@@ -40,7 +40,7 @@ function buildHtml(req) {
 
 
 ///WRITE HTML
-var fileName = 'test.html';
+var fileName = 'output/test.html';
 var stream = fs.createWriteStream(fileName);
 
 stream.once('open', function(fd) {
