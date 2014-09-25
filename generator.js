@@ -2,7 +2,7 @@ var fs = require('fs');
 
 var DOMParser = require('xmldom').DOMParser;
 
-var inspect = require('eyes').inspector({maxLength: false})
+//var inspect = require('eyes').inspector({maxLength: false})
 
 
 ///load 
@@ -25,6 +25,8 @@ function buildIndex() {
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
+
+	console.log(doc);
 	
 	var introduccion = doc.getElementsByTagName('introduccion')[0];
 
@@ -55,45 +57,39 @@ function generarIndicieUnidades(unidades){
 	var indiceUnidades = '<ol>';
 	for (var i=0; i < unidades.length; i++) {
 
-		var unidad_titulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
-		var unidadUrl = 'unidad-'+(i+1);
-		generarPaginaUnidad(unidades[i], unidadUrl);
+		var unidadTitulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+		var unidadUrl = 'unidad-'+(i+1)+'.html';
+		var unidadLink = '<a href="'+unidadUrl+'">'+unidadTitulo+'</a>';
 		
+		generarPaginaUnidad(unidades[i], unidadUrl);
+
 		///APARTADOS
 		var apartados = unidades[i].getElementsByTagName('apartado');
 		var indiceApartados = '';
 		if(apartados.length > 0){
 			indiceApartados = '<ol>';
 			for (var e=0; e < apartados.length; e++) {
-				
-					var apartado_titulo = apartados[e].getElementsByTagName('apartado_titulo')[0].childNodes[0].nodeValue;
-			
-						///SUBAPARTADOS
-						var subapartados = apartados[e].getElementsByTagName('subapartado');
-						var indiceSubapartado = '';
-						if(subapartados.length > 0){
-							indiceSubapartado = '<ol>';
-							for (var o=0; o < subapartados.length; o++) {
-								
-									var subapartado_titulo = subapartados[o].getElementsByTagName('subapartado_titulo')[0].childNodes[0].nodeValue;
+					if(apartados[e].getElementsByTagName('apartado_titulo')[0]){
+						var apartadoTitulo = apartados[e].getElementsByTagName('apartado_titulo')[0].childNodes[0].nodeValue;
+						var apartadoUrl = encodeURIComponent(apartadoTitulo).replace(/%20/g,'-');
+						var apartadoLink = '<a href="'+unidadUrl+'#'+apartadoUrl+'">'+apartadoTitulo+'</a>';
 
-									var itemSubapartado = '<li>'+subapartado_titulo+'</li>';
-									indiceSubapartado = indiceSubapartado+itemSubapartado;
-								
-							}
-							indiceSubapartado=indiceSubapartado+'</ol>';
 
-						}////TERMINA SUBAPARTADOS 
-
-					var itemApartado = '<li>'+apartado_titulo+indiceSubapartado+'</li>';
-					indiceApartados = indiceApartados+itemApartado;
+							///SUBAPARTADOS
+							var subapartados = apartados[e].getElementsByTagName('subapartado');
+							var indiceSubapartado = indexFromElements(subapartados, 'subapartado_titulo',unidadUrl);
+							
+	
+						var itemApartado = '<li>'+apartadoLink+indiceSubapartado+'</li>';
+						indiceApartados = indiceApartados+itemApartado;
+					}
 				
 			}
 			indiceApartados=indiceApartados+'</ol>';
 
 		}////TERMINA APARTADOS 
 
-		var itemUnidad = '<li>'+unidad_titulo+indiceApartados+'</li>';
+		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 	}///TERMINA UNIDAD
@@ -102,11 +98,39 @@ function generarIndicieUnidades(unidades){
 
 
 function generarPaginaUnidad(unidad,fileName){
-	var streamUni = fs.createWriteStream('output/'+fileName+'.html');
+	var streamUni = fs.createWriteStream('output/'+fileName);
 
 	streamUni.once('open', function(fd) {
 		var html = fileName;
 		streamUni.end(html);
 	});
 
+}
+
+function indexFromElements(elementos,what_to_get,child_to_get,baseLink){
+	var output = '';
+	if(elementos.length > 0){
+		output = '<ol>';
+		for (var o=0; o < elementos.length; o++) {
+			if(elementos[o].getElementsByTagName(what_to_get)[0]){
+				var elementoTitulo = elementos[o].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
+
+				var elementoUrl = encodeURIComponent(elementoTitulo).replace(/%20/g,'-');
+				var elementoLink = '<a href="'+baseLink+'#'+elementoUrl+'">'+elementoTitulo+'</a>';
+				/*
+				var childIndex = '';
+				if(child_to_get !== null){
+					var childElements = apartados[e].getElementsByTagName('child_to_get');
+					var childIndex = indexFromElements(childElements,'subapartado_titulo',baseLink);
+				}
+				*/
+				var itemElemento = '<li>'+elementoLink+'</li>';
+				output = output+itemElemento;
+			}
+			
+		}
+		output=output+'</ol>';
+
+	}////TERMINA SUBAPARTADOS 
+	return output;
 }
