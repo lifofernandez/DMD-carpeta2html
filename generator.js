@@ -55,7 +55,7 @@ function generarIndicieUnidades(unidades){
 	var indiceUnidades = '<ol>';
 	for (var i=0; i < unidades.length; i++) {
 
-		var unidad_titulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue
+		var unidad_titulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var unidadUrl = 'unidad-'+(i+1);
 		generarPaginaUnidad(unidades[i], unidadUrl);
 		
@@ -66,7 +66,7 @@ function generarIndicieUnidades(unidades){
 			indiceApartados = '<ol>';
 			for (var e=0; e < apartados.length; e++) {
 				
-					var apartado_titulo = apartados[e].getElementsByTagName('apartado_titulo')[0].childNodes[0].nodeValue
+					var apartado_titulo = apartados[e].getElementsByTagName('apartado_titulo')[0].childNodes[0].nodeValue;
 			
 						///SUBAPARTADOS
 						var subapartados = apartados[e].getElementsByTagName('subapartado');
@@ -75,7 +75,7 @@ function generarIndicieUnidades(unidades){
 							indiceSubapartado = '<ol>';
 							for (var o=0; o < subapartados.length; o++) {
 								
-									var subapartado_titulo = subapartados[o].getElementsByTagName('subapartado_titulo')[0].childNodes[0].nodeValue
+									var subapartado_titulo = subapartados[o].getElementsByTagName('subapartado_titulo')[0].childNodes[0].nodeValue;
 
 									var itemSubapartado = '<li>'+subapartado_titulo+'</li>';
 									indiceSubapartado = indiceSubapartado+itemSubapartado;
