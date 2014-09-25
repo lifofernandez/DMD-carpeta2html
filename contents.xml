@@ -92,140 +92,17 @@
   </unidad>
   <unidad class="group" subclass="unidad_group">
     <unidad_titulo class="item" subclass="unidad_item">Instructivo para el uso de la plantilla</unidad_titulo>
-    <unidad_objetivos class="item" subclass="unidad_item">
-      <p>-</p>
-    </unidad_objetivos>
-    <apartado class="group" subclass="apartado_group">
-      <apartado_titulo class="item" subclass="apartado_item">Google Drive</apartado_titulo>
-      <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>Informacion plantilla de Google Drive</p>
-      </bloque>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Habilitar macros en archivos de Office</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Las macros est&#xE1;n deshabilitadas por <em>default</em> en Microsoft Office 2010 (Word 2010) por razones de seguridad. Para habilitar las macros en Office 2010 tenemos que adentrarnos en las <strong>opciones</strong>. Una vez abierto Microsoft Word. Damos en clic en el <strong>men&#xFA; </strong>y seleccionamos <strong>opciones de Word</strong></p>
-          <p>
-            <img alt="macros1" src="files/macros_1.jpg" href="file:///files/macros_1.jpg"/>
-          </p>
-          <p>Una vez abierto <strong>opciones de Word </strong>damos clic en <strong>centro de confianza </strong>y ah&#xED; damos clic en <strong>configuraciones de centro de confianza</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_2.jpg" href="file:///files/macros_2.jpg"/>
-          </p>
-          <p>En las <strong>configuraciones de centro de confianza </strong>seleccionamos <strong>habilitar todas las macros</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_3.jpg" href="file:///files/macros_3.jpg"/>
-          </p>
-          <p>&#xA0;</p>
-        </bloque>
-        <bloque tipo="recurso_web" class="item" subclass="subapartado_item">
-          <p>Habilitar o deshabilitar macros en archivos de Office. &lt; http://office.microsoft.com/es-ar/word-help/habilitar-o-deshabilitar-macros-en-archivos-de-office-HA010354316.aspx &gt;. [Consulta: 22 de septiembre de 2014].</p>
-          <p>Descripci&#xF3;n: Una macro est&#xE1; compuesta por una serie de comandos que puede usar para automatizar una tarea repetitiva, y se puede ejecutar cuando haya que realizar la tarea. Este art&#xED;culo contiene informaci&#xF3;n acerca de los riesgos relacionados con el trabajo con macros, y le permitir&#xE1; aprender a habilitar o deshabilitar macros en el Centro de confianza.</p>
-        </bloque>
-      </subapartado>
-    </apartado>
-    <apartado class="group" subclass="apartado_group">
-      <apartado_titulo class="item" subclass="apartado_item">Plataforma Drupal</apartado_titulo>
-      <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>materiales.uvq.edu.ar</p>
-      </bloque>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Habilitar macros en archivos de Office</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Las macros est&#xE1;n deshabilitadas por <em>default</em> en Microsoft Office 2010 (Word 2010) por razones de seguridad. Para habilitar las macros en Office 2010 tenemos que adentrarnos en las <strong>opciones</strong>. Una vez abierto Microsoft Word. Damos en clic en el <strong>men&#xFA; </strong>y seleccionamos <strong>opciones de Word</strong></p>
-          <p>
-            <img alt="macros1" src="files/macros_1.jpg" href="file:///files/macros_1.jpg"/>
-          </p>
-          <p>Una vez abierto <strong>opciones de Word </strong>damos clic en <strong>centro de confianza </strong>y ah&#xED; damos clic en <strong>configuraciones de centro de confianza</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_2.jpg" href="file:///files/macros_2.jpg"/>
-          </p>
-          <p>En las <strong>configuraciones de centro de confianza </strong>seleccionamos <strong>habilitar todas las macros</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_3.jpg" href="file:///files/macros_3.jpg"/>
-          </p>
-          <p>&#xA0;</p>
-        </bloque>
-        <bloque tipo="recurso_web" class="item" subclass="subapartado_item">
-          <p>Habilitar o deshabilitar macros en archivos de Office. &lt; http://office.microsoft.com/es-ar/word-help/habilitar-o-deshabilitar-macros-en-archivos-de-office-HA010354316.aspx &gt;. [Consulta: 22 de septiembre de 2014].</p>
-          <p>Descripci&#xF3;n: Una macro est&#xE1; compuesta por una serie de comandos que puede usar para automatizar una tarea repetitiva, y se puede ejecutar cuando haya que realizar la tarea. Este art&#xED;culo contiene informaci&#xF3;n acerca de los riesgos relacionados con el trabajo con macros, y le permitir&#xE1; aprender a habilitar o deshabilitar macros en el Centro de confianza.</p>
-        </bloque>
-      </subapartado>
-    </apartado>
-    <apartado class="group" subclass="apartado_group">
-      <apartado_titulo class="item" subclass="apartado_item">Microsoft Word</apartado_titulo>
-      <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>Para poder utilizar esta plantilla, el autor/a deber&#xE1; instalarla en su computadora. A continuaci&#xF3;n se desarrolla un instructivo para su instalaci&#xF3;n.</p>
-        <p>1.<strong>Copie la carpeta</strong> UVQ_Materiales_Didacticos y utilizando el <strong>Explorador de Windows</strong>, p&#xE9;guela en el directorio ra&#xED;z de su disco r&#xED;gido C (<strong>C</strong>:\). <strong>Es muy importante que sea en este directorio</strong> y no en cualquier otro. Al ingresar dentro de esta carpeta su explorador de Windows debiera mostrar la siguiente ruta: <strong>C:\UVQ_Materiales_Didacticos</strong>.</p>
-        <p>2. Seleccione el archivo llamado <strong>autores_digital</strong>.dot y <strong>c&#xF3;pielo</strong> con las opciones que aparecen al clicquear el bot&#xF3;n derecho del mouse o mediante el comando de teclado &#x201C;Ctrl. + C&#x201D;.</p>
-        <p>
-          <img alt="instalar1" src="files/Captura%20de%20pantalla%202014-07-17%20a%20la%28s%29%2014.16.07.png" href="file:///files/Captura%20de%20pantalla%202014-07-17%20a%20la%28s%29%2014.16.07.png"/>
-        </p>
-        <p>3. A continuaci&#xF3;n pegar&#xE1; por &#xFA;nica vez el archivo de plantilla dentro del programa Microsoft Word y con este paso la plantilla quedar&#xE1; instalada en su computadora:</p>
-        <p>Para ello abra el Word, y en el primer men&#xFA; (Archivo) seleccione el &#xED;tem &#x201C;Nuevo&#x201D;.</p>
-        <p>a) En las <u>versiones 97 y 2000</u> de Word se abrir&#xE1; la siguiente ventana</p>
-        <p>
-          <img alt="instalar2" src="files/Imagen419158_fmt.png" href="file:///files/Imagen419158_fmt.png"/>
-        </p>
-        <p>b) En las <u>versiones XP y 2003</u> de Word se abrir&#xE1; un panel a la derecha de la pantalla llamada &#x201C;<strong>Documento nuevo</strong>&#x201D; en la que se listan distintas opciones:</p>
-        <p>Seleccione la opci&#xF3;n que se llama &#x201C;<strong>En mi PC</strong>&#x201D; dentro del apartado de Plantillas:</p>
-        <p>
-          <img alt="instalar3" src="files/Imagen419176_fmt.png" href="file:///files/Imagen419176_fmt.png"/>
-        </p>
-        <p>A continuaci&#xF3;n se abrir&#xE1; la siguiente ventana:</p>
-        <p>
-          <img alt="instalar4" src="files/Imagen419194_fmt.png" href="file:///files/Imagen419194_fmt.png"/>
-        </p>
-        <p>c) En la <u>versi&#xF3;n 2007</u> de Word, seleccione &#x201C;Archivo Nuevo&#x201D;, y luego &#x201C;Mis plantillas&#x201D;</p>
-        <p>
-          <img alt="instalar5" src="files/Imagen419211_fmt.png" href="file:///files/Imagen419211_fmt.png"/>
-        </p>
-        <p>En todos los casos haga click con el bot&#xF3;n derecho del mouse en alg&#xFA;n sector en blanco de la ventana y <strong>pegue el archivo copiado en el paso 2</strong>.</p>
-        <p>
-          <img src="files/archivo_copiado.jpg" style="height:441px; width:800px" href="file:///files/archivo_copiado.jpg"/>
-        </p>
-        <p>Si estos pasos fueron realizados correctamente, ver&#xE1; la nueva plantilla en el listado de plantillas disponibles: <strong>seleccione el &#xED;cono correspondiente a la plantilla autores_digital</strong> y presione el bot&#xF3;n <strong>&#x201C;Aceptar&#x201D;</strong>.</p>
-      </bloque>
-      <bloque tipo="recurso_leer_con_atencion" class="item" subclass="apartado_item">
-        <p>Recuerde que el documento guardado <strong>siempre</strong> debe tener la extensi&#xF3;n <strong>.doc</strong></p>
-      </bloque>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Habilitar macros en archivos de Office</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Las macros est&#xE1;n deshabilitadas por <em>default</em> en Microsoft Office 2010 (Word 2010) por razones de seguridad. Para habilitar las macros en Office 2010 tenemos que adentrarnos en las <strong>opciones</strong>. Una vez abierto Microsoft Word. Damos en clic en el <strong>men&#xFA; </strong>y seleccionamos <strong>opciones de Word</strong></p>
-          <p>
-            <img alt="macros1" src="files/macros_1.jpg" href="file:///files/macros_1.jpg"/>
-          </p>
-          <p>Una vez abierto <strong>opciones de Word </strong>damos clic en <strong>centro de confianza </strong>y ah&#xED; damos clic en <strong>configuraciones de centro de confianza</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_2.jpg" href="file:///files/macros_2.jpg"/>
-          </p>
-          <p>En las <strong>configuraciones de centro de confianza </strong>seleccionamos <strong>habilitar todas las macros</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_3.jpg" href="file:///files/macros_3.jpg"/>
-          </p>
-          <p>&#xA0;</p>
-        </bloque>
-        <bloque tipo="recurso_web" class="item" subclass="subapartado_item">
-          <p>Habilitar o deshabilitar macros en archivos de Office. &lt; http://office.microsoft.com/es-ar/word-help/habilitar-o-deshabilitar-macros-en-archivos-de-office-HA010354316.aspx &gt;. [Consulta: 22 de septiembre de 2014].</p>
-          <p>Descripci&#xF3;n: Una macro est&#xE1; compuesta por una serie de comandos que puede usar para automatizar una tarea repetitiva, y se puede ejecutar cuando haya que realizar la tarea. Este art&#xED;culo contiene informaci&#xF3;n acerca de los riesgos relacionados con el trabajo con macros, y le permitir&#xE1; aprender a habilitar o deshabilitar macros en el Centro de confianza.</p>
-        </bloque>
-      </subapartado>
-    </apartado>
+    
   </unidad>
   <unidad class="group" subclass="unidad_group">
     <unidad_titulo class="item" subclass="unidad_item">La Carpeta de trabajo</unidad_titulo>
     <unidad_introduccion class="item" subclass="unidad_item">
       <p>A partir de un mismo contenido la Carpeta de trabajo tiene dos versiones: una en soporte papel y la otra en soporte digital. Los cambios pensados para la versi&#xF3;n digital fueron producto de la toma de conciencia de que la preponderancia del modo escritura y las im&#xE1;genes en blanco y negro subordinadas a la l&#xF3;gica sucesiva del discurso, resultaban ya limitadas para cubrir las necesidades espec&#xED;ficas de algunas asignaturas, para las cuales la utilizaci&#xF3;n de im&#xE1;genes en color, videos, animaciones y audio, se tornaba ineludible.</p>
       <p>Esta versi&#xF3;n cuenta con algunas ventajas: puede ser explorada en l&#xED;nea o descargada al disco r&#xED;gido, tiene un &#xED;ndice enlazado y una barra de exploraci&#xF3;n que permite navegar el material en pantalla y recorrer diferentes espacios, tiene enlaces internos y externos, marcadores o bookmarks y la posibilidad de reproducir peque&#xF1;os fragmentos de audio o videos y visualizar im&#xE1;genes y gr&#xE1;ficos en color.</p>
-      <p>En relaci&#xF3;n con la interacci&#xF3;n, Bates se&#xF1;ala lo siguiente:<br/>
-La mayor&#xED;a de las teor&#xED;as del aprendizaje indican que, para que el aprendizaje sea efectivo, tiene que ser activo; en otras palabras, el estudiante debe responder, de una u otra manera, al material docente. No es suficiente con dedicarse a escuchar, ver o escribir, es necesario que los estudiantes hagan algo con el material. Es posible que tengan que demostrar (como m&#xED;nimo a ellos mismos) que lo han entendido, o bien que tengan que modificar sus conocimientos anteriores en funci&#xF3;n de la nueva informaci&#xF3;n; tambi&#xE9;n es posible que tengan que analizar la informaci&#xF3;n nueva bas&#xE1;ndose en sus conocimientos anteriores. (Bates , 1995)</p>
-      <p>Bates , T. (1995), &#x201C;Selecting technologies. Sorting out the differences&#x201D;<br/>
-en: Technology, Open Learning and Distance Education,Routledge, Londres-Nueva York.</p>
+      <p>En relaci&#xF3;n con la interacci&#xF3;n, Bates se&#xF1;ala lo siguiente:<br/>La mayor&#xED;a de las teor&#xED;as del aprendizaje indican que, para que el aprendizaje sea efectivo, tiene que ser activo; en otras palabras, el estudiante debe responder, de una u otra manera, al material docente. No es suficiente con dedicarse a escuchar, ver o escribir, es necesario que los estudiantes hagan algo con el material. Es posible que tengan que demostrar (como m&#xED;nimo a ellos mismos) que lo han entendido, o bien que tengan que modificar sus conocimientos anteriores en funci&#xF3;n de la nueva informaci&#xF3;n; tambi&#xE9;n es posible que tengan que analizar la informaci&#xF3;n nueva bas&#xE1;ndose en sus conocimientos anteriores. (Bates , 1995)</p>
+      <p>Bates , T. (1995), &#x201C;Selecting technologies. Sorting out the differences&#x201D;<br/>en: Technology, Open Learning and Distance Education,Routledge, Londres-Nueva York.</p>
       <p>Para optimizar estas ventajas, el autor/ra de la Carpeta de trabajo debe profundizar las caracter&#xED;sticas did&#xE1;cticas del material a partir de la escritura y el uso de los recursos did&#xE1;cticos y multimediales mediante la incorporaci&#xF3;n de sitios espec&#xED;ficos del &#xE1;rea disciplinar, im&#xE1;genes, mapas, videos y animaciones que pudieran complementar la lectura y la comprensi&#xF3;n de los conceptos con ejemplos claramente visibles.</p>
     </unidad_introduccion>
-    <unidad_objetivos class="item" subclass="unidad_item">
-      <p>-</p>
-    </unidad_objetivos>
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Versi&#xF3;n digital de la Carpeta de trabajo</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
@@ -233,28 +110,7 @@ en: Technology, Open Learning and Distance Education,Routledge, Londres-Nueva Yo
         <p>Esta versi&#xF3;n cuenta con algunas ventajas: puede ser explorada en l&#xED;nea o descargada al disco r&#xED;gido, tiene un &#xED;ndice enlazado y una barra de exploraci&#xF3;n que permite navegar el material en pantalla y recorrer diferentes espacios, tiene enlaces internos y externos, marcadores o bookmarks y la posibilidad de reproducir peque&#xF1;os fragmentos de audio o videos y visualizar im&#xE1;genes y gr&#xE1;ficos en color.</p>
         <p>Para optimizar estas ventajas, el autor/ra de la Carpeta de trabajo debe profundizar las caracter&#xED;sticas did&#xE1;cticas del material a partir de la escritura y el uso de los recursos did&#xE1;cticos y multimediales mediante la incorporaci&#xF3;n de sitios espec&#xED;ficos del &#xE1;rea disciplinar, im&#xE1;genes, mapas, videos y animaciones que pudieran complementar la lectura y la comprensi&#xF3;n de los conceptos con ejemplos claramente visibles.</p>
       </bloque>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Habilitar macros en archivos de Office</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Las macros est&#xE1;n deshabilitadas por <em>default</em> en Microsoft Office 2010 (Word 2010) por razones de seguridad. Para habilitar las macros en Office 2010 tenemos que adentrarnos en las <strong>opciones</strong>. Una vez abierto Microsoft Word. Damos en clic en el <strong>men&#xFA; </strong>y seleccionamos <strong>opciones de Word</strong></p>
-          <p>
-            <img alt="macros1" src="files/macros_1.jpg" href="file:///files/macros_1.jpg"/>
-          </p>
-          <p>Una vez abierto <strong>opciones de Word </strong>damos clic en <strong>centro de confianza </strong>y ah&#xED; damos clic en <strong>configuraciones de centro de confianza</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_2.jpg" href="file:///files/macros_2.jpg"/>
-          </p>
-          <p>En las <strong>configuraciones de centro de confianza </strong>seleccionamos <strong>habilitar todas las macros</strong>.</p>
-          <p>
-            <img alt="macros1" src="files/macros_3.jpg" href="file:///files/macros_3.jpg"/>
-          </p>
-          <p>&#xA0;</p>
-        </bloque>
-        <bloque tipo="recurso_web" class="item" subclass="subapartado_item">
-          <p>Habilitar o deshabilitar macros en archivos de Office. &lt; http://office.microsoft.com/es-ar/word-help/habilitar-o-deshabilitar-macros-en-archivos-de-office-HA010354316.aspx &gt;. [Consulta: 22 de septiembre de 2014].</p>
-          <p>Descripci&#xF3;n: Una macro est&#xE1; compuesta por una serie de comandos que puede usar para automatizar una tarea repetitiva, y se puede ejecutar cuando haya que realizar la tarea. Este art&#xED;culo contiene informaci&#xF3;n acerca de los riesgos relacionados con el trabajo con macros, y le permitir&#xE1; aprender a habilitar o deshabilitar macros en el Centro de confianza.</p>
-        </bloque>
-      </subapartado>
+      
     </apartado>
   </unidad>
   <unidad class="group" subclass="unidad_group">
@@ -442,115 +298,33 @@ en: Technology, Open Learning and Distance Education,Routledge, Londres-Nueva Yo
         <subapartado_titulo class="item" subclass="subapartado_item">Referencias web</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Art&#xED;culos</p>
-          <p>[ A pellido ], [ Inicial/es de nombre/s ] . &#x201C; [ T&#xED;tulo ] &#x201C;, [en l&#xED;nea/CD-ROM]. En: [ T&#xED;tulo ] . [ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] .<br/>
-Disponible en: &lt; [Direcci&#xF3;n WEB ] &gt; [ Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
+          <p>[ A pellido ], [ Inicial/es de nombre/s ] . &#x201C; [ T&#xED;tulo ] &#x201C;, [en l&#xED;nea/CD-ROM]. En: [ T&#xED;tulo ] . [ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] .<br/>Disponible en: &lt; [Direcci&#xF3;n WEB ] &gt; [ Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
         </bloque>
         <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Rappa, M., &#x201C;Business Models on the Web&#x201D;. En: North Carolina State University. [en l&#xED;nea]. s/d.<br/>
-Disponible en: &lt; www.digitalenterprise.org/models/models.html &gt; [Consulta: 10 octubre 2011].</p>
+          <p>Rappa, M., &#x201C;Business Models on the Web&#x201D;. En: North Carolina State University. [en l&#xED;nea]. s/d.<br/>Disponible en: &lt; www.digitalenterprise.org/models/models.html &gt; [Consulta: 10 octubre 2011].</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Recursos web</p>
-          <p>[ Nombre del Sitio ] . &lt; [ Direcci&#xF3;n WEB ] &gt;. [ Consulta: [ dd ] [ mes ] [ aaaa ] ].<br/>
-Descripci&#xF3;n: [ Descripci&#xF3;n ]</p>
+          <p>[ Nombre del Sitio ] . &lt; [ Direcci&#xF3;n WEB ] &gt;. [ Consulta: [ dd ] [ mes ] [ aaaa ] ].<br/>Descripci&#xF3;n: [ Descripci&#xF3;n ]</p>
         </bloque>
         <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Youtube. &lt; www.youtube.com &gt;. [Consulta: 23 de agosto de 2012].<br/>
-Descripci&#xF3;n: sitio que permite encontrar, ver y compartir videos.</p>
+          <p>Youtube. &lt; www.youtube.com &gt;. [Consulta: 23 de agosto de 2012].<br/>Descripci&#xF3;n: sitio que permite encontrar, ver y compartir videos.</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Texto completo</p>
-          <p>[ A pellido ] , [ Inicial/es de nombre/s ] . [ T&#xED;tulo ] , [ [ en l&#xED;nea/CD-ROM ] ].<br/>
-[ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] . Disponible en: &lt; [ Direcci&#xF3;n&#xA0;WEB ] &gt; [Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
+          <p>[ A pellido ] , [ Inicial/es de nombre/s ] . [ T&#xED;tulo ] , [ [ en l&#xED;nea/CD-ROM ] ].<br/>[ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] . Disponible en: &lt; [ Direcci&#xF3;n&#xA0;WEB ] &gt; [Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
         </bloque>
         <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Vilaseca, J.; Torrent, J. y D&#xED;az, &#xC1;. &#x201C;La econom&#xED;a del conocimiento: paradigma tecnol&#xF3;gico y cambio estructural. Un an&#xE1;lisis emp&#xED;rico e internacional para la econom&#xED;a espa&#xF1;ola&#x201D;, [en l&#xED;nea].<br/>
-En: Working Paper Series WP02-003. Noviembre de 2002. Disponible en: &lt; www.uoc.edu/in3/dt/20007/index.html &gt; [Consulta 8 marzo 2007].</p>
+          <p>Vilaseca, J.; Torrent, J. y D&#xED;az, &#xC1;. &#x201C;La econom&#xED;a del conocimiento: paradigma tecnol&#xF3;gico y cambio estructural. Un an&#xE1;lisis emp&#xED;rico e internacional para la econom&#xED;a espa&#xF1;ola&#x201D;, [en l&#xED;nea].<br/>En: Working Paper Series WP02-003. Noviembre de 2002. Disponible en: &lt; www.uoc.edu/in3/dt/20007/index.html &gt; [Consulta 8 marzo 2007].</p>
         </bloque>
       </subapartado>
     </apartado>
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Anexos</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>Se trata de textos, esquemas o gr&#xE1;ficos que por su car&#xE1;cter complementario y/o por su gran extensi&#xF3;n se publican al finalizar el texto completo de la Carpeta de trabajo o luego de la Unidad correspondiente. Aportan informaci&#xF3;n<br/>
-complementaria para profundizar el estudio.<br/>
-Se recomienda que el n&#xFA;mero de Anexos no sea mayor a tres por Carpeta&#xA0;de trabajo y con un n&#xFA;mero de p&#xE1;ginas no superior a siete.</p>
+        <p>Se trata de textos, esquemas o gr&#xE1;ficos que por su car&#xE1;cter complementario y/o por su gran extensi&#xF3;n se publican al finalizar el texto completo de la Carpeta de trabajo o luego de la Unidad correspondiente. Aportan informaci&#xF3;n<br/>complementaria para profundizar el estudio.<br/>Se recomienda que el n&#xFA;mero de Anexos no sea mayor a tres por Carpeta&#xA0;de trabajo y con un n&#xFA;mero de p&#xE1;ginas no superior a siete.</p>
       </bloque>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Modelos de referencias en papel</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>
-            <span style="line-height:1.6">Art&#xED;culos, cap&#xED;tulos o cuentos</span>
-          </p>
-          <p>[ A pellido ] , [ Inicial/es de nombre/s ] . ( [ Fecha de Publicaci&#xF3;n ] ), &#x201C;[ T&#xED;tulo ]&#x201D; en: [ T&#xED;tulo ] , [ Editorial ] , [ Ciudad ] , [ P&#xE1;ginas ] .</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Eagleton, T. (1988), &#x201C;El Postestructuralismo&#x201D; en: Una introducci&#xF3;n a&#xA0;la teor&#xED;a literaria, Fondo de Cultura Econ&#xF3;mica, M&#xE9;xico, pp. 155-188.</p>
-          <p>Art&#xED;culos de varios autores</p>
-          <p>[ Apellido ] , [ Inicial/es de nombre/s ] . ( [ Fecha de Publicaci&#xF3;n ] ),&#x201C;[ T&#xED;tulo ]&#x201D;, en: AA.VV., [ T&#xED;tulo ] , [ Editorial ] , [ Ciudad ],&#xA0;[ P&#xE1;ginas ] .</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Bobbio, N. (1991), &#x201C;Quais alternativas &#xE1; democracia representativa?&#x201D;,&#xA0;en: AA.VV., O marxismo e o Estado, Graal, Rio de Janeiro, pp. 51-60.</p>
-          <p>Libros</p>
-          <p>[ Apellido ] , [ Inicial/es de nombre/s ] . ( [ Fecha de Publicaci&#xF3;n ] ),[ T&#xED;tulo ] , [ Editorial ] , [ Ciudad ] .</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Saer, J. (1994), La pesquisa, Seix Barral, Buenos Aires.</p>
-        </bloque>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Primera edici&#xF3;n</p>
-          <p>En caso de textos traducidos, cl&#xE1;sicos o cualquier otro texto en el que sea relevante consignar su edici&#xF3;n original:</p>
-          <p>[ Apellido ] , [ Inicial/es de nombre/s ] . ( [ Fecha de Publicaci&#xF3;n ] ), [ T&#xED;tulo ] ,[ 1a Edici&#xF3;n ] , [ Traducci&#xF3;n / Est. Preliminar ] , Colecci&#xF3;n &#x2018; [ Colecci&#xF3;n ] &#x201C;, [ Colecci&#xF3;n No ] , [ Editorial ] , [ Ciudad ] .</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Rousseau, J. (1970), Emilio o la educaci&#xF3;n, 1a edici&#xF3;n 1762, estudio&#xA0;preliminar de Daniel Moreno, Colecci&#xF3;n &#x201C;Sepan cu&#xE1;ntos...&#x201D;, N&#xB0; 159,&#xA0;Porr&#xFA;a, M&#xE9;xico.</p>
-        </bloque>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>En los casos en que el traductor sea importante dentro de la disciplina, consignar la traducci&#xF3;n.</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Dewey, J. (1998), Democracia y educaci&#xF3;n, 1a edici&#xF3;n 1916, traducci&#xF3;n de Lorenzo Luzuriaga, colecci&#xF3;n &#x201C;Ra&#xED;ces de la memoria&#x201D;,&#xA0;Morata, Madrid.</p>
-        </bloque>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Obras de un mismo autor</p>
-          <p>Cuando haya m&#xE1;s de una obra del mismo autor se utilizar&#xE1; el gui&#xF3;n largo para reemplazar el nombre del autor.</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Tenti Fanfani, E. (1984), &#x201C;La interacci&#xF3;n maestro-alumno, discusi&#xF3;n&#xA0;sociol&#xF3;gica&#x201D; en: Revista Mexicana de Sociolog&#xED;a, A&#xF1;o XLVI, N&#xB0;1, enero-marzo, M&#xE9;xico, pp. 161-174.</p>
-          <p>&#x2014; (1995a), La escuela vac&#xED;a. Deberes del Estado y responsabilidades de la sociedad civil, Losada, Buenos Aires.</p>
-          <p>&#x2014; (1995b), Universidad y profesiones. Crisis y alternativas, segunda edici&#xF3;n Mi&#xF1;o y D&#xE1;vila Editores, Buenos Aires.</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Referencias web</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Art&#xED;culos</p>
-          <p>[ A pellido ], [ Inicial/es de nombre/s ] . &#x201C; [ T&#xED;tulo ] &#x201C;, [en l&#xED;nea/CD-ROM]. En: [ T&#xED;tulo ] . [ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] .<br/>
-Disponible en: &lt; [Direcci&#xF3;n WEB ] &gt; [ Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Rappa, M., &#x201C;Business Models on the Web&#x201D;. En: North Carolina State University. [en l&#xED;nea]. s/d.<br/>
-Disponible en: &lt; www.digitalenterprise.org/models/models.html &gt; [Consulta: 10 octubre 2011].</p>
-        </bloque>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Recursos web</p>
-          <p>[ Nombre del Sitio ] . &lt; [ Direcci&#xF3;n WEB ] &gt;. [ Consulta: [ dd ] [ mes ] [ aaaa ] ].<br/>
-Descripci&#xF3;n: [ Descripci&#xF3;n ]</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Youtube. &lt; www.youtube.com &gt;. [Consulta: 23 de agosto de 2012].<br/>
-Descripci&#xF3;n: sitio que permite encontrar, ver y compartir videos.</p>
-        </bloque>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Texto completo</p>
-          <p>[ A pellido ] , [ Inicial/es de nombre/s ] . [ T&#xED;tulo ] , [ [ en l&#xED;nea/CD-ROM ] ].<br/>
-[ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] . Disponible en: &lt; [ Direcci&#xF3;n&#xA0;WEB ] &gt; [Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
-        </bloque>
-        <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>Vilaseca, J.; Torrent, J. y D&#xED;az, &#xC1;. &#x201C;La econom&#xED;a del conocimiento: paradigma tecnol&#xF3;gico y cambio estructural. Un an&#xE1;lisis emp&#xED;rico e internacional para la econom&#xED;a espa&#xF1;ola&#x201D;, [en l&#xED;nea].<br/>
-En: Working Paper Series WP02-003. Noviembre de 2002. Disponible en: &lt; www.uoc.edu/in3/dt/20007/index.html &gt; [Consulta 8 marzo 2007].</p>
-        </bloque>
-      </subapartado>
+      
     </apartado>
   </unidad>
   <unidad class="group" subclass="unidad_group">
@@ -559,14 +333,11 @@ En: Working Paper Series WP02-003. Noviembre de 2002. Disponible en: &lt; www.uo
       <p>Adem&#xE1;s de los distintos niveles de t&#xED;tulos y las diferentes categor&#xED;as para clasificar la bibliograf&#xED;a, puede haber componentes textuales, ic&#xF3;nicos y multimediales que completen un tema, una unidad o la Carpeta.</p>
       <p>Es recomendable que exista un equilibrio entre el texto principal y los dife- rentes recursos que fueron dise&#xF1;ados para enriquecer la exposici&#xF3;n.</p>
     </unidad_introduccion>
-    <unidad_objetivos class="item" subclass="unidad_item">
-      <p>-</p>
-    </unidad_objetivos>
+    
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Texto principal</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>A la hora de redactar lo que ser&#xE1; el texto principal de la Carpeta de trabajo, es necesario tener en cuenta las necesidades de un estudiante virtual. Debe ser un texto expositivo explicativo que desarrolle los conceptos te&#xF3;ricos y que no sea uniforme y monol&#xF3;gico, un resumen o glosa te&#xF3;rica enunciada siempre por una misma voz. Por otro lado, es importante la aplicaci&#xF3;n de recursos (esquemas, gr&#xE1;ficos, cuadros, ejemplos, referencias a otros campos, actividades, audios, videos, etc.) que detallaremos m&#xE1;s adelante.<br/>
-En s&#xED;ntesis, las caracter&#xED;sticas generales que debe tener el texto principal son las siguientes:</p>
+        <p>A la hora de redactar lo que ser&#xE1; el texto principal de la Carpeta de trabajo, es necesario tener en cuenta las necesidades de un estudiante virtual. Debe ser un texto expositivo explicativo que desarrolle los conceptos te&#xF3;ricos y que no sea uniforme y monol&#xF3;gico, un resumen o glosa te&#xF3;rica enunciada siempre por una misma voz. Por otro lado, es importante la aplicaci&#xF3;n de recursos (esquemas, gr&#xE1;ficos, cuadros, ejemplos, referencias a otros campos, actividades, audios, videos, etc.) que detallaremos m&#xE1;s adelante.<br/>En s&#xED;ntesis, las caracter&#xED;sticas generales que debe tener el texto principal son las siguientes:</p>
         <ul>
           <li>Debe exponer los contenidos en forma clara y gradual.</li>
           <li>Debe permitir a los estudiantes reflexionar aut&#xF3;nomamente acerca de los interrogantes, curiosidades y dudas que plantean los contenidos.</li>
@@ -620,15 +391,10 @@ En s&#xED;ntesis, las caracter&#xED;sticas generales que debe tener el texto pri
       <subapartado class="group" subclass="subapartado_group">
         <subapartado_titulo class="item" subclass="subapartado_item">Texto aparte</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Este recurso tiene una doble utilidad: por un lado, corresponde su uso en el caso de que el contenido de la pastilla al margen exceda las cinco l&#xED;neas. Por otro lado, puede contener citas de autor, textos que contextualicen el desarrollo tem&#xE1;tico, estudios de casos, etc&#xE9;tera.<br/>
-Se trata de comentarios ad hoc destinados a formular aclaraciones o proponer profundizaciones.<br/>
-Una de las caracter&#xED;sticas fundamentales de este recurso es que el estudiante puede detenerse en &#xE9;l en la primera lectura o saltearlo para volver sobre &#xE9;l luego, sin perder por ello el hilo del texto principal.<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
+          <p>Este recurso tiene una doble utilidad: por un lado, corresponde su uso en el caso de que el contenido de la pastilla al margen exceda las cinco l&#xED;neas. Por otro lado, puede contener citas de autor, textos que contextualicen el desarrollo tem&#xE1;tico, estudios de casos, etc&#xE9;tera.<br/>Se trata de comentarios ad hoc destinados a formular aclaraciones o proponer profundizaciones.<br/>Una de las caracter&#xED;sticas fundamentales de este recurso es que el estudiante puede detenerse en &#xE9;l en la primera lectura o saltearlo para volver sobre &#xE9;l luego, sin perder por ello el hilo del texto principal.<br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
         </bloque>
         <bloque tipo="recurso_texto_aparte" class="item" subclass="subapartado_item">
-          <p><strong>El rol de los medios en la Argentina</strong><br/>
-El investigador argentino Mart&#xED;n Becerra afirma que el actual debate sobre el rol que cumplen los productores de mensajes noticiosos ayud&#xF3; a desacreditar &#x201C;la inmaculada concepci&#xF3;n&#x201D; de los medios tradicionales (Becerra, 2011: 38), sobre todo entre los actores sociales que participan de la discusi&#xF3;n p&#xFA;blica, como intelectuales y periodistas. Becerra insiste en que, en oposici&#xF3;n a la idea de que las instituciones informativas son &#x201C;organismos independientes y socialmente imparciales&#x201D;, hoy se asiste a la ruptura de un contrato de producci&#xF3;n informativa en el que &#x201C;las empresas period&#xED;sticas disimulaban sus apuestas pol&#xED;ticas bajo el discurso de neutralidad y objetividad&#x201D; (2011: 37). Hoy, la pregunta central es: &#xBF;cu&#xE1;l ser&#xE1; la configuraci&#xF3;n del escenario comunicacional en el futuro pr&#xF3;ximo, si la credibilidad de los medios est&#xE1; puesta en cuesti&#xF3;n?<br/>
-Esto nos lleva a entender el doble mecanismo que se da en la relaci&#xF3;n medios-poder pol&#xED;tico: mientras &#x201C;las noticias negativas sobre las instituciones sociales en general pueden socavar la credibilidad en todas las instituciones, medios de comunicaci&#xF3;n incluidos&#x201D; (Castells, 2009: 385), tambi&#xE9;n se ven afectadas las instituciones pol&#xED;ticas cuando los encargados de comunicarlas caen en descr&#xE9;dito.</p>
+          <p><strong>El rol de los medios en la Argentina</strong><br/>El investigador argentino Mart&#xED;n Becerra afirma que el actual debate sobre el rol que cumplen los productores de mensajes noticiosos ayud&#xF3; a desacreditar &#x201C;la inmaculada concepci&#xF3;n&#x201D; de los medios tradicionales (Becerra, 2011: 38), sobre todo entre los actores sociales que participan de la discusi&#xF3;n p&#xFA;blica, como intelectuales y periodistas. Becerra insiste en que, en oposici&#xF3;n a la idea de que las instituciones informativas son &#x201C;organismos independientes y socialmente imparciales&#x201D;, hoy se asiste a la ruptura de un contrato de producci&#xF3;n informativa en el que &#x201C;las empresas period&#xED;sticas disimulaban sus apuestas pol&#xED;ticas bajo el discurso de neutralidad y objetividad&#x201D; (2011: 37). Hoy, la pregunta central es: &#xBF;cu&#xE1;l ser&#xE1; la configuraci&#xF3;n del escenario comunicacional en el futuro pr&#xF3;ximo, si la credibilidad de los medios est&#xE1; puesta en cuesti&#xF3;n?<br/>Esto nos lleva a entender el doble mecanismo que se da en la relaci&#xF3;n medios-poder pol&#xED;tico: mientras &#x201C;las noticias negativas sobre las instituciones sociales en general pueden socavar la credibilidad en todas las instituciones, medios de comunicaci&#xF3;n incluidos&#x201D; (Castells, 2009: 385), tambi&#xE9;n se ven afectadas las instituciones pol&#xED;ticas cuando los encargados de comunicarlas caen en descr&#xE9;dito.</p>
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
@@ -643,14 +409,10 @@ Esto nos lleva a entender el doble mecanismo que se da en la relaci&#xF3;n medio
       <subapartado class="group" subclass="subapartado_group">
         <subapartado_titulo class="item" subclass="subapartado_item">Cita</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>La de uso m&#xE1;s frecuente es la cita de autoridad como prueba del hilo argumental que se viene desarrollando o para reforzar con frases textuales una perspectiva te&#xF3;rica. Otra aplicaci&#xF3;n de este recurso es la que tiene como finalidad instaurar el di&#xE1;logo entre dos posturas distintas o promover como actividad el contraste y la diferenciaci&#xF3;n.<br/>
-La extensi&#xF3;n de la cita no debe exceder las 15 l&#xED;neas. De lo contrario, se sugiere la recomendaci&#xF3;n de la lectura y no su inserci&#xF3;n en la Carpeta de trabajo.<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Costos I de la carrera Contador P&#xFA;blico Nacional.</p>
+          <p>La de uso m&#xE1;s frecuente es la cita de autoridad como prueba del hilo argumental que se viene desarrollando o para reforzar con frases textuales una perspectiva te&#xF3;rica. Otra aplicaci&#xF3;n de este recurso es la que tiene como finalidad instaurar el di&#xE1;logo entre dos posturas distintas o promover como actividad el contraste y la diferenciaci&#xF3;n.<br/>La extensi&#xF3;n de la cita no debe exceder las 15 l&#xED;neas. De lo contrario, se sugiere la recomendaci&#xF3;n de la lectura y no su inserci&#xF3;n en la Carpeta de trabajo.<br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Costos I de la carrera Contador P&#xFA;blico Nacional.</p>
         </bloque>
         <bloque tipo="recurso_cita" class="item" subclass="subapartado_item">
-          <p><a id="(O sorio , 1986: 22)" name="(O sorio , 1986: 22)">Los costos fijos de capacidad se generan con independencia de cualquier decisi&#xF3;n de uso de la misma ya que provien de la estructura productiva que condiciona el m&#xE1;ximo posible de producci&#xF3;n.<br/>
-Los costos fijos de operaci&#xF3;n se generan como consecuencia de utilizar en una determinada proporci&#xF3;n la estructura disponible y se mantendr&#xE1;n constante mientras no se modifiquen las decisiones sobre el uso de la estructura productiva.</a><br/>
-(O sorio , 1986: 22)</p>
+          <p><a id="(O sorio , 1986: 22)" name="(O sorio , 1986: 22)">Los costos fijos de capacidad se generan con independencia de cualquier decisi&#xF3;n de uso de la misma ya que provien de la estructura productiva que condiciona el m&#xE1;ximo posible de producci&#xF3;n.<br/>Los costos fijos de operaci&#xF3;n se generan como consecuencia de utilizar en una determinada proporci&#xF3;n la estructura disponible y se mantendr&#xE1;n constante mientras no se modifiquen las decisiones sobre el uso de la estructura productiva.</a><br/>(O sorio , 1986: 22)</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>En este recurso utilizamos siempre el formato de cita corta: (Apellido , a&#xF1;o:p&#xE1;ginas) tal como figura en el ejemplo anterior. Luego, la cita completa va en las referencias bibliogr&#xE1;ficas.</p>
@@ -659,43 +421,31 @@ Los costos fijos de operaci&#xF3;n se generan como consecuencia de utilizar en u
       <subapartado class="group" subclass="subapartado_group">
         <subapartado_titulo class="item" subclass="subapartado_item">Ejemplo</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Se usa para ilustrar una definici&#xF3;n o una afirmaci&#xF3;n del texto principal, con el objetivo de que se puedan fijar mejor los conceptos. Para este recurso suelen utilizarse estudios de casos, experiencias, etc&#xE9;tera.<br/><br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Contabilidad II. Intermedia de la carrera Contador P&#xFA;blico Nacional.</p>
+          <p>Se usa para ilustrar una definici&#xF3;n o una afirmaci&#xF3;n del texto principal, con el objetivo de que se puedan fijar mejor los conceptos. Para este recurso suelen utilizarse estudios de casos, experiencias, etc&#xE9;tera.<br/><br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Contabilidad II. Intermedia de la carrera Contador P&#xFA;blico Nacional.</p>
         </bloque>
         <bloque tipo="recurso_ejemplo" class="item" subclass="subapartado_item">
-          <p>El proveedor Martin SA informa que la caja de l&#xE1;pices tiene un costo de $1.600 si se abona al contado, existe la posibilidad de abonar la misma dentro de 30 d&#xED;as con un recargo del 25% de intereses, por lo cual el precio financiado es de $2.000.<br/>
-Roman SA es otro proveedor que vende los mismos l&#xE1;pices, este informa que el precio de la caja es de $2.000 abonando a 30 d&#xED;as y en el caso de optar por el pago al contado nos realizar&#xE1; un descuento del 20% por lo que el precio al contado es de $1.600.</p>
+          <p>El proveedor Martin SA informa que la caja de l&#xE1;pices tiene un costo de $1.600 si se abona al contado, existe la posibilidad de abonar la misma dentro de 30 d&#xED;as con un recargo del 25% de intereses, por lo cual el precio financiado es de $2.000.<br/>Roman SA es otro proveedor que vende los mismos l&#xE1;pices, este informa que el precio de la caja es de $2.000 abonando a 30 d&#xED;as y en el caso de optar por el pago al contado nos realizar&#xE1; un descuento del 20% por lo que el precio al contado es de $1.600.</p>
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
         <subapartado_titulo class="item" subclass="subapartado_item">Para Ampliar</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Este recurso extiende la explicaci&#xF3;n a otros casos u otros textos como podr&#xED;an ser los textos period&#xED;sticos. Lo fundamental es mostrar c&#xF3;mo un tema tiene conexiones y derivaciones que ampl&#xED;an la perspectiva e incluyen otras fuentes.&#xA0;<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Planificaci&#xF3;n y gesti&#xF3;n de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
+          <p>Este recurso extiende la explicaci&#xF3;n a otros casos u otros textos como podr&#xED;an ser los textos period&#xED;sticos. Lo fundamental es mostrar c&#xF3;mo un tema tiene conexiones y derivaciones que ampl&#xED;an la perspectiva e incluyen otras fuentes.&#xA0;<br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Planificaci&#xF3;n y gesti&#xF3;n de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
         </bloque>
         <bloque tipo="recurso_para_ampliar" class="item" subclass="subapartado_item">
-          <p>Para profundizar sobre el proceso de intervenci&#xF3;n se puede ver el siguiente texto:<br/>
-Uranga, W. &#x201C;Intervenir desde la comunicaci&#xF3;n&#x201D;, [en l&#xED;nea].<br/>
-En: Cuaderno de c&#xE1;tedra del Taller de Planificaci&#xF3;n de Procesos Comunicacionales. FPyCS, UNLP. 2012. Disponible en: http://goo. gl/Fo5zX<br/>
-[Consulta: 29 de abril de 2012].</p>
+          <p>Para profundizar sobre el proceso de intervenci&#xF3;n se puede ver el siguiente texto:<br/>Uranga, W. &#x201C;Intervenir desde la comunicaci&#xF3;n&#x201D;, [en l&#xED;nea].<br/>En: Cuaderno de c&#xE1;tedra del Taller de Planificaci&#xF3;n de Procesos Comunicacionales. FPyCS, UNLP. 2012. Disponible en: http://goo. gl/Fo5zX<br/>[Consulta: 29 de abril de 2012].</p>
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
         <subapartado_titulo class="item" subclass="subapartado_item">Actividades</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Denominamos actividades a la ejercitaci&#xF3;n pr&#xE1;ctica que se le propone al estudiante para apropiarse de los contenidos, al tiempo que tambi&#xE9;n desarrolla su propio juicio cr&#xED;tico acerca de lo que ha le&#xED;do o aprendido.<br/>
-Al momento de dise&#xF1;ar actividades se pueden abordar estrategias de comprensi&#xF3;n de texto y aprehensi&#xF3;n de contenidos; desplegar estrategias de an&#xE1;lisis, profundizaci&#xF3;n y s&#xED;ntesis; orientar el an&#xE1;lisis y la reflexi&#xF3;n sobre los textos hacia el debate y la confrontaci&#xF3;n de hip&#xF3;tesis y argumentos diferentes; entre otras posibilidades. Pueden ser ejercicios, investigaciones, encuestas, elaboraci&#xF3;n de cuadros, gr&#xE1;ficos, resoluci&#xF3;n de gu&#xED;as de estudio, etc&#xE9;tera.<br/>
-A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que constituye una simple muestra y de ninguna manera pretende erigirse como modelo a seguir.</p>
+          <p>Denominamos actividades a la ejercitaci&#xF3;n pr&#xE1;ctica que se le propone al estudiante para apropiarse de los contenidos, al tiempo que tambi&#xE9;n desarrolla su propio juicio cr&#xED;tico acerca de lo que ha le&#xED;do o aprendido.<br/>Al momento de dise&#xF1;ar actividades se pueden abordar estrategias de comprensi&#xF3;n de texto y aprehensi&#xF3;n de contenidos; desplegar estrategias de an&#xE1;lisis, profundizaci&#xF3;n y s&#xED;ntesis; orientar el an&#xE1;lisis y la reflexi&#xF3;n sobre los textos hacia el debate y la confrontaci&#xF3;n de hip&#xF3;tesis y argumentos diferentes; entre otras posibilidades. Pueden ser ejercicios, investigaciones, encuestas, elaboraci&#xF3;n de cuadros, gr&#xE1;ficos, resoluci&#xF3;n de gu&#xED;as de estudio, etc&#xE9;tera.<br/>A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que constituye una simple muestra y de ninguna manera pretende erigirse como modelo a seguir.</p>
           <p>a) Consignas de comprensi&#xF3;n de contenidos. Se elabora un cuestionario-gu&#xED;a con preguntas que conducen al estudiante por un itinerario concreto a trav&#xE9;s de la informaci&#xF3;n presentada previamente en un texto de otro autor, o en una parte de la Carpeta de trabajo.</p>
           <p>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Historia Social General de la Licenciatura en Ciencias Sociales.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <p>Luego del visionado de la siguiente pel&#xED;cula, realice las actividades de la gu&#xED;a de an&#xE1;lisis.</p>
-          <p>T&#xED;tulo: Antes de la lluvia (Before the Rain)<br/>
-Direcci&#xF3;n: Milcho Manchevski<br/>
-A&#xF1;o: 1994<br/>
-Nacionalidad: macedonia<br/>
-Premios: Le&#xF3;n de Oro en el Festival de Cine de Venecia (1994)</p>
+          <p>T&#xED;tulo: Antes de la lluvia (Before the Rain)<br/>Direcci&#xF3;n: Milcho Manchevski<br/>A&#xF1;o: 1994<br/>Nacionalidad: macedonia<br/>Premios: Le&#xF3;n de Oro en el Festival de Cine de Venecia (1994)</p>
           <p>
             <a href="http://www.youtube.com/watch?v=WcH1Gb1p-Zw" target="_blank">http://www.youtube.com/watch?v=WcH1Gb1p-Zw</a>
           </p>
@@ -705,45 +455,35 @@ Premios: Le&#xF3;n de Oro en el Festival de Cine de Venecia (1994)</p>
           <p><strong>Gu&#xED;a de an&#xE1;lisis</strong><br/><strong>a.</strong> Contextualice el conflicto entre Macedonia y Albania en la Guerra de los Balcanes.<br/><strong>b.</strong> Diferencie la posici&#xF3;n y actitudes de los protagonistas de cada episodio.<br/><strong>c.</strong> Se&#xF1;ale las consecuencias de la guerra en la vida cotidiana de la gente obligada a tomar partido en el conflicto.<br/><strong>d.</strong> Explique cu&#xE1;les son los argumentos &#xE9;ticos y pol&#xED;ticos de los que defienden la violencia como &#xFA;nica v&#xED;a para resolver los conflictos.<br/><strong>e.</strong> Se&#xF1;ale la intervenci&#xF3;n de los medios de comunicaci&#xF3;n y concreta- mente de la prensa gr&#xE1;fica en la visi&#xF3;n de los conflictos b&#xE9;licos.<br/><strong>f.</strong> Analice la estructura narrativa del film como expresi&#xF3;n del c&#xED;rculo de los acontecimientos en que se encuentran inmersos los personajes. &#xBF;Cu&#xE1;les son los elementos que vinculan los tres episodios? &#xBF;Cu&#xE1;l es el significado de la reiterada afirmaci&#xF3;n &#x201C;El tiempo no muere jam&#xE1;s. El c&#xED;rculo nunca se completa&#x201D;?<br/><strong>g.</strong> Explique cu&#xE1;l es la postura del film ante la violencia y el odio que genera la guerra.</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>b) Consignas de an&#xE1;lisis de contenido (con propuestas de producci&#xF3;n o exposici&#xF3;n). Se seleccionan lecturas significativas que traten el tema que se quiere exponer con suficiente profundidad para elaborar consignas que permitan que el estudiante analice, sintetice, estructure y relacione las informaciones previamente transmitidas. Este tipo de actividades pueden estar referidas a lecturas puntuales o pueden tambi&#xE9;n utilizarse como s&#xED;ntesis integral de toda una unidad.<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Historia Social General de la Licenciatura en Ciencias Sociales.</p>
+          <p>b) Consignas de an&#xE1;lisis de contenido (con propuestas de producci&#xF3;n o exposici&#xF3;n). Se seleccionan lecturas significativas que traten el tema que se quiere exponer con suficiente profundidad para elaborar consignas que permitan que el estudiante analice, sintetice, estructure y relacione las informaciones previamente transmitidas. Este tipo de actividades pueden estar referidas a lecturas puntuales o pueden tambi&#xE9;n utilizarse como s&#xED;ntesis integral de toda una unidad.<br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Historia Social General de la Licenciatura en Ciencias Sociales.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
-          <p><strong>2.</strong><br/>
-A partir del texto de la lectura obligatoria y de los contenidos de la Unidad 6, reponder:<br/><strong>a.</strong>&#xBF;Cu&#xE1;l es el l&#xED;mite al dominio global de un Estado en un mundo &#x201C;unipolar&#x201D;?<br/><strong>b.</strong>&#xBF;Por qu&#xE9; no es posible un dominio basado exclusivamente en la fuerza militar?</p>
+          <p><strong>2.</strong><br/>A partir del texto de la lectura obligatoria y de los contenidos de la Unidad 6, reponder:<br/><strong>a.</strong>&#xBF;Cu&#xE1;l es el l&#xED;mite al dominio global de un Estado en un mundo &#x201C;unipolar&#x201D;?<br/><strong>b.</strong>&#xBF;Por qu&#xE9; no es posible un dominio basado exclusivamente en la fuerza militar?</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>c) Consignas de an&#xE1;lisis, discusi&#xF3;n, reflexi&#xF3;n y argumentaci&#xF3;n: se seleccionan textos completos o fragmentos de textos que funcionen como puntos de partida para que el estudiante compare, relacione, reflexione y argumente.<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
+          <p>c) Consignas de an&#xE1;lisis, discusi&#xF3;n, reflexi&#xF3;n y argumentaci&#xF3;n: se seleccionan textos completos o fragmentos de textos que funcionen como puntos de partida para que el estudiante compare, relacione, reflexione y argumente.<br/>El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <p>
             <strong>3.</strong>
           </p>
-          <p>Este es un video realizado por Jimena Delgado y Franco Benavente,<br/>
-alumnos del Taller de realizaci&#xF3;n audiovisual de la Carrera de<br/>
-Comunicaci&#xF3;n de la Pontificia Universidad Cat&#xF3;lica de Chile:</p>
+          <p>Este es un video realizado por Jimena Delgado y Franco Benavente,<br/>alumnos del Taller de realizaci&#xF3;n audiovisual de la Carrera de<br/>Comunicaci&#xF3;n de la Pontificia Universidad Cat&#xF3;lica de Chile:</p>
           <p>
             <a href="http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related" target="_blank">http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related</a>
           </p>
           <p>
             <img alt="actividad2" src="files/video2_fmt.jpeg" href="file:///files/video2_fmt.jpeg"/>
           </p>
-          <p>Luego de ver el video, responda las siguientes preguntas:<br/>
-a_ &#xBF;Cu&#xE1;les son los criterios de noticiabilidad de estos medios a la hora de seleccionar los hechos que re&#xFA;nen los requisitos para adquirir la existencia p&#xFA;blica de noticia?<br/>
-b_ &#xBF;Qu&#xE9; tipos de acontecimientos son presentados por estos profesionales de la informaci&#xF3;n como universales, necesarios y actuales?<br/>
-c_ &#xBF;En qu&#xE9; contexto simb&#xF3;lico?</p>
+          <p>Luego de ver el video, responda las siguientes preguntas:<br/>a_ &#xBF;Cu&#xE1;les son los criterios de noticiabilidad de estos medios a la hora de seleccionar los hechos que re&#xFA;nen los requisitos para adquirir la existencia p&#xFA;blica de noticia?<br/>b_ &#xBF;Qu&#xE9; tipos de acontecimientos son presentados por estos profesionales de la informaci&#xF3;n como universales, necesarios y actuales?<br/>c_ &#xBF;En qu&#xE9; contexto simb&#xF3;lico?</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>d)Ejemplos de otras actividades:<br/>
-Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Problemas Tur&#xED;sticos Contempor&#xE1;neos de la Licenciatura en Turismo y Hoteler&#xED;a.</p>
+          <p>d)Ejemplos de otras actividades:<br/>Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Problemas Tur&#xED;sticos Contempor&#xE1;neos de la Licenciatura en Turismo y Hoteler&#xED;a.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <p><strong>4.</strong><br/><strong>a.</strong> Ingrese en el portal del organismo de turismo del gobierno de la Provincia de Buenos Aires y gestione e identifique la totalidad de sus productos tur&#xED;sticos. Intente asignarle a cada uno la clasificaci&#xF3;n correspondiente.<br/><strong>b.</strong>Ingrese en el portal del organismo de turismo del gobierno de la ciudad de El Calafate y gestione e identifique la totalidad de sus productos tur&#xED;sticos. Intente asignarle a cada uno la clasificaci&#xF3;n correspondiente.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
-          <p>5<br/>
-Interprete, a partir de la observaci&#xF3;n de ambas fotograf&#xED;as, el nivel de satisfacci&#xF3;n de la experiencia del visitante, referente a la capacidad de carga psicol&#xF3;gica de cada una.</p>
+          <p>5<br/>Interprete, a partir de la observaci&#xF3;n de ambas fotograf&#xED;as, el nivel de satisfacci&#xF3;n de la experiencia del visitante, referente a la capacidad de carga psicol&#xF3;gica de cada una.</p>
           <p>Cataratas del Iguaz&#xFA; y Lago Puelo</p>
           <p>
             <img alt="cataratas" src="files/Imagen419645_fmt.png" href="file:///files/Imagen419645_fmt.png"/>
@@ -757,8 +497,7 @@ Interprete, a partir de la observaci&#xF3;n de ambas fotograf&#xED;as, el nivel 
           <p>Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Introducci&#xF3;n a la econom&#xED;a de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
-          <p><strong>6.</strong><br/>
-Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;mica, para luego ir a la solapa de Informaci&#xF3;n Econ&#xF3;mica al d&#xED;a, en la direcci&#xF3;n &lt;http://www.mecon.gov.ar/peconomica/basehome/infoeco.html&gt;; abrir los cuadros en la opci&#xF3;n Nivel de Actividad. Luego, buscar los datos del PIB en valores reales de Argentina, y:</p>
+          <p><strong>6.</strong><br/>Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;mica, para luego ir a la solapa de Informaci&#xF3;n Econ&#xF3;mica al d&#xED;a, en la direcci&#xF3;n &lt;http://www.mecon.gov.ar/peconomica/basehome/infoeco.html&gt;; abrir los cuadros en la opci&#xF3;n Nivel de Actividad. Luego, buscar los datos del PIB en valores reales de Argentina, y:</p>
           <p>a. Graficar el comportamiento del nivel de actividad desde 1993, de manera de ver el movimiento del ciclo econ&#xF3;mico de nuestro pa&#xED;s.</p>
           <p>b. Identificar las fases del ciclo con base en las definiciones antes presentadas.</p>
         </bloque>
@@ -767,17 +506,12 @@ Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;m
             <strong>7</strong>
           </p>
           <p>A partir de los sigueintes recursos:</p>
-          <p>Luis F. Iglesias, el camino de un maestro<br/>
-&lt;<a href="http://portal.educ.ar/debates/protagonistas/educacion/murio-luis-f-iglesias.php" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">http://portal.educ.ar/debates/protagonistas/educacion/murio-luis-f-iglesias.php</a>&gt;</p>
-          <p>La escuela de la se&#xF1;orita Olga (varias partes)<br/>
-&lt;<a class="link-video youtube" href="http://www.youtube.com/watch?v=b8O9wjJj870" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">www.youtube.com/watch?v=b8O9wjJj870</a>&gt;</p>
+          <p>Luis F. Iglesias, el camino de un maestro<br/>&lt;<a href="http://portal.educ.ar/debates/protagonistas/educacion/murio-luis-f-iglesias.php" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">http://portal.educ.ar/debates/protagonistas/educacion/murio-luis-f-iglesias.php</a>&gt;</p>
+          <p>La escuela de la se&#xF1;orita Olga (varias partes)<br/>&lt;<a class="link-video youtube" href="http://www.youtube.com/watch?v=b8O9wjJj870" onclick="window.open(this.href, '', 'resizable=no,status=no,location=no,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no'); return false;">www.youtube.com/watch?v=b8O9wjJj870</a>&gt;</p>
           <p>
             <img alt="actividades ejemplo" src="files/video3_fmt.jpeg" href="file:///files/video3_fmt.jpeg"/>
           </p>
-          <p>Identifique los elementos que diferencian las experiencias del maestro Iglesias y Olga Cossettini en t&#xE9;rminos de:<br/>
-a. Caracter&#xED;sticas de los alumnos.<br/>
-b. M&#xE9;todos empleados.<br/>
-c. Acci&#xF3;n de los maestros.</p>
+          <p>Identifique los elementos que diferencian las experiencias del maestro Iglesias y Olga Cossettini en t&#xE9;rminos de:<br/>a. Caracter&#xED;sticas de los alumnos.<br/>b. M&#xE9;todos empleados.<br/>c. Acci&#xF3;n de los maestros.</p>
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
@@ -794,9 +528,7 @@ c. Acci&#xF3;n de los maestros.</p>
         <subapartado_titulo class="item" subclass="subapartado_item">Audiovisual</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>El material audiovisual puede utilizarse de diferentes maneras. El tipo de uso que el docente d&#xE9; a un material audiovisual en una clase, depender&#xE1; de los objetivos que se persigan, entre los m&#xE1;s usuales se encuentran: transmitir informaci&#xF3;n, motivar y construir conocimiento.</p>
-          <p>a) El audiovisual como transmisor de informaci&#xF3;n. Puede utilizarse un audiovisual solo para que el estudiante reciba una determinada informac&#xF3;n que quiz&#xE1;s pueda reemplazar o ser complemento de una explicaci&#xF3;n te&#xF3;rica dada por escrito. En este caso, simplemente el docente indicar&#xE1; al estudiante el momento en el que debe realizar el visionado.<br/>
-Otro ejemplo de este tipo de utilizaci&#xF3;n son las presentaciones a trav&#xE9;s de las cuales el docente transmite determinados contenidos. Este tipo de presentaciones pueden contener un video del docente y luego la grabaci&#xF3;n de su voz explicando la informaci&#xF3;n dispuesta en diversas diapositivas. Como hemos dicho en relacio&#x301;n con el sonido, la voz del profesor acompa&#xF1;ando el desarrollo del contenido puede resultar m&#xE1;s convocante porque repone los contenidos expresados de diversos modos y a trav&#xE9;s de distintos canales, con lo cual se gana en vivacidad e inter&#xE9;s.<br/>
-El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9;s I de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
+          <p>a) El audiovisual como transmisor de informaci&#xF3;n. Puede utilizarse un audiovisual solo para que el estudiante reciba una determinada informac&#xF3;n que quiz&#xE1;s pueda reemplazar o ser complemento de una explicaci&#xF3;n te&#xF3;rica dada por escrito. En este caso, simplemente el docente indicar&#xE1; al estudiante el momento en el que debe realizar el visionado.<br/>Otro ejemplo de este tipo de utilizaci&#xF3;n son las presentaciones a trav&#xE9;s de las cuales el docente transmite determinados contenidos. Este tipo de presentaciones pueden contener un video del docente y luego la grabaci&#xF3;n de su voz explicando la informaci&#xF3;n dispuesta en diversas diapositivas. Como hemos dicho en relacio&#x301;n con el sonido, la voz del profesor acompa&#xF1;ando el desarrollo del contenido puede resultar m&#xE1;s convocante porque repone los contenidos expresados de diversos modos y a trav&#xE9;s de distintos canales, con lo cual se gana en vivacidad e inter&#xE9;s.<br/>El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9;s I de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
         </bloque>
         <bloque tipo="recurso_audiovisual" class="item" subclass="subapartado_item">
           <p>El siguiente video muestra c&#xF3;mo se forman las palabras que utilizan afijos:</p>
@@ -806,8 +538,7 @@ El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9
           <p>&lt;<a href="http://&lt;http://www.youtube.com/watch?v=WWvzHiif7H0&gt;" target="_blank" title="link-video">http://www.youtube.com/watch?v=WWvzHiif7H0</a>&gt;</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>b) El audiovisual como motivador. Otra manera de introducir el audiovisual en la clase es utiliza&#x301;ndolo como punto de partida para crear en el estudiante el intere&#x301;s por determinado tema. En el ejemplo siguiente, un programa humori&#x301;stico que hace una parodia de una de las generaciones de la educacio&#x301;n a distancia basada en la televisio&#x301;n, constituye un buen disparador para ilustrar y promover la reflexio&#x301;n sobre este formato.<br/>
-El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia Principios de disen&#x303;o y evaluacio&#x301;n de materiales did&#xE1;cticos de la Especializacio&#x301;n en Docencia en Entornos Virtuales</p>
+          <p>b) El audiovisual como motivador. Otra manera de introducir el audiovisual en la clase es utiliza&#x301;ndolo como punto de partida para crear en el estudiante el intere&#x301;s por determinado tema. En el ejemplo siguiente, un programa humori&#x301;stico que hace una parodia de una de las generaciones de la educacio&#x301;n a distancia basada en la televisio&#x301;n, constituye un buen disparador para ilustrar y promover la reflexio&#x301;n sobre este formato.<br/>El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia Principios de disen&#x303;o y evaluacio&#x301;n de materiales did&#xE1;cticos de la Especializacio&#x301;n en Docencia en Entornos Virtuales</p>
         </bloque>
         <bloque tipo="recurso_audiovisual" class="item" subclass="subapartado_item">
           <p>El modelo docente-expositor caracteriz&#xF3; buena parte de los programas de radio y TV educativa desde la d&#xE9;cada de 1960 y hasta hace relativamente poco tiempo, cuando fueron reemplazados por producciones m&#xE1;s complejas y que exploran las alternativas y posibilidades del formato audiovisual. Ejemplo de la din&#xE1;mica docente-expositor lo constituyen, en la Argentina, los programas de &#x201C;Telescuela T&#xE9;cnica&#x201D; producidos y difundidos por el canal 13 a partir del a&#xF1;o 1966. Mucho m&#xE1;s reciente (de la d&#xE9;cada de 1990) es la parodia a ese formato elaborada desde el programa Cha Cha Cha:</p>
@@ -817,16 +548,14 @@ El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia
           <p>&lt;<a class="link-video" href="http://www.youtube.com/watch?v=Z0dV1ZOlx2g" target="_blank">http://www.youtube.com/watch?v=Z0dV1ZOlx2g</a>&gt;</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>c) El audiovisual como instrumento para construir conocimiento. Este tipo de utilizacio&#x301;n engloba las dos anteriores, y agrega un trabajo ma&#x301;s profundo por parte del docente, en cuanto a la planificacio&#x301;n de la estrategia de ensen&#x303;anza. El docente no solo propone al estudiante un visionado, sino que plantea una serie de actividades a partir del mismo. Por ejemplo, a partir del visionado de algunos fragmentos seleccionados previamente para tal fin, se requiere que el estudiante haga comparaciones, responda cuestionarios, plantee reflexiones y diferentes propuestas de escritura a partir de los contenidos presentados, intervenga en un debate con argumentaciones a favor o en contra, elabore hipo&#x301;tesis propias, etce&#x301;tera.<br/>
-El siguiente ejemplo fue tomado de la Carpeta de trabajo Psicologi&#x301;a organizacional de la Licenciatura en Administracio&#x301;n.</p>
+          <p>c) El audiovisual como instrumento para construir conocimiento. Este tipo de utilizacio&#x301;n engloba las dos anteriores, y agrega un trabajo ma&#x301;s profundo por parte del docente, en cuanto a la planificacio&#x301;n de la estrategia de ensen&#x303;anza. El docente no solo propone al estudiante un visionado, sino que plantea una serie de actividades a partir del mismo. Por ejemplo, a partir del visionado de algunos fragmentos seleccionados previamente para tal fin, se requiere que el estudiante haga comparaciones, responda cuestionarios, plantee reflexiones y diferentes propuestas de escritura a partir de los contenidos presentados, intervenga en un debate con argumentaciones a favor o en contra, elabore hipo&#x301;tesis propias, etce&#x301;tera.<br/>El siguiente ejemplo fue tomado de la Carpeta de trabajo Psicologi&#x301;a organizacional de la Licenciatura en Administracio&#x301;n.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <p>
             <strong>1.</strong>
           </p>
           <p>El siguiente video muestra un informe acerca de las personas que trabajan en Google. Reflexione y responda:</p>
-          <p>a. &#xBF;Cu&#xE1;les son los artefactos visibles de la cultura de la organizaci&#xF3;n?<br/>
-b. &#xBF;Qu&#xE9; tipo de cultura organizacional considera que posee? &#xBF;Por qu&#xE9;?</p>
+          <p>a. &#xBF;Cu&#xE1;les son los artefactos visibles de la cultura de la organizaci&#xF3;n?<br/>b. &#xBF;Qu&#xE9; tipo de cultura organizacional considera que posee? &#xBF;Por qu&#xE9;?</p>
           <p>Para responder las preguntas, tome las tipolog&#xED;as de cultura organiza-cional desarrolladas tanto por Hofstede como por Handy. Recuerde tambi&#xE9;n desarrollar de forma expl&#xED;cita las razones que fundamentan su elecci&#xF3;n, tomando los conceptos te&#xF3;ricos desarrollados en el presente apartado.</p>
           <p>
             <img alt="recurso audiovisual actividad ejemplo" src="files/video6_fmt.jpeg" href="file:///files/video6_fmt.jpeg"/>
@@ -845,8 +574,7 @@ b. &#xBF;Qu&#xE9; tipo de cultura organizacional considera que posee? &#xBF;Por 
           <p>
             <img alt="recurso imagen ejemplo" src="files/Imagen419754_fmt.png" href="file:///files/Imagen419754_fmt.png"/>
           </p>
-          <p><em><strong>Prometeo, de Jos&#xE9; de Ribera (1630)</strong></em><br/>
-Fuente: www.publico.es</p>
+          <p><em><strong>Prometeo, de Jos&#xE9; de Ribera (1630)</strong></em><br/>Fuente: www.publico.es</p>
         </bloque>
         <bloque tipo="recurso_imagen" class="item" subclass="subapartado_item">
           <p>
@@ -887,8 +615,7 @@ Fuente: www.publico.es</p>
           <p>Para los recursos Lectura obligatoria y Lectura recomenda da se debe respetar el formato de referencias detallado en el apartado 3.3.</p>
         </bloque>
         <bloque tipo="recurso_lectura_obligatoria" class="item" subclass="subapartado_item">
-          <p>Merello, A. (1973), Prospectiva. Teori&#x301;a y pra&#x301;ctica, Editorial Guadalupe, Buenos Aires, pp. 11-32.<br/>
-Robirosa, M., &#x201C;Articulacio&#x301;n, negociacio&#x301;n, concertacio&#x301;n&#x201D;, [en li&#x301;nea]. En Robirosa, M. y Pascuchi, J., Metodologi&#x301;a de la gestio&#x301;n ambiental metropolitana. s/f. Disponible en: &lt; <a href="http://Merello, A. (1973), Prospectiva. Teori&#x301;a y pra&#x301;ctica, Editorial Guadalupe, Buenos Aires, pp. 11-32. Robirosa, M., &#x201C;Articulacio&#x301;n, negociacio&#x301;n, concertacio&#x301;n&#x201D;, [en li&#x301;nea]. En Robirosa, M. y Pascuchi, J., Metodologi&#x301;a de la gestio&#x301;n ambiental metropolitana. s/f. Disponible en: &lt; &lt;http://www.posgradofadu.com. ar/archivos/biblio_doc/2.Articulacion_Negociacion_Concertacion. pdf&gt; [consulta: 12 marzo 2012]." target="_blank">http://www.posgradofadu.com. ar/archivos/biblio_doc/2.Articulacion_Negociacion_Concertacion. pdf</a>&gt; [consulta: 12 marzo 2012].</p>
+          <p>Merello, A. (1973), Prospectiva. Teori&#x301;a y pra&#x301;ctica, Editorial Guadalupe, Buenos Aires, pp. 11-32.<br/>Robirosa, M., &#x201C;Articulacio&#x301;n, negociacio&#x301;n, concertacio&#x301;n&#x201D;, [en li&#x301;nea]. En Robirosa, M. y Pascuchi, J., Metodologi&#x301;a de la gestio&#x301;n ambiental metropolitana. s/f. Disponible en: &lt; <a href="http://Merello, A. (1973), Prospectiva. Teori&#x301;a y pra&#x301;ctica, Editorial Guadalupe, Buenos Aires, pp. 11-32. Robirosa, M., &#x201C;Articulacio&#x301;n, negociacio&#x301;n, concertacio&#x301;n&#x201D;, [en li&#x301;nea]. En Robirosa, M. y Pascuchi, J., Metodologi&#x301;a de la gestio&#x301;n ambiental metropolitana. s/f. Disponible en: &lt; &lt;http://www.posgradofadu.com. ar/archivos/biblio_doc/2.Articulacion_Negociacion_Concertacion. pdf&gt; [consulta: 12 marzo 2012]." target="_blank">http://www.posgradofadu.com. ar/archivos/biblio_doc/2.Articulacion_Negociacion_Concertacion. pdf</a>&gt; [consulta: 12 marzo 2012].</p>
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
@@ -902,13 +629,7 @@ Robirosa, M., &#x201C;Articulacio&#x301;n, negociacio&#x301;n, concertacio&#x301
       </subapartado>
     </apartado>
     <unidad_bibliografia class="item" subclass="unidad_item">
-      <p>Barvera&#x301; Gregory, E. (2009), &#x201C;Calidad 2.0&#x201D;, en: Pe&#x301;rez, S.<br/>
-Imperatore, A. (comp.). Comunicacio&#x301;n y educacio&#x301;n en entornos virtuales de aprendizaje. Perspectivas teo&#x301;rico-metodolo&#x301;gicas, Editorial de la Universidad nacional de Quilmes, Bernal.<br/>
-Cabrero Almenara, J. (2003), &#x201C;Replanteando la tecnologi&#x301;a educativa&#x201D;, en Comunicar, 21, p. 23-30, Blackwell, Oxford. Elbert, a., Gergich, m. e imperatore, a. (2012), &#x201C;Innovaciones tecnopedago&#x301;gicas en materiales dida&#x301;cticos universitarios en modalidad virtual: &#x2018;sentidos&#x2019; encontrados&#x201D;, en Revista Electro&#x301;nica de Dida&#x301;ctica en Educacio&#x301;n Superior, Nro. 4, Octubre 2012. Disponible en www.biomilenio.net/RDISUP/ Portada.html<br/>
-Gergich, M. (2009), &#x201C;El audiovisual como material dida&#x301;ctico&#x201D;, en Imperatore y otros, Principios de Disen&#x303;o y Evaluacio&#x301;n de Materiales Dida&#x301;cticos, material dida&#x301;ctico multimedia realizado para la asignatura homo&#x301;nima de la Carrera de Especializacio&#x301;n en docencia en entornos virtuales, Secretari&#x301;a de Posgrado, Universidad Nacional de Quilmes.<br/>
-Imperatore,A, Gergich, m. y de anGelis, B. (2010), &#x201C;Materiales dida&#x301;cticos en construccio&#x301;n: una historia posible frente a los desafi&#x301;os de la Web 2.0&#x201D;, en Actas del Congreso Euro-Iberoamericano ATEI Alfabetizacio&#x301;n media&#x301;tica y culturas digitales. Universidad de Sevilla y Universidad Auto&#x301;noma de Barcelona. Gabinete de Comunicacio&#x301;n y Educacio&#x301;n, Sevilla.<br/>
-Kress, G. (2005), El alfabetismo en la era de los nuevos medios de comunicacio&#x301;n, Ediciones Aljibe, Ma&#x301;laga.<br/>
-O &#x301;Reilly, T. (2005), What is Web 2.0. Design Patterns and Business models for the Next Generation of Software, Disponible en: http://oreilly.com/web2/ archive/what-is-web-20.html</p>
+      <p>Barvera&#x301; Gregory, E. (2009), &#x201C;Calidad 2.0&#x201D;, en: Pe&#x301;rez, S.<br/>Imperatore, A. (comp.). Comunicacio&#x301;n y educacio&#x301;n en entornos virtuales de aprendizaje. Perspectivas teo&#x301;rico-metodolo&#x301;gicas, Editorial de la Universidad nacional de Quilmes, Bernal.<br/>Cabrero Almenara, J. (2003), &#x201C;Replanteando la tecnologi&#x301;a educativa&#x201D;, en Comunicar, 21, p. 23-30, Blackwell, Oxford. Elbert, a., Gergich, m. e imperatore, a. (2012), &#x201C;Innovaciones tecnopedago&#x301;gicas en materiales dida&#x301;cticos universitarios en modalidad virtual: &#x2018;sentidos&#x2019; encontrados&#x201D;, en Revista Electro&#x301;nica de Dida&#x301;ctica en Educacio&#x301;n Superior, Nro. 4, Octubre 2012. Disponible en www.biomilenio.net/RDISUP/ Portada.html<br/>Gergich, M. (2009), &#x201C;El audiovisual como material dida&#x301;ctico&#x201D;, en Imperatore y otros, Principios de Disen&#x303;o y Evaluacio&#x301;n de Materiales Dida&#x301;cticos, material dida&#x301;ctico multimedia realizado para la asignatura homo&#x301;nima de la Carrera de Especializacio&#x301;n en docencia en entornos virtuales, Secretari&#x301;a de Posgrado, Universidad Nacional de Quilmes.<br/>Imperatore,A, Gergich, m. y de anGelis, B. (2010), &#x201C;Materiales dida&#x301;cticos en construccio&#x301;n: una historia posible frente a los desafi&#x301;os de la Web 2.0&#x201D;, en Actas del Congreso Euro-Iberoamericano ATEI Alfabetizacio&#x301;n media&#x301;tica y culturas digitales. Universidad de Sevilla y Universidad Auto&#x301;noma de Barcelona. Gabinete de Comunicacio&#x301;n y Educacio&#x301;n, Sevilla.<br/>Kress, G. (2005), El alfabetismo en la era de los nuevos medios de comunicacio&#x301;n, Ediciones Aljibe, Ma&#x301;laga.<br/>O &#x301;Reilly, T. (2005), What is Web 2.0. Design Patterns and Business models for the Next Generation of Software, Disponible en: http://oreilly.com/web2/ archive/what-is-web-20.html</p>
     </unidad_bibliografia>
   </unidad>
 </carpeta>
