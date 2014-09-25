@@ -107,7 +107,7 @@ function generarPaginaUnidad(unidad,fileName){
 
 }
 
-function indexFromElements(elementos,what_to_get,child_to_get,baseLink){
+function indexFromElements(elementos,what_to_get,baseLink,child_to_get){
 	var output = '';
 	if(elementos.length > 0){
 		output = '<ol>';
