@@ -154,16 +154,17 @@ function contentFromChilds(elementGroup){
 	var elementos = elementGroup.childNodes;
 		
 			for (var i=0; i < elementos.length; i++) {
-				//output=output+'1'+elementos[i].nodeValue+'</br>';
+				////output=output+'1'+elementos[i].nodeValue+'</br>';
 
 				if(elementos[i].childNodes){
 					var elementosChilds = elementos[i].childNodes;
 
 					for (var o=0; o < elementosChilds.length; o++) {
-						output=output+'2'+elementosChilds[o]+'</br>///////////////////////////////////////////////////</br>';
+						output=output+'***********'+elementos[i].tagName+'***********<br/>'+elementosChilds[o]+'</br>////////'+elementosChilds[o].tagName+'////</br>';
 						
 						contentFromChilds(elementosChilds[o]);
 						//output=output+childContent+'</br>';
+
 						/* //unnes
 						if(elementosChilds[o].childNodes){
 							var elementosGrandChilds = elementosChilds[o].childNodes;
