@@ -193,39 +193,7 @@ en: Technology, Open Learning and Distance Education,Routledge, Londres-Nueva Yo
         <p>Se aconseja que a lo largo del desarrollo de las unidades se le vayan planteando al estudiante preguntas sobre los contenidos que se tratan a fin de evitar una simple exposici&#xF3;n de la materia.</p>
       </bloque>
       <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">El autor</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Incluye un breve Curr&#xED;culum V&#xED;tae de aproximadamente diez l&#xED;neas con informaci&#xF3;n acad&#xE9;mica y profesional y una fotograf&#xED;a del autor (opcional).</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Introducci&#xF3;n</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>La introducci&#xF3;n es un pr&#xF3;logo sobre los alcances generales de la disciplina y prop&#xF3;sitos del curso en relaci&#xF3;n con los objetivos de aprendizaje.</p>
-          <p>No ha de ser m&#xE1;s que una primera aproximaci&#xF3;n a los principales contenidos de la Carpeta de trabajo. A fin de comentar las caracter&#xED;sticas generales y espec&#xED;ficas de la misma, es necesario proporcionar al estudiante pautas para trabajar el material y, especialmente, para los materiales complementarios (el modo en que se trabajar&#xE1; la bibliograf&#xED;a obligatoria, el uso de los materiales did&#xE1;cticos multimedia, videos o p&#xE1;ginas web, etc&#xE9;tera).</p>
-          <p>Tambi&#xE9;n es conveniente que en la Introducci&#xF3;n se establezcan relaciones entre los contenidos de la asignatura con otras materias y que se relacionen los temas a trabajar con elementos de la vida real o con los conocimientos previos que pudiera tener el estudiante.</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Problem&#xE1;tica del campo</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Debe incluir un desarrollo conceptual acerca de los problemas, paradigmas y ejes que estructuran el campo de conocimiento al que se propone introducir al estudiante.</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Reflexiones acerca del aprendizaje de la disciplina en el entorno virtual</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Es una reflexi&#xF3;n del autor acerca de las particularidades que propone el entorno virtual en el aprendizaje de los temas propuestos en la disciplina, el aporte que genera Internet al conocimiento y sus formas de aprovechamiento.</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Mapa conceptual</subapartado_titulo>
-        <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>El mapa conceptual pone en relaci&#xF3;n los principales conceptos que presenta el contenido de la Carpeta de trabajo. Su finalidad es la de proveer una visi&#xF3;n global que favorezca la comprensi&#xF3;n y la asimilaci&#xF3;n de nuevos conceptos, as&#xED; como la de relacionar los conceptos que forman parte de los esquemas de conocimientos previos de los estudiantes.</p>
-        </bloque>
-      </subapartado>
-      <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Objetivos del curso</subapartado_titulo>
+        <subapartado_titulo class="item" subclass="subapartado_item">empty</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Se trata de la enumeraci&#xF3;n de las expectativas de aprendizaje del estudiante una vez finalizado el curso. Se pueden expresar de la siguiente forma:</p>
         </bloque>
@@ -698,6 +666,9 @@ O &#x301;Reilly, T. (2005), What is Web 2.0. Design Patterns and Business models
       <bloque tipo="texto" class="item" subclass="apartado_item">
         <p>Fuente: InfoLeg. &lt;http://infoleg.mecon.gov.ar&gt;. [Consulta: 5 de septiem- bre de 2013]. Descripci&#xF3;n: Base de datos del Centro de Documentaci&#xF3;n e Informaci&#xF3;n, Ministerio de Econom&#xED;a y Finanzas P&#xFA;blicas. Disponible en: http://infoleg.mecon.gov.ar/infolegInternet/anexos/40000-44999/42755/texact.htm</p>
       </bloque>
+      <subapartado class="group" subclass="subapartado_group">
+        <subapartado_titulo class="item" subclass="subapartado_item">empty</subapartado_titulo>
+      </subapartado>
     </apartado>
   </anexo>
   <anexo class="group" subclass="anexo_group">
@@ -707,22 +678,22 @@ O &#x301;Reilly, T. (2005), What is Web 2.0. Design Patterns and Business models
         <p>Bancos de im&#xE1;genes y sonidos libres</p>
         <ul>
           <li>Freefoto&#xA0;<br/>
-	http://www.freefoto.com/index.jsp</li>
+  http://www.freefoto.com/index.jsp</li>
           <li>Imageafter&#xA0;<br/>
-	http://www.imageafter.com/</li>
+  http://www.imageafter.com/</li>
           <li>Photos8<br/>
-	http://photos8.com/</li>
+  http://photos8.com/</li>
           <li>123rf&#xA0;<br/>
-	http://es.123rf.com/</li>
+  http://es.123rf.com/</li>
           <li>Banco de im&#xE1;genes y sonidos INTEF&#xA0;<br/>
-	http://recursostic.educacion.es/bancoimagenes/web/</li>
+  http://recursostic.educacion.es/bancoimagenes/web/</li>
         </ul>
         <p>Sitios para obtener fuentes completas de im&#xE1;gene</p>
         <ul>
           <li><strong>TineEye Reverse Search Engine</strong> &lt;http://www.tineye.com/&gt;<br/>
-	En este sitio podemos subir un archivo con una imagen y nos informa el o los sitios que la contienen. El &#xE9;xito de la b&#xFA;squeda depende de que se mantenga el nombre original del archivo. Resulta muy &#xFA;til para poner la fuente completa de la imagen que utilizamos.&#xA0;</li>
+  En este sitio podemos subir un archivo con una imagen y nos informa el o los sitios que la contienen. El &#xE9;xito de la b&#xFA;squeda depende de que se mantenga el nombre original del archivo. Resulta muy &#xFA;til para poner la fuente completa de la imagen que utilizamos.&#xA0;</li>
           <li><strong>Google Im&#xE1;genes</strong> &lt;https://www.google.com.ar/imghp?hl=es&amp;tab=wi&gt;<br/>
-	El sitio de Google ofrece un servicio similar. Debemos entrar a la p&#xE1;gina de Google, cliquear en Im&#xE1;genes y cliquear nuevamente en el &#xED;cono de la c&#xE1;mara de foto que aparece en el buscador. Podemos subir la imagen desde nuestra computadora o bien poner la direcci&#xF3;n (URL) de la imagen que buscamos.&#xA0;</li>
+  El sitio de Google ofrece un servicio similar. Debemos entrar a la p&#xE1;gina de Google, cliquear en Im&#xE1;genes y cliquear nuevamente en el &#xED;cono de la c&#xE1;mara de foto que aparece en el buscador. Podemos subir la imagen desde nuestra computadora o bien poner la direcci&#xF3;n (URL) de la imagen que buscamos.&#xA0;</li>
         </ul>
       </bloque>
       <subapartado class="group" subclass="subapartado_group">
@@ -731,29 +702,29 @@ O &#x301;Reilly, T. (2005), What is Web 2.0. Design Patterns and Business models
           <p>Recomendamos utilizar de forma prioritaria recursos de sitios oficiales, libres, p&#xFA;blicos y de fuentes confiables como universidades, organismos oficiales, instituciones p&#xFA;blicas, etc. Por ejemplo, si queremos utilizar un fragmento de video que se encuentra en youtube, chequear previamente si ese mismo frag- mento no se encuentra en alg&#xFA;n sitio que permita su reproducci&#xF3;n. Algunos sitios recomendados para utilizar citando correctamente la fuente son los siguientes:</p>
           <ul>
             <li>Canal Encuentro&#xA0;<br/>
-	www.encuentro.gov.ar</li>
+  www.encuentro.gov.ar</li>
             <li>Tecn&#xF3;polis TV<br/>
-	www.tectv.gob.ar</li>
+  www.tectv.gob.ar</li>
             <li>Televisi&#xF3;n p&#xFA;blica<br/>
-	www.tvpublica.com.ar</li>
+  www.tvpublica.com.ar</li>
             <li>Contenidos digitales abiertos&#xA0;<br/>
-	http://cda.gob.ar/</li>
+  http://cda.gob.ar/</li>
             <li>Televisi&#xF3;n Digital Abierta&#xA0;<br/>
-	http://www.tda.gob.ar&#xA0;</li>
+  http://www.tda.gob.ar&#xA0;</li>
             <li>Banco Audiovisual de Contenidos Universales Argentina<br/>
-	http://www.bacua.gob.ar/</li>
+  http://www.bacua.gob.ar/</li>
             <li>Audiovideoteca de Buenos Aires<br/>
-	http://www.audiovideotecaba.gov.ar/areas/com_social/audiovideoteca/</li>
+  http://www.audiovideotecaba.gov.ar/areas/com_social/audiovideoteca/</li>
             <li>Portal oficial del Gobierno de la Rep&#xFA;blica Argentina<br/>
-	(En el siguiente sitio podemos encontrar todas las direcciones web de ministerios, secretar&#xED;as y otros sitios de inter&#xE9;s) http://www.argentina.gob.ar/</li>
+  (En el siguiente sitio podemos encontrar todas las direcciones web de ministerios, secretar&#xED;as y otros sitios de inter&#xE9;s) http://www.argentina.gob.ar/</li>
             <li>Biblioteca Nacional<br/>
-	http://www.bn.gov.ar/</li>
+  http://www.bn.gov.ar/</li>
             <li>Biblioteca Virtual Miguel de Cervantes<br/>
-	http://www.cervantesvirtual.com/</li>
+  http://www.cervantesvirtual.com/</li>
             <li>Biblioteca &#x201C;Laura Manzo&#x201D; de la Universidad Nacional de Quilmes<br/>
-	http://www.unq.edu.ar//secciones/153-recursos-electr%C3%B3nicos/</li>
+  http://www.unq.edu.ar//secciones/153-recursos-electr%C3%B3nicos/</li>
             <li>Canal de TV de la Universidad Nacional de Quilmes<br/>
-	http://unqtv.unq.edu.ar/</li>
+  http://unqtv.unq.edu.ar/</li>
           </ul>
         </bloque>
       </subapartado>

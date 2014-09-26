@@ -1,45 +1,40 @@
 var fs = require('fs');
-
 var DOMParser = require('xmldom').DOMParser;
-
-//var inspect = require('eyes').inspector({maxLength: false})
-
 
 ///load 
 var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
 
-
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
-//doc.documentElement.setAttribute('x','y');
-//doc.documentElement.setAttributeNS('./lite','c:x','y2');
-//var nsAttr = doc.documentElement.getAttributeNS('./lite','x');
-//console.info(nsAttr)
-//console.log(doc);
 
-
-
+var mainHtml = new Object();;
 //build html
 function buildIndex() {
+	
 	var title = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+	mainHtml.open = '<!DOCTYPE html><html>';
+	mainHtml.head = '<head><meta charset="utf8"/><title>'+title+'</title></head>';
+	mainHtml.header = '<header>'+title +'</header>';
+	mainHtml.footer = '<footer>DMD / UVQ</footer>';
+	mainHtml.close = '</html>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 
-	console.log(doc);
 	
 	var introduccion = doc.getElementsByTagName('introduccion')[0];
 
 	var unidades = doc.getElementsByTagName('unidad');
+	var unidedIndex = generarUnidades(unidades);
 
-	var mainIndex = generarIndicieUnidades(unidades);
+	var anexos = doc.getElementsByTagName('anexo');
+	var axenosIndex = generarAnexos(anexos);
 
-	var head = '<head><meta charset="utf8"/><title>'+title+'</title></head>';
-	var header = '<header>' + title + '</header>';
-	var body = '<body>'+ mainIndex+introduccion+'</body>';
-	var footer = 'Dmd / UVQ';
+	
+	var body = '<body>'+ unidedIndex+axenosIndex+introduccion+'</body>';
+	
 
-	return '<!DOCTYPE html><html>'+head+header+body+footer+'</html>';
+	return mainHtml.open+mainHtml.head+mainHtml.header+body+mainHtml.footer+mainHtml.close;
 };
 
 ///WRITE HTML
@@ -52,85 +47,99 @@ stream.once('open', function(fd) {
 });
 
 
-function generarIndicieUnidades(unidades){
-	//UNIDADES ITERATOR
-	var indiceUnidades = '<ol>';
+
+
+function generarUnidades(unidades){
+	var indiceUnidades = '<ul>';
 	for (var i=0; i < unidades.length; i++) {
 
 		var unidadTitulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+		var unidadNumeral = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
-		var unidadLink = '<a href="'+unidadUrl+'">'+unidadTitulo+'</a>';
+		var unidadLink = '<a href="'+unidadUrl+'">'+unidadNumeral+' '+unidadTitulo+'</a>';
 		
-		generarPaginaUnidad(unidades[i], unidadUrl);
+		generarPaginaUnidad(unidades[i], unidadUrl,i);
 
-		///APARTADOS
 		var apartados = unidades[i].getElementsByTagName('apartado');
-		var indiceApartados = '';
-		if(apartados.length > 0){
-			indiceApartados = '<ol>';
-			for (var e=0; e < apartados.length; e++) {
-					if(apartados[e].getElementsByTagName('apartado_titulo')[0]){
-						var apartadoTitulo = apartados[e].getElementsByTagName('apartado_titulo')[0].childNodes[0].nodeValue;
-						var apartadoUrl = encodeURIComponent(apartadoTitulo).replace(/%20/g,'-');
-						var apartadoLink = '<a href="'+unidadUrl+'#'+apartadoUrl+'">'+apartadoTitulo+'</a>';
-
-
-							///SUBAPARTADOS
-							var subapartados = apartados[e].getElementsByTagName('subapartado');
-							var indiceSubapartado = indexFromElements(subapartados, 'subapartado_titulo',unidadUrl);
-							
-	
-						var itemApartado = '<li>'+apartadoLink+indiceSubapartado+'</li>';
-						indiceApartados = indiceApartados+itemApartado;
-					}
-				
-			}
-			indiceApartados=indiceApartados+'</ol>';
-
-		}////TERMINA APARTADOS 
+		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadNumeral,'subapartado', 'subapartado_titulo');
 
 		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 	}///TERMINA UNIDAD
-	return indiceUnidades=indiceUnidades+'</ol>';
+	return indiceUnidades=indiceUnidades+'</ul>';
+}
+
+function generarAnexos(anexos){
+	var indiceAnexos = '<ul>';
+	for (var i=0; i < anexos.length; i++) {
+
+		var anexoTitulo = 'Anexo';
+		var anexoUrl = 'anexo-'+(i+1)+'.html';
+		var anexoLink = '<a href="'+anexoUrl+'">'+anexoTitulo+'</a>';
+		
+		//generarPaginaUnidad(anexos[i], anexoUrl);
+
+		var apartados = anexos[i].getElementsByTagName('apartado');
+		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'subapartado', 'subapartado_titulo');
+
+		var itemAnexo = '<li>'+anexoLink+indiceApartados+'</li>';
+		
+		indiceAnexos=indiceAnexos+itemAnexo;
+	}///TERMINA UNIDAD
+	return indiceAnexos=indiceAnexos+'</ul>';
 }
 
 
-function generarPaginaUnidad(unidad,fileName){
-	var streamUni = fs.createWriteStream('output/'+fileName);
+function generarPaginaUnidad(unidad,fileName,numeral){
 
+	var unidadTitulo = unidad.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+	var apartados = unidad.getElementsByTagName('apartado');
+	var indiceApartados = indexFromElements(apartados,'apartado_titulo','',numeral,'subapartado', 'subapartado_titulo');
+
+
+
+
+	var streamUni = fs.createWriteStream('output/'+fileName);
 	streamUni.once('open', function(fd) {
-		var html = fileName;
+		var html = mainHtml.open+mainHtml.head+mainHtml.header+unidadTitulo+indiceApartados+mainHtml.footer+mainHtml.close;
 		streamUni.end(html);
 	});
 
 }
 
-function indexFromElements(elementos,what_to_get,baseLink,child_to_get){
+
+
+
+function indexFromElements(elementos,what_to_get,baseLink,parent_n,child_to_get,what_inChild_to_get){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ol>';
-		for (var o=0; o < elementos.length; o++) {
-			if(elementos[o].getElementsByTagName(what_to_get)[0]){
-				var elementoTitulo = elementos[o].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
+		output = '<ul>';
+		for (var i=0; i < elementos.length; i++) {
+			if(elementos[i].getElementsByTagName(what_to_get)[0]){
+				//if(parent_n !== null)parent_n = '';
+				var elementoNumeral = parent_n+'.'+(i+1);
+				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var elementoUrl = encodeURIComponent(elementoTitulo).replace(/%20/g,'-');
-				var elementoLink = '<a href="'+baseLink+'#'+elementoUrl+'">'+elementoTitulo+'</a>';
-				/*
+				var elementoLink = '<a href="'+baseLink+'#'+elementoUrl+'">'+elementoNumeral+' '+elementoTitulo+'</a>';
+				
 				var childIndex = '';
-				if(child_to_get !== null){
-					var childElements = apartados[e].getElementsByTagName('child_to_get');
-					var childIndex = indexFromElements(childElements,'subapartado_titulo',baseLink);
+				var childElements;
+				if(elementos[i].getElementsByTagName(child_to_get)[0]){
+					if(child_to_get !== null){
+						childElements = elementos[i].getElementsByTagName(child_to_get);
+						childIndex = indexFromElements(childElements,what_inChild_to_get,baseLink,elementoNumeral);
+					}
 				}
-				*/
-				var itemElemento = '<li>'+elementoLink+'</li>';
+				var itemElemento = '<li>'+elementoLink+childIndex+'</li>';
 				output = output+itemElemento;
 			}
 			
 		}
-		output=output+'</ol>';
+		output=output+'</ul>';
 
 	}////TERMINA SUBAPARTADOS 
 	return output;
 }
+
