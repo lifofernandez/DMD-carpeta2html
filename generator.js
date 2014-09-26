@@ -58,7 +58,7 @@ function generarUnidades(unidades){
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
 		var unidadLink = '<a href="'+unidadUrl+'">'+unidadNumeral+' '+unidadTitulo+'</a>';
 		
-		generarPaginaUnidad(unidades[i], unidadUrl,i);
+		generarPaginaUnidad(unidades[i], unidadUrl,(i+1));
 
 		var apartados = unidades[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadNumeral,'subapartado', 'subapartado_titulo');
