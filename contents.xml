@@ -13,7 +13,7 @@
     <unidad_titulo class="item" subclass="unidad_item">Plantilla Autores</unidad_titulo>
     <unidad_introduccion class="item" subclass="unidad_item">
       <p>Para la elaboraci&#xF3;n de la Carpeta de trabajo, la Direcci&#xF3;n de Materiales Did&#xE1;cticos elabor&#xF3; una plantilla con recursos y estilos predise&#xF1;ados que le facilitan al autor/a el proceso de escritura de un material did&#xE1;ctico con las caracter&#xED;sticas espec&#xED;ficas de la UNQ.</p>
-    </unidad_introduccion>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> </unidad_introduccion>
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Google Drive</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
