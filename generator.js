@@ -48,7 +48,7 @@ function buildIndex() {
 	
 
 	mainHtml.footer = '<footer>DMD / UVQ</footer>';
-	mainHtml.close = '<!-- Bootstrap core JavaScript ================================================== --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.min.js"></script> <script src="js/docs.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.min.js"></script> <script src="js/docs.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
@@ -128,7 +128,7 @@ function generarPaginaUnidad(unidad,fileName,delta){
 	var indiceApartados = '<div class="col-md-3"><div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo')+'</div></div>';
 
 
-	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad, delta)+'</div>';
+	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad,delta)+'</div>';
 
 	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
 
@@ -187,7 +187,7 @@ function parseUnidad(elementGroup, delta){
 		var objetivos = getPreliminares(elementGroup, 'unidad_objetivos');
 		var intro = getPreliminares(elementGroup, 'unidad_introduccion');
 		
-		var apartados = getParts(elementGroup, 'apartado');
+		var apartados = getParts(elementGroup, 'apartado',delta);
 
 		var unidadHeader = '<header>'+unidadDelta+titulo+'</header>'
 		output = unidadHeader+objetivos+intro+apartados; 
@@ -208,26 +208,31 @@ function getPreliminares(element, what_to_get){
 }
 
 //funicion extraeer artados y sub apartados
-function getParts(element, what_to_get){
-	var op = '<div class="'+what_to_get+'s">';
+function getParts(element, what_to_get,parent_delta){
+	var op = '';
 	var titleLvl = 3;
 	if(what_to_get==='subapartado')titleLvl = 4;
 
 	if(element.getElementsByTagName(what_to_get)){
-		
+
+		op = '<div class="'+what_to_get+'s">';
 		var parts = element.getElementsByTagName(what_to_get);
+
 		for (var i=0; i < parts.length; i++) {
+
 			if(parts[i].getElementsByTagName(what_to_get+'_titulo')[0]){
-				
+			var partDelta = parent_delta+'.'+(i+1);
+			var unidadDelta = '<div class="delta">'+partDelta+'</div>';
+
 				var partId = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
 
-				var partTitulo = '<h'+titleLvl+' id="'+partId+'">'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
+				var partTitulo = '<h'+titleLvl+'>'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
 				
 				}
 			var bloques = getBloques(parts[i]);
-			var subapartados = getParts(parts[i], 'subapartado');
+			var subapartados = getParts(parts[i], 'subapartado',partDelta);
 
-			op = op+'<div class="'+what_to_get+'">'+partTitulo+bloques+subapartados+'</div>';
+			op = op+'<div id="'+partId+'" class="'+what_to_get+'">'+unidadDelta+partTitulo+bloques+subapartados+'</div>';
 		}
 	}
 	return op+'</div>';
