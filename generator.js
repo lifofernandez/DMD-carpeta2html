@@ -54,11 +54,11 @@ function buildIndex() {
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	
 
-	var unidedIndex = ''+generarUnidades(unidades);
+	var unidedIndex = generarUnidades(unidades);
 	var anexosIndex = generarAnexos(anexos);
 
 	
-	var content = '<div class="container">'+unidedIndex+anexosIndex+introduccion+'</div>';
+	var content = '<div class="container"><section>'+introduccion+'</section><section>'+unidedIndex+anexosIndex+'</section></div>';
 	
 
 	return mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
@@ -81,14 +81,14 @@ function generarUnidades(unidades){
 	for (var i=0; i < unidades.length; i++) {
 
 		var unidadTitulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
-		var unidadNumeral = (i+1);
+		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
-		var unidadLink = '<a href="'+unidadUrl+'">'+unidadNumeral+' '+unidadTitulo+'</a>';
+		var unidadLink = '<a href="'+unidadUrl+'">'+unidadDelta+' '+unidadTitulo+'</a>';
 		
 		generarPaginaUnidad(unidades[i], unidadUrl,(i+1));
 
 		var apartados = unidades[i].getElementsByTagName('apartado');
-		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadNumeral,'subapartado', 'subapartado_titulo');
+		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
 
 		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
 		
@@ -232,7 +232,7 @@ function getParts(element, what_to_get,parent_delta){
 			var bloques = getBloques(parts[i]);
 			var subapartados = getParts(parts[i], 'subapartado',partDelta);
 
-			op = op+'<div id="'+partId+'" class="'+what_to_get+'">'+unidadDelta+partTitulo+bloques+subapartados+'</div>';
+			op = op+'<div id="'+partId+'" class="'+what_to_get+' '+what_to_get+'-'+i+'">'+unidadDelta+partTitulo+bloques+subapartados+'</div>';
 		}
 	}
 	return op+'</div>';
@@ -244,8 +244,9 @@ function getBloques(element){
 	if(element.getElementsByTagName('bloque')){
 		var bloques = element.getElementsByTagName('bloque');
 		for (var i=0; i < bloques.length; i++) {
+			var bloqueTipo = bloques[i].getAttribute('tipo');
 			var bloqueContent = getContent(bloques[i]);
-			var op=op+'<div class="bloque '+bloques[i].getAttribute('tipo')+'">'+bloqueContent+'</div>';
+			var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipo+'</div>'+bloqueContent+'</div>';
 		
 		}
 
