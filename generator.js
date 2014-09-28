@@ -7,9 +7,9 @@ var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
-var mainHtml = new Object();
+var mainHtml = {};
 //build html
-
+var mainNav = [];
 
 function buildIndex() {
 	
@@ -19,42 +19,49 @@ function buildIndex() {
 	var unidades = doc.getElementsByTagName('unidad');
 	var anexos = doc.getElementsByTagName('anexo');
 
-	var mainNav='<nav>';
+	
+	//construct nav
 	var unidadesBtns = '';
 	[].forEach.call(unidades, function (element, index) {
-	  	unidadesBtns=unidadesBtns+'<a href=unidad-'+(index+1)+'.html>Unidad '+(index+1)+'</a>';
-
+	  	unidadesBtns=unidadesBtns+'<li><a href=unidad-'+(index+1)+'.html>Unidad '+(index+1)+'</a></li>';
 	});
-	
+
 	var anexosBtns = '';
 	[].forEach.call(anexos, function (element, index) {
-		anexosBtns=anexosBtns+'<a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a>';
-
+		anexosBtns=anexosBtns+'<li><a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a></li>';
 	});
 
-	
+	mainNav.open='<div class="container">';
+    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+title+'</a></div>';
+    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav">'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
+	mainNav.close='</div>';
+
+	//concat nav
+	var nab = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
 
 
-	
 	mainHtml.open = '<!DOCTYPE html><html>';
-	mainHtml.head = '<head><meta charset="utf8"/><title>'+title+'</title></head>';
-	mainHtml.header = '<header><a href="index.html">'+title+'</a>'+unidadesBtns+anexosBtns+'</header>';
+	
+	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+'</title> <!-- Bootstrap core CSS --> <link href="css/bootstrap.min.css" rel="stylesheet"><!-- Custom styles for this template --> <link href="css/navbar-fixed-top.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head><body>';
+	
+	mainHtml.header = '<header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">'+nab+'</header>';
+	
+
 	mainHtml.footer = '<footer>DMD / UVQ</footer>';
-	mainHtml.close = '</html>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript ================================================== --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.min.js"></script> <script src="js/docs.min.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	
 
-	var unidedIndex = generarUnidades(unidades);
-
-	var axenosIndex = generarAnexos(anexos);
+	var unidedIndex = ''+generarUnidades(unidades);
+	var anexosIndex = generarAnexos(anexos);
 
 	
-	var body = '<body>'+ unidedIndex+axenosIndex+introduccion+'</body>';
+	var content = '<div class="container">'+unidedIndex+anexosIndex+introduccion+'</div>';
 	
 
-	return mainHtml.open+mainHtml.head+mainHtml.header+body+mainHtml.footer+mainHtml.close;
+	return mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
 };
 
 ///WRITE HTML
@@ -117,11 +124,13 @@ function generarPaginaUnidad(unidad,fileName,delta){
 
 	var unidadTitulo = unidad.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 	var apartados = unidad.getElementsByTagName('apartado');
-	var indiceApartados = indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo');
+	
+	var indiceApartados = '<div class="col-md-3"><div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo')+'</div></div>';
 
-	var	content = parseUnidad(unidad, delta);
 
-	var body = '<body>'+unidadTitulo+indiceApartados+content+'</body>';
+	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad, delta)+'</div>';
+
+	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
 
 	var streamUni = fs.createWriteStream('output/'+fileName);
 	streamUni.once('open', function(fd) {
@@ -135,7 +144,7 @@ function generarPaginaUnidad(unidad,fileName,delta){
 function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ul>';
+		output = '<ul class="nav sidenav">';
 		for (var i=0; i < elementos.length; i++) {
 			if(elementos[i].getElementsByTagName(what_to_get)[0]){
 				if(parent_delta !== '')var elementoDelta = parent_delta+'.'+(i+1);
@@ -187,14 +196,14 @@ function parseUnidad(elementGroup, delta){
 }
 
 function getPreliminares(element, what_to_get){
-	var op = '<div class="preliminares '+what_to_get+'">';
+	var op = '';
 
 	if(element.getElementsByTagName(what_to_get)[0]){
 		var obj = element.getElementsByTagName(what_to_get)[0];
-		var content = getContent(obj);
+		op = op+'<div class="preliminares '+what_to_get+'">'+getContent(obj)+'</div>';
 	}
 
-	return op+content+'</div>';
+	return op;
 
 }
 
@@ -277,51 +286,3 @@ function romanize(num) {
     return Array(+digits.join("") + 1).join("M") + roman;
 }
 
-
-
-/*
-
-function contentFromChilds(elementGroup){
-	var output = '';
-
-	if(elementGroup.childNodes){
-	var elementos = elementGroup.childNodes;
-		
-			for (var i=0; i < elementos.length; i++) {
-				//output=output+'<div class="'+elementos[i].tagName+' nivel-1">'+elementos[i].nodeValue+'</div>';
-
-				if(elementos[i].childNodes){
-					var elementosChilds = elementos[i].childNodes;
-
-					for (var o=0; o < elementosChilds.length; o++) {
-						if(elementosChilds[o] !== null)output=output+'<div class="'+elementos[i].tagName+' nivel-2">'+elementosChilds[o]+'</div>';
-
-						
-						contentFromChilds(elementosChilds[o]);
-						//output=output+childContent+'</br>';
-
-						 //unnes
-						 if((elementosChilds[o].tagName === 'subapartado')||(elementosChilds[o].tagName === 'bloque')){
- 							if(elementosChilds[o].childNodes){
- 							var elementosGrandChilds = elementosChilds[o].childNodes;
-	 							for (var u=0; u < elementosGrandChilds.length; u++) {
-	 								//output=output+elementosGrandChilds[u]+'</br>////////////////////////';
-									output=output+'<div class="'+elementosChilds[o].tagName+' nivel-3">'+elementosGrandChilds[u]+'</div>';
-	 								contentFromChilds(elementosGrandChilds[u]);
-	 								//output=output+childContent+'</br>';
-	 							}
-	 						}
- 						}
-					
-					}
-				}
-			
-			}
-
-		
-	}
-	return output;
-}
-
-
-*/
