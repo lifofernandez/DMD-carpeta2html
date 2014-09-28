@@ -7,26 +7,47 @@ var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
-var mainHtml = new Object();;
+var mainHtml = new Object();
 //build html
+
+
 function buildIndex() {
 	
 	var title = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+	var introduccion = doc.getElementsByTagName('introduccion')[0];
+
+	var unidades = doc.getElementsByTagName('unidad');
+	var anexos = doc.getElementsByTagName('anexo');
+
+	var mainNav='<nav>';
+	var unidadesBtns = '';
+	[].forEach.call(unidades, function (element, index) {
+	  	unidadesBtns=unidadesBtns+'<a href=unidad-'+(index+1)+'.html>Unidad '+(index+1)+'</a>';
+
+	});
+	
+	var anexosBtns = '';
+	[].forEach.call(anexos, function (element, index) {
+		anexosBtns=anexosBtns+'<a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a>';
+
+	});
+
+	
+
+
+	
 	mainHtml.open = '<!DOCTYPE html><html>';
 	mainHtml.head = '<head><meta charset="utf8"/><title>'+title+'</title></head>';
-	mainHtml.header = '<header><a href="index.html">'+title+'</a></header>';
+	mainHtml.header = '<header><a href="index.html">'+title+'</a>'+unidadesBtns+anexosBtns+'</header>';
 	mainHtml.footer = '<footer>DMD / UVQ</footer>';
 	mainHtml.close = '</html>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	
-	var introduccion = doc.getElementsByTagName('introduccion')[0];
 
-	var unidades = doc.getElementsByTagName('unidad');
 	var unidedIndex = generarUnidades(unidades);
 
-	var anexos = doc.getElementsByTagName('anexo');
 	var axenosIndex = generarAnexos(anexos);
 
 	
@@ -234,7 +255,7 @@ function getContent(element){
 
 
 
-////ADDDDS & UTILS
+////ADDS & UTILS////////////////////////////////////////////
 function makeUrl(input){
 	return input.latinize().replace(/ /g,'-').toLowerCase();
 }
