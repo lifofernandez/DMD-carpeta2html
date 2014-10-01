@@ -6430,6 +6430,9 @@ body {
     width: 263px;
   }
 }
+.preliminares {
+  margin-bottom: 100px;
+}
 /*apartados*/
 .apartados {
   margin-top: 100px;

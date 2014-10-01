@@ -21,6 +21,7 @@
     var $body   = $(document.body)
     
     var mainOfset = 70;
+    var regularMargins = 50;
     var pathname = window.location.pathname;
     var fileNameUrl = pathname.substring(pathname.lastIndexOf('/')+1);
     //alert(fileNameUrl);
@@ -34,7 +35,7 @@
 
     $body.scrollspy({
       target: '.dmd-sidebar',
-      offset: mainOfset,
+      offset: mainOfset+regularMargins,
     })
 
     $window.on('load', function () {
