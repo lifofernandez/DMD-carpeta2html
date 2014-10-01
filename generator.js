@@ -1,5 +1,6 @@
 var fs = require('fs');
 var DOMParser = require('xmldom').DOMParser;
+var html = require("html");
 
 ///load 
 var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
@@ -68,8 +69,9 @@ var fileName = 'output/index.html';
 var stream = fs.createWriteStream(fileName);
 
 stream.once('open', function(fd) {
-	var html = buildIndex();
-	stream.end(html);
+	var data = buildIndex();
+	var prettyData = prettify(data);
+	stream.end(prettyData);
 });
 
 
@@ -133,8 +135,10 @@ function generarPaginaUnidad(unidad,fileName,delta){
 
 	var streamUni = fs.createWriteStream('output/'+fileName);
 	streamUni.once('open', function(fd) {
-		var html = mainHtml.open+mainHtml.head+mainHtml.header+body+mainHtml.footer+mainHtml.close;
-		streamUni.end(html);
+		var data = mainHtml.open+mainHtml.head+mainHtml.header+body+mainHtml.footer+mainHtml.close;
+		var prettyData = prettify(data);
+		
+		streamUni.end(prettyData);
 	});
 
 }
@@ -275,6 +279,12 @@ function getContent(element){
 
 
 ////ADDS & UTILS////////////////////////////////////////////
+
+function prettify(str) {
+  return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,wrap_line_length: 0,preserve_newlines:false,keep_array_indentation:true,unformatted:'p'})
+}
+
+
 function makeUrl(input){
 	return input.latinize().replace(/ /g,'-').toLowerCase();
 }

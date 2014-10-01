@@ -22,15 +22,15 @@
     
     var mainOfset = 70;
     var regularMargins = 50;
+    
+
     var pathname = window.location.pathname;
     var fileNameUrl = pathname.substring(pathname.lastIndexOf('/')+1);
-    //alert(fileNameUrl);
 
     $('.dmd-nav-main a').each(function() {
      var esteUrl = $(this).attr("href");
-      if(fileNameUrl === esteUrl) $(this).parent().addClass( "active" );
-      if(fileNameUrl !== esteUrl) $(this).parent().removeClass( "active" );
-
+      if(fileNameUrl === esteUrl) $(this).parent().addClass("active");
+      if(fileNameUrl !== esteUrl) $(this).parent().removeClass("active");
     });
 
     $body.scrollspy({
@@ -44,17 +44,8 @@
     
 
     $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
-      //alert('this');
       $body.scrollspy('refresh')
-//        console.log(document.body.scrollTop);
     })  
-
-
-  
-
-  
-
-
 
 
     $(".smooth-trigger").on('click', function(e) {
@@ -101,125 +92,8 @@
         }
       })
     }, 100)
-/*
-    setTimeout(function () {
-      $('.bs-top').affix()
-    }, 100)
-*/
 
-    /*
-    // theme toggler
-    ;(function () {
-      var stylesheetLink = $('#bs-theme-stylesheet')
-      var themeBtn = $('.dmd-theme-toggle')
 
-      var activateTheme = function () {
-        stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
-        themeBtn.text('Disable theme preview')
-        localStorage.setItem('previewTheme', true)
-      }
-
-      if (localStorage.getItem('previewTheme')) {
-        activateTheme()
-      }
-
-      themeBtn.click(function () {
-        var href = stylesheetLink.attr('href')
-        if (!href || href.indexOf('data') === 0) {
-          activateTheme()
-        } else {
-          stylesheetLink.attr('href', '')
-          themeBtn.text('Preview theme')
-          localStorage.removeItem('previewTheme')
-        }
-      })
-    })();
-    */
-    /*
-    // Tooltip and popover demos
-    $('.tooltip-demo').tooltip({
-      selector: '[data-toggle="tooltip"]',
-      container: 'body'
-    })
-    $('.popover-demo').popover({
-      selector: '[data-toggle="popover"]',
-      container: 'body'
-    })
-    */
-    
-
-     /*
-    // Demos within modals
-    $('.tooltip-test').tooltip()
-    $('.popover-test').popover()
-
-    // Popover demos
-    $('.dmd-popover').popover()
-
-    // Button state demo
-    $('#loading-example-btn').click(function () {
-      var btn = $(this)
-      btn.button('loading')
-      setTimeout(function () {
-        btn.button('reset')
-      }, 3000)
-    })
-    */
-
-    /*
-    // Config ZeroClipboard
-    ZeroClipboard.config({
-      moviePath: '/assets/flash/ZeroClipboard.swf',
-      hoverClass: 'btn-clipboard-hover'
-    })
-
-    // Insert copy to clipboard button before .highlight or .bs-example
-    $('.highlight').each(function () {
-      var highlight = $(this)
-      var previous = highlight.prev()
-      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'
-
-      if (previous.hasClass('bs-example')) {
-        previous.before(btnHtml.replace(/btn-clipboard/, 'btn-clipboard with-example'))
-      } else {
-        highlight.before(btnHtml)
-      }
-    })
-    var zeroClipboard = new ZeroClipboard($('.btn-clipboard'))
-    var htmlBridge = $('#global-zeroclipboard-html-bridge')
-
-    // Handlers for ZeroClipboard
-    zeroClipboard.on('load', function () {
-      htmlBridge
-        .data('placement', 'top')
-        .attr('title', 'Copy to clipboard')
-        .tooltip()
-    })
-
-    // Copy to clipboard
-    zeroClipboard.on('dataRequested', function (client) {
-      var highlight = $(this).parent().nextAll('.highlight').first()
-      client.setText(highlight.text())
-    })
-
-    // Notify copy success and reset tooltip title
-    zeroClipboard.on('complete', function () {
-      htmlBridge
-        .attr('title', 'Copied!')
-        .tooltip('fixTitle')
-        .tooltip('show')
-        .attr('title', 'Copy to clipboard')
-        .tooltip('fixTitle')
-    })
-
-    // Notify copy failure
-    zeroClipboard.on('noflash wrongflash', function () {
-      htmlBridge
-        .attr('title', 'Flash required')
-        .tooltip('fixTitle')
-        .tooltip('show')
-    })
-*/
-  })
+  })///cierre
 
 }(jQuery)
