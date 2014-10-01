@@ -22,6 +22,11 @@
     
     var mainOfset = 70;
 
+
+    $('dmd-main-nav a').each{
+      alert('o');
+    }
+
     $body.scrollspy({
       target: '.dmd-sidebar',
       offset: mainOfset

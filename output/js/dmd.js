@@ -19,7 +19,18 @@
     // Scrollspy
     var $window = $(window)
     var $body   = $(document.body)
+    
     var mainOfset = 70;
+    var pathname = window.location.pathname;
+    var fileNameUrl = pathname.substring(pathname.lastIndexOf('/')+1);
+    //alert(fileNameUrl);
+
+    $('.dmd-nav-main a').each(function() {
+     var esteUrl = $(this).attr("href");
+      if(fileNameUrl === esteUrl) $(this).parent().addClass( "active" );
+      if(fileNameUrl !== esteUrl) $(this).parent().removeClass( "active" );
+
+    });
 
     $body.scrollspy({
       target: '.dmd-sidebar',
@@ -79,7 +90,7 @@
     }, 100)
 
 
-/*
+    /*
     // theme toggler
     ;(function () {
       var stylesheetLink = $('#bs-theme-stylesheet')
