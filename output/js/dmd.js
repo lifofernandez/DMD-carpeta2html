@@ -34,22 +34,24 @@
 
     $body.scrollspy({
       target: '.dmd-sidebar',
-      offset: mainOfset
+      offset: mainOfset,
     })
+
     $window.on('load', function () {
       $body.scrollspy('refresh')
     })
-    /*
-    $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this).scrollspy('refresh')
-    })
-  */
+    
 
-  $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
-    //alert('this');
-    $body.scrollspy('refresh')
-  })  
+    $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
+      //alert('this');
+      $body.scrollspy('refresh')
+//        console.log(document.body.scrollTop);
+    })  
 
+
+  
+
+  
 
 
 
@@ -63,13 +65,13 @@
        var hash = this.hash;
 
        // animate
-       $('html, body').animate({
+       $body.animate({
            scrollTop: $(this.hash).offset().top - mainOfset
          }, 300, function(){
 
            // when done, add hash to url
            // (default click behaviour)
-           window.location.hash = hash;
+          // window.location.hash = hash;
          });
      });
     
@@ -85,7 +87,7 @@
       $sideBar.affix({
         offset: {
           top: function () {
-            var offsetTop      = $sideBar.offset().top
+            var offsetTop      = $sideBar.offset().top - mainOfset
             var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
             var navOuterHeight = $('.dmd-nav').height()
 
@@ -98,11 +100,11 @@
         }
       })
     }, 100)
-
+/*
     setTimeout(function () {
       $('.bs-top').affix()
     }, 100)
-
+*/
 
     /*
     // theme toggler
