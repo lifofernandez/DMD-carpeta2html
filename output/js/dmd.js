@@ -39,8 +39,22 @@
     $window.on('load', function () {
       $body.scrollspy('refresh')
     })
-    
-    $("ul li a[href^='#']").on('click', function(e) {
+    /*
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh')
+    })
+  */
+
+  $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
+    //alert('this');
+    $body.scrollspy('refresh')
+  })  
+
+
+
+
+
+    $(".smooth-trigger").on('click', function(e) {
 
        // prevent default anchor click behavior
        e.preventDefault();

@@ -44,7 +44,7 @@ function buildIndex() {
 	
 	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head><body>';
 	
-	mainHtml.header = '<header class="navbar navbar-default navbar-fixed-top" id="top" role="banner">'+nab+'</header>';
+	mainHtml.header = '<header class="navbar navbar-default navbar-fixed-top" role="banner">'+nab+'</header>';
 
 	mainHtml.footer = '<div class="footer"><div class="container"><p class="text-muted">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></div>';
 	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.js"></script>  <script src="js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
@@ -124,7 +124,7 @@ function generarPaginaUnidad(unidad,fileName,delta){
 	var unidadTitulo = unidad.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 	var apartados = unidad.getElementsByTagName('apartado');
 	
-	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo')+'</div></div>';
+	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary"><a class="back-to-top smooth-trigger" href="#top">'+unidadTitulo+'</a>'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo')+'</div></div>';
 
 
 	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad,delta)+'</div>';
@@ -144,7 +144,7 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 	var output = '';
 	if(elementos.length > 0){
 		output = '<ul class="nav dmd-sidenav">';
-		if(!child_to_get)output = '<ul class="nav">';
+		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
 			if(elementos[i].getElementsByTagName(what_to_get)[0]){
@@ -153,7 +153,7 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var elementoUrl = makeUrl(elementoTitulo);
-				var elementoLink = '<a href="'+base_link+'#'+elementoUrl+'">'+elementoDelta+' '+elementoTitulo+'</a>';
+				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'">'+elementoDelta+' '+elementoTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;
@@ -178,7 +178,7 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 
 ///PARSEO DE UNIDADES Y FUNCIONES PARA CONTENIDO
 function parseUnidad(elementGroup, delta){
-	var output = '<div class="article unidad unidad-'+delta+'">';
+	var output = '<div id="top" class="article unidad unidad-'+delta+'">';
 
 	if(elementGroup.childNodes){
 		//var elementos = elementGroup.childNodes;
@@ -191,7 +191,7 @@ function parseUnidad(elementGroup, delta){
 		var apartados = getParts(elementGroup, 'apartado',delta);
 
 		var unidadHeader = '<header>'+unidadDelta+titulo+'</header>'
-		output = unidadHeader+objetivos+intro+apartados; 
+		output += unidadHeader+objetivos+intro+apartados; 
 	}
 	return output+'</div>';
 }
@@ -245,10 +245,12 @@ function getBloques(element){
 	if(element.getElementsByTagName('bloque')){
 		var bloques = element.getElementsByTagName('bloque');
 		for (var i=0; i < bloques.length; i++) {
-			var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
-			var bloqueContent = getContent(bloques[i]);
-			var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipo+'</div>'+bloqueContent+'</div>';
-		
+			//console.log(bloques[i].parentNode.tagName);
+			if(element.tagName === bloques[i].parentNode.tagName){ //to get only direct childs
+				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
+				var bloqueContent = getContent(bloques[i]);
+				var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipo+'</div>'+bloqueContent+'</div>';
+			}
 		}
 
 	}
