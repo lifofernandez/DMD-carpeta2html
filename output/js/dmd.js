@@ -39,7 +39,7 @@
     $window.on('load', function () {
       $body.scrollspy('refresh')
     })
-
+    
     $("ul li a[href^='#']").on('click', function(e) {
 
        // prevent default anchor click behavior
@@ -58,7 +58,7 @@
            window.location.hash = hash;
          });
      });
-
+    
     // Kill links
     $('.dmd-container [href=#]').click(function (e) {
       e.preventDefault()
