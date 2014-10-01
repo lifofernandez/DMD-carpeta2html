@@ -14,7 +14,6 @@
     <unidad_introduccion class="item" subclass="unidad_item">
       <p>Para la elaboraci&#xF3;n de la Carpeta de trabajo, la Direcci&#xF3;n de Materiales Did&#xE1;cticos elabor&#xF3; una plantilla con recursos y estilos predise&#xF1;ados que le facilitan al autor/a el proceso de escritura de un material did&#xE1;ctico con las caracter&#xED;sticas espec&#xED;ficas de la UNQ.</p>
     </unidad_introduccion>
-    
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Google Drive</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
@@ -57,7 +56,7 @@
         </p>
         <p>En todos los casos haga click con el bot&#xF3;n derecho del mouse en alg&#xFA;n sector en blanco de la ventana y <strong>pegue el archivo copiado en el paso 2</strong>.</p>
         <p>
-          <img src="files/archivo_copiado.jpg" style="height:441px; width:800px" href="file:///files/archivo_copiado.jpg"/>
+          <img src="files/archivo_copiado.jpg" href="file:///files/archivo_copiado.jpg"/>
         </p>
         <p>Si estos pasos fueron realizados correctamente, ver&#xE1; la nueva plantilla en el listado de plantillas disponibles: <strong>seleccione el &#xED;cono correspondiente a la plantilla autores_digital</strong> y presione el bot&#xF3;n <strong>&#x201C;Aceptar&#x201D;</strong>.</p>
       </bloque>
@@ -90,7 +89,9 @@
   </unidad>
   <unidad class="group" subclass="unidad_group">
     <unidad_titulo class="item" subclass="unidad_item">Instructivo para el uso de la plantilla</unidad_titulo>
-    
+    <apartado class="group" subclass="apartado_group">
+      <subapartado class="group" subclass="subapartado_group"/>
+    </apartado>
   </unidad>
   <unidad class="group" subclass="unidad_group">
     <unidad_titulo class="item" subclass="unidad_item">La Carpeta de trabajo</unidad_titulo>
@@ -108,7 +109,6 @@
         <p>Esta versi&#xF3;n cuenta con algunas ventajas: puede ser explorada en l&#xED;nea o descargada al disco r&#xED;gido, tiene un &#xED;ndice enlazado y una barra de exploraci&#xF3;n que permite navegar el material en pantalla y recorrer diferentes espacios, tiene enlaces internos y externos, marcadores o bookmarks y la posibilidad de reproducir peque&#xF1;os fragmentos de audio o videos y visualizar im&#xE1;genes y gr&#xE1;ficos en color.</p>
         <p>Para optimizar estas ventajas, el autor/ra de la Carpeta de trabajo debe profundizar las caracter&#xED;sticas did&#xE1;cticas del material a partir de la escritura y el uso de los recursos did&#xE1;cticos y multimediales mediante la incorporaci&#xF3;n de sitios espec&#xED;ficos del &#xE1;rea disciplinar, im&#xE1;genes, mapas, videos y animaciones que pudieran complementar la lectura y la comprensi&#xF3;n de los conceptos con ejemplos claramente visibles.</p>
       </bloque>
-      
     </apartado>
   </unidad>
   <unidad class="group" subclass="unidad_group">
@@ -190,6 +190,7 @@
         <p>Es importante que a lo largo de la explicaci&#xF3;n del contenido se incluyan ejemplos y que haya elementos de referencia que permitan relacionar los contenidos que se trabajan con los conocimientos previos que pudiera tener el estudiante.</p>
         <p>Se aconseja que a lo largo del desarrollo de las unidades se le vayan planteando al estudiante preguntas sobre los contenidos que se tratan a fin de evitar una simple exposici&#xF3;n de la materia.</p>
       </bloque>
+      
     </apartado>
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Referencias bibliogr&#xE1;ficas</apartado_titulo>
@@ -197,7 +198,7 @@
         <p>Se trata de la enumeraci&#xF3;n de&#xA0;<strong>todas</strong>&#xA0;las publicaciones, en formato impreso o digital, utilizadas por el autor para la elaboraci&#xF3;n de la Carpeta de trabajo. Se ubican en hoja aparte al final de la Carpeta de trabajo y pueden ser organizadas como Referencias bibliogr&#xE1;ficas, Referencias web, Otras referencias.</p>
       </bloque>
       <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Modelos de referencias en papel</subapartado_titulo>
+        <subapartado_titulo class="item" subclass="subapartado_item">Modelos de referencias gr&#xE1;ficas</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>
             <span style="line-height:1.6">Art&#xED;culos, cap&#xED;tulos o cuentos</span>
@@ -242,7 +243,7 @@
         </bloque>
       </subapartado>
       <subapartado class="group" subclass="subapartado_group">
-        <subapartado_titulo class="item" subclass="subapartado_item">Referencias web</subapartado_titulo>
+        <subapartado_titulo class="item" subclass="subapartado_item">Modelos de  referencias web</subapartado_titulo>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Art&#xED;culos</p>
           <p>[ A pellido ], [ Inicial/es de nombre/s ] . &#x201C; [ T&#xED;tulo ] &#x201C;, [en l&#xED;nea/CD-ROM]. En: [ T&#xED;tulo ] . [ Lugar de Publicaci&#xF3;n ] . [ Editorial ] . [ A&#xF1;o ] .<br/>Disponible en: &lt; [Direcci&#xF3;n WEB ] &gt; [ Consulta: [ dd ] [ mes ] [ aaaa ] ].</p>
@@ -269,9 +270,8 @@
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Anexos</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
-        <p>Se trata de textos, esquemas o gr&#xE1;ficos que por su car&#xE1;cter complementario y/o por su gran extensi&#xF3;n se publican al finalizar el texto completo de la Carpeta de trabajo o luego de la Unidad correspondiente. Aportan informaci&#xF3;n<br/>complementaria para profundizar el estudio.<br/>Se recomienda que el n&#xFA;mero de Anexos no sea mayor a tres por Carpeta&#xA0;de trabajo y con un n&#xFA;mero de p&#xE1;ginas no superior a siete.</p>
+        <p>Se trata de textos, esquemas o gr&#xE1;ficos que por su car&#xE1;cter complementa- rio y/o por su gran extensi&#xF3;n se publican al finalizar el texto completo de la Carpeta de trabajo o luego de la Unidad correspondiente. Aportan informaci&#xF3;n complementaria para profundizar el estudio.<br/>Se recomienda que el n&#xFA;mero de Anexos no sea mayor a tres por Carpeta de trabajo y con un n&#xFA;mero de p&#xE1;ginas no superior a siete.</p>
       </bloque>
-     
     </apartado>
   </unidad>
   <unidad class="group" subclass="unidad_group">
@@ -280,7 +280,6 @@
       <p>Adem&#xE1;s de los distintos niveles de t&#xED;tulos y las diferentes categor&#xED;as para clasificar la bibliograf&#xED;a, puede haber componentes textuales, ic&#xF3;nicos y multimediales que completen un tema, una unidad o la Carpeta.</p>
       <p>Es recomendable que exista un equilibrio entre el texto principal y los dife- rentes recursos que fueron dise&#xF1;ados para enriquecer la exposici&#xF3;n.</p>
     </unidad_introduccion>
-   
     <apartado class="group" subclass="apartado_group">
       <apartado_titulo class="item" subclass="apartado_item">Texto principal</apartado_titulo>
       <bloque tipo="texto" class="item" subclass="apartado_item">
@@ -593,16 +592,16 @@
       <bloque tipo="texto" class="item" subclass="apartado_item">
         <p>Bancos de im&#xE1;genes y sonidos libres</p>
         <ul>
-          <li>Freefoto&#xA0;<br/>	http://www.freefoto.com/index.jsp</li>
-          <li>Imageafter&#xA0;<br/>	http://www.imageafter.com/</li>
-          <li>Photos8<br/>	http://photos8.com/</li>
-          <li>123rf&#xA0;<br/>	http://es.123rf.com/</li>
-          <li>Banco de im&#xE1;genes y sonidos INTEF&#xA0;<br/>	http://recursostic.educacion.es/bancoimagenes/web/</li>
+          <li>Freefoto&#xA0;<br/>  http://www.freefoto.com/index.jsp</li>
+          <li>Imageafter&#xA0;<br/>  http://www.imageafter.com/</li>
+          <li>Photos8<br/>  http://photos8.com/</li>
+          <li>123rf&#xA0;<br/>  http://es.123rf.com/</li>
+          <li>Banco de im&#xE1;genes y sonidos INTEF&#xA0;<br/>  http://recursostic.educacion.es/bancoimagenes/web/</li>
         </ul>
         <p>Sitios para obtener fuentes completas de im&#xE1;gene</p>
         <ul>
-          <li><strong>TineEye Reverse Search Engine</strong> &lt;http://www.tineye.com/&gt;<br/>	En este sitio podemos subir un archivo con una imagen y nos informa el o los sitios que la contienen. El &#xE9;xito de la b&#xFA;squeda depende de que se mantenga el nombre original del archivo. Resulta muy &#xFA;til para poner la fuente completa de la imagen que utilizamos.&#xA0;</li>
-          <li><strong>Google Im&#xE1;genes</strong> &lt;https://www.google.com.ar/imghp?hl=es&amp;tab=wi&gt;<br/>	El sitio de Google ofrece un servicio similar. Debemos entrar a la p&#xE1;gina de Google, cliquear en Im&#xE1;genes y cliquear nuevamente en el &#xED;cono de la c&#xE1;mara de foto que aparece en el buscador. Podemos subir la imagen desde nuestra computadora o bien poner la direcci&#xF3;n (URL) de la imagen que buscamos.&#xA0;</li>
+          <li><strong>TineEye Reverse Search Engine</strong> &lt;http://www.tineye.com/&gt;<br/>  En este sitio podemos subir un archivo con una imagen y nos informa el o los sitios que la contienen. El &#xE9;xito de la b&#xFA;squeda depende de que se mantenga el nombre original del archivo. Resulta muy &#xFA;til para poner la fuente completa de la imagen que utilizamos.&#xA0;</li>
+          <li><strong>Google Im&#xE1;genes</strong> &lt;https://www.google.com.ar/imghp?hl=es&amp;tab=wi&gt;<br/>  El sitio de Google ofrece un servicio similar. Debemos entrar a la p&#xE1;gina de Google, cliquear en Im&#xE1;genes y cliquear nuevamente en el &#xED;cono de la c&#xE1;mara de foto que aparece en el buscador. Podemos subir la imagen desde nuestra computadora o bien poner la direcci&#xF3;n (URL) de la imagen que buscamos.&#xA0;</li>
         </ul>
       </bloque>
       <subapartado class="group" subclass="subapartado_group">
@@ -610,22 +609,21 @@
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>Recomendamos utilizar de forma prioritaria recursos de sitios oficiales, libres, p&#xFA;blicos y de fuentes confiables como universidades, organismos oficiales, instituciones p&#xFA;blicas, etc. Por ejemplo, si queremos utilizar un fragmento de video que se encuentra en youtube, chequear previamente si ese mismo frag- mento no se encuentra en alg&#xFA;n sitio que permita su reproducci&#xF3;n. Algunos sitios recomendados para utilizar citando correctamente la fuente son los siguientes:</p>
           <ul>
-            <li>Canal Encuentro&#xA0;<br/>	www.encuentro.gov.ar</li>
-            <li>Tecn&#xF3;polis TV<br/>	www.tectv.gob.ar</li>
-            <li>Televisi&#xF3;n p&#xFA;blica<br/>	www.tvpublica.com.ar</li>
-            <li>Contenidos digitales abiertos&#xA0;<br/>	http://cda.gob.ar/</li>
-            <li>Televisi&#xF3;n Digital Abierta&#xA0;<br/>	http://www.tda.gob.ar&#xA0;</li>
-            <li>Banco Audiovisual de Contenidos Universales Argentina<br/>	http://www.bacua.gob.ar/</li>
-            <li>Audiovideoteca de Buenos Aires<br/>	http://www.audiovideotecaba.gov.ar/areas/com_social/audiovideoteca/</li>
-            <li>Portal oficial del Gobierno de la Rep&#xFA;blica Argentina<br/>	(En el siguiente sitio podemos encontrar todas las direcciones web de ministerios, secretar&#xED;as y otros sitios de inter&#xE9;s) http://www.argentina.gob.ar/</li>
-            <li>Biblioteca Nacional<br/>	http://www.bn.gov.ar/</li>
-            <li>Biblioteca Virtual Miguel de Cervantes<br/>	http://www.cervantesvirtual.com/</li>
-            <li>Biblioteca &#x201C;Laura Manzo&#x201D; de la Universidad Nacional de Quilmes<br/>	http://www.unq.edu.ar//secciones/153-recursos-electr%C3%B3nicos/</li>
-            <li>Canal de TV de la Universidad Nacional de Quilmes<br/>	http://unqtv.unq.edu.ar/</li>
+            <li>Canal Encuentro&#xA0;<br/>  www.encuentro.gov.ar</li>
+            <li>Tecn&#xF3;polis TV<br/>  www.tectv.gob.ar</li>
+            <li>Televisi&#xF3;n p&#xFA;blica<br/>  www.tvpublica.com.ar</li>
+            <li>Contenidos digitales abiertos&#xA0;<br/>  http://cda.gob.ar/</li>
+            <li>Televisi&#xF3;n Digital Abierta&#xA0;<br/>  http://www.tda.gob.ar&#xA0;</li>
+            <li>Banco Audiovisual de Contenidos Universales Argentina<br/>  http://www.bacua.gob.ar/</li>
+            <li>Audiovideoteca de Buenos Aires<br/>  http://www.audiovideotecaba.gov.ar/areas/com_social/audiovideoteca/</li>
+            <li>Portal oficial del Gobierno de la Rep&#xFA;blica Argentina<br/>  (En el siguiente sitio podemos encontrar todas las direcciones web de ministerios, secretar&#xED;as y otros sitios de inter&#xE9;s) http://www.argentina.gob.ar/</li>
+            <li>Biblioteca Nacional<br/>  http://www.bn.gov.ar/</li>
+            <li>Biblioteca Virtual Miguel de Cervantes<br/>  http://www.cervantesvirtual.com/</li>
+            <li>Biblioteca &#x201C;Laura Manzo&#x201D; de la Universidad Nacional de Quilmes<br/>  http://www.unq.edu.ar//secciones/153-recursos-electr%C3%B3nicos/</li>
+            <li>Canal de TV de la Universidad Nacional de Quilmes<br/>  http://unqtv.unq.edu.ar/</li>
           </ul>
         </bloque>
       </subapartado>
     </apartado>
   </anexo>
 </carpeta>
-

@@ -19,7 +19,6 @@
     // Scrollspy
     var $window = $(window)
     var $body   = $(document.body)
-    
     var mainOfset = 70;
 
     $body.scrollspy({
@@ -80,7 +79,7 @@
     }, 100)
 
 
-    /*
+/*
     // theme toggler
     ;(function () {
       var stylesheetLink = $('#bs-theme-stylesheet')
