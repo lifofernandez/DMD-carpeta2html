@@ -94,13 +94,20 @@
     }, 100)
 
 
+    ///PASTILLAS POPOVERS
+    /*<u type="button" 
+    class="pastilla-popover"  
+    data-toggle="popover" 
+    data-content="Contneido">
+    bibliografía</u>*/
+
     $('.pastilla-popover').popover({
       selector: '[data-toggle="popover"]',
-      container: 'body',
+      container: 'u',
       title:'Pastilla',
       placement:'top',
       trigger:'manual',
-      viewport: '.bloque',
+      viewport: 'body',
       delay: { "show": 500, "hide": 100 },
     })//.popover('show').on('click',function(){ $(this).popover('toggle'); });
     
@@ -121,9 +128,23 @@
   
       });
       
-    })
+    });
     
 
+    ///COLLAPSES
+    
+    
+
+     $('.texto_aparte').each(function() {
+      $(this).children('.bloque-contenido').collapse({
+        //toggle:false,
+      });
+
+    });
+
+
+
+    //UTILES & ADDS
 
     function isScrolledIntoView(elem){
       var margins = 100;

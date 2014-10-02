@@ -253,7 +253,7 @@ function getBloques(element){
 			//console.log(bloques[i].parentNode.tagName);
 			if(element.tagName === bloques[i].parentNode.tagName){ //to get only direct childs
 				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
-				var bloqueContent = getContent(bloques[i]);
+				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
 				var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipo+'</div>'+bloqueContent+'</div>';
 			}
 		}
