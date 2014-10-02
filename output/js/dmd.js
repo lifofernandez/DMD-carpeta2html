@@ -96,7 +96,7 @@
 
     $('.pastilla-popover').popover({
       selector: '[data-toggle="popover"]',
-      container: 'u',
+      container: 'body',
       title:'Pastilla',
       placement:'top',
       trigger:'manual',
@@ -126,7 +126,7 @@
 
 
     function isScrolledIntoView(elem){
-      var margins = $(window).height()/4;
+      var margins = 100;
       var docViewTop = $(window).scrollTop()+margins;
       var docViewBottom = docViewTop + ($(window).height()/2);
 
