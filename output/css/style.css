@@ -3929,7 +3929,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1090;
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
@@ -6302,12 +6302,39 @@ button.close {
     display: none !important;
   }
 }
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
-  min-height: 2000px;
   padding-top: 70px;
   position: relative;
   /* For scrollspy */
 
+  height: 100%;
+  width: 100%;
+}
+body.index {
+  padding-top: 0px;
+}
+.index .cover {
+  height: 100%;
+  width: 100%;
+  background: #428bca;
+}
+.index .cover h1,
+.index .cover .h1 {
+  margin: 0px;
+  padding: 0px;
+}
+.index .navbar.affix {
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  /* Undo the static from mobile first approach */
+
+  top: 0px;
 }
 /*
  * Side navigation
@@ -6376,8 +6403,7 @@ body {
   font-weight: 500;
 }
 /* Back to top (hidden on mobile) */
-.back-to-top,
-.dmd-theme-toggle {
+.back-to-top {
   display: none;
   padding: 4px 10px;
   margin-top: 10px;
@@ -6386,17 +6412,12 @@ body {
   font-weight: 500;
   color: #999;
 }
-.back-to-top:hover,
-.dmd-theme-toggle:hover {
+.back-to-top:hover {
   color: #563d7c;
   text-decoration: none;
 }
-.dmd-theme-toggle {
-  margin-top: 0;
-}
 @media (min-width: 768px) {
-  .back-to-top,
-  .dmd-theme-toggle {
+  .back-to-top {
     display: block;
   }
 }

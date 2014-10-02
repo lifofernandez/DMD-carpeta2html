@@ -79,19 +79,23 @@
       $sideBar.affix({
         offset: {
           top: function () {
-            var offsetTop      = $sideBar.offset().top - mainOfset
+            var offsetTop      = $sideBar.offset().top + mainOfset
             var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
             var navOuterHeight = $('.dmd-nav').height()
 
             return (this.top = offsetTop - navOuterHeight - sideBarMargin)
             //return 70
           },
-          bottom: function () {
-            return (this.bottom = $('.dmd-footer').outerHeight(true))
-          }
+         // bottom: function () { return (this.bottom = $('.dmd-footer').outerHeight(true))}
         }
       })
     }, 100)
+
+    setTimeout(function () {
+      var $indexHeader = $('.index .navbar')
+          $indexHeader.affix({offset: {top: $(window).height()}})
+    }, 100)
+
 
 
     ///PASTILLAS POPOVERS

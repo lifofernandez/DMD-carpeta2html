@@ -10,11 +10,12 @@ var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
 var mainHtml = {};
 //build html
-var mainNav = [];
+var mainNav = {};
+var title = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
 
 function buildIndex() {
 	
-	var title = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+	
 	var introduccion = doc.getElementsByTagName('introduccion')[0];
 
 	var unidades = doc.getElementsByTagName('unidad');
@@ -38,14 +39,14 @@ function buildIndex() {
 	mainNav.close='</div>';
 
 	//concat nav
-	var nab = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
+	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
 
 
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
-	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head><body>';
-	
-	mainHtml.header = '<header class="navbar navbar-default navbar-fixed-top" role="banner">'+nab+'</header>';
+	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+' / Inicio</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
+	mainHtml.cover = '<div class="cover"><h1>'+title+'</h1></div>'
+	mainHtml.header = '<body class="index">'+mainHtml.cover+'<header class="navbar navbar-default affix-top"  role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<div class="footer dmd-footer"><div class="container"><p class="text-muted">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></div>';
 	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.js"></script>  <script src="js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
@@ -125,7 +126,9 @@ function generarPaginaUnidad(unidad,fileName,delta){
 
 	var unidadTitulo = unidad.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 	var apartados = unidad.getElementsByTagName('apartado');
-	
+	var headUnidad = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+' / '+unidadTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
+	var headerUnidad = '<body class="unidad"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
+
 	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo',unidadTitulo)+'</div></div>';
 
 
@@ -135,7 +138,7 @@ function generarPaginaUnidad(unidad,fileName,delta){
 
 	var streamUni = fs.createWriteStream('output/'+fileName);
 	streamUni.once('open', function(fd) {
-		var data = mainHtml.open+mainHtml.head+mainHtml.header+body+mainHtml.footer+mainHtml.close;
+		var data = mainHtml.open+headUnidad+headerUnidad+body+mainHtml.footer+mainHtml.close;
 		var prettyData = prettify(data);
 		
 		streamUni.end(prettyData);
