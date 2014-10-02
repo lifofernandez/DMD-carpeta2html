@@ -94,6 +94,49 @@
     }, 100)
 
 
+    $('.pastilla-popover').popover({
+      selector: '[data-toggle="popover"]',
+      container: 'u',
+      title:'Pastilla',
+      placement:'top',
+      trigger:'manual',
+      viewport: '.bloque',
+      delay: { "show": 500, "hide": 100 },
+    })//.popover('show').on('click',function(){ $(this).popover('toggle'); });
+    
+     
+    
+    $(window).scroll(function(){
+      $('.pastilla-popover').each(function() {
+        
+        var tmpState = isScrolledIntoView(this);
+        var change = (tmpState !== $(this).hasClass('on-screen'));
+        //console.log(change);
+        
+        if(tmpState && change)$(this).addClass('on-screen');
+        if(!tmpState && change)$(this).removeClass('on-screen');
+
+        if($(this).hasClass('on-screen') && change)$(this).popover('show').on('click',function(){ $(this).popover('toggle') });
+        if(!$(this).hasClass('on-screen') && change)$(this).popover('hide').on('click',function(){ $(this).popover('toggle') });
+  
+      });
+      
+    })
+    
+
+
+    function isScrolledIntoView(elem){
+      var margins = $(window).height()/4;
+      var docViewTop = $(window).scrollTop()+margins;
+      var docViewBottom = docViewTop + ($(window).height()/2);
+
+      var elemTop = $(elem).offset().top;
+      var elemBottom = elemTop + $(elem).height();
+
+      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+
   })///cierre
 
 }(jQuery)

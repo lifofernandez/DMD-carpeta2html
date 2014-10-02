@@ -281,7 +281,7 @@ function getContent(element){
 ////ADDS & UTILS////////////////////////////////////////////
 
 function prettify(str) {
-  return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,wrap_line_length: 0,preserve_newlines:false,keep_array_indentation:true,unformatted:'p'})
+  return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,keep_array_indentation:true,unformatted:''})
 }
 
 
