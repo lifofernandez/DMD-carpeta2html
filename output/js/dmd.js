@@ -135,10 +135,12 @@
     
     
 
-     $('.texto_aparte').each(function() {
-      $(this).children('.bloque-contenido').collapse({
-        //toggle:false,
-      });
+     $('.texto_aparte, .para_ampliar, .lectura_recomendada').each(function() {
+     	$(this).children('.bloque-contenido').addClass('collapse');
+      	//$(this).children('.bloque-contenido').collapse('hide');
+       
+      	$(this).children('.tipo').on('click',function(){ $(this).siblings(".bloque-contenido").collapse('toggle')});
+
 
     });
 

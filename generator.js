@@ -233,7 +233,7 @@ function getParts(element, what_to_get,parent_delta){
 
 				var partTitulo = '<h'+titleLvl+'>'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
 				
-				}
+			}
 			var bloques = getBloques(parts[i]);
 			var subapartados = getParts(parts[i], 'subapartado',partDelta);
 
@@ -253,8 +253,9 @@ function getBloques(element){
 			//console.log(bloques[i].parentNode.tagName);
 			if(element.tagName === bloques[i].parentNode.tagName){ //to get only direct childs
 				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
+				var bloqueTipoName =  bloqueTipo.replace('_',' ').toProperCase();
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
-				var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipo+'</div>'+bloqueContent+'</div>';
+				var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
 			}
 		}
 
@@ -279,6 +280,9 @@ function getContent(element){
 
 
 ////ADDS & UTILS////////////////////////////////////////////
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
 
 function prettify(str) {
   return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,keep_array_indentation:true,unformatted:''})
