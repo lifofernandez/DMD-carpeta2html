@@ -1,6 +1,7 @@
 var fs = require('fs');
 var DOMParser = require('xmldom').DOMParser;
 var html = require("html");
+var S = require('string');
 
 ///load 
 var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
@@ -9,32 +10,32 @@ var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
 var mainHtml = {};
-//build html
 var mainNav = {};
-var title = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+
+var carpeta = {};
+//GETSS
+carpeta.titulo = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+carpeta.introduccion = doc.getElementsByTagName('introduccion')[0];
+carpeta.unidades = doc.getElementsByTagName('unidad');
+carpeta.anexos = doc.getElementsByTagName('anexo');
+
+buildIndex();
 
 function buildIndex() {
-	
-	
-	var introduccion = doc.getElementsByTagName('introduccion')[0];
 
-	var unidades = doc.getElementsByTagName('unidad');
-	var anexos = doc.getElementsByTagName('anexo');
-
-	
 	//construct nav
 	var unidadesBtns = '';
-	[].forEach.call(unidades, function (element, index) {
-	  	unidadesBtns=unidadesBtns+'<li><a href=unidad-'+(index+1)+'.html>Unidad '+(index+1)+'</a></li>';
+	[].forEach.call(carpeta.unidades, function (element, index) {
+		unidadesBtns=unidadesBtns+'<li><a href=unidad-'+(index+1)+'.html>Unidad '+(index+1)+'</a></li>';
 	});
 
 	var anexosBtns = '';
-	[].forEach.call(anexos, function (element, index) {
+	[].forEach.call(carpeta.anexos, function (element, index) {
 		anexosBtns=anexosBtns+'<li><a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a></li>';
 	});
 
 	mainNav.open='<div class="container dmd-nav-main">';
-    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+title+'</a></div>';
+    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+carpeta.titulo+'</a></div>';
     mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right">'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	mainNav.close='</div>';
 
@@ -44,8 +45,8 @@ function buildIndex() {
 
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
-	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+' / Inicio</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
-	mainHtml.cover = '<div class="cover"><h1>'+title+'</h1></div>'
+	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
+	mainHtml.cover = '<div class="cover"><h1>'+carpeta.titulo+'</h1></div>'
 	mainHtml.header = '<body class="index">'+mainHtml.cover+'<header class="navbar navbar-default affix-top"  role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<div class="footer dmd-footer"><div class="container"><p class="text-muted">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></div>';
@@ -53,58 +54,60 @@ function buildIndex() {
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
-	
 
-	var unidadesIndex = generarIndexUnidades(unidades);
-	var anexosIndex = generarIndexAnexos(anexos);
-	var indiceGeneral = '<div class="indice-general">'+unidadesIndex+anexosIndex+'</div>';
-	
-	var content = '<div class="container"><section>'+introduccion+'</section><section>'+indiceGeneral+'</section></div>';
-	
+	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
+	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	return mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
+	var indiceGeneral = '<div class="indice-general">'+unidadesIndice+anexosIndice+'</div>';
+	
+	var content = '<div class="container"><section>'+carpeta.introduccion+'</section><section>'+indiceGeneral+'</section></div>';
+	
+	mainHtml.indexCocat = mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
+
+
+	var fileName = 'output/index.html';
+	var stream = fs.createWriteStream(fileName);
+
+	stream.once('open', function(fd) {
+		var data = mainHtml.indexCocat;
+		var prettyData = prettify(data);
+		stream.end(prettyData);
+	});
 };
 
 ///WRITE HTML
-var fileName = 'output/index.html';
-var stream = fs.createWriteStream(fileName);
-
-stream.once('open', function(fd) {
-	var data = buildIndex();
-	var prettyData = prettify(data);
-	stream.end(prettyData);
-});
 
 
 
 
-function generarIndexUnidades(unidades){
+
+function generarIndiceUnidades(unidades_in){
 	var indiceUnidades = '<ol class="main-index-nav unidades-index">';
-	for (var i=0; i < unidades.length; i++) {
+	for (var i=0; i < unidades_in.length; i++) {
 
-		var unidadTitulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+		var unidadTitulo = unidades_in[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
 		var unidadLink = '<a href="'+unidadUrl+'">'+unidadTitulo+'</a>';
 		
 		
 
-		var apartados = unidades[i].getElementsByTagName('apartado');
+		var apartados = unidades_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
 
 		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 
-
-		generarPaginaUnidad(unidades[i], unidadUrl,(i+1));
-	}///TERMINA UNIDAD
+		//sacar de aca
+		generarPaginaUnidad(unidades_in[i], unidadUrl,(i+1));
+	}
 	return indiceUnidades=indiceUnidades+'</ol>';
 }
 
-function generarIndexAnexos(anexos){
+function generarIndiceAnexos(anexos_in){
 	var indiceAnexos = '<ul class="main-index-nav anexos-index">';
-	for (var i=0; i < anexos.length; i++) {
+	for (var i=0; i < anexos_in.length; i++) {
 
 		var anexoTitulo = 'Anexo';
 		var anexoDelta = romanize(i+1);
@@ -114,42 +117,17 @@ function generarIndexAnexos(anexos){
 		
 		
 
-		var apartados = anexos[i].getElementsByTagName('apartado');
+		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
 
 		var itemAnexo = '<li>'+anexoLink+indiceApartados+'</li>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
-
-
-		//generarPaginaUnidad(anexos[i], anexoUrl);
-	}///TERMINA anexp
-	return indiceAnexos=indiceAnexos+'</ul>';
-}
-
-
-function generarPaginaUnidad(unidad,fileName,delta){
-
-	var unidadTitulo = unidad.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
-	var apartados = unidad.getElementsByTagName('apartado');
-	var headUnidad = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+title+' / '+unidadTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
-	var headerUnidad = '<body class="unidad"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
-
-	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo',unidadTitulo)+'</div></div>';
-
-
-	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad,delta)+'</div>';
-
-	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
-
-	var streamUni = fs.createWriteStream('output/'+fileName);
-	streamUni.once('open', function(fd) {
-		var data = mainHtml.open+headUnidad+headerUnidad+body+mainHtml.footer+mainHtml.close;
-		var prettyData = prettify(data);
 		
-		streamUni.end(prettyData);
-	});
-
+		//sacar de aca
+		//generarPaginaUnidad(anexos_in[i], anexoUrl);
+	}
+	return indiceAnexos=indiceAnexos+'</ul>';
 }
 
 //GENERATE MAIN INDEX
@@ -193,8 +171,36 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 }
 
 
+//GENERAR PAGINAS INDIVIDUALES DE CADA UNIDAD
+function generarPaginaUnidad(unidad_in,fileName,delta){
+
+	var unidadTitulo = unidad_in.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+	var apartados = unidad_in.getElementsByTagName('apartado');
+	var headUnidad = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+unidadTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
+	var headerUnidad = '<body class="unidad"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
+
+	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo',unidadTitulo)+'</div></div>';
+
+
+	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad_in,delta)+'</div>';
+
+	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
+
+	var streamUni = fs.createWriteStream('output/'+fileName);
+	streamUni.once('open', function(fd) {
+		var data = mainHtml.open+headUnidad+headerUnidad+body+mainHtml.footer+mainHtml.close;
+		var prettyData = prettify(data);
+		
+		streamUni.end(prettyData);
+	});
+}
+
+
+
+
 
 ///PARSEO DE UNIDADES Y FUNCIONES PARA CONTENIDO
+
 function parseUnidad(elementGroup, delta){
 	var output = '<div id="top" class="article unidad-content unidad-'+delta+'">';
 
@@ -267,7 +273,8 @@ function getBloques(element){
 			//console.log(bloques[i].parentNode.tagName);
 			if(element.tagName === bloques[i].parentNode.tagName){ //to get only direct childs
 				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
-				var bloqueTipoName =  bloqueTipo.replace('_',' ').replace('_',' ').toProperCase();
+				var bloqueTipoName =  S(bloqueTipo).humanize().capitalize().s;
+
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
 				
 				var tooltip = '';
@@ -300,9 +307,6 @@ function getContent(element){
 
 
 ////ADDS & UTILS////////////////////////////////////////////
-String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-};
 
 function prettify(str) {
   return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,keep_array_indentation:true,unformatted:''})
@@ -310,13 +314,9 @@ function prettify(str) {
 
 
 function makeUrl(input){
-	return input.latinize().replace(/ /g,'-').toLowerCase();
+	return S(input).slugify().s;
 }
 
-var Latinise={};Latinise.latin_map={"Á":"A","Ă":"A","Ắ":"A","Ặ":"A","Ằ":"A","Ẳ":"A","Ẵ":"A","Ǎ":"A","Â":"A","Ấ":"A","Ậ":"A","Ầ":"A","Ẩ":"A","Ẫ":"A","Ä":"A","Ǟ":"A","Ȧ":"A","Ǡ":"A","Ạ":"A","Ȁ":"A","À":"A","Ả":"A","Ȃ":"A","Ā":"A","Ą":"A","Å":"A","Ǻ":"A","Ḁ":"A","Ⱥ":"A","Ã":"A","Ꜳ":"AA","Æ":"AE","Ǽ":"AE","Ǣ":"AE","Ꜵ":"AO","Ꜷ":"AU","Ꜹ":"AV","Ꜻ":"AV","Ꜽ":"AY","Ḃ":"B","Ḅ":"B","Ɓ":"B","Ḇ":"B","Ƀ":"B","Ƃ":"B","Ć":"C","Č":"C","Ç":"C","Ḉ":"C","Ĉ":"C","Ċ":"C","Ƈ":"C","Ȼ":"C","Ď":"D","Ḑ":"D","Ḓ":"D","Ḋ":"D","Ḍ":"D","Ɗ":"D","Ḏ":"D","ǲ":"D","ǅ":"D","Đ":"D","Ƌ":"D","Ǳ":"DZ","Ǆ":"DZ","É":"E","Ĕ":"E","Ě":"E","Ȩ":"E","Ḝ":"E","Ê":"E","Ế":"E","Ệ":"E","Ề":"E","Ể":"E","Ễ":"E","Ḙ":"E","Ë":"E","Ė":"E","Ẹ":"E","Ȅ":"E","È":"E","Ẻ":"E","Ȇ":"E","Ē":"E","Ḗ":"E","Ḕ":"E","Ę":"E","Ɇ":"E","Ẽ":"E","Ḛ":"E","Ꝫ":"ET","Ḟ":"F","Ƒ":"F","Ǵ":"G","Ğ":"G","Ǧ":"G","Ģ":"G","Ĝ":"G","Ġ":"G","Ɠ":"G","Ḡ":"G","Ǥ":"G","Ḫ":"H","Ȟ":"H","Ḩ":"H","Ĥ":"H","Ⱨ":"H","Ḧ":"H","Ḣ":"H","Ḥ":"H","Ħ":"H","Í":"I","Ĭ":"I","Ǐ":"I","Î":"I","Ï":"I","Ḯ":"I","İ":"I","Ị":"I","Ȉ":"I","Ì":"I","Ỉ":"I","Ȋ":"I","Ī":"I","Į":"I","Ɨ":"I","Ĩ":"I","Ḭ":"I","Ꝺ":"D","Ꝼ":"F","Ᵹ":"G","Ꞃ":"R","Ꞅ":"S","Ꞇ":"T","Ꝭ":"IS","Ĵ":"J","Ɉ":"J","Ḱ":"K","Ǩ":"K","Ķ":"K","Ⱪ":"K","Ꝃ":"K","Ḳ":"K","Ƙ":"K","Ḵ":"K","Ꝁ":"K","Ꝅ":"K","Ĺ":"L","Ƚ":"L","Ľ":"L","Ļ":"L","Ḽ":"L","Ḷ":"L","Ḹ":"L","Ⱡ":"L","Ꝉ":"L","Ḻ":"L","Ŀ":"L","Ɫ":"L","ǈ":"L","Ł":"L","Ǉ":"LJ","Ḿ":"M","Ṁ":"M","Ṃ":"M","Ɱ":"M","Ń":"N","Ň":"N","Ņ":"N","Ṋ":"N","Ṅ":"N","Ṇ":"N","Ǹ":"N","Ɲ":"N","Ṉ":"N","Ƞ":"N","ǋ":"N","Ñ":"N","Ǌ":"NJ","Ó":"O","Ŏ":"O","Ǒ":"O","Ô":"O","Ố":"O","Ộ":"O","Ồ":"O","Ổ":"O","Ỗ":"O","Ö":"O","Ȫ":"O","Ȯ":"O","Ȱ":"O","Ọ":"O","Ő":"O","Ȍ":"O","Ò":"O","Ỏ":"O","Ơ":"O","Ớ":"O","Ợ":"O","Ờ":"O","Ở":"O","Ỡ":"O","Ȏ":"O","Ꝋ":"O","Ꝍ":"O","Ō":"O","Ṓ":"O","Ṑ":"O","Ɵ":"O","Ǫ":"O","Ǭ":"O","Ø":"O","Ǿ":"O","Õ":"O","Ṍ":"O","Ṏ":"O","Ȭ":"O","Ƣ":"OI","Ꝏ":"OO","Ɛ":"E","Ɔ":"O","Ȣ":"OU","Ṕ":"P","Ṗ":"P","Ꝓ":"P","Ƥ":"P","Ꝕ":"P","Ᵽ":"P","Ꝑ":"P","Ꝙ":"Q","Ꝗ":"Q","Ŕ":"R","Ř":"R","Ŗ":"R","Ṙ":"R","Ṛ":"R","Ṝ":"R","Ȑ":"R","Ȓ":"R","Ṟ":"R","Ɍ":"R","Ɽ":"R","Ꜿ":"C","Ǝ":"E","Ś":"S","Ṥ":"S","Š":"S","Ṧ":"S","Ş":"S","Ŝ":"S","Ș":"S","Ṡ":"S","Ṣ":"S","Ṩ":"S","Ť":"T","Ţ":"T","Ṱ":"T","Ț":"T","Ⱦ":"T","Ṫ":"T","Ṭ":"T","Ƭ":"T","Ṯ":"T","Ʈ":"T","Ŧ":"T","Ɐ":"A","Ꞁ":"L","Ɯ":"M","Ʌ":"V","Ꜩ":"TZ","Ú":"U","Ŭ":"U","Ǔ":"U","Û":"U","Ṷ":"U","Ü":"U","Ǘ":"U","Ǚ":"U","Ǜ":"U","Ǖ":"U","Ṳ":"U","Ụ":"U","Ű":"U","Ȕ":"U","Ù":"U","Ủ":"U","Ư":"U","Ứ":"U","Ự":"U","Ừ":"U","Ử":"U","Ữ":"U","Ȗ":"U","Ū":"U","Ṻ":"U","Ų":"U","Ů":"U","Ũ":"U","Ṹ":"U","Ṵ":"U","Ꝟ":"V","Ṿ":"V","Ʋ":"V","Ṽ":"V","Ꝡ":"VY","Ẃ":"W","Ŵ":"W","Ẅ":"W","Ẇ":"W","Ẉ":"W","Ẁ":"W","Ⱳ":"W","Ẍ":"X","Ẋ":"X","Ý":"Y","Ŷ":"Y","Ÿ":"Y","Ẏ":"Y","Ỵ":"Y","Ỳ":"Y","Ƴ":"Y","Ỷ":"Y","Ỿ":"Y","Ȳ":"Y","Ɏ":"Y","Ỹ":"Y","Ź":"Z","Ž":"Z","Ẑ":"Z","Ⱬ":"Z","Ż":"Z","Ẓ":"Z","Ȥ":"Z","Ẕ":"Z","Ƶ":"Z","Ĳ":"IJ","Œ":"OE","ᴀ":"A","ᴁ":"AE","ʙ":"B","ᴃ":"B","ᴄ":"C","ᴅ":"D","ᴇ":"E","ꜰ":"F","ɢ":"G","ʛ":"G","ʜ":"H","ɪ":"I","ʁ":"R","ᴊ":"J","ᴋ":"K","ʟ":"L","ᴌ":"L","ᴍ":"M","ɴ":"N","ᴏ":"O","ɶ":"OE","ᴐ":"O","ᴕ":"OU","ᴘ":"P","ʀ":"R","ᴎ":"N","ᴙ":"R","ꜱ":"S","ᴛ":"T","ⱻ":"E","ᴚ":"R","ᴜ":"U","ᴠ":"V","ᴡ":"W","ʏ":"Y","ᴢ":"Z","á":"a","ă":"a","ắ":"a","ặ":"a","ằ":"a","ẳ":"a","ẵ":"a","ǎ":"a","â":"a","ấ":"a","ậ":"a","ầ":"a","ẩ":"a","ẫ":"a","ä":"a","ǟ":"a","ȧ":"a","ǡ":"a","ạ":"a","ȁ":"a","à":"a","ả":"a","ȃ":"a","ā":"a","ą":"a","ᶏ":"a","ẚ":"a","å":"a","ǻ":"a","ḁ":"a","ⱥ":"a","ã":"a","ꜳ":"aa","æ":"ae","ǽ":"ae","ǣ":"ae","ꜵ":"ao","ꜷ":"au","ꜹ":"av","ꜻ":"av","ꜽ":"ay","ḃ":"b","ḅ":"b","ɓ":"b","ḇ":"b","ᵬ":"b","ᶀ":"b","ƀ":"b","ƃ":"b","ɵ":"o","ć":"c","č":"c","ç":"c","ḉ":"c","ĉ":"c","ɕ":"c","ċ":"c","ƈ":"c","ȼ":"c","ď":"d","ḑ":"d","ḓ":"d","ȡ":"d","ḋ":"d","ḍ":"d","ɗ":"d","ᶑ":"d","ḏ":"d","ᵭ":"d","ᶁ":"d","đ":"d","ɖ":"d","ƌ":"d","ı":"i","ȷ":"j","ɟ":"j","ʄ":"j","ǳ":"dz","ǆ":"dz","é":"e","ĕ":"e","ě":"e","ȩ":"e","ḝ":"e","ê":"e","ế":"e","ệ":"e","ề":"e","ể":"e","ễ":"e","ḙ":"e","ë":"e","ė":"e","ẹ":"e","ȅ":"e","è":"e","ẻ":"e","ȇ":"e","ē":"e","ḗ":"e","ḕ":"e","ⱸ":"e","ę":"e","ᶒ":"e","ɇ":"e","ẽ":"e","ḛ":"e","ꝫ":"et","ḟ":"f","ƒ":"f","ᵮ":"f","ᶂ":"f","ǵ":"g","ğ":"g","ǧ":"g","ģ":"g","ĝ":"g","ġ":"g","ɠ":"g","ḡ":"g","ᶃ":"g","ǥ":"g","ḫ":"h","ȟ":"h","ḩ":"h","ĥ":"h","ⱨ":"h","ḧ":"h","ḣ":"h","ḥ":"h","ɦ":"h","ẖ":"h","ħ":"h","ƕ":"hv","í":"i","ĭ":"i","ǐ":"i","î":"i","ï":"i","ḯ":"i","ị":"i","ȉ":"i","ì":"i","ỉ":"i","ȋ":"i","ī":"i","į":"i","ᶖ":"i","ɨ":"i","ĩ":"i","ḭ":"i","ꝺ":"d","ꝼ":"f","ᵹ":"g","ꞃ":"r","ꞅ":"s","ꞇ":"t","ꝭ":"is","ǰ":"j","ĵ":"j","ʝ":"j","ɉ":"j","ḱ":"k","ǩ":"k","ķ":"k","ⱪ":"k","ꝃ":"k","ḳ":"k","ƙ":"k","ḵ":"k","ᶄ":"k","ꝁ":"k","ꝅ":"k","ĺ":"l","ƚ":"l","ɬ":"l","ľ":"l","ļ":"l","ḽ":"l","ȴ":"l","ḷ":"l","ḹ":"l","ⱡ":"l","ꝉ":"l","ḻ":"l","ŀ":"l","ɫ":"l","ᶅ":"l","ɭ":"l","ł":"l","ǉ":"lj","ſ":"s","ẜ":"s","ẛ":"s","ẝ":"s","ḿ":"m","ṁ":"m","ṃ":"m","ɱ":"m","ᵯ":"m","ᶆ":"m","ń":"n","ň":"n","ņ":"n","ṋ":"n","ȵ":"n","ṅ":"n","ṇ":"n","ǹ":"n","ɲ":"n","ṉ":"n","ƞ":"n","ᵰ":"n","ᶇ":"n","ɳ":"n","ñ":"n","ǌ":"nj","ó":"o","ŏ":"o","ǒ":"o","ô":"o","ố":"o","ộ":"o","ồ":"o","ổ":"o","ỗ":"o","ö":"o","ȫ":"o","ȯ":"o","ȱ":"o","ọ":"o","ő":"o","ȍ":"o","ò":"o","ỏ":"o","ơ":"o","ớ":"o","ợ":"o","ờ":"o","ở":"o","ỡ":"o","ȏ":"o","ꝋ":"o","ꝍ":"o","ⱺ":"o","ō":"o","ṓ":"o","ṑ":"o","ǫ":"o","ǭ":"o","ø":"o","ǿ":"o","õ":"o","ṍ":"o","ṏ":"o","ȭ":"o","ƣ":"oi","ꝏ":"oo","ɛ":"e","ᶓ":"e","ɔ":"o","ᶗ":"o","ȣ":"ou","ṕ":"p","ṗ":"p","ꝓ":"p","ƥ":"p","ᵱ":"p","ᶈ":"p","ꝕ":"p","ᵽ":"p","ꝑ":"p","ꝙ":"q","ʠ":"q","ɋ":"q","ꝗ":"q","ŕ":"r","ř":"r","ŗ":"r","ṙ":"r","ṛ":"r","ṝ":"r","ȑ":"r","ɾ":"r","ᵳ":"r","ȓ":"r","ṟ":"r","ɼ":"r","ᵲ":"r","ᶉ":"r","ɍ":"r","ɽ":"r","ↄ":"c","ꜿ":"c","ɘ":"e","ɿ":"r","ś":"s","ṥ":"s","š":"s","ṧ":"s","ş":"s","ŝ":"s","ș":"s","ṡ":"s","ṣ":"s","ṩ":"s","ʂ":"s","ᵴ":"s","ᶊ":"s","ȿ":"s","ɡ":"g","ᴑ":"o","ᴓ":"o","ᴝ":"u","ť":"t","ţ":"t","ṱ":"t","ț":"t","ȶ":"t","ẗ":"t","ⱦ":"t","ṫ":"t","ṭ":"t","ƭ":"t","ṯ":"t","ᵵ":"t","ƫ":"t","ʈ":"t","ŧ":"t","ᵺ":"th","ɐ":"a","ᴂ":"ae","ǝ":"e","ᵷ":"g","ɥ":"h","ʮ":"h","ʯ":"h","ᴉ":"i","ʞ":"k","ꞁ":"l","ɯ":"m","ɰ":"m","ᴔ":"oe","ɹ":"r","ɻ":"r","ɺ":"r","ⱹ":"r","ʇ":"t","ʌ":"v","ʍ":"w","ʎ":"y","ꜩ":"tz","ú":"u","ŭ":"u","ǔ":"u","û":"u","ṷ":"u","ü":"u","ǘ":"u","ǚ":"u","ǜ":"u","ǖ":"u","ṳ":"u","ụ":"u","ű":"u","ȕ":"u","ù":"u","ủ":"u","ư":"u","ứ":"u","ự":"u","ừ":"u","ử":"u","ữ":"u","ȗ":"u","ū":"u","ṻ":"u","ų":"u","ᶙ":"u","ů":"u","ũ":"u","ṹ":"u","ṵ":"u","ᵫ":"ue","ꝸ":"um","ⱴ":"v","ꝟ":"v","ṿ":"v","ʋ":"v","ᶌ":"v","ⱱ":"v","ṽ":"v","ꝡ":"vy","ẃ":"w","ŵ":"w","ẅ":"w","ẇ":"w","ẉ":"w","ẁ":"w","ⱳ":"w","ẘ":"w","ẍ":"x","ẋ":"x","ᶍ":"x","ý":"y","ŷ":"y","ÿ":"y","ẏ":"y","ỵ":"y","ỳ":"y","ƴ":"y","ỷ":"y","ỿ":"y","ȳ":"y","ẙ":"y","ɏ":"y","ỹ":"y","ź":"z","ž":"z","ẑ":"z","ʑ":"z","ⱬ":"z","ż":"z","ẓ":"z","ȥ":"z","ẕ":"z","ᵶ":"z","ᶎ":"z","ʐ":"z","ƶ":"z","ɀ":"z","ﬀ":"ff","ﬃ":"ffi","ﬄ":"ffl","ﬁ":"fi","ﬂ":"fl","ĳ":"ij","œ":"oe","ﬆ":"st","ₐ":"a","ₑ":"e","ᵢ":"i","ⱼ":"j","ₒ":"o","ᵣ":"r","ᵤ":"u","ᵥ":"v","ₓ":"x"};
-String.prototype.latinise=function(){return this.replace(/[^A-Za-z0-9\[\] ]/g,function(a){return Latinise.latin_map[a]||a})};
-String.prototype.latinize=String.prototype.latinise;
-String.prototype.isLatin=function(){return this==this.latinise()}
 
 function romanize(num) {
     if (!+num)

@@ -19,6 +19,8 @@
     // Scrollspy
     var $window = $(window)
     var $body   = $(document.body)
+
+    var $height = $window.height()
     
     var mainOfset = 70;
     var regularMargins = 50;
@@ -63,15 +65,11 @@
 
            // when done, add hash to url
            // (default click behaviour)
+           e.preventDefault();
            //window.location.hash = hash;
          });
      });
-    /*
-    // Kill links
-    $('.dmd-container [href=#]').click(function (e) {
-      e.preventDefault()
-    })
-    */
+    
     // Sidenav affixing
     setTimeout(function () {
       var $sideBar = $('.dmd-sidebar')
@@ -90,21 +88,21 @@
         }
       })
     }, 100)
-
+    
+    var $indexHeader = $('.index .navbar')
     setTimeout(function () {
-      var $indexHeader = $('.index .navbar')
-          $indexHeader.affix({offset: {top: $(window).height()}})
+      
+          $indexHeader.affix({offset: {top: $height}})
     }, 100)
 
-  $('.bloque').tooltip();
+  
+    //TOOLTIPS
+   $('.bloque').tooltip();
 
     ///PASTILLAS POPOVERS
-    /*<u type="button" 
-    class="dmd-popover"  
-    data-toggle="popover" 
-    data-content="Contneido">
-    bibliografía</u>*/
-
+    
+    /*<u type="button"class="dmd-popover"data-toggle="popover"data-content="Contneido"> bibliografía</u>*/
+   
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
       container: false,
@@ -115,8 +113,6 @@
       //viewport: 'body',
       delay: { "show": 200, "hide": 100 },
     }).on('click',function(){ $(this).popover('toggle'); });
-    
-     
     
     $(window).scroll(function(){
       $('.dmd-popover').each(function() {
@@ -137,9 +133,6 @@
     
 
     ///COLLAPSES
-    
-    
-
      $('.texto_aparte, .para_ampliar, .lectura_recomendada').each(function() {
      	$(this).children('.bloque-contenido').addClass('collapse');
         //$(this).children('.bloque-contenido').collapse('hide');
@@ -156,7 +149,6 @@
 
 
     //UTILES & ADDS
-
     function isScrolledIntoView(elem){
       var margins = 100;
       var docViewTop = $(window).scrollTop()+margins;
@@ -168,6 +160,11 @@
       return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
 
+    $window.resize(function() {
+      $height = $window.height();
+      $indexHeader.affix({offset: {top: $height}})
+      //alert($height);
+    });
 
   })///cierre
 
