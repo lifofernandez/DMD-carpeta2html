@@ -48,7 +48,7 @@ body {
 }
 
 //PASTILLAS
-.dmd-popover:hover{cursor: pointer;}
+.dmd-popover:hover{cursor: pointer;color:@brand-primary;}
 
 
 /*
@@ -189,9 +189,10 @@ body {
 .tipo{color:red;}
 .texto .tipo{display: none;}
 .bloque{
-  &.texto{
-
-    
+  &.texto{}
+  &.texto_aparte, &.para_ampliar, &.lectura_recomendada{
+    .tipo:hover{cursor: pointer;}
   }
+
 }
 

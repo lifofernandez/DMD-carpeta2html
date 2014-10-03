@@ -114,7 +114,7 @@
       html:true,
       //viewport: 'body',
       delay: { "show": 200, "hide": 100 },
-    })//.popover('show').on('click',function(){ $(this).popover('toggle'); });
+    }).on('click',function(){ $(this).popover('toggle'); });
     
      
     

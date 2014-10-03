@@ -6345,6 +6345,7 @@ body.index {
 }
 .dmd-popover:hover {
   cursor: pointer;
+  color: #428bca;
 }
 /*
  * Side navigation
@@ -6476,4 +6477,9 @@ body.index {
 }
 .texto .tipo {
   display: none;
+}
+.bloque.texto_aparte .tipo:hover,
+.bloque.para_ampliar .tipo:hover,
+.bloque.lectura_recomendada .tipo:hover {
+  cursor: pointer;
 }
