@@ -6307,7 +6307,6 @@ html {
   width: 100%;
 }
 body {
-  padding-top: 70px;
   position: relative;
   /* For scrollspy */
 
@@ -6335,6 +6334,17 @@ body.index {
   /* Undo the static from mobile first approach */
 
   top: 0px;
+  z-index: 1090;
+}
+.tooltip.bottom {
+  left: 15px !important;
+}
+.tooltip.top {
+  right: 15px !important;
+  left: auto !important;
+}
+.dmd-popover:hover {
+  cursor: pointer;
 }
 /*
  * Side navigation
@@ -6350,8 +6360,8 @@ body.index {
 }
 /* First level of nav */
 .dmd-sidenav {
-  margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 70px;
 }
 /* All levels of nav */
 .dmd-sidebar .nav > li > a {
@@ -6402,24 +6412,8 @@ body.index {
   padding-left: 28px;
   font-weight: 500;
 }
-/* Back to top (hidden on mobile) */
-.back-to-top {
-  display: none;
-  padding: 4px 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #999;
-}
-.back-to-top:hover {
-  color: #563d7c;
-  text-decoration: none;
-}
 @media (min-width: 768px) {
-  .back-to-top {
-    display: block;
-  }
+  
 }
 /* Show and affix the side nav when space allows it */
 @media (min-width: 992px) {
@@ -6435,7 +6429,7 @@ body.index {
     position: fixed;
     /* Undo the static from mobile first approach */
   
-    top: 70px;
+    top: 0px;
   }
   .dmd-sidebar.affix-bottom {
     position: absolute;
@@ -6459,16 +6453,21 @@ body.index {
   margin-bottom: 100px;
 }
 /*apartados*/
-.apartados {
+.unidad-content {
+  padding-top: 70px;
+}
+.unidad-content .apartados {
   margin-top: 100px;
 }
-.apartados .apartado {
+.unidad-content .apartados .apartado {
+  padding-top: 70px;
   margin-bottom: 100px;
 }
-.apartados .apartado .subapartados {
+.unidad-content .apartados .apartado .subapartados {
   margin-top: 50px;
 }
-.apartados .apartado .subapartados .subapartado {
+.unidad-content .apartados .apartado .subapartados .subapartado {
+  padding-top: 70px;
   margin-bottom: 50px;
 }
 /*bloques*/
@@ -6477,7 +6476,4 @@ body.index {
 }
 .texto .tipo {
   display: none;
-}
-.pastilla-popover:hover {
-  cursor: pointer;
 }

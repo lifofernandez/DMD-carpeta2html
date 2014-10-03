@@ -1,10 +1,13 @@
+///mias
+@mainOffset : 70px;
+
 html{
   height: 100%;
   width: 100%;
 }
 body {
   //min-height: 2000px;
-  padding-top: 70px;
+  //padding-top: 70px;
   position: relative; /* For scrollspy */
   height: 100%;
   width: 100%;
@@ -30,10 +33,22 @@ body {
     width: 100%;
     position: fixed; /* Undo the static from mobile first approach */
     top: 0px;
+    z-index: 1090;
   }
   
 }
+//TOOLTIPS
+.tooltip.bottom {
+    left: @grid-gutter-width/2 !important;
+}
+.tooltip.top {
+    right:@grid-gutter-width/2 !important;
+  left:auto !important;
+    //right: @grid-gutter-width/2 !important;
+}
 
+//PASTILLAS
+.dmd-popover:hover{cursor: pointer;}
 
 
 /*
@@ -54,8 +69,9 @@ body {
 
 /* First level of nav */
 .dmd-sidenav {
-  margin-top: 20px;
+  //margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 70px;
 }
 
 /* All levels of nav */
@@ -107,25 +123,10 @@ body {
   font-weight: 500;
 }
 
-/* Back to top (hidden on mobile) */
-.back-to-top{
-  display: none;
-  padding: 4px 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #999;
-}
-.back-to-top:hover {
-  color: #563d7c;
-  text-decoration: none;
-}
+
 
 @media (min-width: 768px) {
-  .back-to-top{
-    display: block;
-  }
+  
 }
 
 /* Show and affix the side nav when space allows it */
@@ -140,7 +141,7 @@ body {
   }
   .dmd-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
-    top: 70px;
+    top: 0px;
   }
   .dmd-sidebar.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
@@ -165,15 +166,20 @@ body {
 }
 
 /*apartados*/
-.apartados{
-    margin-top: 100px;
-  .apartado{
-    margin-bottom: 100px;
-    .subapartados{
-      margin-top: 50px;
-      .subapartado{
-        margin-bottom: 50px;
-    
+.unidad-content{
+  padding-top: @mainOffset;
+  .apartados{
+      margin-top: 100px;
+    .apartado{
+      padding-top: @mainOffset;
+      margin-bottom: 100px;
+      .subapartados{
+        margin-top: 50px;
+        .subapartado{
+          padding-top: @mainOffset;
+          margin-bottom: 50px;
+      
+        }
       }
     }
   }
@@ -182,6 +188,10 @@ body {
 /*bloques*/
 .tipo{color:red;}
 .texto .tipo{display: none;}
+.bloque{
+  &.texto{
 
-//PASTILLAS
-.pastilla-popover:hover{cursor: pointer;}
+    
+  }
+}
+

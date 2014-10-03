@@ -55,11 +55,11 @@ function buildIndex() {
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	
 
-	var unidedIndex = generarUnidades(unidades);
-	var anexosIndex = generarAnexos(anexos);
-
+	var unidadesIndex = generarIndexUnidades(unidades);
+	var anexosIndex = generarIndexAnexos(anexos);
+	var indiceGeneral = '<div class="indice-general">'+unidadesIndex+anexosIndex+'</div>';
 	
-	var content = '<div class="container"><section>'+introduccion+'</section><section>'+unidedIndex+anexosIndex+'</section></div>';
+	var content = '<div class="container"><section>'+introduccion+'</section><section>'+indiceGeneral+'</section></div>';
 	
 
 	return mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
@@ -78,16 +78,16 @@ stream.once('open', function(fd) {
 
 
 
-function generarUnidades(unidades){
-	var indiceUnidades = '<ul>';
+function generarIndexUnidades(unidades){
+	var indiceUnidades = '<ol class="main-index-nav unidades-index">';
 	for (var i=0; i < unidades.length; i++) {
 
 		var unidadTitulo = unidades[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
-		var unidadLink = '<a href="'+unidadUrl+'">'+unidadDelta+' '+unidadTitulo+'</a>';
+		var unidadLink = '<a href="'+unidadUrl+'">'+unidadTitulo+'</a>';
 		
-		generarPaginaUnidad(unidades[i], unidadUrl,(i+1));
+		
 
 		var apartados = unidades[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
@@ -95,21 +95,24 @@ function generarUnidades(unidades){
 		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
+
+
+		generarPaginaUnidad(unidades[i], unidadUrl,(i+1));
 	}///TERMINA UNIDAD
-	return indiceUnidades=indiceUnidades+'</ul>';
+	return indiceUnidades=indiceUnidades+'</ol>';
 }
 
-function generarAnexos(anexos){
-	var indiceAnexos = '<ul>';
+function generarIndexAnexos(anexos){
+	var indiceAnexos = '<ul class="main-index-nav anexos-index">';
 	for (var i=0; i < anexos.length; i++) {
 
 		var anexoTitulo = 'Anexo';
-		var anexoNumeral = romanize(i+1);
+		var anexoDelta = romanize(i+1);
 
 		var anexoUrl = 'anexo-'+(i+1)+'.html';
-		var anexoLink = '<a href="'+anexoUrl+'">'+anexoTitulo+' '+anexoNumeral+'</a>';
+		var anexoLink = '<a href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a>';
 		
-		//generarPaginaUnidad(anexos[i], anexoUrl);
+		
 
 		var apartados = anexos[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
@@ -117,7 +120,10 @@ function generarAnexos(anexos){
 		var itemAnexo = '<li>'+anexoLink+indiceApartados+'</li>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
-	}///TERMINA UNIDAD
+
+
+		//generarPaginaUnidad(anexos[i], anexoUrl);
+	}///TERMINA anexp
 	return indiceAnexos=indiceAnexos+'</ul>';
 }
 
@@ -150,7 +156,12 @@ function generarPaginaUnidad(unidad,fileName,delta){
 function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_unidad){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_unidad+'</a></li>';
+		
+		output = '<ul class="nav nav-list">';
+		
+		if(titulo_unidad)output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_unidad+'</a></li>';
+		
+
 		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
@@ -185,7 +196,7 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 
 ///PARSEO DE UNIDADES Y FUNCIONES PARA CONTENIDO
 function parseUnidad(elementGroup, delta){
-	var output = '<div id="top" class="article unidad unidad-'+delta+'">';
+	var output = '<div id="top" class="article unidad-content unidad-'+delta+'">';
 
 	if(elementGroup.childNodes){
 		//var elementos = elementGroup.childNodes;
@@ -256,9 +267,15 @@ function getBloques(element){
 			//console.log(bloques[i].parentNode.tagName);
 			if(element.tagName === bloques[i].parentNode.tagName){ //to get only direct childs
 				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
-				var bloqueTipoName =  bloqueTipo.replace('_',' ').toProperCase();
+				var bloqueTipoName =  bloqueTipo.replace('_',' ').replace('_',' ').toProperCase();
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
-				var op=op+'<div class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
+				
+				var tooltip = '';
+				
+				if(bloqueTipo !== 'texto')tooltip = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
+				if(bloqueTipo === 'actividad')tooltip = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
+
+				var op=op+'<div '+tooltip+' class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
 			}
 		}
 

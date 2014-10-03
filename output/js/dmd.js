@@ -48,7 +48,7 @@
     })  
 
 
-    $(".smooth-trigger").on('click', function(e) {
+    $(".unidad .smooth-trigger").on('click', function(e) {
 
        // prevent default anchor click behavior
        e.preventDefault();
@@ -58,20 +58,20 @@
 
        // animate
        $body.animate({
-           scrollTop: $(this.hash).offset().top - mainOfset
+           scrollTop: $(this.hash).offset().top
          }, 300, function(){
 
            // when done, add hash to url
            // (default click behaviour)
-          // window.location.hash = hash;
+           //window.location.hash = hash;
          });
      });
-    
+    /*
     // Kill links
     $('.dmd-container [href=#]').click(function (e) {
       e.preventDefault()
     })
-
+    */
     // Sidenav affixing
     setTimeout(function () {
       var $sideBar = $('.dmd-sidebar')
@@ -96,29 +96,30 @@
           $indexHeader.affix({offset: {top: $(window).height()}})
     }, 100)
 
-
+  $('.bloque').tooltip();
 
     ///PASTILLAS POPOVERS
     /*<u type="button" 
-    class="pastilla-popover"  
+    class="dmd-popover"  
     data-toggle="popover" 
     data-content="Contneido">
     bibliografía</u>*/
 
-    $('.pastilla-popover').popover({
+    $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
-      container: 'u',
+      container: false,
       title:'Pastilla',
       placement:'top',
       trigger:'manual',
-      viewport: 'body',
-      delay: { "show": 500, "hide": 100 },
+      html:true,
+      //viewport: 'body',
+      delay: { "show": 200, "hide": 100 },
     })//.popover('show').on('click',function(){ $(this).popover('toggle'); });
     
      
     
     $(window).scroll(function(){
-      $('.pastilla-popover').each(function() {
+      $('.dmd-popover').each(function() {
         
         var tmpState = isScrolledIntoView(this);
         var change = (tmpState !== $(this).hasClass('on-screen'));
@@ -141,9 +142,13 @@
 
      $('.texto_aparte, .para_ampliar, .lectura_recomendada').each(function() {
      	$(this).children('.bloque-contenido').addClass('collapse');
-      	//$(this).children('.bloque-contenido').collapse('hide');
+        //$(this).children('.bloque-contenido').collapse('hide');
        
-      	$(this).children('.tipo').on('click',function(){ $(this).siblings(".bloque-contenido").collapse('toggle')});
+        $(this).children('.tipo').on('click',function(){
+          $(this).siblings(".bloque-contenido").collapse('toggle');
+          $(this).parent().tooltip('toggle');
+        });
+
 
 
     });
@@ -155,7 +160,7 @@
     function isScrolledIntoView(elem){
       var margins = 100;
       var docViewTop = $(window).scrollTop()+margins;
-      var docViewBottom = docViewTop + ($(window).height()/2);
+      var docViewBottom = docViewTop + ($(window).height()/4);
 
       var elemTop = $(elem).offset().top;
       var elemBottom = elemTop + $(elem).height();
