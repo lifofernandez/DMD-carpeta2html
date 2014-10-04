@@ -210,13 +210,11 @@ function generarPaginas(element_group,delta){
 	});
 }
 
-/*
- *Element Walker para indicie de cada pagina/unidad
- */
-function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_unidad){
+// Element Walker para indicie de cada pagina/unidad
+function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_unidad+'</a></li>';
+		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_pagina+'</a></li>';
 		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
@@ -247,13 +245,10 @@ function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_
 	return output;
 }
 
-/*
- *Parsear contenido La Unidad
- */
-
+// Parsear contenido unidad/apartado
 function parseContent(element_group, delta){
 	var elementTipe = element_group.tagName;
-	console.log(elementTipe); 
+	console.log(elementTipe+delta); 
 	var output = '<div id="top" class="article '+elementTipe+'-content '+elementTipe+'-content-'+delta+'">';
 
 	if(element_group.childNodes){
@@ -281,7 +276,7 @@ function parseContent(element_group, delta){
 	}
 	return output+'</div>';
 }
-
+// Parsear preliminares
 function getPreliminares(element, what_to_get){
 	var op = '';
 
@@ -294,16 +289,16 @@ function getPreliminares(element, what_to_get){
 
 }
 
-//funicion extraeer artados y sub apartados
+// Parsear artados y sub apartados
 function getParts(element, what_to_get,parent_delta){
 	var op = '';
 	var titleLvl = 3;
 	if(what_to_get==='subapartado')titleLvl = 4;
 
 	if(element.getElementsByTagName(what_to_get)){
-
-		op = '<div class="'+what_to_get+'s">';
 		var parts = element.getElementsByTagName(what_to_get);
+		if(parts.length > 0)op = '<div class="'+what_to_get+'s">';
+		
 
 		for (var i=0; i < parts.length; i++) {
 
@@ -321,12 +316,15 @@ function getParts(element, what_to_get,parent_delta){
 
 			op = op+'<div id="'+partId+'" class="'+what_to_get+' '+what_to_get+'-'+i+'">'+unidadDelta+partTitulo+bloques+subapartados+'</div>';
 		}
+
+		if(parts.length > 0)op += '</div>';
 	}
-	return op+'</div>';
+
+	return op;
 }
 
 
-
+// Parsear bloques
 function getBloques(element){
 	var op = '';
 	if(element.getElementsByTagName('bloque')){
@@ -339,12 +337,12 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
 				
-				var tooltip = '';
+				var tooltipStr = '';
 				
-				if(bloqueTipo !== 'texto')tooltip = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
-				if(bloqueTipo === 'actividad')tooltip = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
+				if(bloqueTipo !== 'texto')tooltipStr = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
+				if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
 
-				var op=op+'<div '+tooltip+' class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
+				var op=op+'<div '+tooltipStr+' class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
 			}
 		}
 
@@ -352,6 +350,7 @@ function getBloques(element){
 	return op;
 }
 
+// Parsear contenido
 function getContent(element){
 	var op = '';
 	if(element.childNodes){
