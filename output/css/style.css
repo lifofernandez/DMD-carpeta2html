@@ -6453,21 +6453,20 @@ body.index {
 .preliminares {
   margin-bottom: 100px;
 }
-/*apartados*/
-.unidad-content {
+.article {
   padding-top: 70px;
 }
-.unidad-content .apartados {
+.article .apartados {
   margin-top: 100px;
 }
-.unidad-content .apartados .apartado {
+.article .apartados .apartado {
   padding-top: 70px;
   margin-bottom: 100px;
 }
-.unidad-content .apartados .apartado .subapartados {
+.article .apartados .apartado .subapartados {
   margin-top: 50px;
 }
-.unidad-content .apartados .apartado .subapartados .subapartado {
+.article .apartados .apartado .subapartados .subapartado {
   padding-top: 70px;
   margin-bottom: 50px;
 }

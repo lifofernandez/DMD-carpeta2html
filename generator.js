@@ -19,6 +19,11 @@ carpeta.introduccion = doc.getElementsByTagName('introduccion')[0];
 carpeta.unidades = doc.getElementsByTagName('unidad');
 carpeta.anexos = doc.getElementsByTagName('anexo');
 
+
+
+////////////////////////////////////////////
+////GENERAR INDICE/////////////////////////
+////////////////////////////////////////////
 buildIndex();
 
 function buildIndex() {
@@ -75,12 +80,6 @@ function buildIndex() {
 	});
 };
 
-///WRITE HTML
-
-
-
-
-
 function generarIndiceUnidades(unidades_in){
 	var indiceUnidades = '<ol class="main-index-nav unidades-index">';
 	for (var i=0; i < unidades_in.length; i++) {
@@ -99,8 +98,6 @@ function generarIndiceUnidades(unidades_in){
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 
-		//sacar de aca
-		generarPaginaUnidad(unidades_in[i], unidadUrl,(i+1));
 	}
 	return indiceUnidades=indiceUnidades+'</ol>';
 }
@@ -114,38 +111,118 @@ function generarIndiceAnexos(anexos_in){
 
 		var anexoUrl = 'anexo-'+(i+1)+'.html';
 		var anexoLink = '<a href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a>';
-		
-		
-
 		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
 
 		var itemAnexo = '<li>'+anexoLink+indiceApartados+'</li>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
-		
-		//sacar de aca
-		//generarPaginaUnidad(anexos_in[i], anexoUrl);
 	}
 	return indiceAnexos=indiceAnexos+'</ul>';
 }
 
-//GENERATE MAIN INDEX
-function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_unidad){
+
+
+// >apartados>subapartados Walker para indicie general
+function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get){
 	var output = '';
-	if(elementos.length > 0){
+	if(items.length > 0){
 		
 		output = '<ul class="nav nav-list">';
-		
-		if(titulo_unidad)output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_unidad+'</a></li>';
-		
+		for (var i=0; i < items.length; i++) {
+			if(items[i].getElementsByTagName(what_to_get)[0]){
+				if(parent_delta !== '')var itemDelta = parent_delta+'.'+(i+1);
+				if(parent_delta === '')var itemDelta = '';
+				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
+				var itemUrl = makeUrl(itemTitulo);
+				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'">'+itemDelta+' '+itemTitulo+'</a>';
+				
+				var childIndex = '';
+				var childElements;
+				if(items[i].getElementsByTagName(child_to_get)[0]){
+					if(child_to_get !== null){
+						childElements = items[i].getElementsByTagName(child_to_get);
+						childIndex = indexFromElements(childElements,what_inChild_to_get,base_link,itemDelta);
+					}
+				}
+				var itemElemento = '<li>'+itemLink+childIndex+'</li>';
+				output = output+itemElemento;
+			}
+			
+		}
+		output=output+'</ul>';
+
+	}////TERMINA SUBAPARTADOS 
+	return output;
+}
+
+
+////////////////////////////////////////////
+////GENERAR PAGINAS/////////////////////////
+////////////////////////////////////////////
+
+unidadesAnexosWalker(carpeta.unidades);
+unidadesAnexosWalker(carpeta.anexos);
+
+function unidadesAnexosWalker(element_group){
+	for (var i=0; i < element_group.length; i++) {
+		generarPaginas(element_group[i],i+1);
+	}
+}
+
+/*
+ * Generar Paginas Individuales De Cada Unidad o Anexo
+ */
+function generarPaginas(element_group,delta){
+	var elementTipe = element_group.tagName;
+	var fileName = elementTipe+'-'+delta+'.html';
+	if(elementTipe === 'unidad'){
+		var paginaTitulo = element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+		var elementDelta = delta;
+	}
+
+	if(elementTipe === 'anexo'){
+		var elementDelta = '';
+		var paginaTitulo = 'Anexo '+romanize(delta);
+	}
+	
+	var apartados = element_group.getElementsByTagName('apartado');
+	
+
+	var headPagina = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+paginaTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
+	
+	var headerPagina = '<body class="page '+elementTipe+' '+elementTipe+'-'+elementDelta+'"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
+
+	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+sideNavFromElements(apartados,'apartado_titulo','',elementDelta,'subapartado', 'subapartado_titulo',paginaTitulo)+'</div></div>';
+
+
+	var	content = '<div class="col-md-9" role="main">'+parseContent(element_group,delta)+'</div>';
+
+	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
+
+	var streamUni = fs.createWriteStream('output/'+fileName);
+	streamUni.once('open', function(fd) {
+		var data = mainHtml.open+headPagina+headerPagina+body+mainHtml.footer+mainHtml.close;
+		var prettyData = prettify(data);
+		
+		streamUni.end(prettyData);
+	});
+}
+
+/*
+ *Element Walker para indicie de cada pagina/unidad
+ */
+function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_unidad){
+	var output = '';
+	if(elementos.length > 0){
+		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_unidad+'</a></li>';
 		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
 			if(elementos[i].getElementsByTagName(what_to_get)[0]){
 				if(parent_delta !== '')var elementoDelta = parent_delta+'.'+(i+1);
-				if(parent_delta === '')var elementoDelta = '';
+				if(parent_delta === '')var elementoDelta = (i+1);
 				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var elementoUrl = makeUrl(elementoTitulo);
@@ -156,7 +233,7 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 				if(elementos[i].getElementsByTagName(child_to_get)[0]){
 					if(child_to_get !== null){
 						childElements = elementos[i].getElementsByTagName(child_to_get);
-						childIndex = indexFromElements(childElements,what_inChild_to_get,base_link,elementoDelta);
+						childIndex = sideNavFromElements(childElements,what_inChild_to_get,base_link,elementoDelta);
 					}
 				}
 				var itemElemento = '<li>'+elementoLink+childIndex+'</li>';
@@ -170,52 +247,37 @@ function indexFromElements(elementos,what_to_get,base_link,parent_delta,child_to
 	return output;
 }
 
+/*
+ *Parsear contenido La Unidad
+ */
 
-//GENERAR PAGINAS INDIVIDUALES DE CADA UNIDAD
-function generarPaginaUnidad(unidad_in,fileName,delta){
+function parseContent(element_group, delta){
+	var elementTipe = element_group.tagName;
+	console.log(elementTipe); 
+	var output = '<div id="top" class="article '+elementTipe+'-content '+elementTipe+'-content-'+delta+'">';
 
-	var unidadTitulo = unidad_in.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
-	var apartados = unidad_in.getElementsByTagName('apartado');
-	var headUnidad = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+unidadTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
-	var headerUnidad = '<body class="unidad"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
+	if(element_group.childNodes){
 
-	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+indexFromElements(apartados,'apartado_titulo','',delta,'subapartado', 'subapartado_titulo',unidadTitulo)+'</div></div>';
+		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
+		if(elementTipe === 'unidad'){
+		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
+		var elementTitulo = '<h2>'+element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue+'</h2>';
+		var elementObjetivos = getPreliminares(element_group, 'unidad_objetivos');
+		var elementIntro = getPreliminares(element_group, 'unidad_introduccion');
+		}
 
+		if(elementTipe === 'anexo'){
+			var elementDelta = '<div class="delta '+elementTipe+'-delta">'+romanize(delta)+'</div>';
+			var elementTitulo = '<h2>Anexo</h2>';
+			var elementObjetivos = '';
+			var elementIntro = '';
+		}
 
-	var	content = '<div class="col-md-9" role="main">'+parseUnidad(unidad_in,delta)+'</div>';
+		var elementApartados = getParts(element_group, 'apartado',delta);
 
-	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
-
-	var streamUni = fs.createWriteStream('output/'+fileName);
-	streamUni.once('open', function(fd) {
-		var data = mainHtml.open+headUnidad+headerUnidad+body+mainHtml.footer+mainHtml.close;
-		var prettyData = prettify(data);
+		var elementHeader = '<header>'+elementDelta+elementTitulo+'</header>'
 		
-		streamUni.end(prettyData);
-	});
-}
-
-
-
-
-
-///PARSEO DE UNIDADES Y FUNCIONES PARA CONTENIDO
-
-function parseUnidad(elementGroup, delta){
-	var output = '<div id="top" class="article unidad-content unidad-'+delta+'">';
-
-	if(elementGroup.childNodes){
-		//var elementos = elementGroup.childNodes;
-		var unidadDelta = '<div class="delta unidad-delta">'+delta+'</div>';
-		var titulo = '<h2>'+elementGroup.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue+'</h2>';
-		
-		var objetivos = getPreliminares(elementGroup, 'unidad_objetivos');
-		var intro = getPreliminares(elementGroup, 'unidad_introduccion');
-		
-		var apartados = getParts(elementGroup, 'apartado',delta);
-
-		var unidadHeader = '<header>'+unidadDelta+titulo+'</header>'
-		output += unidadHeader+objetivos+intro+apartados; 
+		output += elementHeader+elementObjetivos+elementIntro+elementApartados; 
 	}
 	return output+'</div>';
 }
@@ -303,10 +365,9 @@ function getContent(element){
 
 
 
-
-
-
-////ADDS & UTILS////////////////////////////////////////////
+////////////////////////////////////////////
+////ADDS & UTILS////////////////////////////
+////////////////////////////////////////////
 
 function prettify(str) {
   return html.prettyPrint(str, {jslint_happy:true,indent_size: 1,keep_array_indentation:true,unformatted:''})
