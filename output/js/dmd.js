@@ -101,7 +101,7 @@
 
     ///PASTILLAS POPOVERS
     
-    /*<u type="button"class="dmd-popover"data-toggle="popover"data-content="Contneido"> bibliografía</u>*/
+    /*<u type="button" class="dmd-popover" data-toggle="popover" data-content="Contneido"> bibliografía</u>*/
    
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
