@@ -83,19 +83,23 @@ body {
 .dmd-sidebar .nav > li > a:hover,
 .dmd-sidebar .nav > li > a:focus {
   padding-left: 19px;
-  color: @brand-primary;
+ // color: @brand-primary;
   text-decoration: none;
   background-color: transparent;
-  border-left: 1px solid @brand-primary;
+ // border-left: 1px solid @brand-primary;
+  border-left-width: 1px;
+  border-left-style: solid;
 }
 .dmd-sidebar .nav > .active > a,
 .dmd-sidebar .nav > .active:hover > a,
 .dmd-sidebar .nav > .active:focus > a {
   padding-left: 18px;
   font-weight: bold;
-  color: @brand-primary;
+  //color: @brand-primary;
   background-color: transparent;
-  border-left: 2px solid @brand-primary;
+ // border-left-wei: 2px solid @brand-primary;
+  border-left-width: 2px;
+  border-left-style: solid;
 }
 
 /* Nav: second level (shown on .active) */
@@ -198,21 +202,32 @@ body {
     padding:0;
     margin:0;
     li { 
-      padding-left: 1em; 
-      text-indent: -.7em;
+      padding-left: 10px;
+      text-indent: -10px;
     }
     li:before {
       content: "• ";
     }
   }
   ol { 
+    padding-left: 15px;
+
     counter-reset: item ;
     li { 
-      display: block ;
+      display: block;
+      text-indent: -16px;
+      p{text-indent: -1px;}
+      ol{
+        li:before { 
+        content: counter(item, lower-alpha) ". ";
+        counter-increment: item;
+        }  
+      }
     }
     li:before { 
       content: counter(item) ". ";
       counter-increment: item;
+      
     }  
   }
 
@@ -221,7 +236,25 @@ body {
 
 
 .unidad-color(@c){
-  .apartado-delta, .subapartado-delta{
+  .dmd-sidebar .nav > li > a:hover,
+  .dmd-sidebar .nav > li > a:focus {
+  
+  color: @c;
+ 
+  border-left-color: @c;
+}
+.dmd-sidebar .nav > .active > a,
+.dmd-sidebar .nav > .active:hover > a,
+.dmd-sidebar .nav > .active:focus > a {
+ 
+  color: @c;
+ 
+  border-left-color:@c;
+}
+  .apartado-delta, 
+  .subapartado-delta, 
+  .custom-list, 
+  .bloque .delta{
     color:@c;
   }
   .unidad-delta, .anexo-delta{
