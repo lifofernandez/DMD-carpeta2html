@@ -73,57 +73,65 @@ body {
 }
 
 /* All levels of nav */
-.dmd-sidebar .nav > li > a {
-  display: block;
-  padding: 4px 20px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #999;
-}
-.dmd-sidebar .nav > li > a:hover,
-.dmd-sidebar .nav > li > a:focus {
-  padding-left: 19px;
- // color: @brand-primary;
-  text-decoration: none;
-  background-color: transparent;
- // border-left: 1px solid @brand-primary;
-  border-left-width: 1px;
-  border-left-style: solid;
-}
-.dmd-sidebar .nav > .active > a,
-.dmd-sidebar .nav > .active:hover > a,
-.dmd-sidebar .nav > .active:focus > a {
-  padding-left: 18px;
-  font-weight: bold;
-  //color: @brand-primary;
-  background-color: transparent;
- // border-left-wei: 2px solid @brand-primary;
-  border-left-width: 2px;
-  border-left-style: solid;
+.dmd-sidebar .nav > li{ 
+    & > a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+    &:hover, &:focus {
+      padding-left: 19px;
+      // color: @brand-primary;
+      text-decoration: none;
+      background-color: transparent;
+      // border-left: 1px solid @brand-primary;
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+  }
+  &.active > a,
+  &.active:hover > a,
+  &.active:focus > a {
+    padding-left: 18px;
+    font-weight: bold;
+    //color: @brand-primary;
+    background-color: transparent;
+    // border-left-wei: 2px solid @brand-primary;
+    border-left-width: 2px;
+    border-left-style: solid;
+  }
+  /* Nav: second level (shown on .active) */
+  .nav {
+    display: none; /* Hide by default, but at >768px, show it */
+    padding-bottom: 10px;
+    & > li {
+      & > a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        font-size: 12px;
+        font-weight: normal;
+        &:hover, &:focus {
+          padding-left: 29px;
+        }
+      }
+      &.active > a,
+      &.active:hover > a,
+      &.active:focus > a {
+        padding-left: 28px;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
-/* Nav: second level (shown on .active) */
-.dmd-sidebar .nav .nav {
-  display: none; /* Hide by default, but at >768px, show it */
-  padding-bottom: 10px;
-}
-.dmd-sidebar .nav .nav > li > a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-left: 30px;
-  font-size: 12px;
-  font-weight: normal;
-}
-.dmd-sidebar .nav .nav > li > a:hover,
-.dmd-sidebar .nav .nav > li > a:focus {
-  padding-left: 29px;
-}
-.dmd-sidebar .nav .nav > .active > a,
-.dmd-sidebar .nav .nav > .active:hover > a,
-.dmd-sidebar .nav .nav > .active:focus > a {
-  padding-left: 28px;
-  font-weight: 500;
-}
+
+
+
+
+
+
 
 
 
@@ -161,6 +169,10 @@ body {
     width: 263px;
   }
 }
+
+
+
+
 
 .preliminares{
       margin-bottom: 100px;

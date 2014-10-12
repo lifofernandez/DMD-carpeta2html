@@ -6365,6 +6365,9 @@ body.index {
   padding-top: 70px;
 }
 /* All levels of nav */
+.dmd-sidebar .nav > li {
+  /* Nav: second level (shown on .active) */
+}
 .dmd-sidebar .nav > li > a {
   display: block;
   padding: 4px 20px;
@@ -6380,35 +6383,34 @@ body.index {
   border-left-width: 1px;
   border-left-style: solid;
 }
-.dmd-sidebar .nav > .active > a,
-.dmd-sidebar .nav > .active:hover > a,
-.dmd-sidebar .nav > .active:focus > a {
+.dmd-sidebar .nav > li.active > a,
+.dmd-sidebar .nav > li.active:hover > a,
+.dmd-sidebar .nav > li.active:focus > a {
   padding-left: 18px;
   font-weight: bold;
   background-color: transparent;
   border-left-width: 2px;
   border-left-style: solid;
 }
-/* Nav: second level (shown on .active) */
-.dmd-sidebar .nav .nav {
+.dmd-sidebar .nav > li .nav {
   display: none;
   /* Hide by default, but at >768px, show it */
   padding-bottom: 10px;
 }
-.dmd-sidebar .nav .nav > li > a {
+.dmd-sidebar .nav > li .nav > li > a {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 30px;
   font-size: 12px;
   font-weight: normal;
 }
-.dmd-sidebar .nav .nav > li > a:hover,
-.dmd-sidebar .nav .nav > li > a:focus {
+.dmd-sidebar .nav > li .nav > li > a:hover,
+.dmd-sidebar .nav > li .nav > li > a:focus {
   padding-left: 29px;
 }
-.dmd-sidebar .nav .nav > .active > a,
-.dmd-sidebar .nav .nav > .active:hover > a,
-.dmd-sidebar .nav .nav > .active:focus > a {
+.dmd-sidebar .nav > li .nav > li.active > a,
+.dmd-sidebar .nav > li .nav > li.active:hover > a,
+.dmd-sidebar .nav > li .nav > li.active:focus > a {
   padding-left: 28px;
   font-weight: 500;
 }
