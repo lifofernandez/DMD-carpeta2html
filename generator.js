@@ -50,12 +50,12 @@ function buildIndex() {
 
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
-	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
+	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="assets/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
 	mainHtml.cover = '<div class="cover"><h1>'+carpeta.titulo+'</h1></div>'
-	mainHtml.header = '<body class="index">'+mainHtml.cover+'<header class="navbar navbar-inverse affix-top"  role="banner">'+mainNav.render+'</header>';
+	mainHtml.header = '<body class="index">'+mainHtml.cover+'<header class="navbar navbar-default affix-top"  role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<div class="footer dmd-footer"><div class="container"><p class="text-muted">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></div>';
-	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="js/bootstrap.js"></script>  <script src="js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="/js/ie10-viewport-bug-workaround.js"></script></body></html>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="assets/js/bootstrap.js"></script>  <script src="assets/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="assets/js/ie10-viewport-bug-workaround.js"></script></body></html>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
@@ -63,9 +63,9 @@ function buildIndex() {
 	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
 	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	var indiceGeneral = '<div class="indice-general">'+unidadesIndice+anexosIndice+'</div>';
+	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3"><a class="smooth-trigger" href="#intro">Indroducción</a></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	
-	var content = '<div class="container"><section>'+carpeta.introduccion+'</section><section>'+indiceGeneral+'</section></div>';
+	var content = '<div class="container"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h2>Indroducción</h2>'+carpeta.introduccion+'</div></div></section><section>'+indiceGeneral+'</section></div>';
 	
 	mainHtml.indexCocat = mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
 
@@ -81,7 +81,7 @@ function buildIndex() {
 };
 
 function generarIndiceUnidades(unidades_in){
-	var indiceUnidades = '<ol class="main-index-nav unidades-index">';
+	var indiceUnidades = '<div class="main-index-nav unidades-index">';
 	for (var i=0; i < unidades_in.length; i++) {
 
 		var unidadTitulo = unidades_in[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
@@ -94,16 +94,16 @@ function generarIndiceUnidades(unidades_in){
 		var apartados = unidades_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
 
-		var itemUnidad = '<li>'+unidadLink+indiceApartados+'</li>';
+		var itemUnidad = '<div class="row index-row"><div class="col-md-3 delta unidad-delta">'+unidadDelta+'</div><div class="col-md-9">'+unidadLink+indiceApartados+'</div></div>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 
 	}
-	return indiceUnidades=indiceUnidades+'</ol>';
+	return indiceUnidades=indiceUnidades+'</div>';
 }
 
 function generarIndiceAnexos(anexos_in){
-	var indiceAnexos = '<ul class="main-index-nav anexos-index">';
+	var indiceAnexos = '<div class="main-index-nav anexos-index">';
 	for (var i=0; i < anexos_in.length; i++) {
 
 		var anexoTitulo = 'Anexo';
@@ -114,11 +114,11 @@ function generarIndiceAnexos(anexos_in){
 		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
 
-		var itemAnexo = '<li>'+anexoLink+indiceApartados+'</li>';
+		var itemAnexo = '<div class="row index-row"><div class="col-md-3 delta unidad-delta">'+anexoDelta+'</div><div class="col-md-9">'+anexoLink+indiceApartados+'</div></div>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
 	}
-	return indiceAnexos=indiceAnexos+'</ul>';
+	return indiceAnexos=indiceAnexos+'</div>';
 }
 
 
@@ -190,7 +190,7 @@ function generarPaginas(element_group,delta){
 	var apartados = element_group.getElementsByTagName('apartado');
 	
 
-	var headPagina = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+paginaTitulo+'</title> <!-- DMD core CSS --> <link href="css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
+	var headPagina = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+paginaTitulo+'</title> <!-- DMD core CSS --> <link href="assets/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
 	
 	var headerPagina = '<body class="page '+elementTipe+' '+elementTipe+'-'+delta+'"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
 

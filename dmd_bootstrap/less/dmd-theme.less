@@ -13,6 +13,60 @@ body {
     padding-top: 0px;
   }
 }
+@mainOffset: @navbar-height;
+
+
+//HEADER
+.navbar-fixed-top{
+    border-bottom-width: 0px;
+  }
+ .navbar{
+ 
+    border-bottom-width: 0px;
+    border: 0px solid transparent;
+    margin-bottom: 0px;
+  .dmd-nav-main{
+    font-family: "Titillium Web";
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    .navbar-brand {
+    width: 250px;
+    font-size: 14px;
+    }
+    .navbar-nav > li {
+      float: left;
+      padding-top: @navbar-padding-vertical - @padding-small-vertical;
+      padding-bottom: @navbar-padding-vertical - @padding-small-vertical;
+      margin: 0px 9px;
+        > a {
+          padding-top: @padding-small-vertical;
+          padding-bottom: @padding-small-vertical - 1px;
+          padding-right: 1px;
+          padding-left: 1px;
+        }
+        &:last-child {
+           margin-right: 0px;
+        }
+
+        &.active{
+          > a {
+           border-bottom: 1px solid @brand-primary;
+          }
+        }
+      }
+  }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+  border-bottom: 3px solid @gray-light;
+  padding: 10px 0px;
+}
+h1, .h1{margin-top: @font-size-h1*3;margin-bottom: @font-size-h1*2;}
+h2, .h2{margin-top: @font-size-h2*3;margin-bottom: @font-size-h2*2;}
+h3, .h3{margin-top: @font-size-h3*3;margin-bottom: @font-size-h3*2;}
+h4, .h4{margin-top: @font-size-h4*3;margin-bottom: @font-size-h4*2;}
+h5, .h5{margin-top: @font-size-h5*3;margin-bottom: @font-size-h5*2;}
+h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 .index {
@@ -25,6 +79,7 @@ body {
       padding: 0px;
     }
   }
+
   .navbar.affix {
     left: 0;
     right: 0;
@@ -33,7 +88,9 @@ body {
     top: 0px;
     z-index: 1090;
   }
-  
+  #intro {
+    padding-top: 0px;
+  }
 }
 //TOOLTIPS
 .tooltip.bottom {
@@ -69,7 +126,7 @@ body {
 .dmd-sidenav {
   //margin-top: 20px;
   margin-bottom: 20px;
-  padding-top: 70px;
+  padding-top: @mainOffset;
 }
 
 /* All levels of nav */
@@ -184,12 +241,21 @@ body {
   .unidad-delta, .anexo-delta{
     color:  @fondo1;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 40px;
+    width: 100px;
+    height: 100px;
+    font-size: 82px;
+    font-weight: 600;
     text-align: center;
-    padding-top: 2px;
+    line-height: 114%;
+    font-family: "Titillium Web";
   }
+  .apartado-delta, 
+  .subapartado-delta, 
+  .custom-list, 
+  .bloque .delta{
+    font-family:  "Titillium Web";
+  }
+  
   
 
   padding-top: @mainOffset;
@@ -254,24 +320,23 @@ body {
   color: @c;
  
   border-left-color: @c;
-}
-.dmd-sidebar .nav > .active > a,
-.dmd-sidebar .nav > .active:hover > a,
-.dmd-sidebar .nav > .active:focus > a {
- 
-  color: @c;
- 
-  border-left-color:@c;
-}
+  }
+  .dmd-sidebar .nav > .active > a,
+  .dmd-sidebar .nav > .active:hover > a,
+  .dmd-sidebar .nav > .active:focus > a {
+    color: @c;
+    border-left-color:@c;
+  }
+  .unidad-delta, .anexo-delta{
+    background-color:@c;
+  }
   .apartado-delta, 
   .subapartado-delta, 
   .custom-list, 
   .bloque .delta{
     color:@c;
   }
-  .unidad-delta, .anexo-delta{
-    background-color:@c;
-  }
+  
   .article{
     ul{
       li:before {
@@ -302,7 +367,7 @@ body {
   .unidad-color(@unidad5)
 }
 .anexo{
-  .unidad-color(@fondo2)
+  .unidad-color(@gray)
 }
 
 
