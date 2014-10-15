@@ -6435,7 +6435,74 @@ h6,
   z-index: 1090;
 }
 .index #intro {
-  padding-top: 0px;
+  padding-top: 20px;
+  padding-bottom: 120px;
+}
+.index #indice {
+  font-family: 'Aleo Regular';
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.index #indice a {
+  color: #999999;
+}
+.index #indice a:hover {
+  text-decoration: none;
+}
+.index #indice .index-row > div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.index #indice .index-row .delta-container {
+  text-align: center;
+}
+.index #indice .index-row .delta-container .unidad-delta,
+.index #indice .index-row .delta-container .anexo-delta {
+  color: #dae1df;
+  background-color: #c9d4d1;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 82px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 114%;
+  font-family: "Titillium Web";
+  display: inline-block;
+}
+.index #indice .index-row.unidad-1 .delta {
+  background-color: #357eac;
+}
+.index #indice .index-row.unidad-2 .delta {
+  background-color: #d56a98;
+}
+.index #indice .index-row.unidad-3 .delta {
+  background-color: #389988;
+}
+.index #indice .index-row.unidad-4 .delta {
+  background-color: #835797;
+}
+.index #indice .index-row.unidad-5 .delta {
+  background-color: #ea685d;
+}
+.index #indice .index-row.anexo .delta {
+  background-color: #999999;
+}
+.index #indice .index-row .menu-container {
+  border-bottom: 3px solid #b9b9b9;
+}
+.index #indice .index-row .menu-container .menu-header {
+  min-height: 100px;
+  display: table;
+}
+.index #indice .index-row .menu-container .menu-header .big-link {
+  font-size: 48px;
+  line-height: 1;
+  display: table-row;
+  vertical-align: middle;
+}
+.index #indice .index-row .menu-container .nav-list {
+  display: none;
 }
 .tooltip.bottom {
   left: 15px !important;
@@ -6563,6 +6630,7 @@ h6,
 .article .unidad-delta,
 .article .anexo-delta {
   color: #dae1df;
+  background-color: #c9d4d1;
   border-radius: 50%;
   width: 100px;
   height: 100px;

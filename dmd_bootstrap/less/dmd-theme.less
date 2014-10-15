@@ -1,3 +1,6 @@
+@mainOffset: @navbar-height;
+@deltaSize: 100px;
+
 
 html{
   height: 100%;
@@ -13,7 +16,7 @@ body {
     padding-top: 0px;
   }
 }
-@mainOffset: @navbar-height;
+
 
 
 //HEADER
@@ -89,9 +92,77 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     z-index: 1090;
   }
   #intro {
-    padding-top: 0px;
+    padding-top: 20px;
+    padding-bottom:@mainOffset;
+  }
+
+
+  ///indice
+
+  #indice {
+    font-family: 'Aleo Regular';
+    //color:@headings-color;
+    padding-top:@mainOffset;
+    padding-bottom:@mainOffset;
+    a{color:@headings-color;
+      &:hover{text-decoration:none}
+    }
+  .index-row{
+    > div{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+      .delta-container{
+        text-align: center;
+            .unidad-delta, .anexo-delta{
+              .big-delta();
+              display: inline-block;
+          }
+      }
+      &.unidad-1 .delta{
+        background-color: @unidad1;
+      }
+      &.unidad-2 .delta{
+        background-color: @unidad2;
+      }
+      &.unidad-3 .delta{
+        background-color: @unidad3;
+      }
+      &.unidad-4 .delta{
+        background-color: @unidad4;
+      }
+      &.unidad-5 .delta{
+        background-color: @unidad5;
+      }
+      &.anexo .delta{
+        background-color: @gray;
+      }
+      .menu-container{  
+        border-bottom: 3px solid @gray-light; 
+      .menu-header{
+        min-height: @deltaSize;
+        display: table;
+              .big-link{
+                font-size: @font-size-h2;
+                line-height: 1;
+                
+                display: table-row;
+                vertical-align: middle;
+              }
+          }
+        .nav-list{display: none;}
+      }
+    }
+
   }
 }
+
+
+
+
+
+
+
 //TOOLTIPS
 .tooltip.bottom {
     left: @grid-gutter-width/2 !important;
@@ -239,15 +310,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 .article{
   .unidad-delta, .anexo-delta{
-    color:  @fondo1;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    font-size: 82px;
-    font-weight: 600;
-    text-align: center;
-    line-height: 114%;
-    font-family: "Titillium Web";
+    .big-delta();
   }
   .apartado-delta, 
   .subapartado-delta, 
@@ -311,6 +374,19 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 }
+//MIXIMS
+.big-delta(){
+        color:  @fondo1;
+        background-color:  @fondo2;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        font-size: 82px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 114%;
+        font-family: "Titillium Web";
+    }
 
 
 .unidad-color(@c){

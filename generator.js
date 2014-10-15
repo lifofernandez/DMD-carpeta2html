@@ -51,7 +51,7 @@ function buildIndex() {
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
 	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="assets/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
-	mainHtml.cover = '<div class="cover"><h1>'+carpeta.titulo+'</h1></div>'
+	mainHtml.cover = '<div class="cover"><div class="container"><h1>'+carpeta.titulo+'</h1></div></div>'
 	mainHtml.header = '<body class="index">'+mainHtml.cover+'<header class="navbar navbar-default affix-top"  role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<div class="footer dmd-footer"><div class="container"><p class="text-muted">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></div>';
@@ -63,9 +63,9 @@ function buildIndex() {
 	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
 	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3"><a class="smooth-trigger" href="#intro">Indroducción</a></div></div>'+unidadesIndice+anexosIndice+'</div>';
+	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Indroducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	
-	var content = '<div class="container"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h2>Indroducción</h2>'+carpeta.introduccion+'</div></div></section><section>'+indiceGeneral+'</section></div>';
+	var content = '<div class="container"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h2>Indroducción</h2>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
 	mainHtml.indexCocat = mainHtml.open+mainHtml.head+mainHtml.header+content+mainHtml.footer+mainHtml.close;
 
@@ -87,14 +87,16 @@ function generarIndiceUnidades(unidades_in){
 		var unidadTitulo = unidades_in[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
-		var unidadLink = '<a href="'+unidadUrl+'">'+unidadTitulo+'</a>';
+		var unidadLink = '<div class="menu-header"><a class="big-link" href="'+unidadUrl+'">'+unidadTitulo+'</a></div>';
 		
 		
 
 		var apartados = unidades_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
+		var deltaCol = '<div class="col-md-3 delta-container"><div class="delta unidad-delta">'+unidadDelta+'</div></div>';
+		var unidadCol = '<div class="col-md-9 menu-container">'+unidadLink+indiceApartados+'</div>';
 
-		var itemUnidad = '<div class="row index-row"><div class="col-md-3 delta unidad-delta">'+unidadDelta+'</div><div class="col-md-9">'+unidadLink+indiceApartados+'</div></div>';
+		var itemUnidad = '<div class="row index-row unidad unidad-'+unidadDelta+'">'+deltaCol+unidadCol+'</div>';
 		
 		indiceUnidades=indiceUnidades+itemUnidad;
 
@@ -110,11 +112,14 @@ function generarIndiceAnexos(anexos_in){
 		var anexoDelta = romanize(i+1);
 
 		var anexoUrl = 'anexo-'+(i+1)+'.html';
-		var anexoLink = '<a href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a>';
+		var anexoLink = '<div class="menu-header"><a class="big-link" href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a></div>';
 		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
 
-		var itemAnexo = '<div class="row index-row"><div class="col-md-3 delta unidad-delta">'+anexoDelta+'</div><div class="col-md-9">'+anexoLink+indiceApartados+'</div></div>';
+		var deltaCol = '<div class="col-md-3 delta-container"><div class="delta anexo-delta">'+anexoDelta+'</div></div>';
+		var anexoCol = '<div class="col-md-9 menu-container">'+anexoLink+indiceApartados+'</div>';
+
+		var itemAnexo = '<div class="row index-row anexo anexo-'+(i+1)+'">'+deltaCol+anexoCol+'</div>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
 	}
