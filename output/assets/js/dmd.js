@@ -22,7 +22,7 @@
 
     var $height = $window.height()
     
-    var mainOfset = 70;
+    var mainOfset = 120;
     var regularMargins = 50;
     
 
@@ -89,13 +89,39 @@
       })
     }, 100)
     
+
+    ///home relative
     var $indexHeader = $('.index .navbar')
     setTimeout(function () {
-      
           $indexHeader.affix({offset: {top: $height}})
     }, 100)
 
+    $indexHeader.on('affixed.bs.affix', function () {
+      //alert('oo');
+      $('#intro-indice').addClass('pushed');
+    })  
+    $indexHeader.on('affixed-top.bs.affix', function () {
+      //alert('oo');
+      $('#intro-indice').removeClass('pushed');
+    })  
+
+
+  //indice
+  $('.show-menu').each(function() {
+        
+       
+
+        $(this).on('click',function(e){ 
+          e.preventDefault();
+         // $(this).parent().parent().toggleClass('displayed');
+          $(this).parent().siblings(".nav-list").collapse('toggle');
+        });
+        
+
   
+      });
+
+
     //TOOLTIPS
    $('.bloque').tooltip();
 
@@ -107,7 +133,7 @@
       selector: '[data-toggle="popover"]',
       container: false,
       title:'Pastilla',
-      placement:'top',
+      placement:'bottom',
       trigger:'manual',
       html:true,
       //viewport: 'body',

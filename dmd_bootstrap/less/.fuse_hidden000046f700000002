@@ -1,5 +1,4 @@
 @mainOffset: @navbar-height;
-@containerPaddings : 100px;
 @deltaSize: 100px;
 
 
@@ -72,9 +71,6 @@ h4, .h4{margin-top: @font-size-h4*3;margin-bottom: @font-size-h4*2;}
 h5, .h5{margin-top: @font-size-h5*3;margin-bottom: @font-size-h5*2;}
 h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
-#intro-indice.pushed{
-  margin-top: @mainOffset;
-}
 
 .index {
   .cover{
@@ -84,7 +80,6 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     h1,.h1{
       margin: 0px;
       padding: 0px;
-      border-bottom-width: 0px;
     }
   }
 
@@ -97,8 +92,8 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     z-index: 1090;
   }
   #intro {
-    padding-top: @containerPaddings;
-    padding-bottom:@containerPaddings;
+    padding-top: 20px;
+    padding-bottom:@mainOffset;
   }
 
 
@@ -144,70 +139,18 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       }
       .menu-container{  
         border-bottom: 3px solid @gray-light; 
-      
       .menu-header{
-        height: @deltaSize;
+        min-height: @deltaSize;
         display: table;
-        width: 100%;
               .big-link{
                 font-size: @font-size-h2;
                 line-height: 1;
                 
-                display: table-cell !important;
+                display: table-row;
                 vertical-align: middle;
               }
-              .show-menu{
-                //display: block;
-                //float: right;
-                font-size: @font-size-h2;
-                //height: 100%;
-                color:@gray-light;
-                display: table-cell !important;
-                vertical-align: middle;
-                width: 37px;
-              }
-              margin-bottom: 20px;
           }
-
-        & > .nav-list{
-          //display: none;
-          
-          li a {
-            //padding: 10px 20px;
-           // margin: 0 -20px;
-          }
-
-          & > li{
-           // padding: 10px 20px;
-           // margin: 0 -20px;
-            & > a{
-            //  border-bottom: 1px solid @gray-light;
-            font-size: 20px;
-            }
-          }
-          .nav-list{
-            background-color: @fondo2;
-            //padding-top: 10px;
-            //padding-bottom: 10px;
-            & > li{
-            //padding: 10px 20px;
-            //margin: 0 -20px;
-           
-              & > a{
-                padding-left: 44px;
-                padding-top: 6px;
-                padding-bottom: 6px;
-                border-bottom-width: 0px;
-                font-size: 16px;
-                                //font-family: 'Aleo Light';
-              }
-            }
-          }
-
-        }
-
-        
-        
+        .nav-list{display: none;}
       }
     }
 
@@ -244,7 +187,11 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 /* By default it's not affixed in mobile views, so undo that */
 
 
-
+@media (min-width: 768px) {
+  .dmd-sidebar {
+    padding-left: 20px;
+  }
+}
 
 /* First level of nav */
 .dmd-sidenav {
@@ -314,23 +261,21 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 
-@media (min-width: @container-sm) {
-  .dmd-sidebar {
-    //padding-left: 20px;
-  }
+
+
+@media (min-width: 768px) {
+  
 }
 
-
-
 /* Show and affix the side nav when space allows it */
-@media (min-width: @container-md) {
+@media (min-width: 992px) {
   .dmd-sidebar .nav > .active > ul {
     display: block;
   }
   /* Widen the fixed sidebar */
   .dmd-sidebar.affix,
   .dmd-sidebar.affix-bottom {
-    width: 233px;
+    width: 213px;
   }
   .dmd-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
@@ -345,11 +290,11 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     margin-bottom: 0;
   }
 }
-@media (min-width: @container-lg) {
+@media (min-width: 1200px) {
   /* Widen the fixed sidebar again */
   .dmd-sidebar.affix-bottom,
   .dmd-sidebar.affix {
-    width: 243px;
+    width: 263px;
   }
 }
 
@@ -513,13 +458,3 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   }
 }
 
-
-
-//FOOTER
-footer.dmd-footer{
-  padding: @padding-large-vertical 0px;
-  background-color: @fondo2;
-  .copy{
-    margin: 0px;
-  }
-}
