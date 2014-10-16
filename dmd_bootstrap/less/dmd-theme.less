@@ -3,6 +3,8 @@
 @containerPaddings : 100px;
 @deltaSize: 100px;
 
+@paragraph-margin: 0 0 11px;
+
 
 html{
   height: 100%;
@@ -31,7 +33,7 @@ body {
     border: 0px solid transparent;
     margin-bottom: 0px;
   .dmd-nav-main{
-    font-family: "Titillium Web";
+    font-family: @font-family-sans-serif;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
@@ -222,6 +224,12 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 //TOOLTIPS
+.tooltip{
+  font-family: @font-family-sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+}
 .tooltip.bottom {
     left: @grid-gutter-width/2 !important;
 }
@@ -231,8 +239,32 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     //right: @grid-gutter-width/2 !important;
 }
 
+
 //PASTILLAS
 .dmd-popover:hover{cursor: pointer;color:@brand-primary;}
+.popover{
+    font-family: @font-family-sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    .popover-title{
+      font-family: @font-family-sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border-width: 0px;
+      text-align: center;
+      padding: 5px;
+      float: left;
+      display: block;
+      width: 10%;
+    }
+    .popover-content{
+        padding: 5px;
+      display: block;
+      float: right;
+      width: 89%;
+    }
+  }
+  
 
 
 /*
@@ -365,20 +397,27 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 .article{
+  padding-top: @mainOffset + @innerOffset;
+  padding-bottom: 300px;
   .unidad-delta, .anexo-delta{
     .big-delta();
   }
-  .apartado-delta, 
-  .subapartado-delta, 
-  .custom-list, 
-  .bloque .delta{
-    font-family:  "Titillium Web";
-  }
-  
-  
 
-  padding-top: @mainOffset + @innerOffset;
-  padding-bottom: 300px;
+
+  .apartado-delta{
+    font-family: 'Aleo Bold';
+    font-size: @font-size-h3;
+  }
+  .subapartado-delta{
+    font-family: 'Aleo Bold';
+    font-size: @font-size-h4;
+  }
+  .part-title{
+    margin-top: 0px;
+    font-family: 'Aleo Regular';
+  }
+
+
   .apartados{
       //margin-top: 100px;
     .apartado{
@@ -398,7 +437,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   ul {
     list-style: none;
     padding:0;
-    margin:0;
+    margin:0 0 11px;
     li { 
       padding-left: 10px;
       text-indent: -10px;
@@ -429,30 +468,123 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     }  
   }
 
+  .custom-list, 
+  .bloque .delta{
+    font-family: 'Aleo Bold';
+    
+  }
+
 
 }
+
+//bloques
+/*bloques*/
+
+.bloque{
+  margin: @paragraph-margin;
+  .tipo{
+    font-family: @font-family-sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-left: 5px;
+  }
+  &.texto .tipo{display: none;}
+  &.para_ampliar, &.lectura_recomendada, &.para_reflexionar{
+    .tipo:hover{cursor: pointer;}
+  }
+
+  //eachsss
+
+  &.leer_con_atencion{
+    .tipo{
+      display: none;
+    }
+    font-family: @font-family-sans-serif;
+    color:@white;
+    font-weight: 700;
+    padding: 5px;
+   
+    p:nth-last-child(1) {
+       margin-bottom:0px;
+    }
+  }
+
+  &.para_reflexionar, &.para_ampliar{
+    font-family: @font-family-sans-serif;
+    font-weight: 700;
+
+    .tipo{padding-left: 5px;}
+    .bloque-contenido{
+      background-color:@white;
+      padding: 5px;
+    }
+    p:nth-last-child(1) {
+       margin-bottom:0px;
+    }
+  }
+
+  &.texto_aparte{
+    background-color:@white;
+    padding: @padding-large-vertical @padding-large-horizontal;
+
+    .tipo{display: none;}
+    &:hover{cursor: pointer; border:1px solid @gray;margin: -1px;}
+    p:nth-last-child(1) {
+       margin-bottom:0px;
+    }
+    .suspensivos{
+       font-weight: 700;
+      }
+  }
+
+  &.pastilla{
+    display: none;
+  }
+
+}
+
+//colores unidad
+.unidad-1{
+  .unidad-color(@unidad1)
+}
+.unidad-2{
+  .unidad-color(@unidad2)
+}
+.unidad-3{
+  .unidad-color(@unidad3)
+}
+.unidad-4{
+  .unidad-color(@unidad4)
+}
+.unidad-5{
+  .unidad-color(@unidad5)
+}
+.anexo{
+  .unidad-color(@gray)
+}
+
+
+
 //MIXIMS
 .big-delta(){
-        color:  @fondo1;
-        background-color:  @fondo2;
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        font-size: 82px;
-        font-weight: 600;
-        text-align: center;
-        line-height: 114%;
-        font-family: "Titillium Web";
-    }
+  color:  @fondo1;
+  background-color:  @fondo2;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  font-size: 82px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 114%;
+  font-family: @font-family-sans-serif;
+}
 
 
 .unidad-color(@c){
   .dmd-sidebar .nav > li > a:hover,
   .dmd-sidebar .nav > li > a:focus {
-  
-  color: @c;
- 
-  border-left-color: @c;
+    color: @c;
+    border-left-color: @c;
   }
   .dmd-sidebar .nav > .active > a,
   .dmd-sidebar .nav > .active:hover > a,
@@ -482,38 +614,33 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       }  
     }
   }
-}
-
-.unidad-1{
-  .unidad-color(@unidad1)
-}
-.unidad-2{
-  .unidad-color(@unidad2)
-}
-.unidad-3{
-  .unidad-color(@unidad3)
-}
-.unidad-4{
-  .unidad-color(@unidad4)
-}
-.unidad-5{
-  .unidad-color(@unidad5)
-}
-.anexo{
-  .unidad-color(@gray)
-}
 
 
-//bloques
-/*bloques*/
-.tipo{color:red;}
-.texto .tipo{display: none;}
-.bloque{
-  &.texto{}
-  &.texto_aparte, &.para_ampliar, &.lectura_recomendada{
-    .tipo:hover{cursor: pointer;}
+
+  .bloque {
+    .tipo{
+      background-color: @c;
+      color:@white;
+    }
+    &.leer_con_atencion{
+      background-color: @c;
+    }
+    &.texto_aparte{
+      .suspensivos{
+        color:@c;
+      }
+      &:hover{
+        border-color: @c;
+      }
+    }
+
   }
+
 }
+
+
+
+
 
 
 

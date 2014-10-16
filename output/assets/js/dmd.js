@@ -132,7 +132,7 @@
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
       container: false,
-      title:'Pastilla',
+      title:'P',
       placement:'bottom',
       trigger:'manual',
       html:true,
@@ -159,15 +159,31 @@
     
 
     ///COLLAPSES
-     $('.texto_aparte, .para_ampliar, .lectura_recomendada').each(function() {
+    $('.para_ampliar, .lectura_recomendada, .para_reflexionar').each(function() {
      	$(this).children('.bloque-contenido').addClass('collapse');
         //$(this).children('.bloque-contenido').collapse('hide');
        
         $(this).children('.tipo').on('click',function(){
-          $(this).siblings(".bloque-contenido").collapse('toggle');
-          $(this).parent().tooltip('toggle');
+         $(this).parent().tooltip('toggle');
+         $(this).siblings(".bloque-contenido").collapse('toggle');
+
         });
 
+    });
+
+    //texto aparte
+    $('.texto_aparte').each(function() {
+      //$(this).children('.bloque-contenido').addClass('collapse');
+      var childs = $(this).children('.bloque-contenido').children()
+      
+      $(this).children('.bloque-contenido').children().slice( 2, childs.length ).wrapAll('<div class="leer_mas collapse"/>');
+      $(this).children('.bloque-contenido').append( '<p class="suspensivos">...</p>' );
+      
+      $(this).on('click',function(){
+        $(this).tooltip('toggle');
+        $(this).children('.bloque-contenido').children(".leer_mas").collapse('toggle');
+        $(this).children('.bloque-contenido').children(".suspensivos").toggle();
+      });
 
 
     });

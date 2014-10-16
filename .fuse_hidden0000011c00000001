@@ -321,7 +321,7 @@ function getParts(element, what_to_get,parent_delta){
 
 				var partId = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
 
-				var partTitulo = '<h'+titleLvl+' class="part-title">'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
+				var partTitulo = '<h'+titleLvl+'>'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
 				
 			}
 			var bloques = getBloques(parts[i]);
