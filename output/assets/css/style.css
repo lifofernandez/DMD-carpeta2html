@@ -6396,13 +6396,13 @@ h2,
 }
 h3,
 .h3 {
-  margin-top: 84px;
-  margin-bottom: 56px;
+  margin-top: 56px;
+  margin-bottom: 42px;
 }
 h4,
 .h4 {
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 h5,
 .h5 {
@@ -6639,9 +6639,6 @@ h6,
     width: 243px;
   }
 }
-.preliminares {
-  margin-bottom: 100px;
-}
 .article {
   padding-top: 170px;
   padding-bottom: 300px;
@@ -6664,9 +6661,6 @@ h6,
 .article .custom-list,
 .article .bloque .delta {
   font-family: "Titillium Web";
-}
-.article .apartados {
-  margin-top: 100px;
 }
 .article .apartados .apartado {
   padding-top: 170px;
