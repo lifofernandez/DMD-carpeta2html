@@ -246,7 +246,14 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     font-family: @font-family-sans-serif;
     font-weight: 700;
     font-size: 14px;
+    color:@white;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-width: 0px;
+    margin: 0;
+    padding: 0;
     .popover-title{
+      color:@white;
       font-family: @font-family-sans-serif;
       font-weight: 700;
       font-size: 14px;
@@ -258,13 +265,14 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       width: 10%;
     }
     .popover-content{
-        padding: 5px;
+      padding: 5px;
       display: block;
       float: right;
-      width: 89%;
+      width: 90%;
+      line-height: 1.1;
     }
   }
-  
+
 
 
 /*
@@ -447,32 +455,46 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     }
   }
   ol { 
-    padding-left: 15px;
+    padding-left: 0px;
 
     counter-reset: item ;
     li { 
       display: block;
-      text-indent: -16px;
+      padding-left: 18px;
+      text-indent: -18px;
       p{text-indent: -1px;}
       ol{
         li:before { 
         content: counter(item, lower-alpha) ". ";
         counter-increment: item;
+
         }  
       }
     }
+
     li:before { 
       content: counter(item) ". ";
       counter-increment: item;
       
     }  
   }
-
-  .custom-list, 
-  .bloque .delta{
-    font-family: 'Aleo Bold';
-    
+  ol.alpha-list{
+    li{
+      padding-left: 25px;
+      text-indent: -25px;
+    }
+    li:before { 
+      content: counter(item, lower-alpha) ". ";
+      counter-increment: item;
+      font-size: 22px;
+    }  
   }
+  .custom-list{
+    //font-family: 'Aleo Bold';
+    font-size: 22px;
+    &:after{content:")"}
+  }
+ 
 
 
 }
@@ -482,6 +504,10 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 .bloque{
   margin: @paragraph-margin;
+  .delta{
+    font-size: 52px;
+    font-family: 'Aleo Regular';
+  }
   .tipo{
     font-family: @font-family-sans-serif;
     text-transform: uppercase;
@@ -526,7 +552,6 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   &.texto_aparte{
     background-color:@white;
     padding: @padding-large-vertical @padding-large-horizontal;
-
     .tipo{display: none;}
     &:hover{cursor: pointer; border:1px solid @gray;margin: -1px;}
     p:nth-last-child(1) {
@@ -541,6 +566,62 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     display: none;
   }
 
+  &.cita, &.ejemplo{
+    background-color:@white;
+    padding: @padding-large-vertical @padding-large-horizontal;
+    .tipo{
+        display: none;
+      }
+  }
+
+  &.actividad{
+    background-color:@white;
+    display: table;
+    .tipo{
+      display: none;
+    }
+    .delta{
+      position: relative;
+      display: table-cell;
+      padding: @padding-base-vertical @padding-base-horizontal;
+
+    }
+    .bloque-contenido{
+      vertical-align: top;
+      position: relative;
+      display: table-cell;
+      padding: 18px 6px;
+      
+      p:first-of-type { 
+        font-family: 'Aleo Regular';
+        font-size: @font-size-h5;
+        line-height: 1.2;
+        .bottom-bordered();
+        color:@headings-color;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        //word-break: break-word;
+        a{word-break: break-all;}
+      }
+      .guia-de-analisis{
+      .titulo{
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        font-family: 'Aleo Regular';
+      }
+        li{
+          font-weight: 400;
+        }
+      }
+    }
+    .icono{
+       position: relative;
+      display: table-cell;
+      font-size: 52px;
+      padding: @padding-base-vertical @padding-base-horizontal;
+    }
+  }
+    
 }
 
 //colores unidad
@@ -566,6 +647,10 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 //MIXIMS
+.bottom-bordered(){
+  border-bottom: 3px solid @gray-light;
+}
+
 .big-delta(){
   color:  @fondo1;
   background-color:  @fondo2;
@@ -615,7 +700,9 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     }
   }
 
-
+  .coloreado{
+    color:@c;
+  }
 
   .bloque {
     .tipo{

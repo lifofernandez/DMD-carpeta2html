@@ -187,8 +187,12 @@
 
 
     });
-
-
+    //Actividad
+    $('.actividad').each(function() {
+      var element = $(this).children('.bloque-contenido').children(".delta").detach();
+      $(this).prepend(element);
+      $(this).append('<div class="icono">A</div>');
+    });
 
     //UTILES & ADDS
     function isScrolledIntoView(elem){

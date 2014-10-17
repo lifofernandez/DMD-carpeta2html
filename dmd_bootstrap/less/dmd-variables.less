@@ -2,7 +2,9 @@
 
 @mainOffset:   132px;
 
-@white:     #EDF5F4;
+//@white:     #EDF5F4;
+@white:     #EDF6F4;
+
 
 @fondo1:    #DAE1DF;
 @fondo2:    #C9D4D1;
@@ -78,7 +80,7 @@
 @font-size-h2:            floor((@font-size-base * 3)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 2)); // ~24px
 @font-size-h4:            ceil((@font-size-base * 1.8)); // ~18px
-@font-size-h5:            @font-size-base;
+@font-size-h5:            ceil((@font-size-base * 1.4));
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
@@ -115,8 +117,8 @@
 @padding-large-vertical:    20px;
 @padding-large-horizontal:  20px;
 
-@padding-small-vertical:    5px;
-@padding-small-horizontal:  10px;
+@padding-small-vertical:    4px;
+@padding-small-horizontal:  8px;
 
 @padding-xs-vertical:       1px;
 @padding-xs-horizontal:     5px;
@@ -545,13 +547,13 @@
 //##
 
 //** Popover body background color
-@popover-bg:                          @fondo2;
+@popover-bg:                          @gray; //#AAAAAA
 //** Popover maximum width
 @popover-max-width:                   276px;
 //** Popover border color
-@popover-border-color:                @fondo2;
+@popover-border-color:                @popover-bg;
 //** Popover fallback border color
-@popover-fallback-border-color:       @white;
+@popover-fallback-border-color:       @popover-bg;
 
 //** Popover title background color
 @popover-title-bg:                    @popover-bg;
