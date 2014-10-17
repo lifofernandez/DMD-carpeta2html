@@ -564,17 +564,17 @@ A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que const
           </ol>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p><span class="custom-list lower alpha">c</span> Consignas de an&#xE1;lisis, discusi&#xF3;n, reflexi&#xF3;n y argumentaci&#xF3;n: se seleccionan textos completos o fragmentos de textos que funcionen como puntos de partida para que el estudiante compare, relacione, reflexione y argumente.<br/>
-El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
+          <p><span class="custom-list lower alpha">c</span> Consignas de an&#xE1;lisis, discusi&#xF3;n, reflexi&#xF3;n y argumentaci&#xF3;n: se seleccionan textos completos o fragmentos de textos que funcionen como puntos de partida para que el estudiante compare, relacione, reflexione y argumente.</p>
+          <p class="coloreado">El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de la opini&#xF3;n p&#xFA;blica y de construcci&#xF3;n de agenda de la Tecnicatura Universitaria en Gesti&#xF3;n de medios Comunitarios.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">3</div>
           <p>Este es un video realizado por Jimena Delgado y Franco Benavente, alumnos del Taller de realizaci&#xF3;n audiovisual de la Carrera de Comunicaci&#xF3;n de la Pontificia Universidad Cat&#xF3;lica de Chile:</p>
           <p>
-            <a href="http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related" target="_blank">http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related</a>
+            <img alt="actividad2" src="files/video2_fmt.jpeg" href="file:///files/video2_fmt.jpeg"/>
           </p>
           <p>
-            <img alt="actividad2" src="files/video2_fmt.jpeg" href="file:///files/video2_fmt.jpeg"/>
+            <a class="link-video" href="http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related" target="_blank">http://www.youtube.com/watch?v=Zu9BNmaWtl8&amp;feature=related</a>
           </p>
           <ol class="alpha-list guia-de-analisis">
             <h5 class="titulo">Luego de ver el video, responda las siguientes preguntas:</h5>
@@ -584,8 +584,8 @@ El siguiente ejemplo est&#xE1; tomado de la Carpeta de trabajo Teor&#xED;as de l
           </ol>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p><span class="custom-list lower alpha">d</span> Ejemplos de otras actividades:<br/>
-Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Problemas Tur&#xED;sticos Contempor&#xE1;neos de la Licenciatura en Turismo y Hoteler&#xED;a.</p>
+          <p><span class="custom-list lower alpha">d</span> Ejemplos de otras actividades:</p>
+          <p class="coloreado">Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Problemas Tur&#xED;sticos Contempor&#xE1;neos de la Licenciatura en Turismo y Hoteler&#xED;a.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">4</div>
@@ -607,17 +607,17 @@ Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Problemas Tu
           <p>Ep&#xED;grafe: Fotograf&#xED;as de dos sitios tur&#xED;sticos argentinos Fuente: Wallingre (2013).</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p>Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Introducci&#xF3;n a la econom&#xED;a de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
+          <p class="coloreado">Los siguientes ejemplos est&#xE1;n tomados de la Carpeta de trabajo Introducci&#xF3;n a la econom&#xED;a de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">6</div>
-          <p>Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;mica, para luego ir a la solapa de Informaci&#xF3;n Econ&#xF3;mica al d&#xED;a, en la direcci&#xF3;n &lt; <a href="http://www.mecon.gov.ar/peconomica/basehome/infoeco.html">http://www.mecon.gov.ar/peconomica/basehome/infoeco.html</a>&#160;&gt; abrir los cuadros en la opci&#xF3;n Nivel de Actividad. Luego, buscar los datos del PIB en valores reales de Argentina, y:</p>
+          <p>Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;mica, para luego ir a la solapa de Informaci&#xF3;n Econ&#xF3;mica al d&#xED;a, en la direcci&#xF3;n &lt; <a href="http://www.mecon.gov.ar/peconomica/basehome/infoeco.html">http://www.mecon.gov.ar/peconomica/basehome/infoeco.html</a> &#xA0;&gt; abrir los cuadros en la opci&#xF3;n Nivel de Actividad. Luego, buscar los datos del PIB en valores reales de Argentina, y:</p>
           <ol style="list-style-type: lower-alpha;">
             <li>Graficar el comportamiento del nivel de actividad desde 1993, de manera de ver el movimiento del ciclo econ&#xF3;mico de nuestro pa&#xED;s.</li>
             <li>Identificar las fases del ciclo con base en las definiciones antes presentadas.</li>
           </ol>
         </bloque>
-        <bloque tipo="actividad" class="item" subclass="subapartado_item">
+        <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">7</div>
           <p>A partir de los sigueintes recursos:</p>
           <p>Luis F. Iglesias, el camino de un maestro<br/>
