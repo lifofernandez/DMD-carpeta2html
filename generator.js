@@ -66,7 +66,7 @@ function buildIndex() {
 	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
 	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Indroducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
+	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Indroducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	
 	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Indroducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
@@ -149,7 +149,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var itemUrl = makeUrl(itemTitulo);
-				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'">'+itemDelta+' '+itemTitulo+'</a>';
+				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'</span> '+itemTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;
