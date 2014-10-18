@@ -3,7 +3,7 @@
 @containerPaddings : 100px;
 @deltaSize: 100px;
 
-@paragraph-margin: 0 0 11px;
+@paragraphMargin: 0 0 10px;
 
 
 html{
@@ -523,7 +523,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 /*bloques*/
 
 .bloque{
-  margin: @paragraph-margin;
+  margin-bottom: 40px;
   .delta{
     font-size: 52px;
     font-family: 'Aleo Regular';
@@ -534,12 +534,25 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     font-weight: 600;
     padding-left: 5px;
   }
-  &.texto .tipo{display: none;}
+
+  .bloque-contenido{
+      
+    
+    p:nth-last-child(1) {
+       margin-bottom:0px;
+    }
+  }
+    //eachsss
+
+  &.texto {
+    margin:@paragraphMargin;
+    .tipo{display: none;}
+  }
   &.para_ampliar, &.lectura_recomendada, &.para_reflexionar{
     .tipo:hover{cursor: pointer;}
   }
 
-  //eachsss
+
 
   &.leer_con_atencion{
     .tipo{
@@ -550,9 +563,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     font-weight: 700;
     padding: 5px;
    
-    p:nth-last-child(1) {
-       margin-bottom:0px;
-    }
+    
   }
 
   &.para_reflexionar, &.para_ampliar{
@@ -563,9 +574,6 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     .bloque-contenido{
       background-color:@white;
       padding: 5px;
-    }
-    p:nth-last-child(1) {
-       margin-bottom:0px;
     }
   }
 
@@ -595,6 +603,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   }
 
   &.actividad{
+    margin-top: 44px;
     background-color:@white;
     display: table;
     .tipo{
@@ -621,7 +630,19 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
         margin-bottom: 30px;
         padding-bottom: 20px;
         //word-break: break-word;
-        a{word-break: break-all;}
+        a{
+          word-break: break-all;
+          font-size: inherit;
+        }
+      }
+
+      a{
+      font-family: @font-family-sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+      img{
+        margin-bottom: 5px;
       }
       .guia-de-analisis{
       .titulo{
@@ -641,8 +662,99 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       padding: @padding-base-vertical @padding-base-horizontal;
     }
   }
+
+  &.audio{
+    display: table;
+    .tipo{display: none;}
+    .icono{
+      display: table-cell;
+      height: 50px;
+      width: 50px;
+      font-size: 20px;
+    }
+    .bloque-contenido{display: table-cell;}
+    p{
+      margin: 0px;
+      font-style: italic;
+      a{font-style: normal;}
+      }
     
+  }
+  &.audiovisual{
+    //display: table;
+    .tipo{display: none;}
+    a{
+      font-family: @font-family-sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .bloque-contenido{
+      .insideblock{
+        width: 100%;
+        margin: 20px 0 5px;
+        display: table;
+        img{
+          display: table-cell;
+          vertical-align: top;
+          margin: 0px;
+          width: 100%;
+        }
+        .icono{
+          display: table-cell;
+          //height: 50px;
+          width: 10%;
+          font-size: 20px;
+          vertical-align: top;
+        }
+      }
+    }
+    p{
+      margin: 0px;
+    }
+    
+  }
+
+  &.imagen{
+    margin-top: 40px;
+    .tipo{display: none;}
+    img{
+      border: 3px solid gray;
+      margin-bottom: 5px;
+    }
+  }
+  &.web{
+    .tipo{display: none;}
+    .insideblock{
+        width: 100%;
+        margin: 20px 0 5px;
+        display: table;
+        a{
+          display: table-cell;
+          vertical-align: top;
+          margin: 0px;
+          width: 100%;
+          font-weight: 700;
+        }
+        .icono{
+          display: table-cell;
+          //height: 50px;
+          width: 10%;
+          //font-size: 20px;
+          vertical-align: top;
+        }
+      }
+    }
+    &.lectura_obligatoria, &.lectura_recomendada{
+    .tipo{padding-left: 5px;}
+    .bloque-contenido{
+      background-color:@white;
+      padding: 5px;
+    }
+  }
+
 }
+
+
 
 //colores unidad
 .unidad-1{

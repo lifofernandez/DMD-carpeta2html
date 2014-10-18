@@ -558,7 +558,7 @@ A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que const
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">2</div>
           <p>A partir del texto de la lectura obligatoria y de los contenidos de la Unidad 6, reponder:</p>
-          <ol style="list-style-type: lower-alpha;">
+          <ol class="alpha-list">
             <li>&#xBF;Cu&#xE1;l es el l&#xED;mite al dominio global de un Estado en un mundo &#x201C;unipolar&#x201D;?</li>
             <li>&#xBF;Por qu&#xE9; no es posible un dominio basado exclusivamente en la fuerza militar?</li>
           </ol>
@@ -589,7 +589,7 @@ A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que const
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">4</div>
-          <ol style="list-style-type: lower-alpha;">
+          <ol class="alpha-list">
             <li>Ingrese en el portal del organismo de turismo del gobierno de la Provincia de Buenos Aires y gestione e identifique la totalidad de sus productos tur&#xED;sticos. Intente asignarle a cada uno la clasificaci&#xF3;n correspondiente.</li>
             <li>Ingrese en el portal del organismo de turismo del gobierno de la ciudad de El Calafate y gestione e identifique la totalidad de sus productos tur&#xED;sticos. Intente asignarle a cada uno la clasificaci&#xF3;n correspondiente.</li>
           </ol>
@@ -612,7 +612,7 @@ A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que const
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
           <div class="delta">6</div>
           <p>Ingresar a la p&#xE1;gina web de la Secretar&#xED;a de Pol&#xED;tica Econ&#xF3;mica, para luego ir a la solapa de Informaci&#xF3;n Econ&#xF3;mica al d&#xED;a, en la direcci&#xF3;n &lt; <a href="http://www.mecon.gov.ar/peconomica/basehome/infoeco.html">http://www.mecon.gov.ar/peconomica/basehome/infoeco.html</a> &#xA0;&gt; abrir los cuadros en la opci&#xF3;n Nivel de Actividad. Luego, buscar los datos del PIB en valores reales de Argentina, y:</p>
-          <ol style="list-style-type: lower-alpha;">
+          <ol class="alpha-list">
             <li>Graficar el comportamiento del nivel de actividad desde 1993, de manera de ver el movimiento del ciclo econ&#xF3;mico de nuestro pa&#xED;s.</li>
             <li>Identificar las fases del ciclo con base en las definiciones antes presentadas.</li>
           </ol>
@@ -650,8 +650,8 @@ A modo de orientaci&#xF3;n se presenta la siguiente clasificaci&#xF3;n que const
         <bloque tipo="texto" class="item" subclass="subapartado_item">
           <p>El material audiovisual puede utilizarse de diferentes maneras. El tipo de uso que el docente d&#xE9; a un material audiovisual en una clase, depender&#xE1; de los objetivos que se persigan, entre los m&#xE1;s usuales se encuentran: transmitir informaci&#xF3;n, motivar y construir conocimiento.</p>
           <p><span class="custom-list lower alpha">a</span> El audiovisual como transmisor de informaci&#xF3;n. Puede utilizarse un audiovisual solo para que el estudiante reciba una determinada informac&#xF3;n que quiz&#xE1;s pueda reemplazar o ser complemento de una explicaci&#xF3;n te&#xF3;rica dada por escrito. En este caso, simplemente el docente indicar&#xE1; al estudiante el momento en el que debe realizar el visionado.<br/>
-Otro ejemplo de este tipo de utilizaci&#xF3;n son las presentaciones a trav&#xE9;s de las cuales el docente transmite determinados contenidos. Este tipo de presentaciones pueden contener un video del docente y luego la grabaci&#xF3;n de su voz explicando la informaci&#xF3;n dispuesta en diversas diapositivas. Como hemos dicho en relacio&#x301;n con el sonido, la voz del profesor acompa&#xF1;ando el desarrollo del contenido puede resultar m&#xE1;s convocante porque repone los contenidos expresados de diversos modos y a trav&#xE9;s de distintos canales, con lo cual se gana en vivacidad e inter&#xE9;s.<br/>
-El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9;s I de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
+Otro ejemplo de este tipo de utilizaci&#xF3;n son las presentaciones a trav&#xE9;s de las cuales el docente transmite determinados contenidos. Este tipo de presentaciones pueden contener un video del docente y luego la grabaci&#xF3;n de su voz explicando la informaci&#xF3;n dispuesta en diversas diapositivas. Como hemos dicho en relacio&#x301;n con el sonido, la voz del profesor acompa&#xF1;ando el desarrollo del contenido puede resultar m&#xE1;s convocante porque repone los contenidos expresados de diversos modos y a trav&#xE9;s de distintos canales, con lo cual se gana en vivacidad e inter&#xE9;s.</p>
+          <p class="coloreado">El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9;s I de la Tecnicatura Universitaria en Ciencias Empresariales.</p>
         </bloque>
         <bloque tipo="recurso_audiovisual" class="item" subclass="subapartado_item">
           <p>El siguiente video muestra c&#xF3;mo se forman las palabras que utilizan afijos:</p>
@@ -661,8 +661,8 @@ El siguiente ejemplo est&#xE1; tomado del Material Didctico Multimedia Ingl&#xE9
           <p>&lt; <a href="http://&lt;http://www.youtube.com/watch?v=WWvzHiif7H0&gt;" target="_blank" title="link-video">http://www.youtube.com/watch?v=WWvzHiif7H0</a> &gt;</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p><span class="custom-list lower alpha">b</span> El audiovisual como motivador. Otra manera de introducir el audiovisual en la clase es utiliza&#x301;ndolo como punto de partida para crear en el estudiante el intere&#x301;s por determinado tema. En el ejemplo siguiente, un programa humori&#x301;stico que hace una parodia de una de las generaciones de la educacio&#x301;n a distancia basada en la televisio&#x301;n, constituye un buen disparador para ilustrar y promover la reflexio&#x301;n sobre este formato.<br/>
-El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia Principios de disen&#x303;o y evaluacio&#x301;n de materiales did&#xE1;cticos de la Especializacio&#x301;n en Docencia en Entornos Virtuales</p>
+          <p><span class="custom-list lower alpha">b</span> El audiovisual como motivador. Otra manera de introducir el audiovisual en la clase es utiliza&#x301;ndolo como punto de partida para crear en el estudiante el intere&#x301;s por determinado tema. En el ejemplo siguiente, un programa humori&#x301;stico que hace una parodia de una de las generaciones de la educacio&#x301;n a distancia basada en la televisio&#x301;n, constituye un buen disparador para ilustrar y promover la reflexio&#x301;n sobre este formato.</p>
+          <p class="coloreado">El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia Principios de disen&#x303;o y evaluacio&#x301;n de materiales did&#xE1;cticos de la Especializacio&#x301;n en Docencia en Entornos Virtuales</p>
         </bloque>
         <bloque tipo="recurso_audiovisual" class="item" subclass="subapartado_item">
           <p>El modelo docente-expositor caracteriz&#xF3; buena parte de los programas de radio y TV educativa desde la d&#xE9;cada de 1960 y hasta hace relativamente poco tiempo, cuando fueron reemplazados por producciones m&#xE1;s complejas y que exploran las alternativas y posibilidades del formato audiovisual. Ejemplo de la din&#xE1;mica docente-expositor lo constituyen, en la Argentina, los programas de &#x201C;Telescuela T&#xE9;cnica&#x201D; producidos y difundidos por el canal 13 a partir del a&#xF1;o 1966. Mucho m&#xE1;s reciente (de la d&#xE9;cada de 1990) es la parodia a ese formato elaborada desde el programa Cha Cha Cha:</p>
@@ -672,13 +672,13 @@ El siguiente ejemplo esta&#x301; tomado del Material Dida&#x301;ctico Multimedia
           <p>&lt; <a class="link-video" href="http://www.youtube.com/watch?v=Z0dV1ZOlx2g" target="_blank">http://www.youtube.com/watch?v=Z0dV1ZOlx2g</a> &gt;</p>
         </bloque>
         <bloque tipo="texto" class="item" subclass="subapartado_item">
-          <p><span class="custom-list lower alpha">c</span>El audiovisual como instrumento para construir conocimiento. Este tipo de utilizacio&#x301;n engloba las dos anteriores, y agrega un trabajo ma&#x301;s profundo por parte del docente, en cuanto a la planificacio&#x301;n de la estrategia de ensen&#x303;anza. El docente no solo propone al estudiante un visionado, sino que plantea una serie de actividades a partir del mismo. Por ejemplo, a partir del visionado de algunos fragmentos seleccionados previamente para tal fin, se requiere que el estudiante haga comparaciones, responda cuestionarios, plantee reflexiones y diferentes propuestas de escritura a partir de los contenidos presentados, intervenga en un debate con argumentaciones a favor o en contra, elabore hipo&#x301;tesis propias, etce&#x301;tera.<br/>
-El siguiente ejemplo fue tomado de la Carpeta de trabajo Psicologi&#x301;a organizacional de la Licenciatura en Administracio&#x301;n.</p>
+          <p><span class="custom-list lower alpha">c</span>El audiovisual como instrumento para construir conocimiento. Este tipo de utilizacio&#x301;n engloba las dos anteriores, y agrega un trabajo ma&#x301;s profundo por parte del docente, en cuanto a la planificacio&#x301;n de la estrategia de ensen&#x303;anza. El docente no solo propone al estudiante un visionado, sino que plantea una serie de actividades a partir del mismo. Por ejemplo, a partir del visionado de algunos fragmentos seleccionados previamente para tal fin, se requiere que el estudiante haga comparaciones, responda cuestionarios, plantee reflexiones y diferentes propuestas de escritura a partir de los contenidos presentados, intervenga en un debate con argumentaciones a favor o en contra, elabore hipo&#x301;tesis propias, etce&#x301;tera.</p>
+          <p class="coloreado">El siguiente ejemplo fue tomado de la Carpeta de trabajo Psicologi&#x301;a organizacional de la Licenciatura en Administracio&#x301;n.</p>
         </bloque>
         <bloque tipo="recurso_actividad" class="item" subclass="subapartado_item">
-          <div class="delta">1.</div>
+          <div class="delta">1</div>
           <p>El siguiente video muestra un informe acerca de las personas que trabajan en Google. Reflexione y responda:</p>
-          <ol style="list-style-type: lower-alpha;">
+          <ol class="alpha-list">
             <li>&#xBF;Cu&#xE1;les son los artefactos visibles de la cultura de la organizaci&#xF3;n?</li>
             <li>&#xBF;Qu&#xE9; tipo de cultura organizacional considera que posee? &#xBF;Por qu&#xE9;?</li>
           </ol>

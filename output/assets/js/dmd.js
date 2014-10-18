@@ -170,6 +170,17 @@
         });
 
     });
+    $(' .lectura_obligatoria').each(function() {
+      $(this).children('.bloque-contenido').addClass('collapse in');
+        //$(this).children('.bloque-contenido').collapse('hide');
+       
+        $(this).children('.tipo').on('click',function(){
+         $(this).parent().tooltip('toggle');
+         $(this).siblings(".bloque-contenido").collapse('toggle');
+
+        });
+
+    });
 
     //texto aparte
     $('.texto_aparte').each(function() {
@@ -193,6 +204,25 @@
       $(this).prepend(element);
       $(this).append('<div class="icono">A</div>');
     });
+
+    $('.audio').each(function() {
+      var element = $(this).children('.bloque-contenido').children("p").children("a");
+      //$(this).prepend(element);
+      element.parent().parent().parent().prepend('<div class="icono">a</div>');
+    });
+
+    $('.audiovisual').each(function() {
+      var element = $(this).children('.bloque-contenido').children("p").children("img").wrap('<div class="insideblock"/>');
+      //$(this).prepend(element);
+      element.parent().append('<div class="icono">a</div>');
+    });
+
+    $('.web').each(function() {
+      var element = $(this).children('.bloque-contenido').children("p").children("a").parent().wrap('<div class="insideblock"/>');
+      //$(this).prepend(element);
+      element.parent().prepend('<div class="icono">w</div>');
+    });
+
 
     //UTILES & ADDS
     function isScrolledIntoView(elem){
