@@ -41,7 +41,7 @@ function buildIndex() {
 
 	mainNav.open='<div class="container dmd-nav-main">';
     mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+carpeta.titulo+'</a></div>';
-    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right">'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
+    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a href=index.html#intro>Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	mainNav.close='</div>';
 
 	//concat nav
@@ -227,7 +227,7 @@ function generarPaginas(element_group,delta){
 function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+' '+titulo_pagina+'</a></li>';
+		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+'. '+titulo_pagina+'</a></li>';
 		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
@@ -237,7 +237,7 @@ function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_
 				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var elementoUrl = makeUrl(elementoTitulo);
-				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'">'+elementoDelta+' '+elementoTitulo+'</a>';
+				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'">'+elementoDelta+'. '+elementoTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;

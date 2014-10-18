@@ -308,60 +308,74 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   //margin-top: 20px;
   margin-bottom: 20px;
   padding-top: @mainOffset+ @innerOffset;
+  font-family: @font-family-sans-serif;
+  font-weight: 600;
 }
 
 /* All levels of nav */
-.dmd-sidebar .nav > li{ 
-    & > a {
-    display: block;
-    padding: 4px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #999;
-    &:hover, &:focus {
-      padding-left: 19px;
-      // color: @brand-primary;
-      text-decoration: none;
+.dmd-sidebar {
+  width: 200px;
+  .nav > li{ 
+      border-top: 3px solid @gray-light;
+      //border-top: 3px solid @gray;
+      &:nth-last-child(1){border-bottom: 3px solid @gray-light;}
+      & > a {
+      display: block;
+      padding: 4px 20px;
+      font-size: 13px;
+      //font-weight: 500;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: #999;
+
+      &:hover, &:focus {
+        //padding-left: 19px;
+        // color: @brand-primary;
+        text-decoration: none;
+        background-color: transparent;
+        // border-left: 1px solid @brand-primary;
+        border-left-width: 0px;
+        border-left-style: solid;
+      }
+    }
+    &.active > a,
+    &.active:hover > a,
+    &.active:focus > a {
+     // padding-left: 18px;
+      //font-weight: bold;
+      //color: @brand-primary;
       background-color: transparent;
-      // border-left: 1px solid @brand-primary;
-      border-left-width: 1px;
+      // border-left-wei: 2px solid @brand-primary;
+      border-left-width: 0px;
       border-left-style: solid;
     }
-  }
-  &.active > a,
-  &.active:hover > a,
-  &.active:focus > a {
-    padding-left: 18px;
-    font-weight: bold;
-    //color: @brand-primary;
-    background-color: transparent;
-    // border-left-wei: 2px solid @brand-primary;
-    border-left-width: 2px;
-    border-left-style: solid;
-  }
-  /* Nav: second level (shown on .active) */
-  .nav {
-    display: none; /* Hide by default, but at >768px, show it */
-    padding-bottom: 10px;
-    & > li {
-      & > a {
-        padding-top: 1px;
-        padding-bottom: 1px;
-        padding-left: 30px;
-        font-size: 12px;
-        font-weight: normal;
-        &:hover, &:focus {
-          padding-left: 29px;
+    /* Nav: second level (shown on .active) */
+    .nav {
+      display: none; /* Hide by default, but at >768px, show it */
+      padding-bottom: 10px;
+      & > li {
+        border-top: 0px solid @gray-light;
+        border-bottom: 0px solid @gray-light;
+        & > a {
+          padding-top: 1px;
+          padding-bottom: 1px;
+          //padding-left: 30px;//makes de indent
+          
+          //font-size: 12px;
+          //font-weight: normal;
+          &:hover, &:focus {
+           // padding-left: 29px;
+          }
+        }
+        &.active > a,
+        &.active:hover > a,
+        &.active:focus > a {
+          //padding-left: 28px;
+          //font-weight: 500;
         }
       }
-      &.active > a,
-      &.active:hover > a,
-      &.active:focus > a {
-        padding-left: 28px;
-        font-weight: 500;
-      }
     }
-  }
+}
 }
 
 
@@ -385,9 +399,8 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     display: block;
   }
   /* Widen the fixed sidebar */
-  .dmd-sidebar.affix,
-  .dmd-sidebar.affix-bottom {
-    width: 233px;
+  .dmd-sidebar.affix,.dmd-sidebar.affix-bottom {
+    //width: 233px;
   }
   .dmd-sidebar.affix {
     position: fixed; /* Undo the static from mobile first approach */
@@ -396,17 +409,15 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   .dmd-sidebar.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
   }
-  .dmd-sidebar.affix-bottom .dmd-sidenav,
-  .dmd-sidebar.affix .dmd-sidenav {
+  .dmd-sidebar.affix-bottom .dmd-sidenav,.dmd-sidebar.affix .dmd-sidenav {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
 @media (min-width: @container-lg) {
   /* Widen the fixed sidebar again */
-  .dmd-sidebar.affix-bottom,
-  .dmd-sidebar.affix {
-    width: 243px;
+  .dmd-sidebar.affix-bottom,.dmd-sidebar.affix {
+    //width: 243px;
   }
 }
 
@@ -524,6 +535,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 .bloque{
   margin-bottom: 40px;
+  a{word-break: break-all;}
   .delta{
     font-size: 52px;
     font-family: 'Aleo Regular';
@@ -800,7 +812,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 .unidad-color(@c){
   .dmd-sidebar .nav > li > a:hover,
   .dmd-sidebar .nav > li > a:focus {
-    color: @c;
+    color: lighten(@c, 10%);
     border-left-color: @c;
   }
   .dmd-sidebar .nav > .active > a,
