@@ -159,11 +159,14 @@
     
 
     ///COLLAPSES
+    
+
     $('.para_ampliar, .lectura_recomendada, .para_reflexionar').each(function() {
      	$(this).children('.bloque-contenido').addClass('collapse');
         //$(this).children('.bloque-contenido').collapse('hide');
        
         $(this).children('.tipo').on('click',function(){
+         $(this).children('.collapse-indicator').toggleClass('rotate');
          $(this).parent().tooltip('toggle');
          $(this).siblings(".bloque-contenido").collapse('toggle');
 
@@ -181,6 +184,28 @@
         });
 
     });
+    
+    //BLOQUES
+
+    $('.leer_con_atencion').each(function() {
+      //var element = $(this).children('.bloque-contenido');
+      //$(this).prepend(element);
+      $(this).prepend('<div class="icono">LA</div>');
+    });
+
+    $('.para_reflexionar').each(function() {
+      var element = $(this).children('.tipo');
+      //$(this).prepend(element);
+      element.prepend('<div class="icono">PR</div>');
+      element.append('<div class="collapse-indicator">&#9660;</div>');
+    });
+
+    $('.para_ampliar').each(function() {
+      var element = $(this).children('.tipo');
+      //$(this).prepend(element);
+      element.prepend('<div class="icono">PA</div>');
+      element.append('<div class="collapse-indicator">&#9660;</div>');
+    });
 
     //texto aparte
     $('.texto_aparte').each(function() {
@@ -188,12 +213,12 @@
       var childs = $(this).children('.bloque-contenido').children()
       
       $(this).children('.bloque-contenido').children().slice( 2, childs.length ).wrapAll('<div class="leer_mas collapse"/>');
-      $(this).children('.bloque-contenido').append( '<p class="suspensivos">...</p>' );
-      
+      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">&#9660;</div></div>' );
       $(this).on('click',function(){
         $(this).tooltip('toggle');
         $(this).children('.bloque-contenido').children(".leer_mas").collapse('toggle');
-        $(this).children('.bloque-contenido').children(".suspensivos").toggle();
+        $(this).children('.bloque-contenido').children(".footer").children(".suspensivos").toggle();
+        $(this).children('.bloque-contenido').children(".footer").children(".collapse-indicator").toggleClass('rotate');
       });
 
 
