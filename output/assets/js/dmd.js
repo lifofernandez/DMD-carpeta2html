@@ -166,9 +166,10 @@
         //$(this).children('.bloque-contenido').collapse('hide');
        
         $(this).children('.tipo').on('click',function(){
-         $(this).children('.collapse-indicator').toggleClass('rotate');
-         $(this).parent().tooltip('toggle');
-         $(this).siblings(".bloque-contenido").collapse('toggle');
+          $(this).children('.collapse-indicator').toggleClass('rotate');
+          $(this).parent().tooltip('toggle');
+          $(this).siblings(".bloque-contenido").collapse('toggle');
+
 
         });
 
@@ -176,10 +177,12 @@
     $(' .lectura_obligatoria').each(function() {
       $(this).children('.bloque-contenido').addClass('collapse in');
         //$(this).children('.bloque-contenido').collapse('hide');
-       
+      //$(this).children('.tipo').children('.collapse-indicator').addClass('rotate');
+
         $(this).children('.tipo').on('click',function(){
-         $(this).parent().tooltip('toggle');
-         $(this).siblings(".bloque-contenido").collapse('toggle');
+          $(this).children('.collapse-indicator').toggleClass('rotate');
+          $(this).parent().tooltip('toggle');
+          $(this).siblings(".bloque-contenido").collapse('toggle');
 
         });
 
@@ -220,9 +223,32 @@
         $(this).children('.bloque-contenido').children(".footer").children(".suspensivos").toggle();
         $(this).children('.bloque-contenido').children(".footer").children(".collapse-indicator").toggleClass('rotate');
       });
-
-
     });
+
+    $('.cita').each(function() {
+      //var element = $(this).children('.bloque-contenido');
+      //$(this).prepend(element);
+      $(this).prepend('<div class="icono">CI</div>');
+    });
+    $('.ejemplo').each(function() {
+      //var element = $(this).children('.bloque-contenido');
+      //$(this).prepend(element);
+      $(this).prepend('<div class="icono">EJ</div>');
+    });
+
+    $('.lectura_obligatoria').each(function() {
+      var element = $(this).children('.tipo');
+      //$(this).prepend(element);
+      element.prepend('<div class="icono">LO</div>');
+      element.append('<div class="collapse-indicator rotate">&#9660;</div>');
+    });
+    $('.lectura_recomendada').each(function() {
+      var element = $(this).children('.tipo');
+      //$(this).prepend(element);
+      element.prepend('<div class="icono">LR</div>');
+      element.append('<div class="collapse-indicator">&#9660;</div>');
+    });
+
     //Actividad
     $('.actividad').each(function() {
       var element = $(this).children('.bloque-contenido').children(".delta").detach();

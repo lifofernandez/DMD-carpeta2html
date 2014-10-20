@@ -6871,7 +6871,7 @@ h6,
 .bloque.para_ampliar .tipo .icono {
   display: inline;
   font-size: 14px;
-  padding: 0 5px;
+  padding: 0 3px;
   margin-right: 5px;
   border-right: 3px solid #edf6f4;
 }
@@ -6899,7 +6899,7 @@ h6,
 .bloque.para_ampliar .bloque-contenido {
   background-color: #edf6f4;
   padding: 5px;
-  padding-left: 34px;
+  padding-left: 30px;
 }
 .bloque.texto_aparte {
   background-color: #edf6f4;
@@ -6948,11 +6948,19 @@ h6,
 .bloque.cita,
 .bloque.ejemplo {
   background-color: #edf6f4;
-  padding: 20px 20px;
+  padding: 6px;
 }
 .bloque.cita .tipo,
 .bloque.ejemplo .tipo {
   display: none;
+}
+.bloque.cita .icono,
+.bloque.ejemplo .icono {
+  line-height: 1;
+}
+.bloque.cita .bloque-contenido,
+.bloque.ejemplo .bloque-contenido {
+  padding: 0px 25px;
 }
 .bloque.actividad {
   background-color: #edf6f4;
@@ -7089,12 +7097,41 @@ h6,
 }
 .bloque.lectura_obligatoria .tipo,
 .bloque.lectura_recomendada .tipo {
-  padding-left: 5px;
+  padding-left: 0px;
+}
+.bloque.lectura_obligatoria .tipo .icono,
+.bloque.lectura_recomendada .tipo .icono {
+  display: inline;
+  font-size: 14px;
+  padding: 0 3px;
+  margin-right: 5px;
+  border-right: 3px solid #edf6f4;
+}
+.bloque.lectura_obligatoria .tipo .collapse-indicator,
+.bloque.lectura_recomendada .tipo .collapse-indicator {
+  display: inline;
+  font-size: 14px;
+  float: right;
+  margin-right: 15px;
+}
+.bloque.lectura_obligatoria .tipo .collapse-indicator.rotate,
+.bloque.lectura_recomendada .tipo .collapse-indicator.rotate {
+  /* Safari */
+  -webkit-transform: rotate(180deg);
+  /* Firefox */
+  -moz-transform: rotate(180deg);
+  /* IE */
+  -ms-transform: rotate(180deg);
+  /* Opera */
+  -o-transform: rotate(180deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 .bloque.lectura_obligatoria .bloque-contenido,
 .bloque.lectura_recomendada .bloque-contenido {
   background-color: #edf6f4;
   padding: 5px;
+  padding-left: 29px;
 }
 .unidad-1 .dmd-sidebar .nav > li > a:hover,
 .unidad-1 .dmd-sidebar .nav > li > a:focus {
