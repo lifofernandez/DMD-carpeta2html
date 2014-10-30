@@ -2,4 +2,3 @@ output/files
 output/bk
 .DS_Store
 dmd_bootstrap/bootstrap
-render_backup

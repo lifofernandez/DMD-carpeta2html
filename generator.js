@@ -41,7 +41,7 @@ function buildIndex() {
 
 	mainNav.open='<div class="container dmd-nav-main">';
     mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+carpeta.titulo+'</a></div>';
-    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a href=index.html#intro>Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
+    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a id="intro-trigger" href="/#intro">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	mainNav.close='</div>';
 
 	//concat nav
@@ -52,13 +52,13 @@ function buildIndex() {
 	
 	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="assets/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
 	
-	mainHtml.cover = '<div class="cover"><div class="container"><h1>'+carpeta.titulo+'</h1></div></div>';
+	mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1>'+carpeta.titulo+'</h1></div></div>';
 
 	mainHtml.header = '<header class="navbar navbar-default affix-top" role="banner">'+mainNav.render+'</header>';
 
-	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><p class="copy">Dirección de Materiales Didáctivos / Universidad Virtual de Quilmes</p></div></footer>';
+	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger icono rotate" href="#top">&#9660;</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
 
-	mainHtml.close = '<!-- Bootstrap core JavaScript --> <!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="assets/js/bootstrap.js"></script>  <script src="assets/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="assets/js/ie10-viewport-bug-workaround.js"></script>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="assets/js/bootstrap.js"></script>  <script src="assets/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="assets/js/ie10-viewport-bug-workaround.js"></script>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
@@ -68,7 +68,7 @@ function buildIndex() {
 
 	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Indroducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	
-	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Indroducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
+	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Introducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
 	mainHtml.indexCocat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
 
@@ -149,7 +149,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var itemUrl = makeUrl(itemTitulo);
-				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'</span> '+itemTitulo+'</a>';
+				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'.</span> '+itemTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;

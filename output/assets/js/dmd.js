@@ -45,9 +45,33 @@
     })
     
 
+
+
+
+      
     $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
       $body.scrollspy('refresh')
-    })  
+    })
+
+    //custom spy para intro
+
+    $(window).scroll(function() {
+      var elemTop = $('#intro').offset().top;
+      var elemBottom = elemTop + $('#intro').height();
+
+      var docViewTop = $(window).scrollTop();
+      var docViewBottom = docViewTop + $(window).height();
+      //console.log(docViewTop);
+
+      if (elemTop >= docViewTop)$('#intro-trigger').parent().removeClass('active');
+      if (elemTop <= docViewTop)$('#intro-trigger').parent().addClass('active');
+      if (elemBottom <= docViewBottom)$('#intro-trigger').parent().removeClass('active');
+
+    });
+
+    if ($body.is('.index')) {
+     $('#intro-trigger').addClass('smooth-trigger');
+    }
 
 
     $(".smooth-trigger").on('click', function(e) {
