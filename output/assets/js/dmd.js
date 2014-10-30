@@ -56,17 +56,18 @@
     //custom spy para intro
 
     $(window).scroll(function() {
-      var elemTop = $('#intro').offset().top;
-      var elemBottom = elemTop + $('#intro').height();
+      if ($body.is('.index')) { //if is index/home
+        var elemTop = $('#intro').offset().top;
+        var elemBottom = elemTop + $('#intro').height();
 
-      var docViewTop = $(window).scrollTop();
-      var docViewBottom = docViewTop + $(window).height();
-      //console.log(docViewTop);
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        //console.log(docViewTop);
 
-      if (elemTop >= docViewTop)$('#intro-trigger').parent().removeClass('active');
-      if (elemTop <= docViewTop)$('#intro-trigger').parent().addClass('active');
-      if (elemBottom <= docViewBottom)$('#intro-trigger').parent().removeClass('active');
-
+        if (elemTop >= docViewTop)$('#intro-trigger').parent().removeClass('active');
+        if (elemTop <= docViewTop)$('#intro-trigger').parent().addClass('active');
+        if (elemBottom <= docViewBottom)$('#intro-trigger').parent().removeClass('active');
+      }
     });
 
     if ($body.is('.index')) {
@@ -130,23 +131,26 @@
     })  
 
 
+    $window.resize(function() {
+      $height = $window.height();
+      $indexHeader.affix({offset: {top: $height}})
+      //alert($height);
+    });
+
+
   //indice
   $('.show-menu').each(function() {
         
-       
+    $(this).on('click',function(e){ 
+      e.preventDefault();
+      //$(this).parent().parent().toggleClass('displayed');
+      $(this).parent().siblings(".nav-list").collapse('toggle');
+    });
 
-        $(this).on('click',function(e){ 
-          e.preventDefault();
-         // $(this).parent().parent().toggleClass('displayed');
-          $(this).parent().siblings(".nav-list").collapse('toggle');
-        });
-        
-
-  
-      });
+  });
 
 
-    //TOOLTIPS
+  //TOOLTIPS
    $('.bloque').tooltip();
 
     ///PASTILLAS POPOVERS
@@ -156,13 +160,14 @@
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
       container: false,
-      title:'P',
+      title:'N',
       placement:'bottom',
       trigger:'manual',
       html:true,
       //viewport: 'body',
       delay: { "show": 200, "hide": 100 },
     }).on('click',function(){ $(this).popover('toggle'); });
+
     
     $(window).scroll(function(){
       $('.dmd-popover').each(function() {
@@ -217,21 +222,21 @@
     $('.leer_con_atencion').each(function() {
       //var element = $(this).children('.bloque-contenido');
       //$(this).prepend(element);
-      $(this).prepend('<div class="icono">LA</div>');
+      $(this).prepend('<div class="icono">L</div>');
     });
 
     $('.para_reflexionar').each(function() {
       var element = $(this).children('.tipo');
       //$(this).prepend(element);
-      element.prepend('<div class="icono">PR</div>');
-      element.append('<div class="collapse-indicator">&#9660;</div>');
+      element.prepend('<div class="icono">P</div>');
+      element.append('<div class="collapse-indicator">Z</div>');
     });
 
     $('.para_ampliar').each(function() {
       var element = $(this).children('.tipo');
       //$(this).prepend(element);
-      element.prepend('<div class="icono">PA</div>');
-      element.append('<div class="collapse-indicator">&#9660;</div>');
+      element.prepend('<div class="icono">A</div>');
+      element.append('<div class="collapse-indicator">Z</div>');
     });
 
     //texto aparte
@@ -240,7 +245,7 @@
       var childs = $(this).children('.bloque-contenido').children()
       
       $(this).children('.bloque-contenido').children().slice( 2, childs.length ).wrapAll('<div class="leer_mas collapse"/>');
-      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">&#9660;</div></div>' );
+      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">Z</div></div>' );
       $(this).on('click',function(){
         $(this).tooltip('toggle');
         $(this).children('.bloque-contenido').children(".leer_mas").collapse('toggle');
@@ -252,50 +257,50 @@
     $('.cita').each(function() {
       //var element = $(this).children('.bloque-contenido');
       //$(this).prepend(element);
-      $(this).prepend('<div class="icono">CI</div>');
+      $(this).prepend('<div class="icono">C</div>');
     });
     $('.ejemplo').each(function() {
       //var element = $(this).children('.bloque-contenido');
       //$(this).prepend(element);
-      $(this).prepend('<div class="icono">EJ</div>');
+      $(this).prepend('<div class="icono">X</div>');
     });
 
     $('.lectura_obligatoria').each(function() {
       var element = $(this).children('.tipo');
       //$(this).prepend(element);
-      element.prepend('<div class="icono">LO</div>');
-      element.append('<div class="collapse-indicator rotate">&#9660;</div>');
+      element.prepend('<div class="icono">O</div>');
+      element.append('<div class="collapse-indicator rotate">Z</div>');
     });
     $('.lectura_recomendada').each(function() {
       var element = $(this).children('.tipo');
       //$(this).prepend(element);
-      element.prepend('<div class="icono">LR</div>');
-      element.append('<div class="collapse-indicator">&#9660;</div>');
+      element.prepend('<div class="icono">O</div>');
+      element.append('<div class="collapse-indicator">Z</div>');
     });
 
     //Actividad
     $('.actividad').each(function() {
       var element = $(this).children('.bloque-contenido').children(".delta").detach();
       $(this).prepend(element);
-      $(this).append('<div class="icono">A</div>');
+      $(this).append('<div class="icono">K</div>');
     });
 
     $('.audio').each(function() {
       var element = $(this).children('.bloque-contenido').children("p").children("a");
       //$(this).prepend(element);
-      element.parent().parent().parent().prepend('<div class="icono">a</div>');
+      element.parent().parent().parent().prepend('<div class="icono">S</div>');
     });
 
     $('.audiovisual').each(function() {
       var element = $(this).children('.bloque-contenido').children("p").children("img").wrap('<div class="insideblock"/>');
       //$(this).prepend(element);
-      element.parent().append('<div class="icono">a</div>');
+      element.parent().append('<div class="icono">E</div>');
     });
 
     $('.web').each(function() {
       var element = $(this).children('.bloque-contenido').children("p").children("a").parent().wrap('<div class="insideblock"/>');
       //$(this).prepend(element);
-      element.parent().prepend('<div class="icono">w</div>');
+      element.parent().prepend('<div class="icono">W</div>');
     });
 
 
@@ -311,11 +316,6 @@
       return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
 
-    $window.resize(function() {
-      $height = $window.height();
-      $indexHeader.affix({offset: {top: $height}})
-      //alert($height);
-    });
 
   })///cierre
 

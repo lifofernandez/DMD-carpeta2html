@@ -56,7 +56,7 @@ function buildIndex() {
 
 	mainHtml.header = '<header class="navbar navbar-default affix-top" role="banner">'+mainNav.render+'</header>';
 
-	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger icono rotate" href="#top">&#9660;</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
+	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
 
 	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="assets/js/bootstrap.js"></script>  <script src="assets/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="assets/js/ie10-viewport-bug-workaround.js"></script>';
 
@@ -91,7 +91,7 @@ function generarIndiceUnidades(unidades_in){
 		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
 		
-		var unidadHeader = '<div class="menu-header"><a class="big-link" href="'+unidadUrl+'">'+unidadTitulo+'</a><a class="show-menu" href="#">&#9660;</a></div>';
+		var unidadHeader = '<div class="menu-header"><a class="big-link" href="'+unidadUrl+'">'+unidadTitulo+'</a><a class="show-menu collapse-indicator" href="#">Z</a></div>';
 		
 		
 
@@ -117,7 +117,7 @@ function generarIndiceAnexos(anexos_in){
 
 		var anexoUrl = 'anexo-'+(i+1)+'.html';
 		
-		var anexoHeader = '<div class="menu-header"><a class="big-link" href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a><a class="show-menu" href="#">&#9660;</a></div>';
+		var anexoHeader = '<div class="menu-header"><a class="big-link" href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a><a class="show-menu collapse-indicator" href="#">Z</a></div>';
 		
 		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
