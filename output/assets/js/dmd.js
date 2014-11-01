@@ -217,23 +217,25 @@
 
     });
     
-    //BLOQUES
+
+
+    //BLOQUES & iconos
 
     $('.leer_con_atencion').each(function() {
-      //var element = $(this).children('.bloque-contenido');
+      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
-      $(this).prepend('<div class="icono">L</div>');
+      element.prepend('<div class="icono">L</div>');
     });
 
     $('.para_reflexionar').each(function() {
-      var element = $(this).children('.tipo');
+      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">P</div>');
       element.append('<div class="collapse-indicator">Z</div>');
     });
 
     $('.para_ampliar').each(function() {
-      var element = $(this).children('.tipo');
+      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">A</div>');
       element.append('<div class="collapse-indicator">Z</div>');
@@ -266,13 +268,13 @@
     });
 
     $('.lectura_obligatoria').each(function() {
-      var element = $(this).children('.tipo');
+      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">O</div>');
       element.append('<div class="collapse-indicator rotate">Z</div>');
     });
     $('.lectura_recomendada').each(function() {
-      var element = $(this).children('.tipo');
+      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">O</div>');
       element.append('<div class="collapse-indicator">Z</div>');

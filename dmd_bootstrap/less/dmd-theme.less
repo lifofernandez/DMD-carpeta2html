@@ -27,6 +27,8 @@ a{font-family: @font-family-sans-serif;&:hover{text-decoration: none;}}
 .back-to-top-arrow,
 .popover-title{
   font-family: 'UNQ Dingbats' !important;
+  font-weight: 400;
+
   &.rotate{
     .cientoOchenta();
   }
@@ -175,7 +177,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
               .big-link{
                 font-size: @font-size-h2;
                 line-height: 1;
-                
+                font-family: 'Aleo Regular';
                 display: table-cell !important;
                 vertical-align: middle;
               }
@@ -567,6 +569,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
 .bloque{
+    width: 100%;
   margin: 44px 0 40px;
   a{word-break: break-all;}
   .delta{
@@ -577,16 +580,45 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     font-family: @font-family-sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    padding-left: 5px;
+    
     font-size: 14px;
-  }
-  .icono{
-    font-size: 30px;
-    line-height: 1;
-    padding-top:4px;
-  }
+    height: 30px;
+    .icono{
+        display: inline-block;
+        float: left;
+        font-size: 43px;
+        height: 30px;
+        width: 35px;
+        margin-left: -2px;
+        line-height: 0.91;
+        border-right: 3px solid @white;
 
+    }
+
+    .leyenda{
+        display: inline-block;
+        float: left;
+        font-size: 18px;
+        line-height: 1.7;
+        padding-left: 10px;
+        }
+    .collapse-indicator {
+        display: inline;
+        font-size: 38px;
+        float: right;
+        margin-right: 20px;
+        line-height: 0.9;
+        
+       // border-right: 3px solid @white;
+       &.rotate {
+        margin-top: -4px;
+          .cientoOchenta();
+          }
+	     }
+  }
+  
   .bloque-contenido{
+    width: 100%;
       
     
     p:nth-last-child(1) {
@@ -606,7 +638,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
 
   &.leer_con_atencion{
-    .tipo{
+    .leyenda{
       display: none;
     }
     font-family: @font-family-sans-serif;
@@ -621,13 +653,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       vertical-align: top;
     
     }
-    .icono{
-      position: relative;
-      vertical-align: top;
-      display: block;
-      padding:4px 5px 0;
-      border-right: 3px solid @white;
-    }
+    
     
   }
 
@@ -635,28 +661,6 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     font-family: @font-family-sans-serif;
     font-weight: 700;
 
-    .tipo{
-      padding-left: 0px;
-      .icono{
-        display: inline;
-       // font-size: 14px;
-        padding:4px 5px 0;
-        margin-right: 5px;
-        border-right: 3px solid @white;
-      }
-      .collapse-indicator{
-        display: inline;
-        font-size: 14px;
-        float: right;
-        margin-right: 15px;
-        //padding:0 5px;
-       // margin-right: 5px;
-       // border-right: 3px solid @white;
-       &.rotate {
-          .cientoOchenta();
-          }
-      }
-    }
     .bloque-contenido{
       background-color:@white;
       padding: 5px;
@@ -671,15 +675,13 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     &:hover{
       cursor: pointer; 
       border:1px solid @gray;
-       margin:43px -1px 39px;
+      margin:43px -1px 39px;
      }
     p:nth-last-child(1) {
-       margin-bottom:11px;
+        margin-bottom:11px;
     }
     .footer{
-     
-      padding-bottom: @padding-large-vertical ;
-
+          padding-bottom: @padding-large-vertical ;
       .suspensivos{
          font-weight: 700;
          display: inline;
@@ -864,28 +866,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     }
     &.lectura_obligatoria, &.lectura_recomendada{
     //.tipo{padding-left: 5px;}
-    .tipo{
-      padding-left: 0px;
-      .icono{
-        display: inline;
-      //  font-size: 14px;
-        padding:0 3px;
-        margin-right: 5px;
-        border-right: 3px solid @white;
-      }
-      .collapse-indicator{
-        display: inline;
-        font-size: 14px;
-        float: right;
-        margin-right: 15px;
-        //padding:0 5px;
-       // margin-right: 5px;
-       // border-right: 3px solid @white;
-       &.rotate {
-          .cientoOchenta();
-          }
-      }
-    }
+    
     .bloque-contenido{
       background-color:@white;
       padding: 5px;
