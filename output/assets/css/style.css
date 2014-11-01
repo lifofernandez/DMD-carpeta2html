@@ -6902,7 +6902,7 @@ h6,
   font-size: 14px;
   height: 30px;
 }
-.bloque .tipo .icono {
+.bloque .icono {
   display: inline-block;
   float: left;
   font-size: 43px;
@@ -6912,21 +6912,21 @@ h6,
   line-height: 0.91;
   border-right: 3px solid #edf6f4;
 }
-.bloque .tipo .leyenda {
+.bloque .leyenda {
   display: inline-block;
   float: left;
   font-size: 18px;
   line-height: 1.7;
   padding-left: 10px;
 }
-.bloque .tipo .collapse-indicator {
+.bloque .collapse-indicator {
   display: inline;
   font-size: 38px;
   float: right;
   margin-right: 20px;
   line-height: 0.9;
 }
-.bloque .tipo .collapse-indicator.rotate {
+.bloque .collapse-indicator.rotate {
   margin-top: -4px;
   /* Safari */
 
@@ -6993,11 +6993,6 @@ h6,
 .bloque.texto_aparte .tipo {
   display: none;
 }
-.bloque.texto_aparte:hover {
-  cursor: pointer;
-  border: 1px solid #999999;
-  margin: 43px -1px 39px;
-}
 .bloque.texto_aparte p:nth-last-child(1) {
   margin-bottom: 11px;
 }
@@ -7010,8 +7005,6 @@ h6,
   float: left;
 }
 .bloque.texto_aparte .footer .collapse-indicator {
-  display: inline;
-  font-size: 14px;
   float: right;
   margin-right: 15px;
 }
@@ -7032,6 +7025,14 @@ h6,
 
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
+.bloque.texto_aparte:hover {
+  cursor: pointer;
+  border: 1px solid #999999;
+  margin: 43px -1px 39px;
+}
+.bloque.texto_aparte:hover .footer .collapse-indicator {
+  margin-right: 13px;
+}
 .bloque.pastilla {
   display: none;
 }
@@ -7047,6 +7048,8 @@ h6,
 .bloque.cita .icono,
 .bloque.ejemplo .icono {
   line-height: 1;
+  float: none;
+  color: #b9b9b9;
 }
 .bloque.cita .bloque-contenido,
 .bloque.ejemplo .bloque-contenido {
@@ -7100,9 +7103,12 @@ h6,
   font-weight: 400;
 }
 .bloque.actividad .icono {
+  color: #b9b9b9;
   position: relative;
   display: table-cell;
   font-size: 52px;
+  width: 52px;
+  height: auto;
   padding: 6px 12px;
 }
 .bloque.audio {

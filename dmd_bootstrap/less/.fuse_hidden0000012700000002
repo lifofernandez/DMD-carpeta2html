@@ -583,7 +583,6 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     
     font-size: 14px;
     height: 30px;
-     }
     .icono{
         display: inline-block;
         float: left;
@@ -603,9 +602,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
         line-height: 1.7;
         padding-left: 10px;
         }
-    
-   
-  .collapse-indicator {
+    .collapse-indicator {
         display: inline;
         font-size: 38px;
         float: right;
@@ -617,7 +614,8 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
         margin-top: -4px;
           .cientoOchenta();
           }
-       }
+	     }
+  }
   
   .bloque-contenido{
     width: 100%;
@@ -627,9 +625,7 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
        margin-bottom:0px;
     }
   }
-
-
-  //eachsss
+    //eachsss
 
   &.texto {
     margin:@paragraphMargin;
@@ -676,7 +672,11 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     background-color:@white;
     padding: @padding-large-vertical @padding-large-horizontal;
     .tipo{display: none;}
-    
+    &:hover{
+      cursor: pointer; 
+      border:1px solid @gray;
+      margin:43px -1px 39px;
+     }
     p:nth-last-child(1) {
         margin-bottom:11px;
     }
@@ -690,21 +690,20 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   
         }
         .collapse-indicator{
+          display: inline;
+          font-size: 14px;
           float: right;
           margin-right: 15px;
+         // margin-top: -20px;
+  
+          //padding:0 5px;
+         // margin-right: 5px;
+         // border-right: 3px solid @white;
          &.rotate {
             .cientoOchenta();
             }
         }
     }
-
-
-    &:hover{
-      cursor: pointer; 
-      border:1px solid @gray;
-      margin:43px -1px 39px;
-      .footer .collapse-indicator{margin-right: 13px;}
-     }
   }
 
   &.pastilla{
@@ -713,12 +712,11 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 
   &.cita, &.ejemplo{
     background-color:@white;
-
     padding: @padding-base-vertical;
     .tipo{
         display: none;
       }
-    .icono{line-height: 1; float: none;color:@gray-light;}
+    .icono{line-height: 1}
     .bloque-contenido{
       padding: 0px 25px;
     }
@@ -778,12 +776,9 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
       }
     }
     .icono{
-      color:@gray-light;
-      position: relative;
+       position: relative;
       display: table-cell;
       font-size: 52px;
-      width: 52px;
-      height: auto;
       padding: @padding-base-vertical @padding-base-horizontal;
     }
   }
