@@ -19,7 +19,7 @@ carpeta.introduccion = doc.getElementsByTagName('introduccion')[0];
 carpeta.unidades = doc.getElementsByTagName('unidad');
 carpeta.anexos = doc.getElementsByTagName('anexo');
 
-
+var nBloques = 0;
 
 ////////////////////////////////////////////
 ////GENERAR INDICE/////////////////////////
@@ -355,8 +355,10 @@ function getBloques(element){
 				if(bloqueTipo !== 'texto')tooltipStr = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
 				if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
 
-				var op=op+'<div '+tooltipStr+' class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
+				var op=op+'<div '+tooltipStr+' id="bloque-'+nBloques+'"class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
 			}
+
+			nBloques++;
 		}
 
 	}

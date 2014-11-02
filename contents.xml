@@ -350,7 +350,7 @@ La forma de utilizarla es la siguiente:</p>
           <p>Obras de un mismo autor</p>
           <p>Cuando haya m&#xE1;s de una obra del mismo autor se utilizar&#xE1; el gui&#xF3;n largo para reemplazar el nombre del autor.</p>
         </bloque>
-        <bloque tipo="sin_especificar" class="item" subclass="subapartado_item">
+        <bloque tipo="ejemplo" class="item" subclass="subapartado_item">
           <p>Tenti Fanfani, E. (1984), &#x201C;La interacci&#xF3;n maestro-alumno, discusi&#xF3;n&#xA0;sociol&#xF3;gica&#x201D; en: Revista Mexicana de Sociolog&#xED;a, A&#xF1;o XLVI, N&#xB0;1, enero-marzo, M&#xE9;xico, pp. 161-174.</p>
           <p>&#x2014; (1995a), La escuela vac&#xED;a. Deberes del Estado y responsabilidades de la sociedad civil, Losada, Buenos Aires.</p>
           <p>&#x2014; (1995b), Universidad y profesiones. Crisis y alternativas, segunda edici&#xF3;n Mi&#xF1;o y D&#xE1;vila Editores, Buenos Aires.</p>

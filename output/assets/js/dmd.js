@@ -159,7 +159,7 @@
    
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
-      container: false,
+      //container: false,
       title:'N',
       placement:'bottom',
       trigger:'manual',
