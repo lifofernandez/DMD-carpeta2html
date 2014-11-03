@@ -66,7 +66,7 @@ function buildIndex() {
 	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
 	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
+	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Indroducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	
 	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Introducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
@@ -149,7 +149,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var itemUrl = makeUrl(itemTitulo);
-				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'. </span> '+itemTitulo+'</a>';
+				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'.</span> '+itemTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;
@@ -227,7 +227,7 @@ function generarPaginas(element_group,delta){
 function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
 	var output = '';
 	if(elementos.length > 0){
-		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top"><span class="delta">'+parent_delta+'.</span> '+titulo_pagina+'</a></li>';
+		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top">'+parent_delta+'. '+titulo_pagina+'</a></li>';
 		if(!child_to_get)output = '<ul class="nav nav-list">';
 
 		for (var i=0; i < elementos.length; i++) {
@@ -237,7 +237,7 @@ function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_
 				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var elementoUrl = makeUrl(elementoTitulo);
-				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'"><span class="delta">'+elementoDelta+'.</span> '+elementoTitulo+'</a>';
+				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'">'+elementoDelta+'. '+elementoTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;
