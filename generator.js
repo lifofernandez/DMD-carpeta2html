@@ -40,7 +40,7 @@ function buildIndex() {
 	});
 
 	mainNav.open='<div class="container dmd-nav-main">';
-    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">'+carpeta.titulo+'</a></div>';
+    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
     mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a id="intro-trigger" href="/#intro">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	mainNav.close='</div>';
 
