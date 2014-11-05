@@ -112,11 +112,34 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
   .cover{
     height: 100%;
     width: 100%;
-    background: @brand-primary;
+    background: @fondo2;
+    border-bottom: 1px solid @fondo1;
+    .container{
+      width: 850px;
+      height: 100%;
+    }
     h1,.h1{
       margin: 0px;
       padding: 0px;
       border-bottom-width: 0px;
+      font-family: 'UNQ Dingbats';
+      font-size: 400px;
+      color: @brand-primary;
+      padding-top: 30%;
+     
+    }
+    .footer{
+      font-family: @font-family-sans-serif;
+      color: @gray-light;
+      text-align: center;
+      text-transform: uppercase;
+      bottom: 0px;
+      position: absolute;
+      width: auto;
+      font-size: 11px;
+      font-weight: bold;
+      padding-bottom: 20px;
+      white-space: nowrap;
     }
   }
 
@@ -356,13 +379,18 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
 .dmd-sidenav {
   //margin-top: 20px;
   margin-bottom: 20px;
-  padding-top: @mainOffset+ @innerOffset;
   font-family: @font-family-sans-serif;
   font-weight: 600;
 }
 
 /* All levels of nav */
+
 .dmd-sidebar {
+    margin-top: 283+@mainOffset+@innerOffset;
+    &.affix{
+      margin-top: @mainOffset+@innerOffset;
+    }
+
   width: 216px;
   .nav > li{ 
      // border-top: 3px solid @gray-light;
@@ -440,8 +468,25 @@ h6, .h6{margin-top: @font-size-h6*3;margin-bottom: @font-size-h6*2;}
     }
 }
 }
-
-
+//reset unidades titulo largo (2 renglones)
+.page{
+  &.unidad-2,&.unidad-4{
+    .dmd-sidebar {
+      margin-top: 325+@mainOffset+@innerOffset;
+      &.affix{
+        margin-top: @mainOffset+@innerOffset;
+      }
+    }
+  }
+  &.unidad-5{
+    .dmd-sidebar {
+      margin-top: 341+@mainOffset+@innerOffset;
+      &.affix{
+        margin-top: @mainOffset+@innerOffset;
+      }
+    }
+  }
+}
 
 
 
