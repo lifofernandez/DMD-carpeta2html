@@ -1,4 +1,4 @@
-guiadeautor-html
+DMD-carpeta2html
 ================
 
-generar contenidos html de la guía de autores de dmd/uvq
+generar contenidos HTML a partir de las carpetas en XML
