@@ -21,9 +21,11 @@
     var $body   = $(document.body)
 
     var $height = $window.height()
+   
+    var regularMargins = 20;
     
-    var mainOfset = 120;
-    var regularMargins = 50;
+    var mainOffset = 65 + regularMargins;
+ 
     
 
     var pathname = window.location.pathname;
@@ -37,7 +39,7 @@
 
     $body.scrollspy({
       target: '.dmd-sidebar',
-      offset: mainOfset+regularMargins,
+      offset: mainOffset,
     })
 
     $window.on('load', function () {
@@ -103,7 +105,7 @@
         offset: {
           top: function () {
             var offsetTop      = $sideBar.offset().top
-            var offsetTop      = 300
+            var offsetTop      = 0
 
             var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
             var navOuterHeight = $('.dmd-nav').height()

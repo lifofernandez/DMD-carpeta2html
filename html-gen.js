@@ -1,8 +1,19 @@
-
+/*
+ * carpeta2html
+ * convierte carpetas descargadas de aca: materiales.uvq.edu.ar a HTML
+ *
+ * Este script fue echo para uso propio y se provee "asi como es" 
+ * forma parte del prototipo de solucion para la autoria de materiales digitales.
+ * 
+ * Lisandro Fernandez 
+ * 2015
+ *
+ */
 
 var fs = require('fs');
 var DOMParser = require('xmldom').DOMParser;
 var html = require("html");
+
 var S = require('string');
 
 // Prefs
@@ -230,7 +241,7 @@ function generarPaginas(element_group,delta){
 
 	var	content = '<div class="col-md-9" role="main">'+parseContent(element_group,delta)+'</div>';
 
-	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
+	var body = '<div class="container main-container"><div class="row">'+indiceApartados+content+'</div></div>';
 
 	var streamUni = fs.createWriteStream(destFolder+paginaFileName);
 	streamUni.once('open', function(fd) {
