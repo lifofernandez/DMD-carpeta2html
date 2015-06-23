@@ -3,7 +3,6 @@
 
 /backup
 
-output-HTML/
 output-HTML/*.html
 output-HTML/bootstrap
 
