@@ -235,14 +235,14 @@
       var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">P</div>');
-      element.append('<div class="collapse-indicator">Z</div>');
+      element.append('<div class="collapse-indicator">+</div>');
     });
 
     $('.para_ampliar').each(function() {
       var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">A</div>');
-      element.append('<div class="collapse-indicator">Z</div>');
+      element.append('<div class="collapse-indicator">+</div>');
     });
 
     //texto aparte
@@ -251,7 +251,7 @@
       var childs = $(this).children('.bloque-contenido').children()
       
       $(this).children('.bloque-contenido').children().slice( 2, childs.length ).wrapAll('<div class="leer_mas collapse"/>');
-      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">Z</div></div>' );
+      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">+</div></div>' );
       $(this).on('click',function(){
         $(this).tooltip('toggle');
         $(this).children('.bloque-contenido').children(".leer_mas").collapse('toggle');
@@ -275,13 +275,13 @@
       var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">O</div>');
-      element.append('<div class="collapse-indicator rotate">Z</div>');
+      element.append('<div class="collapse-indicator rotate">+</div>');
     });
     $('.lectura_recomendada').each(function() {
       var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
       element.prepend('<div class="icono">O</div>');
-      element.append('<div class="collapse-indicator">Z</div>');
+      element.append('<div class="collapse-indicator">+</div>');
     });
 
     //Actividad

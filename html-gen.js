@@ -80,7 +80,7 @@ function buildIndex() {
 	
 	mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS</div></div></div>';
 
-	mainHtml.header = '<header class="navbar navbar-default affix-top" role="banner">'+mainNav.render+'</header>';
+	mainHtml.header = '<header class="navbar navbar-inverse affix-top" role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
 
@@ -96,7 +96,8 @@ function buildIndex() {
 	
 	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Introducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
-	mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
+	//mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
+	mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body id="top" class="index">'+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
 
 	
 	var fileName = destFolder+'index.html';
@@ -234,7 +235,7 @@ function generarPaginas(element_group,delta){
 
 	var headPagina = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""> <meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"> <title>'+carpeta.titulo+' / '+paginaTitulo+'</title> <!-- DMD core CSS --> <link href="piel/css/bootstrap.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--> </head>';
 	
-	var headerPagina = '<body class="page '+elementTipe+' '+elementTipe+'-'+delta+'"><header class="navbar navbar-default navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
+	var headerPagina = '<body class="page '+elementTipe+' '+elementTipe+'-'+delta+'"><header class="navbar navbar-inverse navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
 
 	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+sideNavFromElements(apartados,'apartado_titulo','',elementDelta,'subapartado', 'subapartado_titulo',paginaTitulo)+'</div></div>';
 

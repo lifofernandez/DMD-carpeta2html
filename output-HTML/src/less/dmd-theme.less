@@ -30,7 +30,7 @@ table{
 
 	border-bottom-width: 0px;
 	border: 0px solid transparent;
-	border-bottom: 1px solid @brand-primary;
+	//border-bottom: 1px solid @brand-primary;
 	margin-bottom: 0px;
 
 	.dmd-nav-main{
@@ -42,11 +42,11 @@ table{
 		.navbar-brand {
 			width: 250px;
 			line-height: .5;
-			font-size: 95px;
+			font-size: 86px;
 			font-weight: normal;
 			font-family: 'UNQ Dingbats';
 			content: 'U';
-			color:@brand-primary;
+			color:@white;
 
 		}
 
@@ -68,7 +68,7 @@ table{
 
 			&.active{
 				> a {
-					border-bottom: 1px solid @brand-primary;
+					border-bottom: 1px solid @white;
 				}
 			}
   		}
@@ -180,7 +180,7 @@ table{
 		}
 		.nav {
 	    	display: none; /* Hide by default, but at >768px, show it */
-	    	//padding-bottom: 10px;
+	    	padding-bottom: 20px;
 	    	//padding-top: 10px;
 
 	    	& > li {
@@ -344,9 +344,7 @@ blockquote{
 }
 
 .icono, 
-.collapse-indicator, 
 .back-to-top-arrow,
-
 .popover-title{
 	font-family: 'UNQ Dingbats';
 	font-weight: 400 ;
@@ -356,6 +354,14 @@ blockquote{
 	}
 }
 
+.collapse-indicator{
+	//font-family: 'UNQ Dingbats';
+	font-weight: 400 ;
+
+	&.rotate{
+		.cuarentaCinco();
+	}
+}
 
 .navbar.affix {
 	left: 0;
@@ -451,6 +457,7 @@ blockquote{
   	padding-top: @mainOffset + @innerOffset;
   	padding-bottom: 300px;
   	padding-right: 70px;
+
   	img{
   		.img-responsive();
   		margin: 30px 0px;
@@ -548,13 +555,22 @@ blockquote{
 		display: inline;
 		font-size: 38px;
 		float: right;
-		margin-right: 20px;
-		line-height: 0.9;
+		margin-right: 7px;
+		line-height: .85;
+
+		/* Firefox */
+		-moz-transition: all .5s ease;
+		/* WebKit */
+		-webkit-transition: all .5s ease;
+		/* Opera */
+		-o-transition: all .5s ease;
+		/* Standard */
+		transition: all .5s ease;
 
        // border-right: 3px solid @white;
     	   	&.rotate {
-       			margin-top: -4px;
-       			.cientoOchenta();
+       			//margin-top: -1px;
+       			.cuarentaCinco();
      	  	}
    	}
 
@@ -661,7 +677,7 @@ blockquote{
 				float: right;
 				margin-right: 15px;
 				&.rotate {
-					.cientoOchenta();
+					.cuarentaCinco();
 				}
 			}
 		}
@@ -961,3 +977,16 @@ footer.dmd-footer{
 
 }
 
+.cuarentaCinco(){
+	/* Safari */
+	-webkit-transform: rotate(-45deg);
+	/* Firefox */
+	-moz-transform: rotate(-45deg);
+	/* IE */
+	-ms-transform: rotate(-45deg);
+	/* Opera */
+	-o-transform: rotate(-45deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.25);
+
+}

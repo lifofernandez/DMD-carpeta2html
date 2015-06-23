@@ -18,8 +18,9 @@
 @mainOffset: (@navbar-height + @regularMargins);
 
 
+//contenido
+@innerOffset:50px;
 
-@innerOffset:0px;
 @containerPaddings : 100px;
 
 @deltaSize: 100px;
@@ -31,3 +32,29 @@
 @border-radius-small:       2px;
 @border-radius-large:       4px;
 
+//
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+@navbar-inverse-color:                      @white;
+@navbar-inverse-bg:                         @brand-primary;
+@navbar-inverse-border:                     transparent;
+
+// Inverted navbar links
+@navbar-inverse-link-color:                 @white;
+@navbar-inverse-link-hover-color:           darken(@white, 10%);
+@navbar-inverse-link-hover-bg:              transparent;
+@navbar-inverse-link-active-color:          @white;
+@navbar-inverse-link-active-bg:             transparent;
+@navbar-inverse-link-disabled-color:        @gray-light;
+@navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar brand label
+@navbar-inverse-brand-color:                @navbar-inverse-link-color;
+@navbar-inverse-brand-hover-color:          @navbar-inverse-link-hover-color;
+@navbar-inverse-brand-hover-bg:             transparent;
+
+// Inverted navbar toggle
+@navbar-inverse-toggle-hover-bg:            #ddd;
+@navbar-inverse-toggle-icon-bar-bg:         #ccc;
+@navbar-inverse-toggle-border-color:        #ddd;

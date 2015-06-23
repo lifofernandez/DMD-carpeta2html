@@ -4655,7 +4655,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #333333;
+  color: #d4d4d4;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
@@ -4666,19 +4666,19 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #d4d4d4;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #333333;
+  color: #ededed;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
+  color: #b3b3b3;
   background-color: transparent;
 }
 .navbar-inverse .navbar-toggle {
@@ -4699,7 +4699,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: transparent;
-  color: #333333;
+  color: #ededed;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
@@ -4713,19 +4713,19 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333333;
+    color: #d4d4d4;
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #333333;
+    color: #ededed;
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #cccccc;
+    color: #b3b3b3;
     background-color: transparent;
   }
 }
@@ -4733,20 +4733,20 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ededed;
 }
 .navbar-inverse .navbar-link:hover {
-  color: #333333;
+  color: #d4d4d4;
 }
 .navbar-inverse .btn-link {
   color: #ededed;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
-  color: #333333;
+  color: #d4d4d4;
 }
 .navbar-inverse .btn-link[disabled]:hover,
 fieldset[disabled] .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link[disabled]:focus,
 fieldset[disabled] .navbar-inverse .btn-link:focus {
-  color: #cccccc;
+  color: #b3b3b3;
 }
 .breadcrumb {
   padding: 8px 15px;
@@ -6829,7 +6829,7 @@ button.close {
   color: #952333;
 }
 .navbar-inverse .navbar-nav > .active > a:hover {
-  color: #333333;
+  color: #d4d4d4;
 }
 .navbar-brand {
   padding-top: 12.5px;
@@ -6972,7 +6972,6 @@ table > tbody > tr:nth-of-type(odd) {
 .navbar {
   border-bottom-width: 0px;
   border: 0px solid transparent;
-  border-bottom: 1px solid #952333;
   margin-bottom: 0px;
 }
 .navbar .dmd-nav-main {
@@ -6984,11 +6983,11 @@ table > tbody > tr:nth-of-type(odd) {
 .navbar .dmd-nav-main .navbar-brand {
   width: 250px;
   line-height: .5;
-  font-size: 95px;
+  font-size: 86px;
   font-weight: normal;
   font-family: 'UNQ Dingbats';
   content: 'U';
-  color: #952333;
+  color: #ededed;
 }
 .navbar .dmd-nav-main .navbar-nav > li {
   float: left;
@@ -7004,7 +7003,7 @@ table > tbody > tr:nth-of-type(odd) {
   border-width: 0px;
 }
 .navbar .dmd-nav-main .navbar-nav > li.active > a {
-  border-bottom: 1px solid #952333;
+  border-bottom: 1px solid #ededed;
 }
 /* Show and affix the side nav when space allows it */
 @media (min-width: 970px) {
@@ -7075,6 +7074,7 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidebar .nav > li .nav {
   display: none;
   /* Hide by default, but at >768px, show it */
+  padding-bottom: 20px;
 }
 .dmd-sidebar .nav > li .nav > li {
   border-top: 0px solid #b3b3b3;
@@ -7214,14 +7214,12 @@ blockquote cite {
   font-weight: 700;
 }
 .icono,
-.collapse-indicator,
 .back-to-top-arrow,
 .popover-title {
   font-family: 'UNQ Dingbats';
   font-weight: 400 ;
 }
 .icono.rotate,
-.collapse-indicator.rotate,
 .back-to-top-arrow.rotate,
 .popover-title.rotate {
   /* Safari */
@@ -7234,6 +7232,21 @@ blockquote cite {
   -o-transform: rotate(180deg);
   /* Internet Explorer */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.collapse-indicator {
+  font-weight: 400 ;
+}
+.collapse-indicator.rotate {
+  /* Safari */
+  -webkit-transform: rotate(-45deg);
+  /* Firefox */
+  -moz-transform: rotate(-45deg);
+  /* IE */
+  -ms-transform: rotate(-45deg);
+  /* Opera */
+  -o-transform: rotate(-45deg);
+  /* Internet Explorer */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.25);
 }
 .navbar.affix {
   left: 0;
@@ -7294,7 +7307,7 @@ blockquote cite {
   border: 3px solid #952333;
 }
 .article {
-  padding-top: 85px + 0px;
+  padding-top: 85px + 50px;
   padding-bottom: 300px;
   padding-right: 70px;
 }
@@ -7334,11 +7347,11 @@ blockquote cite {
   font-size: 33px;
 }
 .article .apartados .apartado {
-  padding-top: 85px + 0px;
+  padding-top: 85px + 50px;
   margin-bottom: 100px;
 }
 .article .apartados .apartado .subapartados .subapartado {
-  padding-top: 85px + 0px;
+  padding-top: 85px + 50px;
 }
 .bloque {
   width: 95%;
@@ -7379,21 +7392,27 @@ blockquote cite {
   display: inline;
   font-size: 38px;
   float: right;
-  margin-right: 20px;
-  line-height: 0.9;
+  margin-right: 7px;
+  line-height: .85;
+  /* Firefox */
+  /* WebKit */
+  -webkit-transition: all .5s ease;
+  /* Opera */
+  -o-transition: all .5s ease;
+  /* Standard */
+  transition: all .5s ease;
 }
 .bloque .collapse-indicator.rotate {
-  margin-top: -4px;
   /* Safari */
-  -webkit-transform: rotate(180deg);
+  -webkit-transform: rotate(-45deg);
   /* Firefox */
-  -moz-transform: rotate(180deg);
+  -moz-transform: rotate(-45deg);
   /* IE */
-  -ms-transform: rotate(180deg);
+  -ms-transform: rotate(-45deg);
   /* Opera */
-  -o-transform: rotate(180deg);
+  -o-transform: rotate(-45deg);
   /* Internet Explorer */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.25);
 }
 .bloque .bloque-contenido {
   width: 100%;
@@ -7489,15 +7508,15 @@ blockquote cite {
 }
 .bloque.texto_aparte .footer .collapse-indicator.rotate {
   /* Safari */
-  -webkit-transform: rotate(180deg);
+  -webkit-transform: rotate(-45deg);
   /* Firefox */
-  -moz-transform: rotate(180deg);
+  -moz-transform: rotate(-45deg);
   /* IE */
-  -ms-transform: rotate(180deg);
+  -ms-transform: rotate(-45deg);
   /* Opera */
-  -o-transform: rotate(180deg);
+  -o-transform: rotate(-45deg);
   /* Internet Explorer */
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0.25);
 }
 .bloque.texto_aparte:hover {
   cursor: pointer;
