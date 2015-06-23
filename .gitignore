@@ -1,9 +1,13 @@
 *.xml
 .DS_Store
 
-output-HTML/bk
-output-HTML/bootstrap
+/backup
+
+output-HTML/
 output-HTML/*.html
+output-HTML/bootstrap
+
+output-HTML/src/private
 
 output-HTML/files/*
-output-HTML/src/private
+
