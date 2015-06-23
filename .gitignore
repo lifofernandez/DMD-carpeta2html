@@ -1,4 +1,7 @@
-output/files
-output/bk
+output-HTML/files
+output-HTML/bk
+output-HTML/bootstrap
+output-HTML/src
+output-HTML/*.html
 .DS_Store
-dmd_bootstrap/bootstrap
+
