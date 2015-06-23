@@ -2,11 +2,13 @@
 .DS_Store
 
 /backup
+/backup/*
 
 output-HTML/*.html
 output-HTML/bootstrap
 
 output-HTML/src/private
+output-HTML/src/private/*
 
 output-HTML/files/*
 
