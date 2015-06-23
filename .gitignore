@@ -1,7 +1,9 @@
-output-HTML/files
-output-HTML/bk
-output-HTML/bootstrap
-output-HTML/src
-output-HTML/*.html
+*.xml
 .DS_Store
 
+output-HTML/bk
+output-HTML/bootstrap
+output-HTML/*.html
+
+output-HTML/files/*
+output-HTML/src/private
