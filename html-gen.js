@@ -1,25 +1,40 @@
+
+
 var fs = require('fs');
 var DOMParser = require('xmldom').DOMParser;
 var html = require("html");
 var S = require('string');
 
+// Prefs
+var destFolder = 'output-HTML/';
+
+
+
+
 ///load 
-var xmlFile = fs.readFileSync(__dirname + '/contents.xml', "utf8");
+var xmlFile = fs.readFileSync(__dirname + '/carpeta.xml', "utf8");
 
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
+
+//lesgou
 var mainHtml = {};
 var mainNav = {};
 
 var carpeta = {};
+
 //GETSS
 carpeta.titulo = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
 carpeta.introduccion = doc.getElementsByTagName('introduccion')[0];
 carpeta.unidades = doc.getElementsByTagName('unidad');
 carpeta.anexos = doc.getElementsByTagName('anexo');
 
+
+
 var nBloques = 0;
+
+
 
 ////////////////////////////////////////////
 ////GENERAR INDICE/////////////////////////
@@ -50,15 +65,15 @@ function buildIndex() {
 
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
-	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="assets/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
+	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="piel/css/style.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
 	
-	mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS - VERSIÓN DIGITAL DE LA CARPETA DE TRABAJO</div></div></div>';
+	mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS</div></div></div>';
 
 	mainHtml.header = '<header class="navbar navbar-default affix-top" role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
 
-	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="assets/js/bootstrap.js"></script>  <script src="assets/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="assets/js/ie10-viewport-bug-workaround.js"></script>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="piel/js/bootstrap.min.js"></script>  <script src="piel/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="piel/js/ie10-viewport-bug-workaround.js"></script>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
@@ -70,14 +85,14 @@ function buildIndex() {
 	
 	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Introducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
 	
-	mainHtml.indexCocat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
+	mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
 
-
-	var fileName = 'output/index.html';
+	
+	var fileName = destFolder+'index.html';
 	var stream = fs.createWriteStream(fileName);
 
 	stream.once('open', function(fd) {
-		var data = mainHtml.indexCocat;
+		var data = mainHtml.indexConcat;
 		var prettyData = prettify(data);
 		stream.end(prettyData);
 	});
@@ -110,6 +125,7 @@ function generarIndiceUnidades(unidades_in){
 
 function generarIndiceAnexos(anexos_in){
 	var indiceAnexos = '<div class="main-index-nav anexos-index">';
+
 	for (var i=0; i < anexos_in.length; i++) {
 
 		var anexoTitulo = 'Anexo';
@@ -175,10 +191,10 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 ////GENERAR PAGINAS/////////////////////////
 ////////////////////////////////////////////
 
-unidadesAnexosWalker(carpeta.unidades);
-unidadesAnexosWalker(carpeta.anexos);
+paginasWalker(carpeta.unidades);
+paginasWalker(carpeta.anexos);
 
-function unidadesAnexosWalker(element_group){
+function paginasWalker(element_group){
 	for (var i=0; i < element_group.length; i++) {
 		generarPaginas(element_group[i],i+1);
 	}
@@ -188,8 +204,10 @@ function unidadesAnexosWalker(element_group){
  * Generar Paginas Individuales De Cada Unidad o Anexo
  */
 function generarPaginas(element_group,delta){
+	
 	var elementTipe = element_group.tagName;
-	var fileName = elementTipe+'-'+delta+'.html';
+	var paginaFileName = elementTipe+'-'+delta+'.html';
+
 	if(elementTipe === 'unidad'){
 		var paginaTitulo = element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var elementDelta = delta;
@@ -214,8 +232,9 @@ function generarPaginas(element_group,delta){
 
 	var body = '<div class="container"><div class="row">'+indiceApartados+content+'</div></div>';
 
-	var streamUni = fs.createWriteStream('output/'+fileName);
+	var streamUni = fs.createWriteStream(destFolder+paginaFileName);
 	streamUni.once('open', function(fd) {
+
 		var data = mainHtml.open+headPagina+headerPagina+body+mainHtml.footer+mainHtml.close;
 		var prettyData = prettify(data);
 		
@@ -225,7 +244,9 @@ function generarPaginas(element_group,delta){
 
 // Element Walker para indicie de cada pagina/unidad
 function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
+
 	var output = '';
+
 	if(elementos.length > 0){
 		output = '<ul class="nav dmd-sidenav"><li class="nav-title"><a class="smooth-trigger" href="#top"><span class="delta">'+parent_delta+'.</span> '+titulo_pagina+'</a></li>';
 		if(!child_to_get)output = '<ul class="nav nav-list">';
@@ -261,7 +282,9 @@ function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_
 // Parsear contenido unidad/apartado
 function parseContent(element_group, delta){
 	var elementTipe = element_group.tagName;
-	console.log(elementTipe+delta); 
+
+	console.log('html-gen -> ['+elementTipe+delta+']'); 
+
 	var output = '<div id="top" class="article '+elementTipe+'-content '+elementTipe+'-content-'+delta+'">';
 
 	if(element_group.childNodes){
