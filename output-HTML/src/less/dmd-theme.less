@@ -1,0 +1,378 @@
+//RESTETS
+
+body {
+  position: relative; 
+}
+
+
+
+
+@media (min-width: @container-sm) {
+	.dmd-sidebar {
+    //padding-left: 20px;
+	}
+}
+
+
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: @container-md) {
+	.dmd-sidebar .nav > .active > ul {
+		display: block;
+	}
+		/* Widen the fixed sidebar */
+	.dmd-sidebar.affix,.dmd-sidebar.affix-bottom {
+	    //width: 233px;
+	}
+	.dmd-sidebar.affix {
+		position: fixed; /* Undo the static from mobile first approach */
+		top: 0px;
+	}
+	.dmd-sidebar.affix-bottom {
+		position: absolute; /* Undo the static from mobile first approach */
+	}
+	.dmd-sidebar.affix-bottom .dmd-sidenav,.dmd-sidebar.affix .dmd-sidenav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+@media (min-width: @container-lg) {
+	/* Widen the fixed sidebar again */
+	.dmd-sidebar.affix-bottom,.dmd-sidebar.affix {
+    //width: 243px;
+	}
+}
+
+ul {
+	list-style: none;
+	padding:0;
+	margin:0 0 11px;
+	li { 
+		padding-left: 10px;
+		text-indent: -10px;
+	}
+	li:before {
+		content: "• ";
+	}
+}
+ol { 
+	padding-left: 0px;
+
+	counter-reset: item ;
+	li { 
+		display: block;
+		padding-left: 18px;
+		text-indent: -18px;
+		p{text-indent: -1px;}
+		ol{
+			li:before { 
+				content: counter(item, lower-alpha) ". ";
+				counter-increment: item;
+
+			}  
+		}
+	}
+
+	li:before { 
+		content: counter(item) ". ";
+		counter-increment: item;
+
+	}  
+}
+ol.alpha-list{
+	li{
+		padding-left: 25px;
+		text-indent: -23px;
+	}
+	li:before { 
+		content: counter(item, lower-alpha) ". ";
+		counter-increment: item;
+		font-size: 22px;
+	}  
+}
+.custom-list{
+    //font-family: 'Aleo Bold';
+    font-size: 22px;
+    &:after{content:")"}
+}
+
+
+
+}
+
+
+
+//////////
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content. esto  esta buenisimo por que lo copie de bootstrap
+ */
+
+
+ /* First level of nav */
+
+ .dmd-sidenav {
+	margin-bottom: 20px;
+	font-family: @font-family-sans-serif;
+	font-weight: 600;
+}
+
+/* All levels of nav */
+.dmd-sidebar {
+	&.affix{
+	}
+
+	width: 216px;
+	.nav > li{ 
+      border-bottom: 3px solid @gray-light;
+		&:first-child{
+			border-top: 3px solid @gray-light;
+		}
+      &:nth-last-child(1){
+    }
+    & > a {
+    	display: block;
+    	padding: 4px 20px;
+    	font-size: 13px;
+      	padding-top: 20px;
+		padding-bottom: 20px;
+		color: #999;
+		border-bottom: 3px solid @gray-light;
+		margin-bottom: -3px;
+
+		&:hover, &:focus {
+	        text-decoration: none;
+	        background-color: transparent;
+	        border-left-width: 0px;
+	        border-left-style: solid;
+   		}
+	}
+
+	&.active > a,
+	&.active:hover > a,
+	&.active:focus > a {
+			background-color: transparent;
+			border-left-width: 0px;
+			border-left-style: solid;
+	  	}
+		.nav {
+	    	display: none; /* Hide by default, but at >768px, show it */
+	    	padding-bottom: 10px;
+	    	padding-top: 10px;
+	    	& > li {
+	    		border-top: 0px solid @gray-light;
+	    		border-bottom: 0px solid @gray-light;
+	    		&:nth-last-child(1){border-bottom: 0px solid @gray-light;}
+	    		& > a {
+	    			border-top: 0px solid @gray-light;
+	    			border-bottom: 0px solid @gray-light;
+	    			padding-top: 5px;
+	    			padding-bottom: 5px;
+	    			padding-left: 44px;
+
+		          	&:hover, &:focus {
+		       		}
+	   			}
+		   
+		 	}
+
+		}
+
+	}
+}
+//tooltips
+
+tooltip{
+	font-family: @font-family-sans-serif;
+	font-weight: 600;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+//PASTILLAS
+.dmd-popover:hover{
+	cursor: pointer;
+	color:@brand-primary;
+}
+.popover{
+	font-family: @font-family-sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	color:@white;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	border-width: 0px;
+	margin: 0;
+	padding: 0;
+	.popover-title{
+		color:@white;
+		font-size: 25px;
+		border-width: 0px;
+		text-align: center;
+		padding: 0;
+		float: left;
+		display: block;
+		width: 40px;
+	}
+	.popover-content{
+		padding: 7px 10px;
+		display: block;
+		float: right;
+		max-width: 235px;
+		line-height: 1.1;
+
+		a{color:lighten(@link-color, 20%); word-wrap: break-word;}
+	}
+}
+
+blockquote{
+
+	border:0px solid transparent;
+	
+	background-color:@white;
+
+	padding: 30px 0px;
+	padding-right: 30px;
+	font-size: @font-size-base;
+
+	&:before{
+		content: 'C';
+		position:absolute;
+		font-family: 'UNQ Dingbats';
+		font-size: 60px;
+		margin-top: -40px;
+		color:@gray-light;
+	}
+	p:first-child {
+		//margin-top: 20px;
+	}
+	p{
+		margin-left: 40px;
+	}
+	
+	cite{
+		font-size: @font-size-small;
+		font-style: normal;
+		font-weight: 700;
+	}
+}
+
+.icono, 
+.collapse-indicator, 
+.back-to-top-arrow,
+
+.popover-title{
+	font-family: 'UNQ Dingbats';
+	font-weight: 400 ;
+
+	&.rotate{
+		.cientoOchenta();
+	}
+}
+
+
+.navbar.affix {
+	left: 0;
+	right: 0;
+	width: 100%;
+	position: fixed; /* Undo the static from mobile first approach */
+	top: 0px;
+	z-index: 1090;
+}
+
+.unidad{
+
+	@c = @brand-primary;
+	.dmd-sidebar .nav > li {
+		.nav > li > a{
+			.delta{
+				color: @c;
+			}
+		}
+	}
+
+	.dmd-sidebar .nav > li > a:hover,
+	.dmd-sidebar .nav > li > a:focus {
+		color: lighten(@c, 10%);
+		border-left-color: @c;
+	}
+	.dmd-sidebar .nav > .active > a,
+	.dmd-sidebar .nav > .active:hover > a,
+	.dmd-sidebar .nav > .active:focus > a {
+		color: @c;
+		border-left-color:@c;
+
+	}
+
+	.unidad-delta, .anexo-delta{
+		background-color:@c;
+	}
+	.apartado-delta, 
+	.subapartado-delta, 
+	.custom-list, 
+	.bloque .delta{
+		color:@c;
+	}
+
+	.article{
+		ul{
+			li:before {
+				color: @c; /* or whatever color you prefer */
+			}
+		}
+		ol{ 
+			li:before { 
+				color: @c;
+			}  
+		}
+	}
+
+	.coloreado{
+		color:@c;
+	}
+
+	.bloque {
+		.tipo{
+			background-color: @c;
+			color:@white;
+		}
+		&.leer_con_atencion{
+			background-color: @c;
+		}
+		&.texto_aparte{
+			.suspensivos{
+				color:@c;
+			}
+			&:hover{
+				border-color: @c;
+			}
+		}
+		&.imagen{
+			img:hover{
+				border: 3px solid @c;
+			}
+		}
+
+	}
+}
+
+//MIXIMS
+
+
+.cientoOchenta(){
+	/* Safari */
+	-webkit-transform: rotate(180deg);
+	/* Firefox */
+	-moz-transform: rotate(180deg);
+	/* IE */
+	-ms-transform: rotate(180deg);
+	/* Opera */
+	-o-transform: rotate(180deg);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+
+}
+
