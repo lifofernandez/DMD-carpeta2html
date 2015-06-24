@@ -192,8 +192,23 @@
     
 
     ///COLLAPSES
-    
+    $(' .bloque').each(function() {
+      $(this).children('.bloque-contenido').addClass('collapse in');
+      //$(this).children('.bloque-contenido').collapse('hide');
+      //$(this).children('.tipo').children('.collapse-indicator').addClass('rotate');
 
+      $(this).children('.bloque-header').children('.collapse-indicator').on('click',function(){
+        $(this).toggleClass('rotate');
+        $(this).parent().parent().tooltip('toggle');
+        $(this).parent().siblings(".bloque-contenido").collapse('toggle');
+
+      });
+
+    });
+
+
+    
+    /*
     $('.para_ampliar, .lectura_recomendada, .para_reflexionar').each(function() {
      	$(this).children('.bloque-contenido').addClass('collapse');
         //$(this).children('.bloque-contenido').collapse('hide');
@@ -207,6 +222,8 @@
         });
 
     });
+
+
     $(' .lectura_obligatoria').each(function() {
       $(this).children('.bloque-contenido').addClass('collapse in');
         //$(this).children('.bloque-contenido').collapse('hide');
@@ -221,10 +238,10 @@
 
     });
     
-
+*/
 
     //BLOQUES & iconos
-
+/*
     $('.leer_con_atencion').each(function() {
       var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
       //$(this).prepend(element);
@@ -308,7 +325,7 @@
       //$(this).prepend(element);
       element.parent().prepend('<div class="icono">W</div>');
     });
-
+*/
 
     //UTILES & ADDS
     function isScrolledIntoView(elem){

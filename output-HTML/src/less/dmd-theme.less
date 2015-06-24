@@ -285,6 +285,7 @@ table{
 }
 
 //tooltips
+
 tooltip{
 	font-family: @font-family-sans-serif;
 	font-weight: 600;
@@ -293,6 +294,7 @@ tooltip{
 }
 
 //PASTILLAS
+/*
 .dmd-popover:hover{
 	cursor: pointer;
 	color:@brand-primary;
@@ -327,6 +329,7 @@ tooltip{
 		a{color:lighten(@link-color, 20%); word-wrap: break-word;}
 	}
 }
+*/
 
 blockquote{
 
@@ -446,23 +449,23 @@ blockquote{
 
 	.bloque {
 		.tipo{
-			background-color: @c;
-			color:@white;
+			//background-color: @c;
+			color:@c;
 		}
 		&.leer_con_atencion{
-			background-color: @c;
+			//background-color: @c;
 		}
 		&.texto_aparte{
 			.suspensivos{
-				color:@c;
+				//color:@c;
 			}
 			&:hover{
-				border-color: @c;
+				//border-color: @c;
 			}
 		}
 		&.imagen{
 			img:hover{
-				border: 3px solid @c;
+				border: 1px solid @c;
 			}
 		}
 
@@ -484,7 +487,9 @@ blockquote{
 
   	img{
   		.img-responsive();
-  		margin: 30px 0px;
+  		width: 100%;
+  		margin: 5px 10px !important;
+  		border: 1px solid @brand-primary !important;
   	}
   	.unidad-delta, .anexo-delta{
   		.big-delta();
@@ -542,70 +547,90 @@ blockquote{
 //BLOQUES
 .bloque{
 	width: 95%;
-	margin: 30px 0;
+	margin-top: 30px;
+	padding: 10px 0;
+	border-top:1px solid @brand-primary;
+	border-bottom:1px solid @brand-primary;
+
 	a{word-break: break-all;}
+	/*
 	.delta{
 		font-size: 52px;
 		// font-family: 'Aleo Regular';
 	}
-	.tipo{
-		font-family: @font-family-sans-serif;
-		text-transform: uppercase;
-		font-weight: 600;
+	*/
 
-		font-size: 14px;
-		height: 30px;
+	.bloque-header{
+		color: @brand-primary;
+		display: block;
+		/* float: left; */
+		width: 100%;
+		height: 50px;
+		.icono{
+			display: block;
+			float: left;
+		  	font-size: 34px;
+			margin-top: 2px;
+			line-height: 1;
+			
+	
+		}
+	
+		
+	
+		.tipo{
+			//font-family: @font-family-sans-serif;
+			text-transform: uppercase;
+			font-weight: 600;
+			float: left;
+			font-size: 22px;
+			
+		}
+		.collapse-indicator {
+			display: block;
+			font-size: 38px;
+			font-weight: bold;
+			float: right;
+
+			margin-right: 7px;
+			line-height: .85;
+	
+			/* Firefox */
+			-moz-transition: all .5s ease;
+			/* WebKit */
+			-webkit-transition: all .5s ease;
+			/* Opera */
+			-o-transition: all .5s ease;
+			/* Standard */
+			transition: all .5s ease;
+	
+	       // border-right: 3px solid @white;
+	    	   	&.rotate {
+	       			//margin-top: -1px;
+	       			.cuarentaCinco();
+	     	  	}
+	   	}
 	}
-	.icono{
-		display: inline-block;
-		float: left;
-		font-size: 43px;
-		height: 30px;
-		width: 35px;
-		margin-left: -2px;
-		line-height: 0.91;
-		//border-right: 3px solid @white;
-
-	}
-
-	.leyenda{
-		display: inline-block;
-		float: left;
-		font-size: 18px;
-		line-height: 1.7;
-		//padding-left: 10px;
-	}
-
-
-	.collapse-indicator {
-		display: inline;
-		font-size: 38px;
-		float: right;
-		margin-right: 7px;
-		line-height: .85;
-
-		/* Firefox */
-		-moz-transition: all .5s ease;
-		/* WebKit */
-		-webkit-transition: all .5s ease;
-		/* Opera */
-		-o-transition: all .5s ease;
-		/* Standard */
-		transition: all .5s ease;
-
-       // border-right: 3px solid @white;
-    	   	&.rotate {
-       			//margin-top: -1px;
-       			.cuarentaCinco();
-     	  	}
-   	}
 
    	.bloque-contenido{
    		width: 100%;
+   		//display: block;
+   		&.collapse.in {
+		  	display: table;
+		}
+		clear: both;
    		p:nth-last-child(1) {
    			margin-bottom:0px;
    		}
    	}
+
+   	&.texto {
+		margin-bottom: 20px;
+		.bloque-header{display: none;}
+		border:0px solid transparent;
+	}
+
+   	/*
 	//resets
 	&.audiovisual, &.audio, &.actividad, &.cita, &.ejemplo, &.web{
 		.icono{
@@ -615,10 +640,7 @@ blockquote{
 
   	// eachs tipo de bloque
 
-	&.texto {
-		margin-bottom: 20px;
-		.tipo{display: none;}
-	}
+	
 
 	&.para_ampliar, &.lectura_recomendada, &.para_reflexionar{
 		.tipo:hover{
@@ -935,7 +957,7 @@ blockquote{
 			padding: 5px;
 			padding-left: 44px;
 		}
-	}
+	}*/
 
 }  /*termina bloques*/
 

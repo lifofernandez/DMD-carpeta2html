@@ -389,16 +389,20 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
 				
-				var tooltipStr = '';
+				var tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
 
-				var iconoStr = '<div class="icono">x</div>';
+				var iconoStr = '<div class="icono">L</div>';
 				var collapseStr = '<div class="collapse-indicator">+</div>';
 
-				var bloqueHeader = iconoStr+'<div class="tipo">'+bloqueTipoName+'</div>';
+				var bloqueHeader = '<div class="bloque-header">'+iconoStr+'<div class="tipo">'+bloqueTipoName+'</div>'+collapseStr+'</div>';
 
-				//if(bloqueTipo !== 'texto')tooltipStr = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
+				if(bloqueTipo === 'texto'){
+					bloqueHeader = '<div class="bloque-header">'+'<div class="tipo">'+bloqueTipoName+'</div>'+'</div>';
+					tooltipStr = '';
+
+			}
 				//if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
-					tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
+					
 
 				var op=op+'<div '+tooltipStr+' id="bloque-'+nBloques+'"class="bloque '+bloqueTipo+'">'+bloqueHeader+bloqueContent+'</div>';
 			}
