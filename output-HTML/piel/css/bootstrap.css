@@ -6919,6 +6919,13 @@ legend {
 .modal .close {
   color: #333333;
 }
+/*
+ * dmd-theme.js
+ * 
+ * Lisandro Fernandez 
+ * 2015
+ *
+ */
 body {
   position: relative;
 }
@@ -7099,104 +7106,12 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidebar > .nav > li:first-child > a {
   font-size: 15px;
 }
-.bloque-contenido {
-  /*
-	ul {
-		list-style: none;
-		padding:0;
-		margin:0 0 11px;
-		li { 
-			padding-left: 10px;
-			text-indent: -10px;
-		}
-		li:before {
-			content: "• ";
-		}
-	}	
-	ol { 
-		padding-left: 0px;
-
-		counter-reset: item ;
-		li { 
-			display: block;
-			padding-left: 18px;
-			text-indent: -18px;
-			p{text-indent: -1px;}
-			ol{
-				li:before { 
-					content: counter(item, lower-alpha) ". ";
-					counter-increment: item;
-
-				}  
-			}
-		}
-
-		li:before { 
-			content: counter(item) ". ";
-			counter-increment: item;
-
-		}  
-	}
-	ol.alpha-list{
-		li{
-			padding-left: 25px;
-			text-indent: -23px;
-		}
-		li:before { 
-			content: counter(item, lower-alpha) ". ";
-			counter-increment: item;
-			font-size: 22px;
-		}  
-	}
-	.custom-list{
-	    //font-family: 'Aleo Bold';
-	    font-size: 22px;
-	    &:after{content:")"}
-	}
-	*/
-}
 tooltip {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
   font-size: 11px;
   text-transform: uppercase;
 }
-/*
-.dmd-popover:hover{
-	cursor: pointer;
-	color:@brand-primary;
-}
-.popover{
-	font-family: @font-family-sans-serif;
-	font-weight: 700;
-	font-size: 16px;
-	color:@white;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	border-width: 0px;
-	margin: 0;
-	padding: 0;
-	.popover-title{
-		color:@white;
-		font-size: 25px;
-		border-width: 0px;
-		text-align: center;
-		padding: 0;
-		float: left;
-		display: block;
-		width: 40px;
-	}
-	.popover-content{
-		padding: 7px 10px;
-		display: block;
-		float: right;
-		max-width: 235px;
-		line-height: 1.1;
-
-		a{color:lighten(@link-color, 20%); word-wrap: break-word;}
-	}
-}
-*/
 blockquote {
   border: 0px solid transparent;
   background-color: #ededed;
@@ -7352,12 +7267,6 @@ blockquote cite {
   padding: 10px 0;
   border-top: 1px solid #952333;
   border-bottom: 1px solid #952333;
-  /*
-	.delta{
-		font-size: 52px;
-		// font-family: 'Aleo Regular';
-	}
-	*/
 }
 .bloque a {
   word-break: break-all;
@@ -7434,6 +7343,7 @@ footer.dmd-footer {
   text-transform: uppercase;
   padding: 10px 0px;
   background-color: #952333;
+  color: #eeeeee;
 }
 footer.dmd-footer p {
   margin: 0px;
@@ -7448,7 +7358,7 @@ footer.dmd-footer #bottom-to-top .back-to-top-arrow {
   display: block;
   font-size: 34px;
   line-height: 0.3;
-  color: #b3b3b3;
+  color: #eeeeee;
 }
 footer.dmd-footer #copy {
   text-align: right;
