@@ -334,7 +334,12 @@ function getPreliminares(element, what_to_get){
 
 	if(element.getElementsByTagName(what_to_get)[0]){
 		var obj = element.getElementsByTagName(what_to_get)[0];
-		op = op+'<div class="preliminares '+what_to_get+'">'+getContent(obj)+'</div>';
+		var partTitulo = '';
+
+		if(what_to_get === 'unidad_objetivos')partTitulo = '<h4 class="preliminares-title" >Objetivos de la Unidad</h4>';
+		if(what_to_get === 'unidad_introduccion')partTitulo = '<h4 class="preliminares-title" >Introducción a la Unidad</h4>';
+
+		op = op+'<div class="preliminares '+what_to_get+'">'+partTitulo+getContent(obj)+'</div>';
 	}
 
 	return op;
@@ -387,12 +392,88 @@ function getBloques(element){
 				var bloqueTipo =  bloques[i].getAttribute('tipo').replace('recurso_','');
 				var bloqueTipoName =  S(bloqueTipo).humanize().capitalize().s;
 
-				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
+				var bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'</div>';
 				
 				var tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
 
-				var iconoStr = '<div class="icono">L</div>';
-				var collapseStr = '<div class="collapse-indicator">+</div>';
+				var collapseStr = '<div class="collapse-indicator rotate">+</div>';
+
+				var iconoStr = '<div class="icono"></div>';
+				switch (bloqueTipo){
+					case "actividad": 
+					iconoStr = '<div class="icono">K</div>';
+					break;
+
+					case "cita": 
+					iconoStr = '<div class="icono">C</div>';
+					break;
+
+					case "leer_con_atencion": 
+					iconoStr = '<div class="icono">L</div>';
+					break;
+
+					case "pastilla": 
+					iconoStr = '<div class="icono"></div>';
+					break;
+
+					case "ejemplo": 
+					iconoStr = '<div class="icono">X</div>';
+					break;
+
+					case "para_ampliar": 
+					//bloqueContent = '<div class="bloque-contenido collapse">'+getContent(bloques[i])+'</div>';
+					//collapseStr = '<div class="collapse-indicator">+</div>';
+					//iconoStr = '<div class="icono">A</div>';
+					break;
+
+					case "para_reflexionar": 
+					iconoStr = '<div class="icono">P</div>';
+					bloqueContent = '<div class="bloque-contenido collapse">'+getContent(bloques[i])+'</div>';
+					collapseStr = '<div class="collapse-indicator">+</div>';
+					iconoStr = '<div class="icono">A</div>';
+					break;
+
+					case "texto_aparte": 
+					iconoStr = '<div class="icono"></div>';
+					bloqueContent = '<div class="bloque-contenido collapse">'+getContent(bloques[i])+'</div>';
+					collapseStr = '<div class="collapse-indicator">+</div>';
+					iconoStr = '<div class="icono">A</div>';
+					break;
+
+					case "lectura_obligatoria": 
+					iconoStr = '<div class="icono">O</div>';
+					break;
+
+					case "lectura_recomendada": 
+					iconoStr = '<div class="icono">O</div>';
+					bloqueContent = '<div class="bloque-contenido collapse">'+getContent(bloques[i])+'</div>';
+					collapseStr = '<div class="collapse-indicator">+</div>';
+					iconoStr = '<div class="icono">A</div>';
+					break;
+
+					case "audio": 
+					iconoStr = '<div class="icono">S</div>';
+					break;
+
+					case "audiovisual": 
+					iconoStr = '<div class="icono">E</div>';
+					break;
+
+					case "imagen": 
+					iconoStr = '<div class="icono"></div>';
+					break;
+
+					case "web": 
+					iconoStr = '<div class="icono">W</div>';
+					break;
+
+
+
+					default:
+					
+				}
+
+				
 
 				var bloqueHeader = '<div class="bloque-header">'+iconoStr+'<div class="tipo">'+bloqueTipoName+'</div>'+collapseStr+'</div>';
 
@@ -400,7 +481,11 @@ function getBloques(element){
 					bloqueHeader = '<div class="bloque-header">'+'<div class="tipo">'+bloqueTipoName+'</div>'+'</div>';
 					tooltipStr = '';
 
-			}
+				}
+
+
+
+				
 				//if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
 					
 

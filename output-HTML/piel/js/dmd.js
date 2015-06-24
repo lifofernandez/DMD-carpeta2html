@@ -193,14 +193,14 @@
 
     ///COLLAPSES
     $(' .bloque').each(function() {
-      $(this).children('.bloque-contenido').addClass('collapse in');
+      //$(this).children('.bloque-contenido').addClass('collapse in');
       //$(this).children('.bloque-contenido').collapse('hide');
       //$(this).children('.tipo').children('.collapse-indicator').addClass('rotate');
 
-      $(this).children('.bloque-header').children('.collapse-indicator').on('click',function(){
-        $(this).toggleClass('rotate');
-        $(this).parent().parent().tooltip('toggle');
-        $(this).parent().siblings(".bloque-contenido").collapse('toggle');
+      $(this).children('.bloque-header').on('click',function(){
+        $(this).children('.collapse-indicator').toggleClass('rotate');
+        $(this).parent().tooltip('toggle');
+        $(this).siblings(".bloque-contenido").collapse('toggle');
 
       });
 
