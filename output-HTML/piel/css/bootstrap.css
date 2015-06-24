@@ -1103,12 +1103,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #952333;
+  color: #5bc0de;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #421017;
+  color: #2390b0;
   text-decoration: underline;
 }
 a:focus {
@@ -3462,7 +3462,7 @@ fieldset[disabled] .btn-danger.active {
   background-color: #ffffff;
 }
 .btn-link {
-  color: #952333;
+  color: #5bc0de;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3483,7 +3483,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:hover,
 .btn-link:focus {
-  color: #421017;
+  color: #2390b0;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4062,7 +4062,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #952333;
+  border-color: #5bc0de;
 }
 .nav .nav-divider {
   height: 1px;
@@ -4555,28 +4555,28 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #dddddd;
 }
 .navbar-default .navbar-brand {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #952333;
+  color: #5bc0de;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
   color: #333333;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #952333;
+  color: #5bc0de;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #952333;
+  color: #5bc0de;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -4603,21 +4603,21 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
-  color: #952333;
+  color: #5bc0de;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #952333;
+    color: #5bc0de;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #952333;
+    color: #5bc0de;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #952333;
+    color: #5bc0de;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
@@ -4628,17 +4628,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default .navbar-link {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .navbar-link:hover {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .btn-link {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .btn-link:hover,
 .navbar-default .btn-link:focus {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-default .btn-link[disabled]:hover,
 fieldset[disabled] .navbar-default .btn-link:hover,
@@ -5001,7 +5001,7 @@ a.badge:focus {
 }
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #952333;
+  color: #5bc0de;
   background-color: #ffffff;
 }
 .list-group-item > .badge {
@@ -5074,7 +5074,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #952333;
+  border-color: #5bc0de;
 }
 .thumbnail .caption {
   padding: 9px;
@@ -6826,7 +6826,7 @@ button.close {
   border: 1px solid #ddd;
 }
 .navbar-default .navbar-nav > .active > a:hover {
-  color: #952333;
+  color: #5bc0de;
 }
 .navbar-inverse .navbar-nav > .active > a:hover {
   color: #d4d4d4;
@@ -7043,18 +7043,23 @@ table > tbody > tr:nth-of-type(odd) {
 }
 /* All levels of nav */
 .dmd-sidebar {
-  width: 216px;
+  width: 250px;
+}
+.dmd-sidebar > .nav > li {
+  padding: 5px 0;
 }
 .dmd-sidebar .nav > li {
-  border-bottom: 1px solid #b3b3b3;
+  border-bottom: 0px solid #b3b3b3;
 }
 .dmd-sidebar .nav > li > a {
   display: block;
-  padding: 4px 20px;
-  font-size: 13px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #b3b3b3;
+}
+.dmd-sidebar .nav > li > a .delta {
+  font-size: 13px;
 }
 .dmd-sidebar .nav > li > a:hover,
 .dmd-sidebar .nav > li > a:focus {
@@ -7067,14 +7072,14 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidebar .nav > li.active:hover > a,
 .dmd-sidebar .nav > li.active:focus > a {
   background-color: transparent;
-  border-left-width: 0px;
+  border-left-width: 1px;
+  margin-left: -1px;
   border-left-style: solid;
-  padding-bottom: 5px;
 }
 .dmd-sidebar .nav > li .nav {
   display: none;
   /* Hide by default, but at >768px, show it */
-  padding-bottom: 20px;
+  border-bottom: 0px solid #b3b3b3;
 }
 .dmd-sidebar .nav > li .nav > li {
   border-top: 0px solid #b3b3b3;
@@ -7086,11 +7091,13 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidebar .nav > li .nav > li > a {
   border-top: 0px solid #b3b3b3;
   border-bottom: 0px solid #b3b3b3;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: 13px;
 }
 .dmd-sidebar .nav > li.active > .nav {
   display: inherit;
+}
+.dmd-sidebar > .nav > li:first-child > a {
+  font-size: 15px;
 }
 .bloque-contenido {
   /*
@@ -7187,7 +7194,7 @@ tooltip {
   line-height: 1.1;
 }
 .popover .popover-content a {
-  color: #d44a5d;
+  color: #b0e1ef;
   word-wrap: break-word;
 }
 blockquote {
@@ -7311,6 +7318,9 @@ blockquote cite {
   padding-bottom: 300px;
   padding-right: 70px;
 }
+.article header h2.titulo-pagina {
+  margin-top: 0px;
+}
 .article img {
   display: block;
   max-width: 100%;
@@ -7319,6 +7329,7 @@ blockquote cite {
 }
 .article .unidad-delta,
 .article .anexo-delta {
+  display: none;
   color: #952333;
   background-color: transparent;
   width: 100px;
@@ -7330,19 +7341,16 @@ blockquote cite {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .article .apartado-delta {
-  font-family: 'Aleo Bold';
   font-size: 23px;
   line-height: 1;
 }
 .article .subapartado-delta {
-  font-family: 'Aleo Bold';
   font-size: 23px;
   line-height: 1;
 }
 .article .part-title {
   padding: 8px 0;
   margin-top: 0px;
-  font-family: 'Aleo Regular';
   margin-bottom: 82px;
   font-size: 33px;
 }
@@ -7362,7 +7370,6 @@ blockquote cite {
 }
 .bloque .delta {
   font-size: 52px;
-  font-family: 'Aleo Regular';
 }
 .bloque .tipo {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7379,14 +7386,12 @@ blockquote cite {
   width: 35px;
   margin-left: -2px;
   line-height: 0.91;
-  border-right: 3px solid #ededed;
 }
 .bloque .leyenda {
   display: inline-block;
   float: left;
   font-size: 18px;
   line-height: 1.7;
-  padding-left: 10px;
 }
 .bloque .collapse-indicator {
   display: inline;

@@ -87,7 +87,7 @@
 
        // animate
        $body.animate({
-           scrollTop: $(this.hash).offset().top
+           scrollTop: $(this.hash).offset().top - mainOffset
          }, 500, function(){
 
            // when done, add hash to url

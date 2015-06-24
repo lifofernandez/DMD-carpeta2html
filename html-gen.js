@@ -299,19 +299,23 @@ function parseContent(element_group, delta){
 
 	var output = '<div id="top" class="article '+elementTipe+'-content '+elementTipe+'-content-'+delta+'">';
 
+	var paginaTitulo = element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
+	var paginaAnchor = makeUrl(element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue);
+	
 	if(element_group.childNodes){
 
 		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
 		if(elementTipe === 'unidad'){
 		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
-		var elementTitulo = '<h2>'+element_group.getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue+'</h2>';
+		var elementTitulo = '<h2 id="'+paginaAnchor+'" class="titulo-pagina">'+paginaTitulo+'</h2>';
+		
 		var elementObjetivos = getPreliminares(element_group, 'unidad_objetivos');
 		var elementIntro = getPreliminares(element_group, 'unidad_introduccion');
 		}
 
 		if(elementTipe === 'anexo'){
 			var elementDelta = '<div class="delta '+elementTipe+'-delta">'+romanize(delta)+'</div>';
-			var elementTitulo = '<h2>Anexo</h2>';
+			var elementTitulo = '<h2 id="titulo-anexo" class="titulo-pagina">Anexo</h2>';
 			var elementObjetivos = '';
 			var elementIntro = '';
 		}

@@ -144,21 +144,25 @@ table{
 	&.affix{
 	
 	}
-
-	width: 216px;
+	width: 250px;
+	> .nav > li{
+		padding: 5px 0;
+	}
 	.nav > li{ 
-      border-bottom: 1px solid @gray-light;
-		&:first-child{
-			//border-top: 1px solid @gray-light;
-		}
-      	&:nth-last-child(1){}
+      	border-bottom: 0px solid @gray-light;
+		
+		
+      	
 	    & > a {
 	    	display: block;
-	    	padding: 4px 20px;
-	    	font-size: 13px;
-	      	padding-top: 20px;
-			padding-bottom: 20px;
+	    	//padding: 4px 20px;
+	    	font-size: 14px;
+	      	padding-top: 5px;
+			padding-bottom: 5px;
 			color: @gray-light;
+			.delta{
+				font-size: 13px;
+			}
 			// border-bottom: 1px solid @gray-light;
 			// margin-bottom: -1px;
 
@@ -174,15 +178,19 @@ table{
 		&.active:hover > a,
 		&.active:focus > a {
 			background-color: transparent;
-			border-left-width: 0px;
+			border-left-width: 1px;
+			margin-left: -1px;
 			border-left-style: solid;
-			padding-bottom: 5px;
+			//padding-bottom: 5px;
 		}
+
+		
+
 		.nav {
 	    	display: none; /* Hide by default, but at >768px, show it */
-	    	padding-bottom: 20px;
+	    	//padding-bottom: 20px;
 	    	//padding-top: 10px;
-
+	    	border-bottom: 0px solid @gray-light;
 	    	& > li {
 	    		border-top: 0px solid @gray-light;
 	    		border-bottom: 0px solid @gray-light;
@@ -190,8 +198,9 @@ table{
 	    		& > a {
 	    			border-top: 0px solid @gray-light;
 	    			border-bottom: 0px solid @gray-light;
-	    			padding-top: 5px;
-	    			padding-bottom: 5px;
+	    			//padding-top: 5px;
+	    			//padding-bottom: 5px;
+	    			font-size: 13px;
 	    			//padding-left: 44px;
 
 		          	&:hover, &:focus {
@@ -206,6 +215,14 @@ table{
 		}
 
 	}
+	> .nav > li:first-child > a{
+		font-size: 15px;
+	}
+	> .nav > li:first-child.active > a{
+		//border-top: 1px solid @gray-light;
+		//padding-bottom: 20px;
+	}
+	
 }
 
 
@@ -453,6 +470,11 @@ blockquote{
 }
 
  .article{
+ 	header{
+ 	 	h2.titulo-pagina{
+ 	 		margin-top: 0px;
+ 	 	}
+ 	}
 
   	padding-top: @mainOffset + @innerOffset;
   	padding-bottom: 300px;
@@ -468,19 +490,19 @@ blockquote{
 
 
   	.apartado-delta{
-  		font-family: 'Aleo Bold';
+  		//font-family: 'Aleo Bold';
   		font-size: 23px;
   		line-height: 1;
   	}
   	.subapartado-delta{
-  		font-family: 'Aleo Bold';
+  		//font-family: 'Aleo Bold';
   		font-size: 23px;
   		line-height: 1;
   	}
   	.part-title{
   		padding: 8px 0;
   		margin-top: 0px;
-  		font-family: 'Aleo Regular';
+  		//font-family: 'Aleo Regular';
   		margin-bottom: 82px;
   		font-size: 33px;
   	}
@@ -520,7 +542,7 @@ blockquote{
 	a{word-break: break-all;}
 	.delta{
 		font-size: 52px;
-		font-family: 'Aleo Regular';
+		// font-family: 'Aleo Regular';
 	}
 	.tipo{
 		font-family: @font-family-sans-serif;
@@ -538,7 +560,7 @@ blockquote{
 		width: 35px;
 		margin-left: -2px;
 		line-height: 0.91;
-		border-right: 3px solid @white;
+		//border-right: 3px solid @white;
 
 	}
 
@@ -547,7 +569,7 @@ blockquote{
 		float: left;
 		font-size: 18px;
 		line-height: 1.7;
-		padding-left: 10px;
+		//padding-left: 10px;
 	}
 
 
@@ -946,6 +968,7 @@ footer.dmd-footer{
 
 //MIXIMS
 .big-delta(){
+	display: none;
 	color:  @brand-primary;
 	background-color:  transparent;
 	//border-radius: 50%;
