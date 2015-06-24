@@ -308,7 +308,7 @@ function parseContent(element_group, delta){
 		if(elementTipe === 'unidad'){
 		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
 		var elementTitulo = '<h2 id="'+paginaAnchor+'" class="titulo-pagina">'+paginaTitulo+'</h2>';
-		
+
 		var elementObjetivos = getPreliminares(element_group, 'unidad_objetivos');
 		var elementIntro = getPreliminares(element_group, 'unidad_introduccion');
 		}
@@ -390,11 +390,17 @@ function getBloques(element){
 				var bloqueContent = '<div class="bloque-contenido">'+getContent(bloques[i])+'</div>';
 				
 				var tooltipStr = '';
-				
-				if(bloqueTipo !== 'texto')tooltipStr = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
-				if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
 
-				var op=op+'<div '+tooltipStr+' id="bloque-'+nBloques+'"class="bloque '+bloqueTipo+'"><div class="tipo">'+bloqueTipoName+'</div>'+bloqueContent+'</div>';
+				var iconoStr = '<div class="icono">x</div>';
+				var collapseStr = '<div class="collapse-indicator">+</div>';
+
+				var bloqueHeader = iconoStr+'<div class="tipo">'+bloqueTipoName+'</div>';
+
+				//if(bloqueTipo !== 'texto')tooltipStr = 'data-toggle="tooltip" data-placement="bottom" title="'+bloqueTipoName+'"';
+				//if(bloqueTipo === 'actividad')tooltipStr = 'data-toggle="tooltip" data-placement="top" title="'+bloqueTipoName+'"';
+					tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
+
+				var op=op+'<div '+tooltipStr+' id="bloque-'+nBloques+'"class="bloque '+bloqueTipo+'">'+bloqueHeader+bloqueContent+'</div>';
 			}
 
 			nBloques++;
