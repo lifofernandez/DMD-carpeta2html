@@ -475,7 +475,9 @@ blockquote{
  	 		margin-top: 0px;
  	 	}
  	}
-
+ 	.preliminares{
+ 		margin-bottom: @interMargin;
+ 	}
   	padding-top: @mainOffset + @innerOffset;
   	padding-bottom: 300px;
   	padding-right: 70px;
@@ -510,14 +512,16 @@ blockquote{
 
   	.apartados{
     //margin-top: 100px;
+
 	    .apartado{
 	    	padding-top: @mainOffset + @innerOffset;
-	    	margin-bottom: 100px;
+	    	margin-bottom: @interMargin;
 	    	.subapartados{
 	        //margin-top: 50px;
 		        .subapartado{
 		        	padding-top: @mainOffset + @innerOffset;
-		          //margin-bottom: 50px;
+		         	margin-top: @interMargin;
+ 	
 		      	}
 	  		}
 		}
@@ -538,7 +542,7 @@ blockquote{
 //BLOQUES
 .bloque{
 	width: 95%;
-	margin: 29px 0 106px;
+	margin: 30px 0;
 	a{word-break: break-all;}
 	.delta{
 		font-size: 52px;
@@ -612,7 +616,7 @@ blockquote{
   	// eachs tipo de bloque
 
 	&.texto {
-		margin:@paragraphMargin;
+		margin-bottom: 20px;
 		.tipo{display: none;}
 	}
 
