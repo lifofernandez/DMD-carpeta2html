@@ -361,17 +361,18 @@ function getParts(element, what_to_get,parent_delta){
 
 			if(parts[i].getElementsByTagName(what_to_get+'_titulo')[0]){
 			var partDelta = parent_delta+'.'+(i+1);
-			var unidadDelta = '<div class="delta '+what_to_get+'-delta">'+partDelta+'</div>';
+			
+			var unidadDelta = '<span class="delta '+what_to_get+'-delta">'+partDelta+'</span>';
 
 				var partId = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
 
-				var partTitulo = '<h'+titleLvl+' class="part-title">'+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
+				var partTitulo = '<h'+titleLvl+' class="part-title">'+unidadDelta+' '+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
 				
 			}
 			var bloques = getBloques(parts[i]);
 			var subapartados = getParts(parts[i], 'subapartado',partDelta);
 
-			op = op+'<div id="'+partId+'" class="'+what_to_get+' '+what_to_get+'-'+i+'">'+unidadDelta+partTitulo+bloques+subapartados+'</div>';
+			op = op+'<div id="'+partId+'" class="'+what_to_get+' '+what_to_get+'-'+i+'">'+partTitulo+bloques+subapartados+'</div>';
 		}
 
 		if(parts.length > 0)op += '</div>';

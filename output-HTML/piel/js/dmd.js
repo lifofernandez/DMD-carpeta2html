@@ -1,15 +1,11 @@
-// NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
-// IT'S ALL JUST JUNK FOR OUR DOCS!
-// ++++++++++++++++++++++++++++++++++++++++++
-
-/*!
- * JavaScript for Bootstrap's docs (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see http://creativecommons.org/licenses/by/3.0/.
+/*
+ * dmd.js
+ * 
+ * Lisandro Fernandez 
+ * 2015
+ *
  */
 
-/* global ZeroClipboard */
 
 !function ($) {
   'use strict';
@@ -126,11 +122,9 @@
     }, 100)
 
     $indexHeader.on('affixed.bs.affix', function () {
-      //alert('oo');
       $('#intro-indice').addClass('pushed');
     })  
     $indexHeader.on('affixed-top.bs.affix', function () {
-      //alert('oo');
       $('#intro-indice').removeClass('pushed');
     })  
 
@@ -193,9 +187,7 @@
 
     ///COLLAPSES
     $(' .bloque').each(function() {
-      //$(this).children('.bloque-contenido').addClass('collapse in');
-      //$(this).children('.bloque-contenido').collapse('hide');
-      //$(this).children('.tipo').children('.collapse-indicator').addClass('rotate');
+
 
       $(this).children('.bloque-header').on('click',function(){
         $(this).children('.collapse-indicator').toggleClass('rotate');
@@ -208,124 +200,7 @@
 
 
     
-    /*
-    $('.para_ampliar, .lectura_recomendada, .para_reflexionar').each(function() {
-     	$(this).children('.bloque-contenido').addClass('collapse');
-        //$(this).children('.bloque-contenido').collapse('hide');
-       
-        $(this).children('.tipo').on('click',function(){
-          $(this).children('.collapse-indicator').toggleClass('rotate');
-          $(this).parent().tooltip('toggle');
-          $(this).siblings(".bloque-contenido").collapse('toggle');
-
-
-        });
-
-    });
-
-
-    $(' .lectura_obligatoria').each(function() {
-      $(this).children('.bloque-contenido').addClass('collapse in');
-        //$(this).children('.bloque-contenido').collapse('hide');
-      //$(this).children('.tipo').children('.collapse-indicator').addClass('rotate');
-
-        $(this).children('.tipo').on('click',function(){
-          $(this).children('.collapse-indicator').toggleClass('rotate');
-          $(this).parent().tooltip('toggle');
-          $(this).siblings(".bloque-contenido").collapse('toggle');
-
-        });
-
-    });
     
-*/
-
-    //BLOQUES & iconos
-/*
-    $('.leer_con_atencion').each(function() {
-      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
-      //$(this).prepend(element);
-      element.prepend('<div class="icono">L</div>');
-    });
-
-    $('.para_reflexionar').each(function() {
-      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
-      //$(this).prepend(element);
-      element.prepend('<div class="icono">P</div>');
-      element.append('<div class="collapse-indicator">+</div>');
-    });
-
-    $('.para_ampliar').each(function() {
-      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
-      //$(this).prepend(element);
-      element.prepend('<div class="icono">A</div>');
-      element.append('<div class="collapse-indicator">+</div>');
-    });
-
-    //texto aparte
-    $('.texto_aparte').each(function() {
-      //$(this).children('.bloque-contenido').addClass('collapse');
-      var childs = $(this).children('.bloque-contenido').children()
-      
-      $(this).children('.bloque-contenido').children().slice( 2, childs.length ).wrapAll('<div class="leer_mas collapse"/>');
-      $(this).children('.bloque-contenido').append( '<div class="footer"><div class="suspensivos">...</div><div class="collapse-indicator">+</div></div>' );
-      $(this).on('click',function(){
-        $(this).tooltip('toggle');
-        $(this).children('.bloque-contenido').children(".leer_mas").collapse('toggle');
-        $(this).children('.bloque-contenido').children(".footer").children(".suspensivos").toggle();
-        $(this).children('.bloque-contenido').children(".footer").children(".collapse-indicator").toggleClass('rotate');
-      });
-    });
-
-    $('.cita').each(function() {
-      //var element = $(this).children('.bloque-contenido');
-      //$(this).prepend(element);
-      $(this).prepend('<div class="icono">C</div>');
-    });
-    $('.ejemplo').each(function() {
-      //var element = $(this).children('.bloque-contenido');
-      //$(this).prepend(element);
-      $(this).prepend('<div class="icono">X</div>');
-    });
-
-    $('.lectura_obligatoria').each(function() {
-      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
-      //$(this).prepend(element);
-      element.prepend('<div class="icono">O</div>');
-      element.append('<div class="collapse-indicator rotate">+</div>');
-    });
-    $('.lectura_recomendada').each(function() {
-      var element = $(this).children('.tipo').wrapInner('<div class="leyenda"/>');
-      //$(this).prepend(element);
-      element.prepend('<div class="icono">O</div>');
-      element.append('<div class="collapse-indicator">+</div>');
-    });
-
-    //Actividad
-    $('.actividad').each(function() {
-      var element = $(this).children('.bloque-contenido').children(".delta").detach();
-      $(this).prepend(element);
-      $(this).append('<div class="icono">K</div>');
-    });
-
-    $('.audio').each(function() {
-      var element = $(this).children('.bloque-contenido').children("p").children("a");
-      // $(this).prepend(element);
-      element.parent().parent().parent().prepend('<div class="icono">S</div>');
-    });
-
-    $('.audiovisual').each(function() {
-      var element = $(this).children('.bloque-contenido').children("p").children("img").wrap('<div class="insideblock"/>');
-      //$(this).prepend(element);
-      element.parent().append('<div class="icono">E</div>');
-    });
-
-    $('.web').each(function() {
-      var element = $(this).children('.bloque-contenido').children("p").children("a").parent().wrap('<div class="insideblock"/>');
-      //$(this).prepend(element);
-      element.parent().prepend('<div class="icono">W</div>');
-    });
-*/
 
     //UTILES & ADDS
     function isScrolledIntoView(elem){
