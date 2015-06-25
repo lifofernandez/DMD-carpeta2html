@@ -53,20 +53,6 @@
 
     //custom spy para intro
 
-    $(window).scroll(function() {
-      if ($body.is('.index')) { //if is index/home
-        var elemTop = $('#intro').offset().top;
-        var elemBottom = elemTop + $('#intro').height();
-
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-        //console.log(docViewTop);
-
-        if (elemTop >= docViewTop)$('#intro-trigger').parent().removeClass('active');
-        if (elemTop <= docViewTop)$('#intro-trigger').parent().addClass('active');
-        if (elemBottom <= docViewBottom)$('#intro-trigger').parent().removeClass('active');
-      }
-    });
 
     if ($body.is('.index')) {
      $('#intro-trigger').addClass('smooth-trigger');
@@ -114,7 +100,7 @@
       })
     }, 100)
     
-
+    /*
     ///home relative
     var $indexHeader = $('.index .navbar')
     setTimeout(function () {
@@ -127,7 +113,7 @@
     $indexHeader.on('affixed-top.bs.affix', function () {
       $('#intro-indice').removeClass('pushed');
     })  
-
+*/
 
     $window.resize(function() {
       $height = $window.height();

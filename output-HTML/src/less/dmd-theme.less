@@ -48,6 +48,7 @@ table{
 
 		.navbar-brand {
 			width: 250px;
+			//padding: 15px 0px;
 			line-height: .5;
 			font-size: 86px;
 			font-weight: normal;
@@ -378,7 +379,7 @@ blockquote{
 }
 
  .article{
-  	padding-top: @mainOffset + @innerOffset;
+  	//padding-top: (@mainOffset + @interMargin);
   	padding-bottom: 300px;
   	//padding-right: 70px;
 
@@ -395,9 +396,13 @@ blockquote{
 
   	img{
   		.img-responsive();
-  		width: 100%;
-  		margin: 5px 10px !important;
-  		border: 1px solid @brand-primary !important;
+  		display: block;
+		height: auto !important;
+		width: 100% !important;
+		height: auto;
+		margin: 10px auto;
+		margin-bottom: 30px;
+  		border: 2px solid @brand-primary !important;
   	}
   	.unidad-delta, .anexo-delta{
   		display: none;
@@ -422,11 +427,11 @@ blockquote{
   	.apartados{
 
 	    .apartado{
-	    	padding-top: @mainOffset + @innerOffset;
+	    	//padding-top: (@mainOffset + @interMargin);
 	    	margin-bottom: @interMargin;
 	    	.subapartados{
 		        .subapartado{
-		        	padding-top: @mainOffset + @innerOffset;
+		        	padding-top: @mainOffset + @interMargin;
 		         	margin-top: @interMargin;
  	
 		      	}
@@ -451,8 +456,8 @@ blockquote{
 	//width: 95%;
 	margin-top: 30px;
 	padding: 10px 0;
-	border-top:1px solid @brand-primary;
-	border-bottom:1px solid @brand-primary;
+	border-top:2px solid @brand-primary;
+	border-bottom:2px solid @brand-primary;
 
 	a{word-break: break-all;}
 
@@ -540,8 +545,9 @@ footer.dmd-footer{
 	background-color: @brand-primary;
 	color: @gray-lighter;
 	p{margin: 0px;}
-  	a:hover{text-decoration: none;}
+  	a:hover, a:active,a:focus{text-decoration: none;}
   	#titulo{
+  		padding: 0px;
 	}	
 	#bottom-to-top{
 		text-align: center;
@@ -550,6 +556,7 @@ footer.dmd-footer{
 			font-size: 34px;
 			line-height: 0.3;
 			color: @gray-lighter;
+			text-decoration: none;
 		}
 
 	}

@@ -34,10 +34,22 @@ var mainHtml = {};
 var mainNav = {};
 
 var carpeta = {};
+	carpeta.preliminares = {};
 
 //GETSS
 carpeta.titulo = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
-carpeta.introduccion = doc.getElementsByTagName('introduccion')[0];
+
+
+carpeta.preliminares.introduccion = doc.getElementsByTagName('introduccion')[0];
+
+carpeta.preliminares.problematica = doc.getElementsByTagName('problematica_del_campo')[0];
+carpeta.preliminares.reflexiones = doc.getElementsByTagName('reflexiones')[0];
+carpeta.preliminares.objetivos = doc.getElementsByTagName('objetivos_del_curso')[0];
+carpeta.preliminares.mapa = doc.getElementsByTagName('mapa_conceptual')[0];
+//console.log(carpeta.preliminares.mapa);
+
+
+
 carpeta.unidades = doc.getElementsByTagName('unidad');
 carpeta.anexos = doc.getElementsByTagName('anexo');
 
@@ -78,9 +90,9 @@ function buildIndex() {
 	
 	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="piel/css/bootstrap-DMD-theme.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
 	
-	mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS</div></div></div>';
+	//mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS</div></div></div>';
 
-	mainHtml.header = '<header class="navbar navbar-inverse affix-top" role="banner">'+mainNav.render+'</header>';
+	mainHtml.header = '<header class="navbar navbar-inverse navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
 
 	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
 
@@ -92,9 +104,51 @@ function buildIndex() {
 	var unidadesIndice = generarIndiceUnidades(carpeta.unidades);
 	var anexosIndice = generarIndiceAnexos(carpeta.anexos);
 
-	var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="#intro">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
+	//var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="index.html">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
+	var titulo = '<section id="carpeta-titulo"><div class="row"><div class="col-md-12"><h1>'+carpeta.titulo+'</h1></div></div></section>';
+
+	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad">'+unidadesIndice+anexosIndice+'<ul></div>';
+
 	
-	var content = '<div class="container" id="intro-indice"><section id="intro"><div class="row"><div class="col-md-9 col-md-offset-3"><h1>Introducción</h1>'+carpeta.introduccion+'</div></div></section><section id="indice">'+indiceGeneral+'</section></div>';
+
+	//preliminares
+	var preliminares = '<div class="col-md-8">';
+		
+
+	if(carpeta.preliminares.introduccion !== 'undefined'){
+	var introduccion = '<div id="introduccion" class="row"><div class="col-md-12"><h2>Introducción</h2>'+carpeta.preliminares.introduccion+'</div></div>';
+		preliminares +=introduccion;
+	}
+	if(carpeta.preliminares.problematica !== undefined){
+	var problematica = '<div id="problematica" class="row"><div class="col-md-12"><h2>Problemática del campo</h2>'+carpeta.preliminares.problematica+'</div></div>';
+		preliminares +=problematica;
+	}
+	if(carpeta.preliminares.reflexiones !== undefined){
+	var reflexiones = '<div id="reflexiones" class="row"><div class="col-md-12"><h2>Reflexiones sobre el aprendizaje de la asignatura en el entorno virtual</h2>'+carpeta.preliminares.reflexiones+'</div></div>';
+		preliminares +=reflexiones;
+	}
+	if(carpeta.preliminares.objetivos !== undefined){
+	var objetivos = '<div id="objetivos" class="row"><div class="col-md-12"><h2>Objetivos del curso</h2>'+carpeta.preliminares.objetivos+'</div></div>';
+		preliminares +=objetivos;
+	}
+
+	console.log(carpeta.preliminares.mapa);
+	if(carpeta.preliminares.mapa !== undefined){
+		var mapa = '<div id="mapa" class="row"><div class="col-md-12"><h2>Mapa conceptual / Diagrama de contenidos</h2>'+carpeta.preliminares.mapa+'</div></div>';
+		preliminares +=mapa;
+	}
+	preliminares+='</div>';
+
+	//autor
+	var autor = '<div class="col-md-4 well">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'+indiceGeneral+'</div>';
+
+
+
+	var intro ='<section id="preliminares"><div class="row">'+preliminares+autor+'</div></section>';
+
+	
+	
+	var content = '<div class="container main-container" id="titlo-preliminares-indice">'+titulo+intro+'</div>';
 	
 	//mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
 	mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body id="top" class="index">'+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
@@ -110,33 +164,40 @@ function buildIndex() {
 	});
 };
 
+function generarPreliminares(){
+
+
+
+}
+
 function generarIndiceUnidades(unidades_in){
-	var indiceUnidades = '<div class="main-index-nav unidades-index">';
+	var indiceUnidades = '';
+
 	for (var i=0; i < unidades_in.length; i++) {
 
 		var unidadTitulo = unidades_in[i].getElementsByTagName('unidad_titulo')[0].childNodes[0].nodeValue;
 		var unidadDelta = (i+1);
 		var unidadUrl = 'unidad-'+(i+1)+'.html';
 		
-		var unidadHeader = '<div class="menu-header"><a class="big-link" href="'+unidadUrl+'">'+unidadTitulo+'</a><a class="show-menu collapse-indicator" href="#">Z</a></div>';
+		var unidadHeader = '<a class="indice-link menu-header" href="'+unidadUrl+'"><span class="delta">'+unidadDelta+'. </span>'+unidadTitulo+'</a>';
 		
 		
 
 		var apartados = unidades_in[i].getElementsByTagName('apartado');
-		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
-		var deltaCol = '<div class="col-md-3 delta-container"><div class="delta unidad-delta">'+unidadDelta+'</div></div>';
-		var unidadCol = '<div class="col-md-9 menu-container">'+unidadHeader+indiceApartados+'</div>';
 
-		var itemUnidad = '<div class="row index-row unidad unidad-'+unidadDelta+'">'+deltaCol+unidadCol+'</div>';
+		var indiceApartados = indexFromElements(apartados,'apartado_titulo',unidadUrl,unidadDelta,'subapartado', 'subapartado_titulo');
+	
 		
-		indiceUnidades=indiceUnidades+itemUnidad;
+		var itemUnidad = '<li class="unidad unidad-'+unidadDelta+'">'+unidadHeader+indiceApartados+'</li>';
+		
+		indiceUnidades+=itemUnidad;
 
 	}
-	return indiceUnidades=indiceUnidades+'</div>';
+	return indiceUnidades;
 }
 
 function generarIndiceAnexos(anexos_in){
-	var indiceAnexos = '<div class="main-index-nav anexos-index">';
+	var indiceAnexos = '';
 
 	for (var i=0; i < anexos_in.length; i++) {
 
@@ -145,19 +206,21 @@ function generarIndiceAnexos(anexos_in){
 
 		var anexoUrl = 'anexo-'+(i+1)+'.html';
 		
-		var anexoHeader = '<div class="menu-header"><a class="big-link" href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a><a class="show-menu collapse-indicator" href="#">Z</a></div>';
+		var anexoHeader = '<a class="indice-link menu-header" href="'+anexoUrl+'">'+anexoTitulo+' '+anexoDelta+'</a>';
 		
 		var apartados = anexos_in[i].getElementsByTagName('apartado');
 		var indiceApartados = indexFromElements(apartados,'apartado_titulo',anexoUrl,'','subapartado', 'subapartado_titulo');
 
-		var deltaCol = '<div class="col-md-3 delta-container"><div class="delta anexo-delta">'+anexoDelta+'</div></div>';
-		var anexoCol = '<div class="col-md-9 menu-container">'+anexoHeader+indiceApartados+'</div>';
 
-		var itemAnexo = '<div class="row index-row anexo anexo-'+(i+1)+'">'+deltaCol+anexoCol+'</div>';
+		
+
+		var anexoCol = '<div class="menu-container">'+indiceApartados+'</div>';
+
+		var itemAnexo = '<div class="row index-row anexo anexo-'+(i+1)+'">'+anexoCol+'</div>';
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
 	}
-	return indiceAnexos=indiceAnexos+'</div>';
+	return indiceAnexos=indiceAnexos+'';
 }
 
 
@@ -168,7 +231,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 	if(items.length > 0){
 
 		output = '<ul class="nav nav-list lvl-subapartado">';
-		if(child_to_get)output = '<ul class="nav nav-list lvl-apartado collapse">';
+		if(child_to_get)output = '<ul class="nav nav-list lvl-apartado">';
 		
 		for (var i=0; i < items.length; i++) {
 			if(items[i].getElementsByTagName(what_to_get)[0]){
@@ -177,7 +240,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
 				var itemUrl = makeUrl(itemTitulo);
-				var itemLink = '<a class="indice-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'. </span> '+itemTitulo+'</a>';
+				var itemLink = '<a class="indice-link apart-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'. </span> '+itemTitulo+'</a>';
 				
 				var childIndex = '';
 				var childElements;
@@ -360,9 +423,9 @@ function getParts(element, what_to_get,parent_delta){
 		for (var i=0; i < parts.length; i++) {
 
 			if(parts[i].getElementsByTagName(what_to_get+'_titulo')[0]){
-			var partDelta = parent_delta+'.'+(i+1);
+				var partDelta = parent_delta+'.'+(i+1);
 			
-			var unidadDelta = '<span class="delta '+what_to_get+'-delta">'+partDelta+'</span>';
+				var unidadDelta = '<span class="delta '+what_to_get+'-delta">'+partDelta+'.</span>';
 
 				var partId = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
 
