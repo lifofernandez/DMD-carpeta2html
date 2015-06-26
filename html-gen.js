@@ -113,7 +113,7 @@ function buildIndex() {
 	//var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="index.html">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	var titulo = '<section id="carpeta-titulo"><div class="row"><div class="col-md-12"><h1>'+carpeta.titulo+'</h1></div></div></section>';
 
-	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad"><h4 id="titulo-indice">Indice General:</h4>'+unidadesIndice+anexosIndice+'<ul></div>';
+	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad"><h4 id="titulo-indice">Indice General</h4>'+unidadesIndice+anexosIndice+'<ul></div>';
 
 	
 
