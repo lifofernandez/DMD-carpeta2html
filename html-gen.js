@@ -24,7 +24,7 @@ var destFolder = 'output-HTML/';
 
 ///load 
 var xmlFile = fs.readFileSync(__dirname + '/carpeta.xml', "utf8");
-
+console.log('### [cargando: carpeta.xml] ###');
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
@@ -38,6 +38,12 @@ var carpeta = {};
 
 //GETSS
 carpeta.titulo = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
+console.log('carpeta: '+carpeta.titulo);
+
+
+
+carpeta.preliminares.autor = doc.getElementsByTagName('autor')[0];
+
 
 
 carpeta.preliminares.introduccion = doc.getElementsByTagName('introduccion')[0];
@@ -79,7 +85,7 @@ function buildIndex() {
 
 	mainNav.open='<div class="container dmd-nav-main">';
     mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
-    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a id="intro-trigger" href="/#intro">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
+    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a id="intro-trigger" href="index.html">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	mainNav.close='</div>';
 
 	//concat nav
@@ -107,7 +113,7 @@ function buildIndex() {
 	//var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="index.html">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	var titulo = '<section id="carpeta-titulo"><div class="row"><div class="col-md-12"><h1>'+carpeta.titulo+'</h1></div></div></section>';
 
-	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad">'+unidadesIndice+anexosIndice+'<ul></div>';
+	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad"><h4 id="titulo-indice">Indice General:</h4>'+unidadesIndice+anexosIndice+'<ul></div>';
 
 	
 
@@ -132,7 +138,7 @@ function buildIndex() {
 		preliminares +=objetivos;
 	}
 
-	console.log(carpeta.preliminares.mapa);
+	//console.log(carpeta.preliminares.mapa);
 	if(carpeta.preliminares.mapa !== undefined){
 		var mapa = '<div id="mapa" class="row"><div class="col-md-12"><h2>Mapa conceptual / Diagrama de contenidos</h2>'+carpeta.preliminares.mapa+'</div></div>';
 		preliminares +=mapa;
@@ -140,7 +146,16 @@ function buildIndex() {
 	preliminares+='</div>';
 
 	//autor
-	var autor = '<div class="col-md-4 well">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'+indiceGeneral+'</div>';
+	var autorNombre = carpeta.preliminares.autor.getElementsByTagName('autor_nombre')[0].childNodes[0].nodeValue;
+
+	console.log('autor: '+autorNombre);
+
+	var autorBio = carpeta.preliminares.autor.getElementsByTagName('autor_biografia')[0].childNodes[0].nodeValue;
+	var autorFoto = carpeta.preliminares.autor.getElementsByTagName('autor_foto')[0];
+	var pepep = autorFoto;
+	console.log(pepep);
+
+	var autor = '<div class="col-md-4"><div id="autor" class="well">'+autorFoto+'<h5>'+autorNombre+'</h5>'+autorBio+'</div>'+indiceGeneral+'</div>';
 
 
 
@@ -214,9 +229,10 @@ function generarIndiceAnexos(anexos_in){
 
 		
 
-		var anexoCol = '<div class="menu-container">'+indiceApartados+'</div>';
+	
 
-		var itemAnexo = '<div class="row index-row anexo anexo-'+(i+1)+'">'+anexoCol+'</div>';
+		var itemAnexo = '<li class="anexo anexo-'+(i+1)+'">'+anexoHeader+indiceApartados+'</li>';
+
 		
 		indiceAnexos=indiceAnexos+itemAnexo;
 	}
@@ -370,7 +386,7 @@ function parseContent(element_group, delta){
 		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
 		if(elementTipe === 'unidad'){
 		var elementDelta = '<div class="delta '+elementTipe+'-delta">'+delta+'</div>';
-		var elementTitulo = '<h2 id="'+paginaAnchor+'" class="titulo-pagina">'+paginaTitulo+'</h2>';
+		var elementTitulo = '<h1 id="'+paginaAnchor+'" class="titulo-pagina">'+paginaTitulo+'</h1>';
 
 		var elementObjetivos = getPreliminares(element_group, 'unidad_objetivos');
 		var elementIntro = getPreliminares(element_group, 'unidad_introduccion');
@@ -378,7 +394,7 @@ function parseContent(element_group, delta){
 
 		if(elementTipe === 'anexo'){
 			var elementDelta = '<div class="delta '+elementTipe+'-delta">'+romanize(delta)+'</div>';
-			var elementTitulo = '<h2 id="titulo-anexo" class="titulo-pagina">Anexo</h2>';
+			var elementTitulo = '<h1 id="titulo-anexo" class="titulo-pagina">Anexo</h1>';
 			var elementObjetivos = '';
 			var elementIntro = '';
 		}
@@ -399,8 +415,8 @@ function getPreliminares(element, what_to_get){
 		var obj = element.getElementsByTagName(what_to_get)[0];
 		var partTitulo = '';
 
-		if(what_to_get === 'unidad_objetivos')partTitulo = '<h4 class="preliminares-title" >Objetivos de la Unidad</h4>';
-		if(what_to_get === 'unidad_introduccion')partTitulo = '<h4 class="preliminares-title" >Introducción a la Unidad</h4>';
+		if(what_to_get === 'unidad_objetivos')partTitulo = '<h3 class="preliminares-title" >Objetivos de la Unidad</h3>';
+		if(what_to_get === 'unidad_introduccion')partTitulo = '<h3 class="preliminares-title" >Introducción a la Unidad</h3>';
 
 		op = op+'<div class="preliminares '+what_to_get+'">'+partTitulo+getContent(obj)+'</div>';
 	}
@@ -412,8 +428,8 @@ function getPreliminares(element, what_to_get){
 // Parsear artados y sub apartados
 function getParts(element, what_to_get,parent_delta){
 	var op = '';
-	var titleLvl = 3;
-	if(what_to_get==='subapartado')titleLvl = 4;
+	var titleLvl = 2;
+	if(what_to_get==='subapartado')titleLvl = 3;
 
 	if(element.getElementsByTagName(what_to_get)){
 		var parts = element.getElementsByTagName(what_to_get);

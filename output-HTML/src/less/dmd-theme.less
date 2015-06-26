@@ -15,6 +15,7 @@ body {
 
 .main-container{
 	padding-top: @mainOffset;
+	padding-bottom: @containerPaddings;
 }
 
 table{
@@ -35,10 +36,11 @@ table{
 
 .navbar{
 
-	border-bottom-width: 0px;
-	border: 0px solid transparent;
+	//border-bottom-width: 0px;
+	border-bottom: 10px solid @brand-primary2;
 	//border-bottom: 1px solid @brand-primary;
 	margin-bottom: 0px;
+
 
 	.dmd-nav-main{
 		font-family: @font-family-sans-serif;
@@ -47,7 +49,7 @@ table{
 		font-weight: 600;
 
 		.navbar-brand {
-			width: 250px;
+			width: 243px;
 			//padding: 15px 0px;
 			line-height: .5;
 			font-size: 86px;
@@ -76,7 +78,7 @@ table{
 
 			&.active{
 				> a {
-					border-bottom: 1px solid @white;
+					border-bottom: 2px solid @white;
 				}
 			}
   		}
@@ -125,8 +127,36 @@ table{
 
 
 
+// AUTOR
+// INDICE GENERAL
+
+#autor{
+		*{
+			width: 100%;
+
+		}
+}
+#mapa{
+		*{
+			border: 2px solid @brand-primary;
+			width: 100%;
+
+		}
+}
 
 
+
+.indice-general{
+	a.indice-link, h4#titulo-indice {
+		font-family: @font-family-sans-serif;
+		color:@gray;
+		font-weight: @bold;
+		padding-left: @nav-link-padding-horizontal;
+		.delta{
+			color:@brand-primary;
+		}
+	}
+}
 
 
 //////////
@@ -152,7 +182,9 @@ table{
 	&.affix{
 	
 	}
-	width: 250px;
+	width: 243px;
+	margin-top: @sidebar-top-margin;
+
 	> .nav > li{
 		padding: 5px 0;
 	}
@@ -166,7 +198,7 @@ table{
 	    	font-size: 14px;
 	      	padding-top: 5px;
 			padding-bottom: 5px;
-			color: @gray-light;
+			color: @gray;
 			.delta{
 				font-size: 13px;
 			}
@@ -183,8 +215,8 @@ table{
 		&.active:hover > a,
 		&.active:focus > a {
 			background-color: transparent;
-			border-left-width: 1px;
-			margin-left: -1px;
+			border-left-width: 2px;
+			margin-left: -2px;
 			border-left-style: solid;
 		}
 
@@ -317,12 +349,15 @@ blockquote{
 	/*.dmd-sidebar .nav > li > a:focus*/ {
 		color: lighten(@c, 10%);
 		border-left-color: @c;
+		background-color:@gray-lighter;
 	}
 	.dmd-sidebar .nav > .active > a,
 	.dmd-sidebar .nav > .active:hover > a,
 	.dmd-sidebar .nav > .active:focus > a {
 		color: @c;
+		background-color: transparent;
 		border-left-color:@c;
+
 
 	}
 
@@ -385,8 +420,8 @@ blockquote{
 
  	header{
  	 	h2.titulo-pagina{
- 	 		margin-top: 0px;
- 	 		margin-bottom: @interMargin;
+ 	 		//margin-top: 0px;
+ 	 		//margin-bottom: @interMargin;
  	 	}
  	}
  	.preliminares{
@@ -400,7 +435,7 @@ blockquote{
 		height: auto !important;
 		width: 100% !important;
 		height: auto;
-		margin: 10px auto;
+		margin: 10px auto !important;
 		margin-bottom: 30px;
   		border: 2px solid @brand-primary !important;
   	}

@@ -1,5 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url("http://fonts.googleapis.com/css?family=Raleway:600,900,400,300");
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 @font-face {
   font-family: 'UNQ Dingbats';
@@ -1196,7 +1196,7 @@ h6,
 .h5,
 .h6 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -5881,8 +5881,8 @@ button.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #952333;
-  border: 1px solid #952333;
+  background-color: #eee;
+  border: 1px solid #793f47;
   border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -6812,6 +6812,14 @@ button.close {
     display: none !important;
   }
 }
+/*darken(@rojounqui, 10%)*/
+bold,
+strong {
+  font-weight: 600;
+}
+.well {
+  border-width: 2px 0;
+}
 .navbar {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -6939,6 +6947,7 @@ body {
 }
 .main-container {
   padding-top: 85px;
+  padding-bottom: 100px;
 }
 table {
   width: 100%;
@@ -6986,8 +6995,7 @@ table > tbody > tr:nth-of-type(odd) {
 }
 .navbar {
   margin-bottom: 0;
-  border: 0 solid transparent;
-  border-bottom-width: 0;
+  border-bottom: 10px solid #793f47;
 }
 .navbar .dmd-nav-main {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -6996,7 +7004,7 @@ table > tbody > tr:nth-of-type(odd) {
   text-transform: uppercase;
 }
 .navbar .dmd-nav-main .navbar-brand {
-  width: 250px;
+  width: 243px;
   font-family: 'UNQ Dingbats';
   font-size: 86px;
   font-weight: normal;
@@ -7018,7 +7026,7 @@ table > tbody > tr:nth-of-type(odd) {
   border-width: 0;
 }
 .navbar .dmd-nav-main .navbar-nav > li.active > a {
-  border-bottom: 1px solid #ededed;
+  border-bottom: 2px solid #ededed;
 }
 /* Show and affix the side nav when space allows it */
 @media (min-width: 970px) {
@@ -7044,6 +7052,24 @@ table > tbody > tr:nth-of-type(odd) {
 @media (min-width: 1170px) {
   /* Widen the fixed sidebar again */
 }
+#autor * {
+  width: 100%;
+}
+#mapa * {
+  width: 100%;
+  border: 2px solid #952333;
+}
+.indice-general a.indice-link,
+.indice-general h4#titulo-indice {
+  padding-left: 15px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #555;
+}
+.indice-general a.indice-link .delta,
+.indice-general h4#titulo-indice .delta {
+  color: #952333;
+}
 /*
  * Side navigation
  *
@@ -7058,7 +7084,8 @@ table > tbody > tr:nth-of-type(odd) {
 }
 /* All levels of nav */
 .dmd-sidebar {
-  width: 250px;
+  width: 243px;
+  margin-top: 22px;
 }
 .dmd-sidebar > .nav > li {
   padding: 5px 0;
@@ -7071,7 +7098,7 @@ table > tbody > tr:nth-of-type(odd) {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 14px;
-  color: #b3b3b3;
+  color: #555;
 }
 .dmd-sidebar .nav > li > a .delta {
   font-size: 13px;
@@ -7086,10 +7113,10 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidebar .nav > li.active > a,
 .dmd-sidebar .nav > li.active:hover > a,
 .dmd-sidebar .nav > li.active:focus > a {
-  margin-left: -1px;
+  margin-left: -2px;
   background-color: transparent;
   border-left-style: solid;
-  border-left-width: 1px;
+  border-left-width: 2px;
 }
 .dmd-sidebar .nav > li .nav {
   display: none;
@@ -7192,12 +7219,14 @@ blockquote cite {
 }
 .unidad .dmd-sidebar .nav > li > a:hover {
   color: #be2d41;
+  background-color: #eee;
   border-left-color: #952333;
 }
 .unidad .dmd-sidebar .nav > .active > a,
 .unidad .dmd-sidebar .nav > .active:hover > a,
 .unidad .dmd-sidebar .nav > .active:focus > a {
   color: #952333;
+  background-color: transparent;
   border-left-color: #952333;
 }
 .unidad .unidad-delta,
@@ -7229,10 +7258,6 @@ blockquote cite {
 .article {
   padding-bottom: 300px;
 }
-.article header h2.titulo-pagina {
-  margin-top: 0;
-  margin-bottom: 100px;
-}
 .article .preliminares {
   margin-bottom: 100px;
 }
@@ -7242,7 +7267,7 @@ blockquote cite {
   max-width: 100%;
   height: auto !important;
   height: auto;
-  margin: 10px auto;
+  margin: 10px auto !important;
   margin-bottom: 30px;
   border: 2px solid #952333 !important;
 }

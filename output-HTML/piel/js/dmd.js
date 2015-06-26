@@ -19,8 +19,10 @@
     var $height = $window.height()
    
     var regularMargins = 20;
+
+    var sideBarTopMargin = 22;
     
-    var mainOffset = 65 + regularMargins;
+    var mainOffset = 65 + regularMargins + sideBarTopMargin;
  
     
 

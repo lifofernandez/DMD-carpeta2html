@@ -5,19 +5,29 @@
 @white: #ededed;
 
 @brand-primary:          @rojounqui;
+@brand-primary2:          desaturate(@rojounqui, 30%); /*darken(@rojounqui, 10%)*/
 @tooltip-bg:             @brand-primary;
 
 @link-color:            @brand-info;
 
 @font-family-sans-serif:  "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       "Droid Serif", Georgia, "Times New Roman", Times, serif;
- 
+
+@bold: 600;
+bold,strong{
+	font-weight: @bold;
+}
+@headings-font-weight:    @bold;
 //@header-height: @navbar-height;
+
+
 
 @regularMargins: 20px;
 
 @mainOffset: (@navbar-height + @regularMargins);
 
+
+@sidebar-top-margin: 22px;
 
 //contenido
 @interMargin:100px;
@@ -29,14 +39,21 @@
 
 @paragraphMargin: 0 0 10px;
 
+@nav-link-padding-vertical: 10px;
+@nav-link-padding-horizontal: 15px;
+@nav-link-padding:                          @nav-link-padding-vertical @nav-link-padding-horizontal;
+
 
 @border-radius-base:        0px;
 @border-radius-small:       2px;
 @border-radius-large:       4px;
 
-@well-bg:                     @brand-primary;
-@well-border:                 @brand-primary;
+@well-bg:                    @gray-lighter;
+@well-border:                 @brand-primary2;
+.well{
+		border-width: 2px 0px;
 
+}
 
 //
 
