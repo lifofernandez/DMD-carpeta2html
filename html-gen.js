@@ -24,7 +24,7 @@ var destFolder = 'output-HTML/';
 
 ///load 
 var xmlFile = fs.readFileSync(__dirname + '/carpeta.xml', "utf8");
-console.log('### [cargando: carpeta.xml] ###');
+console.log('##### cargando: carpeta.xml #####');
 //parse
 var doc = new DOMParser().parseFromString(xmlFile, 'text/xml');
 
@@ -83,10 +83,14 @@ function buildIndex() {
 		anexosBtns=anexosBtns+'<li><a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a></li>';
 	});
 
-	mainNav.open='<div class="container dmd-nav-main">';
-    mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
-    mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li><a id="intro-trigger" href="index.html">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
-	mainNav.close='</div>';
+	mainNav.open='<div class="container dmd-nav-main"><div class="row">';
+
+    mainNav.header='<div class="col-xs-3 navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
+
+    
+    mainNav.collapse ='<div class="col-xs-9"><nav class="navbar-collapse collapse" role="navigation"><span id="titulo-nav" >'+carpeta.titulo+'</span><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li class="active"><a id="intro-trigger" href="index.html">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse --></div>';
+	
+	mainNav.close='</div></div>';
 
 	//concat nav
 	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
@@ -113,7 +117,7 @@ function buildIndex() {
 	//var indiceGeneral = '<div class="indice-general"><div class="row index-row"><div class="col-md-9 col-md-offset-3 menu-container intro-container"><div class="menu-header"><a class="smooth-trigger big-link" href="index.html">Introducción</a></div></div></div>'+unidadesIndice+anexosIndice+'</div>';
 	var titulo = '<section id="carpeta-titulo"><div class="row"><div class="col-md-12"><h1>'+carpeta.titulo+'</h1></div></div></section>';
 
-	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad"><h4 id="titulo-indice">Indice General</h4>'+unidadesIndice+anexosIndice+'<ul></div>';
+	var indiceGeneral = '<div id="indice" class="indice-general"><ul class="nav nav-list lvl-unidad"><h3 id="titulo-indice">Indice General</h3>'+unidadesIndice+anexosIndice+'<ul></div>';
 
 	
 

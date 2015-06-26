@@ -17,12 +17,14 @@
     var $body   = $(document.body)
 
     var $height = $window.height()
+
+    var navbarHeight = 65;
    
     var regularMargins = 20;
 
-    var sideBarTopMargin = 22;
+    var topBarBorders = 22;
     
-    var mainOffset = 65 + regularMargins + sideBarTopMargin;
+    var mainOffset = navbarHeight + regularMargins + topBarBorders;
  
     
 
@@ -57,7 +59,7 @@
 
 
     if ($body.is('.index')) {
-     $('#intro-trigger').addClass('smooth-trigger');
+        $('#intro-trigger').parent().addClass('active');
     }
 
 
@@ -121,13 +123,13 @@
       $('#intro-indice').removeClass('pushed');
     })  
 */
-
+/*
     $window.resize(function() {
       $height = $window.height();
-      $indexHeader.affix({offset: {top: $height}})
+     // $indexHeader.affix({offset: {top: $height}})
       //alert($height);
     });
-
+*/
 
   //indice
   $('.show-menu').each(function() {
