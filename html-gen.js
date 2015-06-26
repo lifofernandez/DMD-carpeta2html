@@ -152,10 +152,9 @@ function buildIndex() {
 
 	var autorBio = carpeta.preliminares.autor.getElementsByTagName('autor_biografia')[0].childNodes[0].nodeValue;
 	var autorFoto = carpeta.preliminares.autor.getElementsByTagName('autor_foto')[0];
-	var pepep = autorFoto;
-	console.log(pepep);
+	var autorFotoConMascara = '<div id="autor-foto">'+autorFoto+'</div>';
 
-	var autor = '<div class="col-md-4"><div id="autor" class="well">'+autorFoto+'<h5>'+autorNombre+'</h5>'+autorBio+'</div>'+indiceGeneral+'</div>';
+	var autor = '<div class="col-md-4"><div id="autor" class="well">'+autorFotoConMascara+'<h5>'+autorNombre+'</h5>'+autorBio+'</div>'+indiceGeneral+'</div>';
 
 
 

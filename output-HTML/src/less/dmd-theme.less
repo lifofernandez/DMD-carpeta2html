@@ -37,7 +37,7 @@ table{
 .navbar{
 
 	//border-bottom-width: 0px;
-	border-bottom: 10px solid @brand-primary2;
+	border-bottom: 10px solid @acento;
 	//border-bottom: 1px solid @brand-primary;
 	margin-bottom: 0px;
 
@@ -129,18 +129,47 @@ table{
 
 // AUTOR
 // INDICE GENERAL
+/*
+.saturate {-webkit-filter: saturate(3);}
+.grayscale {-webkit-filter: grayscale(100%);}
+.contrast {-webkit-filter: contrast(160%);}
+.brightness {-webkit-filter: brightness(0.25);}
+.blur {-webkit-filter: blur(3px);}
+.invert {-webkit-filter: invert(100%);}
+.sepia {-webkit-filter: sepia(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);}
+.rss.opacity {-webkit-filter: opacity(50%);}
+*/
 
 #autor{
 		*{
 			width: 100%;
 
 		}
+		#autor-foto{
+			img{
+				-webkit-filter: grayscale(100%);
+				background-color: @brand-primary;
+				margin-bottom: 50px;
+			}
+			
+			
+			/*opacity: .35;
+			position: absolute;*/
+
+		}
 }
 #mapa{
-		*{
-			border: 2px solid @brand-primary;
-			width: 100%;
-
+		* {
+			*{
+				*{
+					//border: 2px solid @brand-primary;
+					margin-top: 30px;
+					margin-bottom: 30px;
+					width: 100%;
+		
+				}
+			}
 		}
 }
 
@@ -174,7 +203,7 @@ table{
 .dmd-sidenav {
 	margin-bottom: 20px;
 	font-family: @font-family-sans-serif;
-	font-weight: 600;
+	font-weight: 400;
 }
 
 /* All levels of nav */
@@ -347,7 +376,7 @@ blockquote{
 
 	.dmd-sidebar .nav > li > a:hover,
 	/*.dmd-sidebar .nav > li > a:focus*/ {
-		color: lighten(@c, 10%);
+		color: @acento;
 		border-left-color: @c;
 		background-color:@gray-lighter;
 	}

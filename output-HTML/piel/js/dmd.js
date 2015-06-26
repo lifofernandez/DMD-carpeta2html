@@ -102,8 +102,13 @@
       })
     }, 100)
     
-    /*
+   
     ///home relative
+
+
+
+
+     /*
     var $indexHeader = $('.index .navbar')
     setTimeout(function () {
           $indexHeader.affix({offset: {top: $height}})

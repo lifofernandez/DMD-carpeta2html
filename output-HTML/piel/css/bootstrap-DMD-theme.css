@@ -5882,7 +5882,7 @@ button.list-group-item-danger.active:focus {
   padding: 19px;
   margin-bottom: 20px;
   background-color: #eee;
-  border: 1px solid #793f47;
+  border: 1px solid #e44548;
   border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -6812,7 +6812,6 @@ button.close {
     display: none !important;
   }
 }
-/*darken(@rojounqui, 10%)*/
 bold,
 strong {
   font-weight: 600;
@@ -6995,7 +6994,7 @@ table > tbody > tr:nth-of-type(odd) {
 }
 .navbar {
   margin-bottom: 0;
-  border-bottom: 10px solid #793f47;
+  border-bottom: 10px solid #e44548;
 }
 .navbar .dmd-nav-main {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7052,12 +7051,34 @@ table > tbody > tr:nth-of-type(odd) {
 @media (min-width: 1170px) {
   /* Widen the fixed sidebar again */
 }
+/*
+.saturate {-webkit-filter: saturate(3);}
+.grayscale {-webkit-filter: grayscale(100%);}
+.contrast {-webkit-filter: contrast(160%);}
+.brightness {-webkit-filter: brightness(0.25);}
+.blur {-webkit-filter: blur(3px);}
+.invert {-webkit-filter: invert(100%);}
+.sepia {-webkit-filter: sepia(100%);}
+.huerotate {-webkit-filter: hue-rotate(180deg);}
+.rss.opacity {-webkit-filter: opacity(50%);}
+*/
 #autor * {
   width: 100%;
 }
-#mapa * {
+#autor #autor-foto {
+  /*opacity: .35;
+			position: absolute;*/
+}
+#autor #autor-foto img {
+  margin-bottom: 50px;
+  background-color: #952333;
+
+  -webkit-filter: grayscale(100%);
+}
+#mapa * * * {
   width: 100%;
-  border: 2px solid #952333;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .indice-general a.indice-link,
 .indice-general h4#titulo-indice {
@@ -7080,7 +7101,7 @@ table > tbody > tr:nth-of-type(odd) {
 .dmd-sidenav {
   margin-bottom: 20px;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
 }
 /* All levels of nav */
 .dmd-sidebar {
@@ -7218,7 +7239,7 @@ blockquote cite {
   color: #952333;
 }
 .unidad .dmd-sidebar .nav > li > a:hover {
-  color: #be2d41;
+  color: #e44548;
   background-color: #eee;
   border-left-color: #952333;
 }
