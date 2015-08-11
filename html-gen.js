@@ -104,7 +104,7 @@ function buildIndex() {
 
 	mainHtml.header = '<header class="navbar navbar-inverse navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
 
-	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didáctivos</p></div></div></div></footer>';
+	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didácticos</p></div></div></div></footer>';
 
 	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="piel/js/bootstrap.min.js"></script>  <script src="piel/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="piel/js/ie10-viewport-bug-workaround.js"></script>';
 
