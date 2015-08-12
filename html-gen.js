@@ -125,26 +125,31 @@ function buildIndex() {
 	var preliminares = '<div class="col-md-8">';
 		
 
-	if(carpeta.preliminares.introduccion !== 'undefined'){
-	var introduccion = '<div id="introduccion" class="row"><div class="col-md-12"><h2>Introducción</h2>'+carpeta.preliminares.introduccion+'</div></div>';
+	if(carpeta.preliminares.introduccion !== undefined){
+		var introduccionContents = getContent(carpeta.preliminares.introduccion);
+		var introduccion = '<div id="introduccion" class"contenidos-preliminares"><h2>Introducción</h2>'+introduccionContents+'</div>';
 		preliminares +=introduccion;
 	}
 	if(carpeta.preliminares.problematica !== undefined){
-	var problematica = '<div id="problematica" class="row"><div class="col-md-12"><h2>Problemática del campo</h2>'+carpeta.preliminares.problematica+'</div></div>';
+		var problematicaContents = getContent(carpeta.preliminares.problematica);	
+		var problematica = '<div id="problematica" class="contenidos-preliminares"><h2>Problemática del campo</h2>'+problematicaContents+'</div>';
 		preliminares +=problematica;
 	}
 	if(carpeta.preliminares.reflexiones !== undefined){
-	var reflexiones = '<div id="reflexiones" class="row"><div class="col-md-12"><h2>Reflexiones sobre el aprendizaje de la asignatura en el entorno virtual</h2>'+carpeta.preliminares.reflexiones+'</div></div>';
+		var reflexionesContents = getContent(carpeta.preliminares.reflexiones);	
+		var reflexiones = '<div id="reflexiones" class="contenidos-preliminares"><h2>Reflexiones sobre el aprendizaje de la asignatura en el entorno virtual</h2>'+reflexionesContents+'</div>';
 		preliminares +=reflexiones;
 	}
 	if(carpeta.preliminares.objetivos !== undefined){
-	var objetivos = '<div id="objetivos" class="row"><div class="col-md-12"><h2>Objetivos del curso</h2>'+carpeta.preliminares.objetivos+'</div></div>';
+		var objetivosContents = getContent(carpeta.preliminares.objetivos);	
+		var objetivos = '<div id="objetivos" class="contenidos-preliminares"><h2>Objetivos del curso</h2>'+objetivosContents+'</div>';
 		preliminares +=objetivos;
 	}
 
 	//console.log(carpeta.preliminares.mapa);
 	if(carpeta.preliminares.mapa !== undefined){
-		var mapa = '<div id="mapa" class="row"><div class="col-md-12"><h2>Mapa conceptual / Diagrama de contenidos</h2>'+carpeta.preliminares.mapa+'</div></div>';
+		var mapaContents = getContent(carpeta.preliminares.mapa);	
+		var mapa = '<div id="mapa" class="contenidos-preliminares"><h2>Mapa conceptual / Diagrama de contenidos</h2>'+mapaContents+'</div>';
 		preliminares +=mapa;
 	}
 	preliminares+='</div>';
@@ -156,7 +161,9 @@ function buildIndex() {
 
 	var autorBio = carpeta.preliminares.autor.getElementsByTagName('autor_biografia')[0].childNodes[0].nodeValue;
 	var autorFoto = carpeta.preliminares.autor.getElementsByTagName('autor_foto')[0];
-	var autorFotoConMascara = '<div id="autor-foto">'+autorFoto+'</div>';
+	var autorFotoImg = getContent(autorFoto);
+
+	var autorFotoConMascara = '<div id="autor-foto">'+autorFotoImg+'</div>';
 
 	var autor = '<div class="col-md-4"><div id="autor" class="well">'+autorFotoConMascara+'<h5>'+autorNombre+'</h5>'+autorBio+'</div>'+indiceGeneral+'</div>';
 
