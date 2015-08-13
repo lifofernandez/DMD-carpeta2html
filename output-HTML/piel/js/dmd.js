@@ -77,7 +77,6 @@
          }, 500, function(){
 
            // when done, add hash to url
-           // (default click behaviour)
            e.preventDefault();
            window.location.hash = hash;
          });

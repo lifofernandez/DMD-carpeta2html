@@ -7279,12 +7279,14 @@ blockquote cite {
 }
 .article img {
   display: block;
-  width: 100% !important;
   max-width: 100%;
-  height: auto !important;
   height: auto;
-  margin: 10px auto !important;
-  margin-bottom: 30px;
+  /*display: block;
+			height: auto !important;
+			width: 100% !important;
+			height: auto;
+			margin: 10px auto !important;
+			margin-bottom: 30px;*/
   border: 2px solid #952333 !important;
 }
 .article .unidad-delta,
@@ -7293,7 +7295,6 @@ blockquote cite {
 }
 .article .part-title {
   padding: 8px 0;
-  margin-top: 0;
   margin-bottom: 30px;
 }
 .article h3.part-title {
