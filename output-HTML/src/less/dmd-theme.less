@@ -1,12 +1,10 @@
 /*
- * dmd-theme.js
+ * dmd-theme.css
  * 
  * Lisandro Fernandez 
  * 2015
  *
  */
-
-
 
 
 body {
@@ -82,13 +80,17 @@ table{
 				padding-left: 1px;
 				border-width: 0px;
 			}
-			&:last-child {
-          		// margin-right: 0px;
-      		}
+			&:first-child {
+           margin-left: 0px;
+           a{
+           	margin-left: 0px;
+           	padding-left: 0px;
+           }
+      }
 
 			&.active{
 				> a {
-					border-bottom: 2px solid @white;
+					font-weight: 900;
 				}
 			}
   		}
@@ -495,7 +497,7 @@ blockquote{
 }
 
  .article{
-  	//padding-top: (@mainOffset + @interMargin);
+  	padding-top: @mainOffset;
   	padding-bottom: 300px;
   	//padding-right: 70px;
 
@@ -543,11 +545,11 @@ blockquote{
   	.apartados{
 
 	    .apartado{
-	    	//padding-top: (@mainOffset + @interMargin);
+	    	padding-top: @mainOffset;
 	    	margin-bottom: @interMargin;
 	    	.subapartados{
 		        .subapartado{
-		        	padding-top: @mainOffset + @interMargin;
+		        	padding-top: @mainOffset;
 		         	margin-top: @interMargin;
  	
 		      	}

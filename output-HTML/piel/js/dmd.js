@@ -70,7 +70,7 @@
 
        // store hash
        var hash = this.hash;
-
+       console.log(hash);
        // animate
        $body.animate({
            scrollTop: $(this.hash).offset().top - mainOffset
@@ -78,8 +78,8 @@
 
            // when done, add hash to url
            // (default click behaviour)
-           e.preventDefault();
-           //window.location.hash = hash;
+           //e.preventDefault();
+           window.location.hash = hash;
          });
      });
     

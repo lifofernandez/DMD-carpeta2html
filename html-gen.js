@@ -1,4 +1,4 @@
-/*
+/**
  * carpeta2html
  * convierte carpetas descargadas de aca: materiales.uvq.edu.ar a HTML
  *
@@ -34,7 +34,8 @@ var mainHtml = {};
 var mainNav = {};
 
 var carpeta = {};
-	carpeta.preliminares = {};
+
+carpeta.preliminares = {};
 
 //GETSS
 carpeta.titulo = doc.getElementsByTagName('carpeta_titulo')[0].childNodes[0].nodeValue;
@@ -44,10 +45,7 @@ console.log('carpeta: '+carpeta.titulo);
 
 carpeta.preliminares.autor = doc.getElementsByTagName('autor')[0];
 
-
-
 carpeta.preliminares.introduccion = doc.getElementsByTagName('introduccion')[0];
-
 carpeta.preliminares.problematica = doc.getElementsByTagName('problematica_del_campo')[0];
 carpeta.preliminares.reflexiones = doc.getElementsByTagName('reflexiones')[0];
 carpeta.preliminares.objetivos = doc.getElementsByTagName('objetivos_del_curso')[0];
@@ -85,20 +83,22 @@ function buildIndex() {
 
 	mainNav.open='<div class="container dmd-nav-main"><div class="row">';
 
-    mainNav.header='<div class="col-xs-3 navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
+  
 
     
-    mainNav.collapse ='<div class="col-xs-9"><nav class="navbar-collapse collapse" role="navigation"><span id="titulo-nav" >'+carpeta.titulo+'</span><ul class="nav navbar-nav dmd-unidades-nav navbar-right"><li class="active"><a id="intro-trigger" href="index.html">Introducción</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse --></div>';
+  mainNav.collapse ='<div class="col-xs-10"><nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav"><li class="active"><a id="intro-trigger" href="index.html">'+carpeta.titulo+'</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse --></div>';
 	
+	mainNav.header='<div class="col-xs-2 navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
+
 	mainNav.close='</div></div>';
 
 	//concat nav
-	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
+	mainNav.render = mainNav.open+mainNav.collapse+mainNav.header+mainNav.close;
 
 
 	mainHtml.open = '<!DOCTYPE html><html>';
 	
-	mainHtml.head = '<head><meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="piel/css/bootstrap-DMD-theme.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
+	mainHtml.head = '<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="description" content=""> <meta name="keywords" content=""><meta name="author" content="DMD/UVQ"> <link rel="icon" href="/favicon.ico"><title>'+carpeta.titulo+' / Inicio</title> <!-- DMD core CSS --> <link href="piel/css/bootstrap-DMD-theme.min.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]--></head>';
 	
 	//mainHtml.cover = '<div id="top" class="cover"><div class="container"><h1 class="main-logo">U</h1><div class="footer">'+carpeta.titulo+' - DIRECCIÓN DE MATERIALES DIDÁCTICOS</div></div></div>';
 
@@ -106,7 +106,7 @@ function buildIndex() {
 
 	mainHtml.footer = '<footer class="footer dmd-footer"><div class="container"><div class="row"><div id="titulo" class="col-md-5"><p>'+carpeta.titulo+'</p></div><div id="bottom-to-top" class="col-md-2"><a class="smooth-trigger back-to-top-arrow rotate" href="#top">Z</a></div><div id="copy"class="col-md-5"><p>Dirección de Materiales Didácticos</p></div></div></div></footer>';
 
-	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <script src="piel/js/bootstrap.min.js"></script>  <script src="piel/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="piel/js/ie10-viewport-bug-workaround.js"></script>';
+	mainHtml.close = '<!-- Bootstrap core JavaScript --><!-- Placed at the end of the document so the pages load faster --> <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script> <script src="piel/js/bootstrap.js"></script>  <script src="piel/js/dmd.js"></script> <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> <script src="piel/js/ie10-viewport-bug-workaround.js"></script>';
 
 	//var autor_nombre = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
 	//var autor_bio = doc.getElementsByTagName('autor')[0].childNodes[0].nodeValue;
