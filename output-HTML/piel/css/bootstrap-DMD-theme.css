@@ -6885,7 +6885,7 @@ legend {
   color: #333;
 }
 /*
- * dmd-theme.js
+ * dmd-theme.css
  * 
  * Lisandro Fernandez 
  * 2015
@@ -6895,8 +6895,10 @@ body {
   position: relative;
 }
 .main-container {
-  padding-top: 85px;
   padding-bottom: 100px;
+}
+#main-preliminares {
+  padding-top: 85px;
 }
 table {
   width: 100%;
@@ -6953,7 +6955,7 @@ table > tbody > tr:nth-of-type(odd) {
   text-transform: uppercase;
 }
 .navbar .dmd-nav-main .navbar-brand {
-  width: 243px;
+  float: right;
   font-family: 'UNQ Dingbats';
   font-size: 86px;
   font-weight: 100;
@@ -7003,7 +7005,6 @@ table > tbody > tr:nth-of-type(odd) {
   .dmd-sidebar.affix {
     position: fixed;
     /* Undo the static from mobile first approach */
-    top: 85px;
   }
   .dmd-sidebar.affix-bottom {
     position: absolute;
@@ -7098,6 +7099,7 @@ table > tbody > tr:nth-of-type(odd) {
 /* All levels of nav */
 .dmd-sidebar {
   width: 243px;
+  padding-top: 85px;
   margin-top: 22px;
 }
 .dmd-sidebar > .nav > li {

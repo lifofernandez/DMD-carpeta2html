@@ -173,7 +173,7 @@ function buildIndex() {
 
 	
 	
-	var content = '<div class="container main-container" id="titlo-preliminares-indice">'+titulo+intro+'</div>';
+	var content = '<div class="container main-container" id="main-preliminares">'+titulo+intro+'</div>';
 	
 	//mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body class="index">'+mainHtml.cover+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';
 	mainHtml.indexConcat = mainHtml.open+mainHtml.head+'<body id="top" class="index">'+mainHtml.header+content+mainHtml.footer+mainHtml.close+'</body></html>';

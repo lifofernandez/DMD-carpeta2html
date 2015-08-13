@@ -78,7 +78,7 @@
 
            // when done, add hash to url
            // (default click behaviour)
-           //e.preventDefault();
+           e.preventDefault();
            window.location.hash = hash;
          });
      });

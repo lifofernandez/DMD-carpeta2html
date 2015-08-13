@@ -12,10 +12,12 @@ body {
 }
 
 .main-container{
-	padding-top: @mainOffset;
+	//padding-top: @mainOffset;
 	padding-bottom: @containerPaddings;
 }
-
+#main-preliminares{
+	padding-top: @mainOffset;
+}
 table{
 	.table();
 	.table-striped();
@@ -47,8 +49,9 @@ table{
 		font-weight: 600;
 
 		.navbar-brand {
-			width: 243px;
+			//width: 243px;
 			//padding: 15px 0px;
+			float: right;
 			line-height: .5;
 			font-size: 86px;
 			font-weight: 100;
@@ -117,7 +120,7 @@ table{
 	}
 	.dmd-sidebar.affix {
 		position: fixed; /* Undo the static from mobile first approach */
-		top: @mainOffset;
+		//top: @mainOffset;
 	}
 	.dmd-sidebar.affix-bottom {
 		position: absolute; /* Undo the static from mobile first approach */
@@ -267,7 +270,7 @@ table{
 	}
 	width: 243px;
 	margin-top: @sidebar-top-margin;
-
+	padding-top: @mainOffset;
 	> .nav > li{
 		padding: 5px 0;
 	}
