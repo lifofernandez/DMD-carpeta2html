@@ -484,7 +484,7 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'</div>';
 				
-				var tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
+				var tooltipStr = 'data-toggle="tooltip" title="'+bloqueTipoName+'"';
 
 				var collapseStr = '<div class="collapse-indicator rotate">+</div>';
 
