@@ -13,11 +13,12 @@
   $(function () {
 
     // Scrollspy
-    var $window = $(window)
-    var $body   = $(document.body)
+    var $window = $(window);
+    var $body   = $(document.body);
 
-    var $height = $window.height()
-
+    var height = $window.height();
+    var width = $window.width();
+   
     var navbarHeight = 65;
    
     var regularMargins = 20;
@@ -112,7 +113,7 @@
      /*
     var $indexHeader = $('.index .navbar')
     setTimeout(function () {
-          $indexHeader.affix({offset: {top: $height}})
+          $indexHeader.affix({offset: {top: height}})
     }, 100)
 
     $indexHeader.on('affixed.bs.affix', function () {
@@ -121,12 +122,12 @@
     $indexHeader.on('affixed-top.bs.affix', function () {
       $('#intro-indice').removeClass('pushed');
     })  
-*/
-/*
+    */
+    /*
     $window.resize(function() {
-      $height = $window.height();
-     // $indexHeader.affix({offset: {top: $height}})
-      //alert($height);
+      height = $window.height();
+     // $indexHeader.affix({offset: {top: height}})
+      //alert(height);
     });
 */
 
@@ -143,7 +144,9 @@
 
 
   //TOOLTIPS
-   $('.bloque').tooltip();
+  
+  if(width > 600)$('.bloque').tooltip({placement:'right'});
+  if(width < 600)$('.bloque').tooltip({placement:'top'});
 
     ///PASTILLAS POPOVERS
     
@@ -180,7 +183,7 @@
     
 
     ///COLLAPSES
-    $(' .bloque').each(function() {
+    $('.bloque').each(function() {
 
 
       $(this).children('.bloque-header').on('click',function(){

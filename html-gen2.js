@@ -81,19 +81,19 @@ function buildIndex() {
 		anexosBtns=anexosBtns+'<li><a href=anexo-'+(index+1)+'.html>Anexo '+romanize(index+1)+'</a></li>';
 	});
 
-	mainNav.open='<div class="container dmd-nav-main"><div class="row">';
+	mainNav.open='<div class="container dmd-nav-main">';
 
   
 
     
-  mainNav.collapse ='<div class="col-xs-10"><nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav"><li class="active"><a id="intro-trigger" href="index.html">'+carpeta.titulo+'</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse --></div>';
+  mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav"><li class="active"><a id="intro-trigger" href="index.html">'+carpeta.titulo+'</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	
-	mainNav.header='<div class="col-xs-2 navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
+	mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
 
-	mainNav.close='</div></div>';
+	mainNav.close='</div>';
 
 	//concat nav
-	mainNav.render = mainNav.open+mainNav.collapse+mainNav.header+mainNav.close;
+	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
 
 
 	mainHtml.open = '<!DOCTYPE html><html>';
@@ -484,7 +484,7 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'</div>';
 				
-				var tooltipStr = 'data-toggle="tooltip" data-placement="right" title="'+bloqueTipoName+'"';
+				var tooltipStr = 'data-toggle="tooltip" title="'+bloqueTipoName+'"';
 
 				var collapseStr = '<div class="collapse-indicator rotate">+</div>';
 
