@@ -10,3 +10,4 @@ output-HTML/src/private
 
 output-HTML/files/*
 
+node_modules
