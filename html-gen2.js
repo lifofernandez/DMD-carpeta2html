@@ -265,7 +265,7 @@ function indexFromElements(items,what_to_get,base_link,parent_delta,child_to_get
 				if(parent_delta === '')var itemDelta = '';
 				var itemTitulo = items[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
-				var itemUrl = makeUrl(itemTitulo);
+				var itemUrl = makeUrl(itemDelta+'_'+itemTitulo);
 				var itemLink = '<a class="indice-link apart-link" href="'+base_link+'#'+itemUrl+'"><span class="delta">'+itemDelta+'. </span> '+itemTitulo+'</a>';
 				
 				var childIndex = '';
@@ -358,7 +358,7 @@ function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_
 				if(parent_delta === '')var elementoDelta = (i+1);
 				var elementoTitulo = elementos[i].getElementsByTagName(what_to_get)[0].childNodes[0].nodeValue;
 
-				var elementoUrl = makeUrl(elementoTitulo);
+				var elementoUrl = makeUrl(elementoDelta+'_'+elementoTitulo);
 				var elementoLink = '<a class="smooth-trigger" href="'+base_link+'#'+elementoUrl+'"><span class="delta">'+elementoDelta+'.</span> '+elementoTitulo+'</a>';
 				
 				var childIndex = '';
@@ -453,8 +453,9 @@ function getParts(element, what_to_get,parent_delta){
 			
 				var unidadDelta = '<span class="delta '+what_to_get+'-delta">'+partDelta+'.</span>';
 
-				var partId = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
+				var partTitRaw = makeUrl(parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue);
 
+				var partId = makeUrl(partDelta+'_'+partTitRaw);
 				var partTitulo = '<h'+titleLvl+' class="part-title">'+unidadDelta+' '+parts[i].getElementsByTagName(what_to_get+'_titulo')[0].childNodes[0].nodeValue+'</h'+titleLvl+'>';
 				
 			}
