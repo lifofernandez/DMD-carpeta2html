@@ -1,0 +1,34 @@
+{
+  "name": "dmd-carpeta2html",
+  "version": "1.0.0",
+  "description": "convertir carpetas.xml en HTML",
+  "main": "html-gen.js",
+  "dependencies": {
+    "connect": "^3.4.0",
+    "html": "0.0.7",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "string": "^2.2.0",
+    "xmldom": "^0.1.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "gen": "node html-gen.js",
+    "gen2": "node html-gen2.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifofernandez/DMD-carpeta2html.git"
+  },
+  "keywords": [
+    "xml",
+    "html"
+  ],
+  "author": "lisandro fernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifofernandez/DMD-carpeta2html/issues"
+  },
+  "homepage": "https://github.com/lifofernandez/DMD-carpeta2html#readme"
+}

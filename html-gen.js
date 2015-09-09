@@ -13,7 +13,6 @@
 var fs = require('fs');
 var DOMParser = require('xmldom').DOMParser;
 var html = require("html");
-
 var S = require('string');
 
 // Prefs
