@@ -44,7 +44,7 @@
     })
 
     $window.on('load', function () {
-      $body.scrollspy('refresh')
+      $body.scrollspy('refresh');
     })
     
 
@@ -53,39 +53,36 @@
 
       
     $('.dmd-sidebar').on('activate.bs.scrollspy', function () {
-      $body.scrollspy('refresh')
+      $body.scrollspy('refresh');
     })
 
-    //custom spy para intro
-
-
-    if ($body.is('.index')) {
-        $('#intro-trigger').parent().addClass('active');
-    }
+    // custom spy para intro
+    // if ($body.is('.index')) {
+    //    $('#intro-trigger').parent().addClass('active');
+    // }
 
 
     $(".smooth-trigger").on('click', function(e) {
 
-       // prevent default anchor click behavior
-       e.preventDefault();
+      // prevent default anchor click behavior
+      e.preventDefault();
 
-       // store hash
-       var hash = this.hash;
-       console.log(hash);
+      // store hash
+      var hash = this.hash;
+
        // animate
-       $body.animate({
-           scrollTop: $(this.hash).offset().top - mainOffset
+       $('html,body').animate({
+           scrollTop: $(hash).offset().top - mainOffset
          }, 500, function(){
 
-           // when done, add hash to url
-           e.preventDefault();
-           window.location.hash = hash;
+          // when done, add hash to url
+          //window.location.hash = hash;
          });
      });
     
     // Sidenav affixing
     setTimeout(function () {
-      var $sideBar = $('.dmd-sidebar')
+      var $sideBar = $('.dmd-sidebar');
 
       $sideBar.affix({
         offset: {
@@ -110,7 +107,7 @@
 
 
 
-     /*
+    /*
     var $indexHeader = $('.index .navbar')
     setTimeout(function () {
           $indexHeader.affix({offset: {top: height}})
@@ -129,29 +126,27 @@
      // $indexHeader.affix({offset: {top: height}})
       //alert(height);
     });
-*/
+    */
 
-  //indice
-  $('.show-menu').each(function() {
-        
-    $(this).on('click',function(e){ 
-      e.preventDefault();
-      //$(this).parent().parent().toggleClass('displayed');
-      $(this).parent().siblings(".nav-list").collapse('toggle');
+    //indice
+    $('.show-menu').each(function() {
+          
+      $(this).on('click',function(e){ 
+        e.preventDefault();
+        //$(this).parent().parent().toggleClass('displayed');
+        $(this).parent().siblings(".nav-list").collapse('toggle');
+      });
+
     });
 
-  });
 
-
-  //TOOLTIPS
+    //TOOLTIPS
   
-  if(width > 600)$('.bloque').tooltip({placement:'right'});
-  if(width < 600)$('.bloque').tooltip({placement:'top'});
+    if(width > 600)$('.bloque').tooltip({placement:'right'});
+    if(width < 600)$('.bloque').tooltip({placement:'top'});
 
     ///PASTILLAS POPOVERS
-    
-    /*<u type="button" class="dmd-popover" data-toggle="popover" data-content="Contneido"> bibliografía</u>*/
-   
+       
     $('.dmd-popover').popover({
       selector: '[data-toggle="popover"]',
       //container: false,
@@ -163,7 +158,7 @@
       delay: { "show": 200, "hide": 100 },
     }).on('click',function(){ $(this).popover('toggle'); });
 
-    
+  
     $(window).scroll(function(){
       $('.dmd-popover').each(function() {
         
@@ -176,7 +171,7 @@
 
         if($(this).hasClass('on-screen') && change)$(this).popover('show').on('click',function(){ $(this).popover('toggle') });
         if(!$(this).hasClass('on-screen') && change)$(this).popover('hide').on('click',function(){ $(this).popover('toggle') });
-  
+
       });
       
     });
