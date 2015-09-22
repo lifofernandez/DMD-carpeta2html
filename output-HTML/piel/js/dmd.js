@@ -65,20 +65,22 @@
     $(".smooth-trigger").on('click', function(e) {
 
       // prevent default anchor click behavior
-      e.preventDefault();
+      //e.preventDefault();
 
       // store hash
       var hash = this.hash;
 
-       // animate
-       $('html,body').animate({
-           scrollTop: $(hash).offset().top - mainOffset
-         }, 500, function(){
+      // animate
+      // $('html,body').animate({
+      //     scrollTop: $(hash).offset().top - mainOffset
+      //   }, 500, function(){
 
-          // when done, add hash to url
-          //window.location.hash = hash;
-         });
-     });
+      //   // when done, add hash to url
+      // });
+
+      window.location.hash = hash;
+
+    });
     
     // Sidenav affixing
     setTimeout(function () {
@@ -87,7 +89,7 @@
       $sideBar.affix({
         offset: {
           top: function () {
-            var offsetTop      = $sideBar.offset().top
+            // var offsetTop      = $sideBar.offset().top
             var offsetTop      = 0
 
             var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
@@ -120,6 +122,7 @@
       $('#intro-indice').removeClass('pushed');
     })  
     */
+    
     /*
     $window.resize(function() {
       height = $window.height();
