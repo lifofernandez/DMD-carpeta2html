@@ -485,7 +485,7 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'</div>';
 				
-				var tooltipStr = 'title="'+bloqueTipoName+'"';
+				var tooltipStr = '';
 
 				var collapseStr = '<div class="collapse-indicator rotate">+</div>';
 
@@ -504,7 +504,23 @@ function getBloques(element){
 					break;
 
 					case "pastilla": 
-					iconoStr = '<div class="icono"></div>';
+					iconoStr = '';
+					bloqueContent = '<a href="#myModal" data-toggle="modal" class="icono">N</a>
+					<div id="myModal" class="modal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<div class="icono">N</div>
+							<div class="modal-title">Pastilla</div>
+						</div>
+					<div class="modal-body">
+						<p>'+getContent(bloques[i])+'</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+					</div><!-- /.modal -->';
+					collapseStr = '';
+					iconoStr = '';
 					break;
 
 					case "ejemplo": 
@@ -548,6 +564,8 @@ function getBloques(element){
 
 					case "audiovisual": 
 					iconoStr = '<div class="icono">E</div>';
+					bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'<div class="row"><div class="col-­sm­‐8"><iframe >LINK</iframe></div></div></div>';
+
 					break;
 
 					case "imagen": 
