@@ -505,21 +505,7 @@ function getBloques(element){
 
 					case "pastilla": 
 					iconoStr = '';
-					bloqueContent = '<a href="#myModal" data-toggle="modal" class="icono">N</a>
-					<div id="myModal" class="modal">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<div class="icono">N</div>
-							<div class="modal-title">Pastilla</div>
-						</div>
-						<div class="modal-body">
-							<p>'+getContent(bloques[i])+'</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-						</div>
-					</div><!-- /.modal -->';
-					collapseStr = '';
+					bloqueContent = '<a href="#myModal" data-toggle="modal" class="icono">N</a> <div id="myModal" class="modal"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <div class="icono">N</div> <div class="modal-title">Pastilla</div> </div> <div class="modal-body"> <p>'+getContent(bloques[i])+'</p> </div> <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button> </div> </div><!-- /.modal -->'; collapseStr = '';
 					iconoStr = '';
 					break;
 
