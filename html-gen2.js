@@ -1,5 +1,5 @@
 /**
- * carpeta2html
+ * carpeta2html (ajustes para Debo)
  * convierte carpetas descargadas de aca: materiales.uvq.edu.ar a HTML
  *
  * Este script fue echo para uso propio y se provee "asi como es" 
