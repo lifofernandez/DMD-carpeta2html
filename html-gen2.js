@@ -90,10 +90,14 @@ function buildIndex() {
 	
 	mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-­‐brand" href="index.html">V</a><a class="navbar-brand" href="index.html">U</a></div><div class="materia"><h4>'+carpeta.titulo+'</h4></div>';
 
+
 	mainNav.close='</div>';
 
+	mainNav.navDebo='<div class="navbar2"><div class="col-xs-10"><nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav"><li><div class="icono"><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="Introduction" class="bloque-bot">H</a></div></li><li class="active"><a href=unidad-1.html>1</a></li><li><a href=unidad-2.html>2</a></li><li><a href=unidad-3.html>3</a></li><li><a href=unidad-4.html>4</a></li><li><a href=unidad-5.html>5</a></li><li><a href=unidad-6.html>6</a></li><li><div class="icono"><a href="bibliografia.html" data-toggle="tooltip" data-placement="bottom" title="Bibliografía"  class="bloque-bot">B</a></div></li> <li><div class="icono"><a href="imprimir.html" data-toggle="tooltip" data-placement="bottom" title="Imprimir"  class="bloque-bot">F</a></div></li><li><div class="icono"><a href="creditos.html" data-toggle="tooltip" data-placement="bottom" title="Créditos"  class="bloque-bot">T</a></div></li>       </ul>      </nav>     </div>     </div>';
+
+
 	//concat nav
-	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close;
+	mainNav.render = mainNav.open+mainNav.header+mainNav.collapse+mainNav.close+mainNav.navDebo;
 
 
 	mainHtml.open = '<!DOCTYPE html><html>';
@@ -326,7 +330,7 @@ function generarPaginas(element_group,delta){
 	
 	var headerPagina = '<body class="page '+elementTipe+' '+elementTipe+'-'+delta+'"><header class="navbar navbar-inverse navbar-fixed-top" role="banner">'+mainNav.render+'</header>';
 
-	var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+sideNavFromElements(apartados,'apartado_titulo','',elementDelta,'subapartado', 'subapartado_titulo',paginaTitulo)+'</div></div>';
+var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">'+sideNavFromElements(apartados,'apartado_titulo','',elementDelta,'subapartado', 'subapartado_titulo',paginaTitulo)+'</div></div>';
 
 
 	var	content = '<div class="col-md-9" role="main">'+parseContent(element_group,delta)+'</div>';
@@ -344,7 +348,7 @@ function generarPaginas(element_group,delta){
 }
 
 // Element Walker para indicie de cada pagina/unidad
-function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
+function sideNavFromElements(elementos,what_to_get,base_lin<k,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
 
 	var output = '';
 
