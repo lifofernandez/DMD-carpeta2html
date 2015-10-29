@@ -512,12 +512,12 @@ function getBloques(element){
 							<div class="icono">N</div>
 							<div class="modal-title">Pastilla</div>
 						</div>
-					<div class="modal-body">
-						<p>'+getContent(bloques[i])+'</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-					</div>
+						<div class="modal-body">
+							<p>'+getContent(bloques[i])+'</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						</div>
 					</div><!-- /.modal -->';
 					collapseStr = '';
 					iconoStr = '';
