@@ -1,6 +1,6 @@
 /**
  * carpeta2html
- * convierte carpetas descargadas de aca: materiales.uvq.edu.ar a HTML
+ * convierte carpetas descargadas de: materiales.uvq.edu.ar a HTML
  *
  * Este script fue echo para uso propio y se provee "asi como es" 
  * forma parte del prototipo de solucion para la autoria de materiales digitales.

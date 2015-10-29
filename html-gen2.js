@@ -1,6 +1,6 @@
 /**
  * carpeta2html (ajustes para Debo)
- * convierte carpetas descargadas de aca: materiales.uvq.edu.ar a HTML
+ * convierte carpetas descargadas de materiales.uvq.edu.ar a HTML
  *
  * Este script fue echo para uso propio y se provee "asi como es" 
  * forma parte del prototipo de solucion para la autoria de materiales digitales.
@@ -88,7 +88,7 @@ function buildIndex() {
     
   mainNav.collapse ='<nav class="navbar-collapse collapse" role="navigation"><ul class="nav navbar-nav dmd-unidades-nav"><li class="active"><a id="intro-trigger" href="index.html">'+carpeta.titulo+'</a></li>'+unidadesBtns+anexosBtns+'</ul></nav><!--/.nav-collapse -->';
 	
-	mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">U</a></div>';
+	mainNav.header='<div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-­‐brand" href="index.html">V</a><a class="navbar-brand" href="index.html">U</a></div><div class="materia"><h4>'+carpeta.titulo+'</h4></div>';
 
 	mainNav.close='</div>';
 
@@ -485,7 +485,7 @@ function getBloques(element){
 
 				var bloqueContent = '<div class="bloque-contenido collapse in">'+getContent(bloques[i])+'</div>';
 				
-				var tooltipStr = 'data-toggle="tooltip" title="'+bloqueTipoName+'"';
+				var tooltipStr = 'title="'+bloqueTipoName+'"';
 
 				var collapseStr = '<div class="collapse-indicator rotate">+</div>';
 
@@ -514,7 +514,7 @@ function getBloques(element){
 					case "para_ampliar": 
 					//bloqueContent = '<div class="bloque-contenido collapse">'+getContent(bloques[i])+'</div>';
 					//collapseStr = '<div class="collapse-indicator">+</div>';
-					//iconoStr = '<div class="icono">A</div>';
+					iconoStr = '<div class="icono">A</div>';
 					break;
 
 					case "para_reflexionar": 
