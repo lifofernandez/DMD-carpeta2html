@@ -348,7 +348,7 @@ var indiceApartados = '<div class="col-md-3"><div class="dmd-sidebar hidden-prin
 }
 
 // Element Walker para indicie de cada pagina/unidad
-function sideNavFromElements(elementos,what_to_get,base_lin<k,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
+function sideNavFromElements(elementos,what_to_get,base_link,parent_delta,child_to_get,what_inChild_to_get,titulo_pagina){
 
 	var output = '';
 

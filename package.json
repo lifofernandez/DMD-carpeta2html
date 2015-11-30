@@ -2,7 +2,7 @@
   "name": "dmd-carpeta2html",
   "version": "1.0.0",
   "description": "convertir carpetas.xml en HTML",
-  "main": "html-gen.js",
+  "main": "html-gen2.js",
   "dependencies": {
     "connect": "^3.4.0",
     "html": "0.0.7",
